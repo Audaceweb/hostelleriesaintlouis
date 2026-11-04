@@ -88,7 +88,6 @@ collections:
           - { label: "Badge 2 Texte", name: "chambres_badge2_text", widget: "string" }
           - { label: "Badge 3 Titre", name: "chambres_badge3_title", widget: "string" }
           - { label: "Badge 3 Texte", name: "chambres_badge3_text", widget: "string" }
-          # Standard
           - { label: "Standard Sous-titre", name: "std_subtitle", widget: "string" }
           - { label: "Standard Titre", name: "std_title", widget: "string" }
           - { label: "Standard Image", name: "std_img", widget: "image" }
@@ -101,7 +100,6 @@ collections:
           - { label: "Standard Équipement 6", name: "std_amenity6", widget: "string" }
           - { label: "Standard Équipement 7", name: "std_amenity7", widget: "string" }
           - { label: "Standard Prix", name: "std_price", widget: "string" }
-          # Supérieure
           - { label: "Supérieure Sous-titre", name: "sup_subtitle", widget: "string" }
           - { label: "Supérieure Titre", name: "sup_title", widget: "string" }
           - { label: "Supérieure Image", name: "sup_img", widget: "image" }
@@ -115,7 +113,6 @@ collections:
           - { label: "Supérieure Équipement 7", name: "sup_amenity7", widget: "string" }
           - { label: "Supérieure Équipement 8", name: "sup_amenity8", widget: "string" }
           - { label: "Supérieure Prix", name: "sup_price", widget: "string" }
-          # Confort
           - { label: "Confort Sous-titre", name: "conf_subtitle", widget: "string" }
           - { label: "Confort Titre", name: "conf_title", widget: "string" }
           - { label: "Confort Image", name: "conf_img", widget: "image" }
@@ -129,7 +126,6 @@ collections:
           - { label: "Confort Équipement 7", name: "conf_amenity7", widget: "string" }
           - { label: "Confort Équipement 8", name: "conf_amenity8", widget: "string" }
           - { label: "Confort Prix", name: "conf_price", widget: "string" }
-          # Petit-déjeuner
           - { label: "Petit-déjeuner Image", name: "breakfast_img", widget: "image" }
           - { label: "Petit-déjeuner Sous-titre", name: "breakfast_subtitle", widget: "string" }
           - { label: "Petit-déjeuner Titre", name: "breakfast_title", widget: "string" }
@@ -137,7 +133,6 @@ collections:
           - { label: "Note 1", name: "breakfast_note1", widget: "text" }
           - { label: "Note 2", name: "breakfast_note2", widget: "text" }
           - { label: "Prix Petit-déjeuner", name: "breakfast_price", widget: "string" }
-          # Grille tarifs
           - { label: "Tarifs Sous-titre", name: "tarifs_subtitle", widget: "string" }
           - { label: "Tarifs Titre", name: "tarifs_title", widget: "string" }
           - { label: "Tarifs Description", name: "tarifs_desc", widget: "text" }
@@ -153,7 +148,6 @@ collections:
           - { label: "Carte 3 Sous-titre", name: "card3_subtitle", widget: "string" }
           - { label: "Carte 3 Prix", name: "card3_price", widget: "string" }
           - { label: "Carte 3 Texte", name: "card3_text", widget: "text" }
-          # Suppléments & Demi-pension
           - { label: "Suppléments Titre", name: "supp_title", widget: "string" }
           - { label: "Supplément 1 Label", name: "supp1_label", widget: "string" }
           - { label: "Supplément 1 Valeur", name: "supp1_val", widget: "string" }
@@ -166,7 +160,6 @@ collections:
           - { label: "Demi-pension Titre", name: "dp_title", widget: "string" }
           - { label: "Demi-pension Texte 1", name: "dp_text1", widget: "text" }
           - { label: "Demi-pension Texte 2", name: "dp_text2", widget: "text" }
-          # Soirée étape
           - { label: "Soirée Étape Sous-titre", name: "se_subtitle", widget: "string" }
           - { label: "Soirée Étape Titre", name: "se_title", widget: "string" }
           - { label: "Soirée Étape Description", name: "se_desc", widget: "text" }
@@ -179,7 +172,6 @@ collections:
           - { label: "Encadré Supérieure Label", name: "se_box_sup_label", widget: "string" }
           - { label: "Encadré Supérieure Prix", name: "se_box_sup_price", widget: "string" }
           - { label: "Encadré Supérieure Sub", name: "se_box_sup_sub", widget: "string" }
-          # Animaux
           - { label: "Animaux Sous-titre", name: "pets_subtitle", widget: "string" }
           - { label: "Animaux Titre", name: "pets_title", widget: "string" }
           - { label: "Animaux Texte", name: "pets_text", widget: "text" }
@@ -212,7 +204,6 @@ collections:
           - { label: "Vin Titre", name: "wine_title", widget: "string" }
           - { label: "Vin Description 1", name: "wine_desc1", widget: "text" }
           - { label: "Vin Description 2", name: "wine_desc2", widget: "text" }
-          # Menu de la semaine
           - { label: "Menu Sous-titre", name: "menu_subtitle", widget: "string" }
           - { label: "Menu Titre", name: "menu_title", widget: "string" }
           - { label: "Menu Dates", name: "menu_dates", widget: "string" }
@@ -232,7 +223,6 @@ collections:
           - { label: "Item 6 Nom", name: "m_item6_name", widget: "string" }
           - { label: "Item 6 Prix", name: "m_item6_price", widget: "string" }
           - { label: "Formule Note", name: "m_formula", widget: "text" }
-          # Menu automnal
           - { label: "Automne Sous-titre", name: "autumn-subtitle", widget: "string" }
           - { label: "Automne Titre", name: "autumn-title", widget: "string" }
           - { label: "Automne Dates", name: "autumn-dates", widget: "string" }
@@ -255,7 +245,6 @@ collections:
           - { label: "Automne Item 5 Desc", name: "autumn-item-5-desc", widget: "string" }
           - { label: "Automne Item 5 Prix", name: "autumn-item-5-price", widget: "string" }
           - { label: "Automne Footer", name: "autumn-footer", widget: "text" }
-          # Fait maison
           - { label: "Citation Fait Maison", name: "homemade_quote", widget: "string" }
           - { label: "Logo Fait Maison Image", name: "homemade_img", widget: "image" }
 
@@ -279,7 +268,6 @@ collections:
           - { label: "Paragraphe 3", name: "wedding_p3", widget: "text" }
           - { label: "Paragraphe 4", name: "wedding_p4", widget: "text" }
           - { label: "Signature", name: "wedding_signature", widget: "string" }
-          # Réceptions
           - { label: "Réception Sous-titre", name: "reception_section_subtitle", widget: "string" }
           - { label: "Réception Titre", name: "reception_section_title", widget: "string" }
           - { label: "Réception Description", name: "reception_section_desc", widget: "text" }
@@ -293,7 +281,6 @@ collections:
           - { label: "Carte 4 Desc", name: "rcard4_desc", widget: "text" }
           - { label: "Bannière Partenaire Titre", name: "partner_banner_title", widget: "string" }
           - { label: "Bannière Partenaire Desc", name: "partner_banner_desc", widget: "text" }
-          # Confiance
           - { label: "Confiance Sous-titre", name: "trust_section_subtitle", widget: "string" }
           - { label: "Confiance Titre", name: "trust_section_title", widget: "string" }
           - { label: "Confiance Description", name: "trust_section_desc", widget: "text" }
@@ -308,7 +295,6 @@ collections:
           - { label: "Galerie Texte 3", name: "g_text3", widget: "string" }
           - { label: "Galerie Image 4", name: "g_img4", widget: "image" }
           - { label: "Galerie Texte 4", name: "g_text4", widget: "string" }
-          # Devis
           - { label: "Devis Sous-titre", name: "mariages_quote_subtitle", widget: "string" }
           - { label: "Devis Titre", name: "mariages_quote_title", widget: "string" }
           - { label: "Devis Description", name: "mariages_quote_desc", widget: "text" }
@@ -348,7 +334,7 @@ collections:
           - { label: "Téléphone", name: "seminaires_quote_phone", widget: "string" }
 
       # ==========================================
-      # 6. PAGE SPA (spa.html)
+      # 6. PAGE SPA (spa.html) - CORRIGÉE SANS DOUBLONS
       # ==========================================
       - name: "spa"
         label: "Page Spa"
@@ -374,10 +360,10 @@ collections:
           - { label: "Spa Card 4 Desc", name: "spa_scard4_desc", widget: "string" }
           - { label: "Tarifs Sous-titre", name: "spa_tarifs_subtitle", widget: "string" }
           - { label: "Tarifs Titre", name: "spa_tarifs_title", widget: "string" }
-          - { label: "Tarif 1 Titre", name: "t1_title", widget: "string" }
-          - { label: "Tarif 1 Prix", name: "t1_price", widget: "string" }
-          - { label: "Tarif 2 Titre", name: "t2_title", widget: "string" }
-          - { label: "Tarif 2 Prix", name: "t2_price", widget: "string" }
+          - { label: "Résident Titre", name: "spa_t1_title", widget: "string" }
+          - { label: "Résident Prix", name: "spa_t1_price", widget: "string" }
+          - { label: "Extérieur Titre", name: "spa_t2_title", widget: "string" }
+          - { label: "Extérieur Prix", name: "spa_t2_price", widget: "string" }
           - { label: "Note Tarifs", name: "tarifs_note", widget: "text" }
           - { label: "Horaires Titre", name: "hours_title", widget: "string" }
           - { label: "Horaire 1 Jour", name: "h1_day", widget: "string" }
@@ -392,29 +378,29 @@ collections:
           - { label: "Carrousel Image 1", name: "spa_carrousel_img1", widget: "image" }
           - { label: "Carrousel Image 2", name: "spa_carrousel_img2", widget: "image" }
           - { label: "Carrousel Image 3", name: "spa_carrousel_img3", widget: "image" }
-          # Soins Andréa
+          # Soins Andréa (Renommés avec le préfixe andrea_ pour éviter les conflits avec le bloc du dessus)
           - { label: "Soins Sous-titre", name: "soins_subtitle", widget: "string" }
           - { label: "Soins Titre", name: "soins_title", widget: "string" }
           - { label: "Soins Description", name: "soins_desc", widget: "text" }
           - { label: "Andréa Label", name: "andrea_label", widget: "string" }
           - { label: "Andréa Créneaux", name: "andrea_slots", widget: "string" }
           - { label: "Traitement Cat 1", name: "tcat1", widget: "string" }
-          - { label: "Traitement 1 Nom", name: "t1_name", widget: "string" }
-          - { label: "Traitement 1 Sub", name: "t1_sub", widget: "string" }
-          - { label: "Traitement 1 Prix", name: "t1_price", widget: "string" }
-          - { label: "Traitement 2 Nom", name: "t2_name", widget: "string" }
-          - { label: "Traitement 2 Sub", name: "t2_sub", widget: "string" }
-          - { label: "Traitement 2 Prix", name: "t2_price", widget: "string" }
-          - { label: "Traitement 3 Nom", name: "t3_name", widget: "string" }
-          - { label: "Traitement 3 Sub", name: "t3_sub", widget: "string" }
-          - { label: "Traitement 3 Prix", name: "t3_price", widget: "string" }
+          - { label: "Traitement 1 Nom", name: "andrea_t1_name", widget: "string" }
+          - { label: "Traitement 1 Sub", name: "andrea_t1_sub", widget: "string" }
+          - { label: "Traitement 1 Prix", name: "andrea_t1_price", widget: "string" }
+          - { label: "Traitement 2 Nom", name: "andrea_t2_name", widget: "string" }
+          - { label: "Traitement 2 Sub", name: "andrea_t2_sub", widget: "string" }
+          - { label: "Traitement 2 Prix", name: "andrea_t2_price", widget: "string" }
+          - { label: "Traitement 3 Nom", name: "andrea_t3_name", widget: "string" }
+          - { label: "Traitement 3 Sub", name: "andrea_t3_sub", widget: "string" }
+          - { label: "Traitement 3 Prix", name: "andrea_t3_price", widget: "string" }
           - { label: "Traitement Cat 2", name: "tcat2", widget: "string" }
-          - { label: "Traitement 4 Nom", name: "t4_name", widget: "string" }
-          - { label: "Traitement 4 Sub", name: "t4_sub", widget: "string" }
-          - { label: "Traitement 4 Prix", name: "t4_price", widget: "string" }
-          - { label: "Traitement 5 Nom", name: "t5_name", widget: "string" }
-          - { label: "Traitement 5 Sub", name: "t5_sub", widget: "string" }
-          - { label: "Traitement 5 Prix", name: "t5_price", widget: "string" }
+          - { label: "Traitement 4 Nom", name: "andrea_t4_name", widget: "string" }
+          - { label: "Traitement 4 Sub", name: "andrea_t4_sub", widget: "string" }
+          - { label: "Traitement 4 Prix", name: "andrea_t4_price", widget: "string" }
+          - { label: "Traitement 5 Nom", name: "andrea_t5_name", widget: "string" }
+          - { label: "Traitement 5 Sub", name: "andrea_t5_sub", widget: "string" }
+          - { label: "Traitement 5 Prix", name: "andrea_t5_price", widget: "string" }
           # Formulaire Spa
           - { label: "Formulaire Sous-titre", name: "form_subtitle", widget: "string" }
           - { label: "Formulaire Titre", name: "form_title", widget: "string" }
@@ -475,10 +461,8 @@ collections:
           - { label: "Golf Item 1", name: "golf_item1", widget: "text" }
           - { label: "Golf Item 2", name: "golf_item2", widget: "text" }
           - { label: "Golf Item 3", name: "golf_item3", widget: "text" }
-          # Actualités infos
           - { label: "News Sous-titre", name: "infos_news_subtitle", widget: "string" }
           - { label: "News Titre", name: "infos_news_title", widget: "string" }
-          # Contact infos
           - { label: "Contact Sous-titre", name: "contact_subtitle", widget: "string" }
           - { label: "Contact Titre", name: "contact_title", widget: "string" }
           - { label: "Contact Desc", name: "contact_desc", widget: "text" }
