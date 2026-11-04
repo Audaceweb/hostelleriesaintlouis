@@ -9,10 +9,12 @@ collections:
   - name: "pages"
     label: "Pages du Site"
     files:
-      # 1. PAGE D'ACCUEIL
+      # ==========================================
+      # 1. PAGE D'ACCUEIL (index.html)
+      # ==========================================
       - name: "index"
         label: "Page d'Accueil"
-        file: "index.html"
+        file: "content/index.json"
         fields:
           - { label: "Logo Hero", name: "hero_logo", widget: "image" }
           - { label: "Description Hero", name: "hero_desc", widget: "string" }
@@ -21,10 +23,10 @@ collections:
           - { label: "Carrousel - Image 3", name: "carrousel_img3", widget: "image" }
           - { label: "Badge Année", name: "badge_year", widget: "string" }
           - { label: "Badge Texte", name: "badge_text", widget: "string" }
-          - { label: "Présentation Sous-titre", name: "intro_subtitle", widget: "string" }
-          - { label: "Présentation Titre", name: "intro_title", widget: "string" }
-          - { label: "Présentation Texte 1", name: "intro_text1", widget: "text" }
-          - { label: "Présentation Texte 2", name: "intro_text2", widget: "text" }
+          - { label: "Intro Sous-titre", name: "intro_subtitle", widget: "string" }
+          - { label: "Intro Titre", name: "intro_title", widget: "string" }
+          - { label: "Intro Texte 1", name: "intro_text1", widget: "text" }
+          - { label: "Intro Texte 2", name: "intro_text2", widget: "text" }
           - { label: "Chambres Image", name: "rooms_img", widget: "image" }
           - { label: "Chambres Sous-titre", name: "rooms_subtitle", widget: "string" }
           - { label: "Chambres Titre", name: "rooms_title", widget: "string" }
@@ -33,78 +35,453 @@ collections:
           - { label: "Restaurant Sous-titre", name: "resto_subtitle", widget: "string" }
           - { label: "Restaurant Titre", name: "resto_title", widget: "string" }
           - { label: "Restaurant Description", name: "resto_desc", widget: "text" }
+          # Liste actualités accueil
+          - label: "Actualités Accueil"
+            name: "home_news"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+          - { label: "Mariages Image", name: "wedding_img", widget: "image" }
+          - { label: "Mariages Sous-titre", name: "wedding_subtitle", widget: "string" }
+          - { label: "Mariages Titre", name: "wedding_title", widget: "string" }
+          - { label: "Mariages Description", name: "wedding_desc", widget: "text" }
+          - { label: "Séminaires Image", name: "seminar_img", widget: "image" }
+          - { label: "Séminaires Sous-titre", name: "seminar_subtitle", widget: "string" }
+          - { label: "Séminaires Titre", name: "seminar_title", widget: "string" }
+          - { label: "Séminaires Description", name: "seminar_desc", widget: "text" }
+          - { label: "Spa Image", name: "spa_img", widget: "image" }
+          - { label: "Spa Sous-titre", name: "spa_subtitle", widget: "string" }
+          - { label: "Spa Titre", name: "spa_title", widget: "string" }
+          - { label: "Spa Description", name: "spa_desc", widget: "text" }
+          - { label: "Coffrets Image", name: "gift_img", widget: "image" }
+          - { label: "Coffrets Sous-titre", name: "gift_subtitle", widget: "string" }
+          - { label: "Coffrets Titre", name: "gift_title", widget: "string" }
+          - { label: "Coffrets Description", name: "gift_desc", widget: "text" }
+          - { label: "Infos Image", name: "infos_img", widget: "image" }
+          - { label: "Infos Sous-titre", name: "infos_subtitle", widget: "string" }
+          - { label: "Infos Titre", name: "infos_title", widget: "string" }
+          - { label: "Infos Description", name: "infos_desc", widget: "text" }
+          - { label: "Avis Sous-titre", name: "reviews_subtitle", widget: "string" }
+          - { label: "Avis Titre", name: "reviews_title", widget: "string" }
 
-      # 2. PAGE CHAMBRES
+      # ==========================================
+      # 2. PAGE CHAMBRES (chambres.html)
+      # ==========================================
       - name: "chambres"
         label: "Page Chambres"
-        file: "chambres.html"
+        file: "content/chambres.json"
         fields:
+          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "hero_title", widget: "string" }
           - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Intro Sous-titre", name: "intro_subtitle", widget: "string" }
+          - { label: "Intro Titre", name: "intro_heading", widget: "string" }
           - { label: "Intro Texte 1", name: "intro_text1", widget: "text" }
           - { label: "Intro Texte 2", name: "intro_text2", widget: "text" }
-          - { label: "Standard Photo", name: "std_img", widget: "image" }
-          - { label: "Standard Prix", name: "std_price", widget: "string" }
+          - { label: "Badge 1 Titre", name: "badge1_title", widget: "string" }
+          - { label: "Badge 1 Texte", name: "badge1_text", widget: "string" }
+          - { label: "Badge 2 Titre", name: "badge2_title", widget: "string" }
+          - { label: "Badge 2 Texte", name: "badge2_text", widget: "string" }
+          - { label: "Badge 3 Titre", name: "badge3_title", widget: "string" }
+          - { label: "Badge 3 Texte", name: "badge3_text", widget: "string" }
+          # Standard
+          - { label: "Standard Sous-titre", name: "std_subtitle", widget: "string" }
+          - { label: "Standard Titre", name: "std_title", widget: "string" }
+          - { label: "Standard Image", name: "std_img", widget: "image" }
           - { label: "Standard Description", name: "std_desc", widget: "text" }
-          - { label: "Supérieure Photo", name: "sup_img", widget: "image" }
-          - { label: "Supérieure Prix", name: "sup_price", widget: "string" }
+          - { label: "Standard Équipement 1", name: "std_amenity1", widget: "string" }
+          - { label: "Standard Équipement 2", name: "std_amenity2", widget: "string" }
+          - { label: "Standard Équipement 3", name: "std_amenity3", widget: "string" }
+          - { label: "Standard Équipement 4", name: "std_amenity4", widget: "string" }
+          - { label: "Standard Équipement 5", name: "std_amenity5", widget: "string" }
+          - { label: "Standard Équipement 6", name: "std_amenity6", widget: "string" }
+          - { label: "Standard Équipement 7", name: "std_amenity7", widget: "string" }
+          - { label: "Standard Prix", name: "std_price", widget: "string" }
+          # Supérieure
+          - { label: "Supérieure Sous-titre", name: "sup_subtitle", widget: "string" }
+          - { label: "Supérieure Titre", name: "sup_title", widget: "string" }
+          - { label: "Supérieure Image", name: "sup_img", widget: "image" }
           - { label: "Supérieure Description", name: "sup_desc", widget: "text" }
-          - { label: "Confort Photo", name: "conf_img", widget: "image" }
-          - { label: "Confort Prix", name: "conf_price", widget: "string" }
+          - { label: "Supérieure Équipement 1", name: "sup_amenity1", widget: "string" }
+          - { label: "Supérieure Équipement 2", name: "sup_amenity2", widget: "string" }
+          - { label: "Supérieure Équipement 3", name: "sup_amenity3", widget: "string" }
+          - { label: "Supérieure Équipement 4", name: "sup_amenity4", widget: "string" }
+          - { label: "Supérieure Équipement 5", name: "sup_amenity5", widget: "string" }
+          - { label: "Supérieure Équipement 6", name: "sup_amenity6", widget: "string" }
+          - { label: "Supérieure Équipement 7", name: "sup_amenity7", widget: "string" }
+          - { label: "Supérieure Équipement 8", name: "sup_amenity8", widget: "string" }
+          - { label: "Supérieure Prix", name: "sup_price", widget: "string" }
+          # Confort
+          - { label: "Confort Sous-titre", name: "conf_subtitle", widget: "string" }
+          - { label: "Confort Titre", name: "conf_title", widget: "string" }
+          - { label: "Confort Image", name: "conf_img", widget: "image" }
           - { label: "Confort Description", name: "conf_desc", widget: "text" }
+          - { label: "Confort Équipement 1", name: "conf_amenity1", widget: "string" }
+          - { label: "Confort Équipement 2", name: "conf_amenity2", widget: "string" }
+          - { label: "Confort Équipement 3", name: "conf_amenity3", widget: "string" }
+          - { label: "Confort Équipement 4", name: "conf_amenity4", widget: "string" }
+          - { label: "Confort Équipement 5", name: "conf_amenity5", widget: "string" }
+          - { label: "Confort Équipement 6", name: "conf_amenity6", widget: "string" }
+          - { label: "Confort Équipement 7", name: "conf_amenity7", widget: "string" }
+          - { label: "Confort Équipement 8", name: "conf_amenity8", widget: "string" }
+          - { label: "Confort Prix", name: "conf_price", widget: "string" }
+          # Petit-déjeuner
+          - { label: "Petit-déjeuner Image", name: "breakfast_img", widget: "image" }
+          - { label: "Petit-déjeuner Sous-titre", name: "breakfast_subtitle", widget: "string" }
+          - { label: "Petit-déjeuner Titre", name: "breakfast_title", widget: "string" }
+          - { label: "Petit-déjeuner Texte 1", name: "breakfast_text1", widget: "text" }
+          - { label: "Note 1", name: "breakfast_note1", widget: "text" }
+          - { label: "Note 2", name: "breakfast_note2", widget: "text" }
+          - { label: "Prix Petit-déjeuner", name: "breakfast_price", widget: "string" }
+          # Grille tarifs
+          - { label: "Tarifs Sous-titre", name: "tarifs_subtitle", widget: "string" }
+          - { label: "Tarifs Titre", name: "tarifs_title", widget: "string" }
+          - { label: "Tarifs Description", name: "tarifs_desc", widget: "text" }
+          - { label: "Carte 1 Titre", name: "card1_title", widget: "string" }
+          - { label: "Carte 1 Sous-titre", name: "card1_subtitle", widget: "string" }
+          - { label: "Carte 1 Prix", name: "card1_price", widget: "string" }
+          - { label: "Carte 1 Texte", name: "card1_text", widget: "text" }
+          - { label: "Carte 2 Titre", name: "card2_title", widget: "string" }
+          - { label: "Carte 2 Sous-titre", name: "card2_subtitle", widget: "string" }
+          - { label: "Carte 2 Prix", name: "card2_price", widget: "string" }
+          - { label: "Carte 2 Texte", name: "card2_text", widget: "text" }
+          - { label: "Carte 3 Titre", name: "card3_title", widget: "string" }
+          - { label: "Carte 3 Sous-titre", name: "card3_subtitle", widget: "string" }
+          - { label: "Carte 3 Prix", name: "card3_price", widget: "string" }
+          - { label: "Carte 3 Texte", name: "card3_text", widget: "text" }
+          # Suppléments & Demi-pension
+          - { label: "Suppléments Titre", name: "supp_title", widget: "string" }
+          - { label: "Supplément 1 Label", name: "supp1_label", widget: "string" }
+          - { label: "Supplément 1 Valeur", name: "supp1_val", widget: "string" }
+          - { label: "Supplément 2 Label", name: "supp2_label", widget: "string" }
+          - { label: "Supplément 2 Valeur", name: "supp2_val", widget: "string" }
+          - { label: "Supplément 3 Label", name: "supp3_label", widget: "string" }
+          - { label: "Supplément 3 Valeur", name: "supp3_val", widget: "string" }
+          - { label: "Supplément 4 Label", name: "supp4_label", widget: "string" }
+          - { label: "Supplément 4 Valeur", name: "supp4_val", widget: "string" }
+          - { label: "Demi-pension Titre", name: "dp_title", widget: "string" }
+          - { label: "Demi-pension Texte 1", name: "dp_text1", widget: "text" }
+          - { label: "Demi-pension Texte 2", name: "dp_text2", widget: "text" }
+          # Soirée étape
+          - { label: "Soirée Étape Sous-titre", name: "se_subtitle", widget: "string" }
+          - { label: "Soirée Étape Titre", name: "se_title", widget: "string" }
+          - { label: "Soirée Étape Description", name: "se_desc", widget: "text" }
+          - { label: "Soirée Étape Point 1", name: "se_point1", widget: "string" }
+          - { label: "Soirée Étape Point 2", name: "se_point2", widget: "string" }
+          - { label: "Soirée Étape Point 3", name: "se_point3", widget: "string" }
+          - { label: "Encadré Titre", name: "se_box_title", widget: "string" }
+          - { label: "Encadré Standard Label", name: "se_box_std_label", widget: "string" }
+          - { label: "Encadré Standard Prix", name: "se_box_std_price", widget: "string" }
+          - { label: "Encadré Supérieure Label", name: "se_box_sup_label", widget: "string" }
+          - { label: "Encadré Supérieure Prix", name: "se_box_sup_price", widget: "string" }
+          - { label: "Encadré Supérieure Sub", name: "se_box_sup_sub", widget: "string" }
+          # Animaux
+          - { label: "Animaux Sous-titre", name: "pets_subtitle", widget: "string" }
+          - { label: "Animaux Titre", name: "pets_title", widget: "string" }
+          - { label: "Animaux Texte", name: "pets_text", widget: "text" }
+          - { label: "Animaux Détails", name: "pets_details", widget: "text" }
 
-      # 3. PAGE RESTAURANT PAUZE
+      # ==========================================
+      # 3. PAGE RESTAURANT PAUZE (pauze.html)
+      # ==========================================
       - name: "pauze"
         label: "Page Restaurant PAUZE"
-        file: "pauze.html"
+        file: "content/pauze.json"
         fields:
+          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "hero_title", widget: "string" }
           - { label: "Hero Description", name: "hero_desc", widget: "string" }
-          - { label: "Présentation Chef", name: "chef_desc1", widget: "text" }
-          - { label: "Citation Chef", name: "chef_desc2", widget: "text" }
-          - { label: "Présentation Vins", name: "wine_desc1", widget: "text" }
+          - { label: "Carrousel Image 1", name: "carrousel_img1", widget: "image" }
+          - { label: "Carrousel Image 2", name: "carrousel_img2", widget: "image" }
+          - { label: "Carrousel Image 3", name: "carrousel_img3", widget: "image" }
+          - { label: "Carrousel Image 4", name: "carrousel_img4", widget: "image" }
+          - { label: "Intro Sous-titre", name: "intro_subtitle", widget: "string" }
+          - { label: "Intro Titre", name: "intro_title", widget: "string" }
+          - { label: "Intro Texte 1", name: "intro_text1", widget: "text" }
+          - { label: "Badge Titre", name: "badge_title", widget: "string" }
+          - { label: "Badge Description", name: "badge_desc", widget: "text" }
+          - { label: "Chef Sous-titre", name: "chef_subtitle", widget: "string" }
+          - { label: "Chef Titre", name: "chef_title", widget: "string" }
+          - { label: "Chef Description 1", name: "chef_desc1", widget: "text" }
+          - { label: "Chef Description 2", name: "chef_desc2", widget: "text" }
+          - { label: "Vin Sous-titre", name: "wine_subtitle", widget: "string" }
+          - { label: "Vin Titre", name: "wine_title", widget: "string" }
+          - { label: "Vin Description 1", name: "wine_desc1", widget: "text" }
+          - { label: "Vin Description 2", name: "wine_desc2", widget: "text" }
+          # Menu de la semaine
+          - { label: "Menu Sous-titre", name: "menu_subtitle", widget: "string" }
+          - { label: "Menu Titre", name: "menu_title", widget: "string" }
           - { label: "Menu Dates", name: "menu_dates", widget: "string" }
-          - { label: "Menu Formule Prix", name: "m_formula", widget: "string" }
+          - { label: "Catégorie 1", name: "m_cat1", widget: "string" }
+          - { label: "Item 1 Nom", name: "m_item1_name", widget: "string" }
+          - { label: "Item 1 Prix", name: "m_item1_price", widget: "string" }
+          - { label: "Item 2 Nom", name: "m_item2_name", widget: "string" }
+          - { label: "Item 2 Prix", name: "m_item2_price", widget: "string" }
+          - { label: "Catégorie 2", name: "m_cat2", widget: "string" }
+          - { label: "Item 3 Nom", name: "m_item3_name", widget: "string" }
+          - { label: "Item 3 Prix", name: "m_item3_price", widget: "string" }
+          - { label: "Item 4 Nom", name: "m_item4_name", widget: "string" }
+          - { label: "Item 4 Prix", name: "m_item4_price", widget: "string" }
+          - { label: "Catégorie 3", name: "m_cat3", widget: "string" }
+          - { label: "Item 5 Nom", name: "m_item5_name", widget: "string" }
+          - { label: "Item 5 Prix", name: "m_item5_price", widget: "string" }
+          - { label: "Item 6 Nom", name: "m_item6_name", widget: "string" }
+          - { label: "Item 6 Prix", name: "m_item6_price", widget: "string" }
+          - { label: "Formule Note", name: "m_formula", widget: "text" }
+          # Menu automnal
+          - { label: "Automne Sous-titre", name: "autumn-subtitle", widget: "string" }
+          - { label: "Automne Titre", name: "autumn-title", widget: "string" }
+          - { label: "Automne Dates", name: "autumn-dates", widget: "string" }
+          - { label: "Automne Cat 1", name: "autumn-cat-1", widget: "string" }
+          - { label: "Automne Item 1 Nom", name: "autumn-item-1-name", widget: "string" }
+          - { label: "Automne Item 1 Desc", name: "autumn-item-1-desc", widget: "string" }
+          - { label: "Automne Item 1 Prix", name: "autumn-item-1-price", widget: "string" }
+          - { label: "Automne Item 2 Nom", name: "autumn-item-2-name", widget: "string" }
+          - { label: "Automne Item 2 Desc", name: "autumn-item-2-desc", widget: "string" }
+          - { label: "Automne Item 2 Prix", name: "autumn-item-2-price", widget: "string" }
+          - { label: "Automne Cat 2", name: "autumn-cat-2", widget: "string" }
+          - { label: "Automne Item 3 Nom", name: "autumn-item-3-name", widget: "string" }
+          - { label: "Automne Item 3 Desc", name: "autumn-item-3-desc", widget: "string" }
+          - { label: "Automne Item 3 Prix", name: "autumn-item-3-price", widget: "string" }
+          - { label: "Automne Item 4 Nom", name: "autumn-item-4-name", widget: "string" }
+          - { label: "Automne Item 4 Desc", name: "autumn-item-4-desc", widget: "string" }
+          - { label: "Automne Item 4 Prix", name: "autumn-item-4-price", widget: "string" }
+          - { label: "Automne Cat 3", name: "autumn-cat-3", widget: "string" }
+          - { label: "Automne Item 5 Nom", name: "autumn-item-5-name", widget: "string" }
+          - { label: "Automne Item 5 Desc", name: "autumn-item-5-desc", widget: "string" }
+          - { label: "Automne Item 5 Prix", name: "autumn-item-5-price", widget: "string" }
+          - { label: "Automne Footer", name: "autumn-footer", widget: "text" }
+          # Fait maison
+          - { label: "Citation Fait Maison", name: "homemade_quote", widget: "string" }
+          - { label: "Logo Fait Maison Image", name: "homemade_img", widget: "image" }
 
-      # 4. PAGE MARIAGES
+      # ==========================================
+      # 4. PAGE MARIAGES & RÉCEPTIONS (mariages.html)
+      # ==========================================
       - name: "mariages"
         label: "Page Mariages"
-        file: "mariages.html"
+        file: "content/mariages.json"
         fields:
+          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "hero_title", widget: "string" }
           - { label: "Hero Description", name: "hero_desc", widget: "string" }
-          - { label: "Lettre Mariés Paragraphe 1", name: "wedding_p1", widget: "string" }
-          - { label: "Lettre Mariés Paragraphe 2", name: "wedding_p2", widget: "text" }
-          - { label: "Lettre Mariés Paragraphe 3", name: "wedding_p3", widget: "text" }
+          - { label: "Carrousel Mariage 1", name: "wedding_img1", widget: "image" }
+          - { label: "Carrousel Mariage 2", name: "wedding_img2", widget: "image" }
+          - { label: "Mariage Sous-titre", name: "wedding_section_subtitle", widget: "string" }
+          - { label: "Mariage Titre", name: "wedding_section_title", widget: "string" }
+          - { label: "Citation", name: "wedding_quote", widget: "string" }
+          - { label: "Paragraphe 1", name: "wedding_p1", widget: "text" }
+          - { label: "Paragraphe 2", name: "wedding_p2", widget: "text" }
+          - { label: "Paragraphe 3", name: "wedding_p3", widget: "text" }
+          - { label: "Paragraphe 4", name: "wedding_p4", widget: "text" }
+          - { label: "Signature", name: "wedding_signature", widget: "string" }
+          # Réceptions
+          - { label: "Réception Sous-titre", name: "reception_section_subtitle", widget: "string" }
+          - { label: "Réception Titre", name: "reception_section_title", widget: "string" }
+          - { label: "Réception Description", name: "reception_section_desc", widget: "text" }
+          - { label: "Carte 1 Titre", name: "rcard1_title", widget: "string" }
+          - { label: "Carte 1 Desc", name: "rcard1_desc", widget: "text" }
+          - { label: "Carte 2 Titre", name: "rcard2_title", widget: "string" }
+          - { label: "Carte 2 Desc", name: "rcard2_desc", widget: "text" }
+          - { label: "Carte 3 Titre", name: "rcard3_title", widget: "string" }
+          - { label: "Carte 3 Desc", name: "rcard3_desc", widget: "text" }
+          - { label: "Carte 4 Titre", name: "rcard4_title", widget: "string" }
+          - { label: "Carte 4 Desc", name: "rcard4_desc", widget: "text" }
+          - { label: "Bannière Partenaire Titre", name: "partner_banner_title", widget: "string" }
+          - { label: "Bannière Partenaire Desc", name: "partner_banner_desc", widget: "text" }
+          # Confiance
+          - { label: "Confiance Sous-titre", name: "trust_section_subtitle", widget: "string" }
+          - { label: "Confiance Titre", name: "trust_section_title", widget: "string" }
+          - { label: "Confiance Description", name: "trust_section_desc", widget: "text" }
+          - { label: "Slider Image 1", name: "trust_slider_img1", widget: "image" }
+          - { label: "Slider Image 2", name: "trust_slider_img2", widget: "image" }
+          - { label: "Slider Image 3", name: "trust_slider_img3", widget: "image" }
+          - { label: "Galerie Image 1", name: "g_img1", widget: "image" }
+          - { label: "Galerie Texte 1", name: "g_text1", widget: "string" }
+          - { label: "Galerie Image 2", name: "g_img2", widget: "image" }
+          - { label: "Galerie Texte 2", name: "g_text2", widget: "string" }
+          - { label: "Galerie Image 3", name: "g_img3", widget: "image" }
+          - { label: "Galerie Texte 3", name: "g_text3", widget: "string" }
+          - { label: "Galerie Image 4", name: "g_img4", widget: "image" }
+          - { label: "Galerie Texte 4", name: "g_text4", widget: "string" }
+          # Devis
+          - { label: "Devis Sous-titre", name: "quote_subtitle", widget: "string" }
+          - { label: "Devis Titre", name: "quote_title", widget: "string" }
+          - { label: "Devis Description", name: "quote_desc", widget: "text" }
+          - { label: "Adresse", name: "quote_address", widget: "string" }
+          - { label: "Téléphone", name: "quote_phone", widget: "string" }
 
-      # 5. PAGE SÉMINAIRES
+      # ==========================================
+      # 5. PAGE SÉMINAIRES (seminaires.html)
+      # ==========================================
       - name: "seminaires"
         label: "Page Séminaires"
-        file: "seminaires.html"
+        file: "content/seminaires.json"
         fields:
+          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "hero_title", widget: "string" }
           - { label: "Hero Description", name: "hero_desc", widget: "string" }
-          - { label: "Texte Présentation 1", name: "intro_text1", widget: "text" }
-          - { label: "Texte Présentation 2", name: "intro_text2", widget: "text" }
+          - { label: "Intro Image", name: "intro_img", widget: "image" }
+          - { label: "Intro Sous-titre", name: "intro_subtitle", widget: "string" }
+          - { label: "Intro Titre", name: "intro_title", widget: "string" }
+          - { label: "Intro Texte 1", name: "intro_text1", widget: "text" }
+          - { label: "Intro Texte 2", name: "intro_text2", widget: "text" }
+          - { label: "Atouts Sous-titre", name: "atouts_subtitle", widget: "string" }
+          - { label: "Atouts Titre", name: "atouts_title", widget: "string" }
+          - { label: "Atouts Description", name: "atouts_desc", widget: "text" }
+          - { label: "Salle 1 Titre", name: "scard1_title", widget: "string" }
+          - { label: "Salle 1 Desc", name: "scard1_desc", widget: "text" }
+          - { label: "Salle 2 Titre", name: "scard2_title", widget: "string" }
+          - { label: "Salle 2 Desc", name: "scard2_desc", widget: "text" }
+          - { label: "Salle 3 Titre", name: "scard3_title", widget: "string" }
+          - { label: "Salle 3 Desc", name: "scard3_desc", widget: "text" }
+          - { label: "Salle 4 Titre", name: "scard4_title", widget: "string" }
+          - { label: "Salle 4 Desc", name: "scard4_desc", widget: "text" }
+          - { label: "Devis Sous-titre", name: "quote_subtitle", widget: "string" }
+          - { label: "Devis Titre", name: "quote_title", widget: "string" }
+          - { label: "Devis Description", name: "quote_desc", widget: "text" }
+          - { label: "Adresse", name: "quote_address", widget: "string" }
+          - { label: "Téléphone", name: "quote_phone", widget: "string" }
 
-      # 6. PAGE SPA
+      # ==========================================
+      # 6. PAGE SPA (spa.html)
+      # ==========================================
       - name: "spa"
         label: "Page Spa"
-        file: "spa.html"
+        file: "content/spa.json"
         fields:
+          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "hero_title", widget: "string" }
           - { label: "Hero Description", name: "hero_desc", widget: "string" }
-          - { label: "Tarif Résidents", name: "t1_price", widget: "string" }
-          - { label: "Tarif Extérieurs", name: "t2_price", widget: "string" }
-          - { label: "Horaires Andréa", name: "andrea_slots", widget: "string" }
+          - { label: "Spa Intro Sous-titre", name: "spa_intro_subtitle", widget: "string" }
+          - { label: "Spa Intro Titre", name: "spa_intro_title", widget: "string" }
+          - { label: "Spa Intro Desc", name: "spa_intro_desc", widget: "text" }
+          - { label: "Spa Card 1 Titre", name: "scard1_title", widget: "string" }
+          - { label: "Spa Card 1 Capacité", name: "scard1_capacity", widget: "string" }
+          - { label: "Spa Card 1 Desc", name: "scard1_desc", widget: "string" }
+          - { label: "Spa Card 2 Titre", name: "scard2_title", widget: "string" }
+          - { label: "Spa Card 2 Capacité", name: "scard2_capacity", widget: "string" }
+          - { label: "Spa Card 2 Desc", name: "scard2_desc", widget: "string" }
+          - { label: "Spa Card 3 Titre", name: "scard3_title", widget: "string" }
+          - { label: "Spa Card 3 Capacité", name: "scard3_capacity", widget: "string" }
+          - { label: "Spa Card 3 Desc", name: "scard3_desc", widget: "string" }
+          - { label: "Spa Card 4 Titre", name: "scard4_title", widget: "string" }
+          - { label: "Spa Card 4 Capacité", name: "scard4_capacity", widget: "string" }
+          - { label: "Spa Card 4 Desc", name: "scard4_desc", widget: "string" }
+          - { label: "Tarifs Sous-titre", name: "tarifs_subtitle", widget: "string" }
+          - { label: "Tarifs Titre", name: "tarifs_title", widget: "string" }
+          - { label: "Tarif 1 Titre", name: "t1_title", widget: "string" }
+          - { label: "Tarif 1 Prix", name: "t1_price", widget: "string" }
+          - { label: "Tarif 2 Titre", name: "t2_title", widget: "string" }
+          - { label: "Tarif 2 Prix", name: "t2_price", widget: "string" }
+          - { label: "Note Tarifs", name: "tarifs_note", widget: "text" }
+          - { label: "Horaires Titre", name: "hours_title", widget: "string" }
+          - { label: "Horaire 1 Jour", name: "h1_day", widget: "string" }
+          - { label: "Horaire 1 Heure", name: "h1_time", widget: "string" }
+          - { label: "Horaire 1 Sub", name: "h1_sub", widget: "string" }
+          - { label: "Horaire 2 Jour", name: "h2_day", widget: "string" }
+          - { label: "Horaire 2 Heure", name: "h2_time", widget: "string" }
+          - { label: "Horaire 2 Sub", name: "h2_sub", widget: "string" }
+          - { label: "Horaire 3 Jour", name: "h3_day", widget: "string" }
+          - { label: "Horaire 3 Heure", name: "h3_time", widget: "string" }
+          - { label: "Horaire 3 Sub", name: "h3_sub", widget: "string" }
+          - { label: "Carrousel Image 1", name: "carrousel_img1", widget: "image" }
+          - { label: "Carrousel Image 2", name: "carrousel_img2", widget: "image" }
+          - { label: "Carrousel Image 3", name: "carrousel_img3", widget: "image" }
+          # Soins Andréa
+          - { label: "Soins Sous-titre", name: "soins_subtitle", widget: "string" }
+          - { label: "Soins Titre", name: "soins_title", widget: "string" }
+          - { label: "Soins Description", name: "soins_desc", widget: "text" }
+          - { label: "Andréa Label", name: "andrea_label", widget: "string" }
+          - { label: "Andréa Créneaux", name: "andrea_slots", widget: "string" }
+          - { label: "Traitement Cat 1", name: "tcat1", widget: "string" }
+          - { label: "Traitement 1 Nom", name: "t1_name", widget: "string" }
+          - { label: "Traitement 1 Sub", name: "t1_sub", widget: "string" }
+          - { label: "Traitement 1 Prix", name: "t1_price", widget: "string" }
+          - { label: "Traitement 2 Nom", name: "t2_name", widget: "string" }
+          - { label: "Traitement 2 Sub", name: "t2_sub", widget: "string" }
+          - { label: "Traitement 2 Prix", name: "t2_price", widget: "string" }
+          - { label: "Traitement 3 Nom", name: "t3_name", widget: "string" }
+          - { label: "Traitement 3 Sub", name: "t3_sub", widget: "string" }
+          - { label: "Traitement 3 Prix", name: "t3_price", widget: "string" }
+          - { label: "Traitement Cat 2", name: "tcat2", widget: "string" }
+          - { label: "Traitement 4 Nom", name: "t4_name", widget: "string" }
+          - { label: "Traitement 4 Sub", name: "t4_sub", widget: "string" }
+          - { label: "Traitement 4 Prix", name: "t4_price", widget: "string" }
+          - { label: "Traitement 5 Nom", name: "t5_name", widget: "string" }
+          - { label: "Traitement 5 Sub", name: "t5_sub", widget: "string" }
+          - { label: "Traitement 5 Prix", name: "t5_price", widget: "string" }
+          # Formulaire Spa
+          - { label: "Formulaire Sous-titre", name: "form_subtitle", widget: "string" }
+          - { label: "Formulaire Titre", name: "form_title", widget: "string" }
+          - { label: "Formulaire Desc", name: "form_desc", widget: "text" }
+          - { label: "Alerte Titre", name: "alert_title", widget: "string" }
+          - { label: "Alerte Desc", name: "alert_desc", widget: "text" }
+          - { label: "Politique Titre", name: "policy_title", widget: "string" }
+          - { label: "Politique Desc", name: "policy_desc", widget: "text" }
+          - { label: "CTA Téléphone Texte", name: "phone_cta_text", widget: "string" }
 
-      # 7. PAGE INFOS PRATIQUES
+      # ==========================================
+      # 7. PAGE INFOS PRATIQUES (infos.html)
+      # ==========================================
       - name: "infos"
         label: "Page Infos Pratiques"
-        file: "infos.html"
+        file: "content/infos.json"
         fields:
+          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "hero_title", widget: "string" }
           - { label: "Hero Description", name: "hero_desc", widget: "string" }
-          - { label: "Accès voiture", name: "car_desc", widget: "text" }
-          - { label: "Accès Shuttle", name: "shuttle_desc", widget: "text" }
-          - { label: "Accès Train", name: "train_desc", widget: "text" }
+          - { label: "Accès Sous-titre", name: "access_subtitle", widget: "string" }
+          - { label: "Accès Titre", name: "access_title", widget: "string" }
+          - { label: "Voiture Titre", name: "car_title", widget: "string" }
+          - { label: "Voiture Desc", name: "car_desc", widget: "text" }
+          - { label: "Shuttle Titre", name: "shuttle_title", widget: "string" }
+          - { label: "Shuttle Desc", name: "shuttle_desc", widget: "text" }
+          - { label: "Train Titre", name: "train_title", widget: "string" }
+          - { label: "Train Desc", name: "train_desc", widget: "text" }
+          - { label: "Environs Sous-titre", name: "surroundings_subtitle", widget: "string" }
+          - { label: "Environs Titre", name: "surroundings_title", widget: "string" }
+          - { label: "Environs Desc", name: "surroundings_desc", widget: "text" }
+          - { label: "Flandres Titre", name: "flandres_title", widget: "string" }
+          - { label: "Flandres Item 1", name: "flandres_item1", widget: "text" }
+          - { label: "Flandres Item 2", name: "flandres_item2", widget: "text" }
+          - { label: "Flandres Item 3", name: "flandres_item3", widget: "text" }
+          - { label: "Flandres Item 4", name: "flandres_item4", widget: "text" }
+          - { label: "Flandres Item 5", name: "flandres_item5", widget: "text" }
+          - { label: "Bergues Titre", name: "bergues_title", widget: "string" }
+          - { label: "Bergues Item 1", name: "bergues_item1", widget: "text" }
+          - { label: "Bergues Item 2", name: "bergues_item2", widget: "text" }
+          - { label: "Bergues Item 3", name: "bergues_item3", widget: "text" }
+          - { label: "Dunkerque Titre", name: "dunkerque_title", widget: "string" }
+          - { label: "Dunkerque Item 1", name: "dunkerque_item1", widget: "text" }
+          - { label: "Dunkerque Item 2", name: "dunkerque_item2", widget: "text" }
+          - { label: "Dunkerque Item 3", name: "dunkerque_item3", widget: "text" }
+          - { label: "Dunkerque Item 4", name: "dunkerque_item4", widget: "text" }
+          - { label: "Gravelines Titre", name: "gravelines_title", widget: "string" }
+          - { label: "Gravelines Item 1", name: "gravelines_item1", widget: "text" }
+          - { label: "Gravelines Item 2", name: "gravelines_item2", widget: "text" }
+          - { label: "Gravelines Item 3", name: "gravelines_item3", widget: "text" }
+          - { label: "Gravelines Item 4", name: "gravelines_item4", widget: "text" }
+          - { label: "St-Omer Titre", name: "stomer_title", widget: "string" }
+          - { label: "St-Omer Item 1", name: "stomer_item1", widget: "text" }
+          - { label: "St-Omer Item 2", name: "stomer_item2", widget: "text" }
+          - { label: "St-Omer Item 3", name: "stomer_item3", widget: "text" }
+          - { label: "St-Omer Item 4", name: "stomer_item4", widget: "text" }
+          - { label: "Golf Titre", name: "golf_title", widget: "string" }
+          - { label: "Golf Item 1", name: "golf_item1", widget: "text" }
+          - { label: "Golf Item 2", name: "golf_item2", widget: "text" }
+          - { label: "Golf Item 3", name: "golf_item3", widget: "text" }
+          # Actualités infos
+          - { label: "News Sous-titre", name: "news_subtitle", widget: "string" }
+          - { label: "News Titre", name: "news_title", widget: "string" }
+          # Contact infos
+          - { label: "Contact Sous-titre", name: "contact_subtitle", widget: "string" }
+          - { label: "Contact Titre", name: "contact_title", widget: "string" }
+          - { label: "Contact Desc", name: "contact_desc", widget: "text" }
+          - { label: "Adresse", name: "contact_address", widget: "string" }
+          - { label: "Téléphone", name: "contact_phone", widget: "string" }
+          - { label: "Email", name: "contact_email", widget: "string" }
