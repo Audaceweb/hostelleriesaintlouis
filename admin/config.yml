@@ -9,7 +9,7 @@ collections:
   - name: "pages"
     label: "Pages du Site"
     files:
-     # ==========================================
+      # ==========================================
       # 1. PAGE D'ACCUEIL (index.html)
       # ==========================================
       - name: "index"
@@ -67,6 +67,7 @@ collections:
           - { label: "Infos Description", name: "infos_desc", widget: "text" }
           - { label: "Avis Sous-titre", name: "reviews_subtitle", widget: "string" }
           - { label: "Avis Titre", name: "reviews_title", widget: "string" }
+
       # ==========================================
       # 2. PAGE CHAMBRES (chambres.html)
       # ==========================================
@@ -74,19 +75,19 @@ collections:
         label: "Page Chambres"
         file: "content/chambres.json"
         fields:
-          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
-          - { label: "Hero Titre", name: "hero_title", widget: "string" }
-          - { label: "Hero Description", name: "hero_desc", widget: "string" }
-          - { label: "Intro Sous-titre", name: "intro_subtitle", widget: "string" }
-          - { label: "Intro Titre", name: "intro_heading", widget: "string" }
-          - { label: "Intro Texte 1", name: "intro_text1", widget: "text" }
-          - { label: "Intro Texte 2", name: "intro_text2", widget: "text" }
-          - { label: "Badge 1 Titre", name: "badge1_title", widget: "string" }
-          - { label: "Badge 1 Texte", name: "badge1_text", widget: "string" }
-          - { label: "Badge 2 Titre", name: "badge2_title", widget: "string" }
-          - { label: "Badge 2 Texte", name: "badge2_text", widget: "string" }
-          - { label: "Badge 3 Titre", name: "badge3_title", widget: "string" }
-          - { label: "Badge 3 Texte", name: "badge3_text", widget: "string" }
+          - { label: "Hero Sous-titre", name: "chambres_hero_subtitle", widget: "string" }
+          - { label: "Hero Titre", name: "chambres_hero_title", widget: "string" }
+          - { label: "Hero Description", name: "chambres_hero_desc", widget: "string" }
+          - { label: "Intro Sous-titre", name: "chambres_intro_subtitle", widget: "string" }
+          - { label: "Intro Titre", name: "chambres_intro_heading", widget: "string" }
+          - { label: "Intro Texte 1", name: "chambres_intro_text1", widget: "text" }
+          - { label: "Intro Texte 2", name: "chambres_intro_text2", widget: "text" }
+          - { label: "Badge 1 Titre", name: "chambres_badge1_title", widget: "string" }
+          - { label: "Badge 1 Texte", name: "chambres_badge1_text", widget: "string" }
+          - { label: "Badge 2 Titre", name: "chambres_badge2_title", widget: "string" }
+          - { label: "Badge 2 Texte", name: "chambres_badge2_text", widget: "string" }
+          - { label: "Badge 3 Titre", name: "chambres_badge3_title", widget: "string" }
+          - { label: "Badge 3 Texte", name: "chambres_badge3_text", widget: "string" }
           # Standard
           - { label: "Standard Sous-titre", name: "std_subtitle", widget: "string" }
           - { label: "Standard Titre", name: "std_title", widget: "string" }
@@ -191,18 +192,18 @@ collections:
         label: "Page Restaurant PAUZE"
         file: "content/pauze.json"
         fields:
-          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
-          - { label: "Hero Titre", name: "hero_title", widget: "string" }
-          - { label: "Hero Description", name: "hero_desc", widget: "string" }
-          - { label: "Carrousel Image 1", name: "carrousel_img1", widget: "image" }
-          - { label: "Carrousel Image 2", name: "carrousel_img2", widget: "image" }
-          - { label: "Carrousel Image 3", name: "carrousel_img3", widget: "image" }
-          - { label: "Carrousel Image 4", name: "carrousel_img4", widget: "image" }
-          - { label: "Intro Sous-titre", name: "intro_subtitle", widget: "string" }
-          - { label: "Intro Titre", name: "intro_title", widget: "string" }
-          - { label: "Intro Texte 1", name: "intro_text1", widget: "text" }
-          - { label: "Badge Titre", name: "badge_title", widget: "string" }
-          - { label: "Badge Description", name: "badge_desc", widget: "text" }
+          - { label: "Hero Sous-titre", name: "pauze_hero_subtitle", widget: "string" }
+          - { label: "Hero Titre", name: "pauze_hero_title", widget: "string" }
+          - { label: "Hero Description", name: "pauze_hero_desc", widget: "string" }
+          - { label: "Carrousel Image 1", name: "pauze_carrousel_img1", widget: "image" }
+          - { label: "Carrousel Image 2", name: "pauze_carrousel_img2", widget: "image" }
+          - { label: "Carrousel Image 3", name: "pauze_carrousel_img3", widget: "image" }
+          - { label: "Carrousel Image 4", name: "pauze_carrousel_img4", widget: "image" }
+          - { label: "Intro Sous-titre", name: "pauze_intro_subtitle", widget: "string" }
+          - { label: "Intro Titre", name: "pauze_intro_title", widget: "string" }
+          - { label: "Intro Texte 1", name: "pauze_intro_text1", widget: "text" }
+          - { label: "Badge Titre", name: "pauze_badge_title", widget: "string" }
+          - { label: "Badge Description", name: "pauze_badge_desc", widget: "text" }
           - { label: "Chef Sous-titre", name: "chef_subtitle", widget: "string" }
           - { label: "Chef Titre", name: "chef_title", widget: "string" }
           - { label: "Chef Description 1", name: "chef_desc1", widget: "text" }
@@ -265,9 +266,9 @@ collections:
         label: "Page Mariages"
         file: "content/mariages.json"
         fields:
-          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
-          - { label: "Hero Titre", name: "hero_title", widget: "string" }
-          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Hero Sous-titre", name: "mariages_hero_subtitle", widget: "string" }
+          - { label: "Hero Titre", name: "mariages_hero_title", widget: "string" }
+          - { label: "Hero Description", name: "mariages_hero_desc", widget: "string" }
           - { label: "Carrousel Mariage 1", name: "wedding_img1", widget: "image" }
           - { label: "Carrousel Mariage 2", name: "wedding_img2", widget: "image" }
           - { label: "Mariage Sous-titre", name: "wedding_section_subtitle", widget: "string" }
@@ -308,11 +309,11 @@ collections:
           - { label: "Galerie Image 4", name: "g_img4", widget: "image" }
           - { label: "Galerie Texte 4", name: "g_text4", widget: "string" }
           # Devis
-          - { label: "Devis Sous-titre", name: "quote_subtitle", widget: "string" }
-          - { label: "Devis Titre", name: "quote_title", widget: "string" }
-          - { label: "Devis Description", name: "quote_desc", widget: "text" }
-          - { label: "Adresse", name: "quote_address", widget: "string" }
-          - { label: "Téléphone", name: "quote_phone", widget: "string" }
+          - { label: "Devis Sous-titre", name: "mariages_quote_subtitle", widget: "string" }
+          - { label: "Devis Titre", name: "mariages_quote_title", widget: "string" }
+          - { label: "Devis Description", name: "mariages_quote_desc", widget: "text" }
+          - { label: "Adresse", name: "mariages_quote_address", widget: "string" }
+          - { label: "Téléphone", name: "mariages_quote_phone", widget: "string" }
 
       # ==========================================
       # 5. PAGE SÉMINAIRES (seminaires.html)
@@ -321,14 +322,14 @@ collections:
         label: "Page Séminaires"
         file: "content/seminaires.json"
         fields:
-          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
-          - { label: "Hero Titre", name: "hero_title", widget: "string" }
-          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Hero Sous-titre", name: "seminaires_hero_subtitle", widget: "string" }
+          - { label: "Hero Titre", name: "seminaires_hero_title", widget: "string" }
+          - { label: "Hero Description", name: "seminaires_hero_desc", widget: "string" }
           - { label: "Intro Image", name: "intro_img", widget: "image" }
-          - { label: "Intro Sous-titre", name: "intro_subtitle", widget: "string" }
-          - { label: "Intro Titre", name: "intro_title", widget: "string" }
-          - { label: "Intro Texte 1", name: "intro_text1", widget: "text" }
-          - { label: "Intro Texte 2", name: "intro_text2", widget: "text" }
+          - { label: "Intro Sous-titre", name: "seminaires_intro_subtitle", widget: "string" }
+          - { label: "Intro Titre", name: "seminaires_intro_title", widget: "string" }
+          - { label: "Intro Texte 1", name: "seminaires_intro_text1", widget: "text" }
+          - { label: "Intro Texte 2", name: "seminaires_intro_text2", widget: "text" }
           - { label: "Atouts Sous-titre", name: "atouts_subtitle", widget: "string" }
           - { label: "Atouts Titre", name: "atouts_title", widget: "string" }
           - { label: "Atouts Description", name: "atouts_desc", widget: "text" }
@@ -340,11 +341,11 @@ collections:
           - { label: "Salle 3 Desc", name: "scard3_desc", widget: "text" }
           - { label: "Salle 4 Titre", name: "scard4_title", widget: "string" }
           - { label: "Salle 4 Desc", name: "scard4_desc", widget: "text" }
-          - { label: "Devis Sous-titre", name: "quote_subtitle", widget: "string" }
-          - { label: "Devis Titre", name: "quote_title", widget: "string" }
-          - { label: "Devis Description", name: "quote_desc", widget: "text" }
-          - { label: "Adresse", name: "quote_address", widget: "string" }
-          - { label: "Téléphone", name: "quote_phone", widget: "string" }
+          - { label: "Devis Sous-titre", name: "seminaires_quote_subtitle", widget: "string" }
+          - { label: "Devis Titre", name: "seminaires_quote_title", widget: "string" }
+          - { label: "Devis Description", name: "seminaires_quote_desc", widget: "text" }
+          - { label: "Adresse", name: "seminaires_quote_address", widget: "string" }
+          - { label: "Téléphone", name: "seminaires_quote_phone", widget: "string" }
 
       # ==========================================
       # 6. PAGE SPA (spa.html)
@@ -353,26 +354,26 @@ collections:
         label: "Page Spa"
         file: "content/spa.json"
         fields:
-          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
-          - { label: "Hero Titre", name: "hero_title", widget: "string" }
-          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Hero Sous-titre", name: "spa_hero_subtitle", widget: "string" }
+          - { label: "Hero Titre", name: "spa_hero_title", widget: "string" }
+          - { label: "Hero Description", name: "spa_hero_desc", widget: "string" }
           - { label: "Spa Intro Sous-titre", name: "spa_intro_subtitle", widget: "string" }
           - { label: "Spa Intro Titre", name: "spa_intro_title", widget: "string" }
           - { label: "Spa Intro Desc", name: "spa_intro_desc", widget: "text" }
-          - { label: "Spa Card 1 Titre", name: "scard1_title", widget: "string" }
-          - { label: "Spa Card 1 Capacité", name: "scard1_capacity", widget: "string" }
-          - { label: "Spa Card 1 Desc", name: "scard1_desc", widget: "string" }
-          - { label: "Spa Card 2 Titre", name: "scard2_title", widget: "string" }
-          - { label: "Spa Card 2 Capacité", name: "scard2_capacity", widget: "string" }
-          - { label: "Spa Card 2 Desc", name: "scard2_desc", widget: "string" }
-          - { label: "Spa Card 3 Titre", name: "scard3_title", widget: "string" }
-          - { label: "Spa Card 3 Capacité", name: "scard3_capacity", widget: "string" }
-          - { label: "Spa Card 3 Desc", name: "scard3_desc", widget: "string" }
-          - { label: "Spa Card 4 Titre", name: "scard4_title", widget: "string" }
-          - { label: "Spa Card 4 Capacité", name: "scard4_capacity", widget: "string" }
-          - { label: "Spa Card 4 Desc", name: "scard4_desc", widget: "string" }
-          - { label: "Tarifs Sous-titre", name: "tarifs_subtitle", widget: "string" }
-          - { label: "Tarifs Titre", name: "tarifs_title", widget: "string" }
+          - { label: "Spa Card 1 Titre", name: "spa_scard1_title", widget: "string" }
+          - { label: "Spa Card 1 Capacité", name: "spa_scard1_capacity", widget: "string" }
+          - { label: "Spa Card 1 Desc", name: "spa_scard1_desc", widget: "string" }
+          - { label: "Spa Card 2 Titre", name: "spa_scard2_title", widget: "string" }
+          - { label: "Spa Card 2 Capacité", name: "spa_scard2_capacity", widget: "string" }
+          - { label: "Spa Card 2 Desc", name: "spa_scard2_desc", widget: "string" }
+          - { label: "Spa Card 3 Titre", name: "spa_scard3_title", widget: "string" }
+          - { label: "Spa Card 3 Capacité", name: "spa_scard3_capacity", widget: "string" }
+          - { label: "Spa Card 3 Desc", name: "spa_scard3_desc", widget: "string" }
+          - { label: "Spa Card 4 Titre", name: "spa_scard4_title", widget: "string" }
+          - { label: "Spa Card 4 Capacité", name: "spa_scard4_capacity", widget: "string" }
+          - { label: "Spa Card 4 Desc", name: "spa_scard4_desc", widget: "string" }
+          - { label: "Tarifs Sous-titre", name: "spa_tarifs_subtitle", widget: "string" }
+          - { label: "Tarifs Titre", name: "spa_tarifs_title", widget: "string" }
           - { label: "Tarif 1 Titre", name: "t1_title", widget: "string" }
           - { label: "Tarif 1 Prix", name: "t1_price", widget: "string" }
           - { label: "Tarif 2 Titre", name: "t2_title", widget: "string" }
@@ -388,9 +389,9 @@ collections:
           - { label: "Horaire 3 Jour", name: "h3_day", widget: "string" }
           - { label: "Horaire 3 Heure", name: "h3_time", widget: "string" }
           - { label: "Horaire 3 Sub", name: "h3_sub", widget: "string" }
-          - { label: "Carrousel Image 1", name: "carrousel_img1", widget: "image" }
-          - { label: "Carrousel Image 2", name: "carrousel_img2", widget: "image" }
-          - { label: "Carrousel Image 3", name: "carrousel_img3", widget: "image" }
+          - { label: "Carrousel Image 1", name: "spa_carrousel_img1", widget: "image" }
+          - { label: "Carrousel Image 2", name: "spa_carrousel_img2", widget: "image" }
+          - { label: "Carrousel Image 3", name: "spa_carrousel_img3", widget: "image" }
           # Soins Andréa
           - { label: "Soins Sous-titre", name: "soins_subtitle", widget: "string" }
           - { label: "Soins Titre", name: "soins_title", widget: "string" }
@@ -431,9 +432,9 @@ collections:
         label: "Page Infos Pratiques"
         file: "content/infos.json"
         fields:
-          - { label: "Hero Sous-titre", name: "hero_subtitle", widget: "string" }
-          - { label: "Hero Titre", name: "hero_title", widget: "string" }
-          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Hero Sous-titre", name: "infos_hero_subtitle", widget: "string" }
+          - { label: "Hero Titre", name: "infos_hero_title", widget: "string" }
+          - { label: "Hero Description", name: "infos_hero_desc", widget: "string" }
           - { label: "Accès Sous-titre", name: "access_subtitle", widget: "string" }
           - { label: "Accès Titre", name: "access_title", widget: "string" }
           - { label: "Voiture Titre", name: "car_title", widget: "string" }
@@ -475,8 +476,8 @@ collections:
           - { label: "Golf Item 2", name: "golf_item2", widget: "text" }
           - { label: "Golf Item 3", name: "golf_item3", widget: "text" }
           # Actualités infos
-          - { label: "News Sous-titre", name: "news_subtitle", widget: "string" }
-          - { label: "News Titre", name: "news_title", widget: "string" }
+          - { label: "News Sous-titre", name: "infos_news_subtitle", widget: "string" }
+          - { label: "News Titre", name: "infos_news_title", widget: "string" }
           # Contact infos
           - { label: "Contact Sous-titre", name: "contact_subtitle", widget: "string" }
           - { label: "Contact Titre", name: "contact_title", widget: "string" }
