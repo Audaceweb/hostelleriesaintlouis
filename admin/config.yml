@@ -9,7 +9,7 @@ collections:
   - name: "pages"
     label: "Pages du Site"
     files:
-      # ==========================================
+     # ==========================================
       # 1. PAGE D'ACCUEIL (index.html)
       # ==========================================
       - name: "index"
@@ -18,9 +18,9 @@ collections:
         fields:
           - { label: "Logo Hero", name: "hero_logo", widget: "image" }
           - { label: "Description Hero", name: "hero_desc", widget: "string" }
-          - { label: "Carrousel - Image 1", name: "carrousel_img1", widget: "image" }
-          - { label: "Carrousel - Image 2", name: "carrousel_img2", widget: "image" }
-          - { label: "Carrousel - Image 3", name: "carrousel_img3", widget: "image" }
+          - { label: "Carrousel Accueil - Image 1", name: "home_carrousel_img1", widget: "image" }
+          - { label: "Carrousel Accueil - Image 2", name: "home_carrousel_img2", widget: "image" }
+          - { label: "Carrousel Accueil - Image 3", name: "home_carrousel_img3", widget: "image" }
           - { label: "Badge Année", name: "badge_year", widget: "string" }
           - { label: "Badge Texte", name: "badge_text", widget: "string" }
           - { label: "Intro Sous-titre", name: "intro_subtitle", widget: "string" }
@@ -67,7 +67,6 @@ collections:
           - { label: "Infos Description", name: "infos_desc", widget: "text" }
           - { label: "Avis Sous-titre", name: "reviews_subtitle", widget: "string" }
           - { label: "Avis Titre", name: "reviews_title", widget: "string" }
-
       # ==========================================
       # 2. PAGE CHAMBRES (chambres.html)
       # ==========================================
