@@ -6,151 +6,105 @@ media_folder: "img"
 public_folder: "img"
 
 collections:
-  # ==========================================
-  # 1. PAGE D'ACCUEIL (INDEX)
-  # ==========================================
-  - name: "index"
-    label: "Page d'Accueil"
-    file: "index.html"
-    fields:
-      - { label: "Logo Hero", name: "hero_logo", widget: "image" }
-      - { label: "Description Hero", name: "hero_desc", widget: "string" }
-      - { label: "Carrousel - Image 1", name: "carrousel_img1", widget: "image" }
-      - { label: "Carrousel - Image 2", name: "carrousel_img2", widget: "image" }
-      - { label: "Carrousel - Image 3", name: "carrousel_img3", widget: "image" }
-      - { label: "Badge Année", name: "badge_year", widget: "string" }
-      - { label: "Badge Texte", name: "badge_text", widget: "string" }
-      - { label: "Présentation Sous-titre", name: "intro_subtitle", widget: "string" }
-      - { label: "Présentation Titre", name: "intro_title", widget: "string" }
-      - { label: "Présentation Texte 1", name: "intro_text1", widget: "text" }
-      - { label: "Présentation Texte 2", name: "intro_text2", widget: "text" }
-      # Section Chambres
-      - { label: "Chambres Image", name: "rooms_img", widget: "image" }
-      - { label: "Chambres Sous-titre", name: "rooms_subtitle", widget: "string" }
-      - { label: "Chambres Titre", name: "rooms_title", widget: "string" }
-      - { label: "Chambres Description", name: "rooms_desc", widget: "text" }
-      # Section Restaurant
-      - { label: "Restaurant Image", name: "resto_img", widget: "image" }
-      - { label: "Restaurant Sous-titre", name: "resto_subtitle", widget: "string" }
-      - { label: "Restaurant Titre", name: "resto_title", widget: "string" }
-      - { label: "Restaurant Description", name: "resto_desc", widget: "text" }
-      # Actualités
-      - label: "Actualités Accueil"
-        name: "home_news"
-        widget: "list"
-        summary: '{{fields.title}}'
+  - name: "pages"
+    label: "Pages du Site"
+    files:
+      # 1. PAGE D'ACCUEIL
+      - name: "index"
+        label: "Page d'Accueil"
+        file: "index.html"
         fields:
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Date", name: "date", widget: "string" }
-          - { label: "Titre", name: "title", widget: "string" }
-          - { label: "Description", name: "desc", widget: "text" }
+          - { label: "Logo Hero", name: "hero_logo", widget: "image" }
+          - { label: "Description Hero", name: "hero_desc", widget: "string" }
+          - { label: "Carrousel - Image 1", name: "carrousel_img1", widget: "image" }
+          - { label: "Carrousel - Image 2", name: "carrousel_img2", widget: "image" }
+          - { label: "Carrousel - Image 3", name: "carrousel_img3", widget: "image" }
+          - { label: "Badge Année", name: "badge_year", widget: "string" }
+          - { label: "Badge Texte", name: "badge_text", widget: "string" }
+          - { label: "Présentation Sous-titre", name: "intro_subtitle", widget: "string" }
+          - { label: "Présentation Titre", name: "intro_title", widget: "string" }
+          - { label: "Présentation Texte 1", name: "intro_text1", widget: "text" }
+          - { label: "Présentation Texte 2", name: "intro_text2", widget: "text" }
+          - { label: "Chambres Image", name: "rooms_img", widget: "image" }
+          - { label: "Chambres Sous-titre", name: "rooms_subtitle", widget: "string" }
+          - { label: "Chambres Titre", name: "rooms_title", widget: "string" }
+          - { label: "Chambres Description", name: "rooms_desc", widget: "text" }
+          - { label: "Restaurant Image", name: "resto_img", widget: "image" }
+          - { label: "Restaurant Sous-titre", name: "resto_subtitle", widget: "string" }
+          - { label: "Restaurant Titre", name: "resto_title", widget: "string" }
+          - { label: "Restaurant Description", name: "resto_desc", widget: "text" }
 
-  # ==========================================
-  # 2. PAGE CHAMBRES
-  # ==========================================
-  - name: "chambres"
-    label: "Page Chambres"
-    file: "chambres.html"
-    fields:
-      - { label: "Hero Titre", name: "hero_title", widget: "string" }
-      - { label: "Hero Description", name: "hero_desc", widget: "string" }
-      - { label: "Intro Texte 1", name: "intro_text1", widget: "text" }
-      - { label: "Intro Texte 2", name: "intro_text2", widget: "text" }
-      # Standard
-      - { label: "Standard Photo", name: "std_img", widget: "image" }
-      - { label: "Standard Prix", name: "std_price", widget: "string" }
-      - { label: "Standard Description", name: "std_desc", widget: "text" }
-      # Supérieure
-      - { label: "Supérieure Photo", name: "sup_img", widget: "image" }
-      - { label: "Supérieure Prix", name: "sup_price", widget: "string" }
-      - { label: "Supérieure Description", name: "sup_desc", widget: "text" }
-      # Confort
-      - { label: "Confort Photo", name: "conf_img", widget: "image" }
-      - { label: "Confort Prix", name: "conf_price", widget: "string" }
-      - { label: "Confort Description", name: "conf_desc", widget: "text" }
-
-  # ==========================================
-  # 3. PAGE RESTAURANT PAUZE
-  # ==========================================
-  - name: "pauze"
-    label: "Page Restaurant PAUZE"
-    file: "pauze.html"
-    fields:
-      - { label: "Hero Titre", name: "hero_title", widget: "string" }
-      - { label: "Hero Description", name: "hero_desc", widget: "string" }
-      - { label: "Présentation Chef", name: "chef_desc1", widget: "text" }
-      - { label: "Citation Chef", name: "chef_desc2", widget: "text" }
-      - { label: "Présentation Vins", name: "wine_desc1", widget: "text" }
-      - { label: "Menu Dates", name: "menu_dates", widget: "string" }
-      - { label: "Menu Formule Prix", name: "m_formula", widget: "string" }
-
-  # ==========================================
-  # 4. PAGE MARIAGES & RÉCEPTIONS
-  # ==========================================
-  - name: "mariages"
-    label: "Page Mariages"
-    file: "mariages.html"
-    fields:
-      - { label: "Hero Titre", name: "hero_title", widget: "string" }
-      - { label: "Hero Description", name: "hero_desc", widget: "string" }
-      - { label: "Lettre Mariés Paragraphe 1", name: "wedding_p1", widget: "string" }
-      - { label: "Lettre Mariés Paragraphe 2", name: "wedding_p2", widget: "text" }
-      - { label: "Lettre Mariés Paragraphe 3", name: "wedding_p3", widget: "text" }
-
-  # ==========================================
-  # 5. PAGE SÉMINAIRES
-  # ==========================================
-  - name: "seminaires"
-    label: "Page Séminaires"
-    file: "seminaires.html"
-    fields:
-      - { label: "Hero Titre", name: "hero_title", widget: "string" }
-      - { label: "Hero Description", name: "hero_desc", widget: "string" }
-      - { label: "Texte Présentation 1", name: "intro_text1", widget: "text" }
-      - { label: "Texte Présentation 2", name: "intro_text2", widget: "text" }
-
-  # ==========================================
-  # 6. PAGE SPA & BIEN-ÊTRE
-  # ==========================================
-  - name: "spa"
-    label: "Page Spa"
-    file: "spa.html"
-    fields:
-      - { label: "Hero Titre", name: "hero_title", widget: "string" }
-      - { label: "Hero Description", name: "hero_desc", widget: "string" }
-      - { label: "Tarif Résidents", name: "t1_price", widget: "string" }
-      - { label: "Tarif Extérieurs", name: "t2_price", widget: "string" }
-      - { label: "Horaires Andréa", name: "andrea_slots", widget: "string" }
-
-  # ==========================================
-  # 7. PAGE INFOS PRATIQUES
-  # ==========================================
-  - name: "infos"
-    label: "Page Infos Pratiques"
-    file: "infos.html"
-    fields:
-      - { label: "Hero Titre", name: "hero_title", widget: "string" }
-      - { label: "Hero Description", name: "hero_desc", widget: "string" }
-      - { label: "Accès voiture", name: "car_desc", widget: "text" }
-      - { label: "Accès Shuttle", name: "shuttle_desc", widget: "text" }
-      - { label: "Accès Train", name: "train_desc", widget: "text" }
-
-  # ==========================================
-  # 8. PAGE COFFRETS CADEAUX
-  # ==========================================
-  - name: "coffrets"
-    label: "Page Coffrets Cadeaux"
-    file: "coffrets.html"
-    fields:
-      - { label: "Hero Titre", name: "hero_title", widget: "string" }
-      - { label: "Hero Description", name: "hero_desc", widget: "string" }
-      - label: "Cartes Cadeaux"
-        name: "gift_packages"
-        widget: "list"
-        summary: '{{fields.title}}'
+      # 2. PAGE CHAMBRES
+      - name: "chambres"
+        label: "Page Chambres"
+        file: "chambres.html"
         fields:
-          - { label: "Badge", name: "badge", widget: "string" }
-          - { label: "Titre", name: "title", widget: "string" }
-          - { label: "Description", name: "desc", widget: "text" }
-          - { label: "Prix", name: "price", widget: "string" }
-          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Hero Titre", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Intro Texte 1", name: "intro_text1", widget: "text" }
+          - { label: "Intro Texte 2", name: "intro_text2", widget: "text" }
+          - { label: "Standard Photo", name: "std_img", widget: "image" }
+          - { label: "Standard Prix", name: "std_price", widget: "string" }
+          - { label: "Standard Description", name: "std_desc", widget: "text" }
+          - { label: "Supérieure Photo", name: "sup_img", widget: "image" }
+          - { label: "Supérieure Prix", name: "sup_price", widget: "string" }
+          - { label: "Supérieure Description", name: "sup_desc", widget: "text" }
+          - { label: "Confort Photo", name: "conf_img", widget: "image" }
+          - { label: "Confort Prix", name: "conf_price", widget: "string" }
+          - { label: "Confort Description", name: "conf_desc", widget: "text" }
+
+      # 3. PAGE RESTAURANT PAUZE
+      - name: "pauze"
+        label: "Page Restaurant PAUZE"
+        file: "pauze.html"
+        fields:
+          - { label: "Hero Titre", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Présentation Chef", name: "chef_desc1", widget: "text" }
+          - { label: "Citation Chef", name: "chef_desc2", widget: "text" }
+          - { label: "Présentation Vins", name: "wine_desc1", widget: "text" }
+          - { label: "Menu Dates", name: "menu_dates", widget: "string" }
+          - { label: "Menu Formule Prix", name: "m_formula", widget: "string" }
+
+      # 4. PAGE MARIAGES
+      - name: "mariages"
+        label: "Page Mariages"
+        file: "mariages.html"
+        fields:
+          - { label: "Hero Titre", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Lettre Mariés Paragraphe 1", name: "wedding_p1", widget: "string" }
+          - { label: "Lettre Mariés Paragraphe 2", name: "wedding_p2", widget: "text" }
+          - { label: "Lettre Mariés Paragraphe 3", name: "wedding_p3", widget: "text" }
+
+      # 5. PAGE SÉMINAIRES
+      - name: "seminaires"
+        label: "Page Séminaires"
+        file: "seminaires.html"
+        fields:
+          - { label: "Hero Titre", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Texte Présentation 1", name: "intro_text1", widget: "text" }
+          - { label: "Texte Présentation 2", name: "intro_text2", widget: "text" }
+
+      # 6. PAGE SPA
+      - name: "spa"
+        label: "Page Spa"
+        file: "spa.html"
+        fields:
+          - { label: "Hero Titre", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Tarif Résidents", name: "t1_price", widget: "string" }
+          - { label: "Tarif Extérieurs", name: "t2_price", widget: "string" }
+          - { label: "Horaires Andréa", name: "andrea_slots", widget: "string" }
+
+      # 7. PAGE INFOS PRATIQUES
+      - name: "infos"
+        label: "Page Infos Pratiques"
+        file: "infos.html"
+        fields:
+          - { label: "Hero Titre", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_desc", widget: "string" }
+          - { label: "Accès voiture", name: "car_desc", widget: "text" }
+          - { label: "Accès Shuttle", name: "shuttle_desc", widget: "text" }
+          - { label: "Accès Train", name: "train_desc", widget: "text" }
