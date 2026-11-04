@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffrets Cadeaux d'Exception - Hostellerie Saint-Louis</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/grandlogob.png">
+
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
+    
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ENTÊTE / HEADER -->
+    <header id="main-header">
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="logo-container" id="logo-container">
+            <a href="index.html">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
+            </a>
+        </div>
+
+        <nav class="nav-bar" id="nav-bar">
+            <ul class="nav-links">
+                <li><a href="chambres.html">Chambres</a></li>
+                <li><a href="pauze.html">Restaurant</a></li>
+                <li><a href="mariages.html">Mariages & Réceptions</a></li>
+                <li><a href="seminaires.html">Séminaires</a></li>
+                <li><a href="spa.html">Spa & Bien-être</a></li>
+                <li><a href="coffrets.html" class="active">Coffrets Cadeaux</a></li>
+                <li><a href="infos.html">Infos Pratiques</a></li>
+            </ul>
+        </nav>
+
+        <a href="#boutique-zenchef" class="btn-reserver">Offrir un Coffret</a>
+    </header>
+
+    <main>
+        <!-- HERO COFFRETS CADEAUX -->
+        <section class="page-hero-large coffrets-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="subtitle">Offrez l'Exception</span>
+                <h1 class="title">Coffrets Cadeaux</h1>
+                <p class="hero-desc">Partagez l'art de vivre et la sérénité de l'Hostellerie Saint-Louis avec vos proches.</p>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION & AVANTAGES EXCLUSIFS -->
+        <section class="section-block block-creme reveal">
+            <div class="container" style="max-width: 1100px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <span class="subtitle">Des Attentions Inoubliables</span>
+                    <h2 class="title" style="color: var(--color-blue); font-size: 3rem;">L'Expérience Cadeau en Toute Simplicité</h2>
+                    <p class="body-text" style="max-width: 850px; margin: 15px auto 0 auto; color: #444; font-size: 1.1rem;">
+                        Faites plaisir à vos proches en leur offrant un moment d'exception dans le cadre chaleureux de l'Hostellerie Saint-Louis ! Nos coffrets-cadeaux sont le présent idéal pour célébrer une occasion spéciale ou simplement témoigner votre affection.
+                    </p>
+                </div>
+
+                <!-- GRILLE DES 4 ENGAGEMENTS / SIMPLICITÉ (ICÔNES SVG LUXE) -->
+                <div class="gift-benefits-grid">
+                    <!-- Validité 1 an -->
+                    <div class="gift-benefit-card">
+                        <div class="gift-benefit-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h3>Validité d'un An</h3>
+                        <p>Le bénéficiaire dispose d'une année complète à partir de la date d'achat pour profiter pleinement de son expérience.</p>
+                    </div>
+
+                    <!-- Réservation facile -->
+                    <div class="gift-benefit-card">
+                        <div class="gift-benefit-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <h3>Réservation Simple</h3>
+                        <p>Il suffit à vos invités d'indiquer qu'ils possèdent un bon cadeau lors de leur réservation par téléphone ou en ligne.</p>
+                    </div>
+
+                    <!-- Impression instantanée -->
+                    <div class="gift-benefit-card">
+                        <div class="gift-benefit-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </div>
+                        <h3>Bons Instantanés</h3>
+                        <p>Éditez et imprimez votre chèque cadeau immédiatement après votre commande. La solution parfaite pour un présent de dernière minute !</p>
+                    </div>
+
+                    <!-- Retrait personnalisé -->
+                    <div class="gift-benefit-card">
+                        <div class="gift-benefit-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                        </div>
+                        <h3>Écrin Personnalisé</h3>
+                        <p>Venez retirer votre bon cadeau directement à l'hôtel, sublimé dans une élégante pochette dorée prête à offrir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION BOUTIQUE & EXEMPLES DE COFFRETS (PRÊT POUR ZENCHEF) -->
+        <section class="section-block block-blanc reveal" id="boutique-zenchef">
+            <div class="container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
+                <span class="subtitle">Nos Inspirations Cadeaux</span>
+                <h2 class="title" style="color: var(--color-blue); font-size: 3rem; margin-bottom: 20px;">Sélection de Coffrets d'Exception</h2>
+                <p class="body-text" style="color: #666; max-width: 750px; margin: 0 auto 50px auto;">
+                    Choisissez le coffret qui fera vibrer vos proches et offrez une parenthèse inoubliable au cœur des Flandres.
+                </p>
+
+                <!-- EXEMPLES DE COFFRETS (CARTES DE LUXE) -->
+                <div class="gift-cards-grid">
+                    <!-- Coffret Gastronomie -->
+                    <div class="gift-package-card">
+                        <div class="gift-package-img">
+                            <img src="img/pauze6.jpg" alt="Coffret Gastronomique PAUZE">
+                            <span class="gift-badge">Gastronomie</span>
+                        </div>
+                        <div class="gift-package-content">
+                            <h3>Menu Dégustation PAUZE & Vins</h3>
+                            <p>Une expérience gustative en 4 temps orchestrée par notre Chef, accompagnée d'un accord mets & vins soigneusement sélectionné.</p>
+                            <div class="gift-package-footer">
+                                <span class="gift-price">À partir de 120 €</span>
+                                <a href="#zenchef-modal" class="btn-gold-small">Commandez</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coffret Séjour Romantique -->
+                    <div class="gift-package-card">
+                        <div class="gift-package-img">
+                            <img src="img/chambreindex.jpg" alt="Coffret Séjour Luxe">
+                            <span class="gift-badge">Séjour & Nuitée</span>
+                        </div>
+                        <div class="gift-package-content">
+                            <h3>Escapade Évasion & Petit-Déjeuner</h3>
+                            <p>Une nuit en Chambre Supérieure avec champagne en chambre et petits-déjeuners gourmands du terroir au réveil.</p>
+                            <div class="gift-package-footer">
+                                <span class="gift-price">À partir de 195 €</span>
+                                <a href="#zenchef-modal" class="btn-gold-small">Commandez</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coffret Détente & Spa -->
+                    <div class="gift-package-card">
+                        <div class="gift-package-img">
+                            <img src="img/spa2.png" alt="Coffret Spa & Soins">
+                            <span class="gift-badge">Bien-être</span>
+                        </div>
+                        <div class="gift-package-content">
+                            <h3>Parenthèse Sérénité au Spa Saint-Louis</h3>
+                            <p>Accès privatif de 2 heures à l'espace bien-être (120m²) suivi d'un massage Signature de 60 minutes avec Andréa.</p>
+                            <div class="gift-package-footer">
+                                <span class="gift-price">À partir de 115 €</span>
+                                <a href="#zenchef-modal" class="btn-gold-small">Commandez</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BANDEAU ACCÈS BOUTIQUE EN LIGNE (INTEGRATION ZENCHEF) -->
+                <div class="zenchef-integration-banner">
+                    <div class="zenchef-banner-text">
+                        <h3 style="font-family: var(--font-subtitle); font-style: italic; color: var(--color-gold); font-size: 2rem;">Accédez à Notre Boutique en Ligne</h3>
+                        <p style="color: var(--color-white); font-size: 1.05rem; margin-top: 5px;">Personnalisez votre bon cadeau en quelques clics via notre module sécurisé.</p>
+                    </div>
+                    <!-- Quand tu auras ton lien/widget ZenChef, remplace le href par ton lien direct ZenChef -->
+                    <a href="javascript:void(0);" onclick="alert('Redirection vers le module de paiement sécurisé ZenChef...');" class="btn-gold" style="padding: 16px 35px; font-size: 1rem; font-weight: 600;">
+                        Ouvrir la Boutique ZenChef
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+  <footer class="main-footer-new">
+        <div class="footer-container-grid">
+            <div class="footer-left">
+                <h3>Hostellerie Saint-Louis</h3>
+                <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
+                <p>Tél : <a href="tel:+33328680000">03 28 68 81 83</a></p>
+                <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
+                
+                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
+                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
+                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
+                    
+                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
+                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
+            </div>
+
+            <div class="footer-right">
+                <h3>Newsletter</h3>
+                <p>Recevez nos offres privilèges.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn-gold">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-legal">
+            <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
+            <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

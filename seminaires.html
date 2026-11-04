@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séminaires & Événements Professionnels - Hostellerie Saint-Louis</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/grandlogob.png">
+
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
+    
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ENTÊTE / HEADER (Non modifiable par le CMS) -->
+    <header id="main-header">
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="logo-container" id="logo-container">
+            <a href="index.html">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
+            </a>
+        </div>
+
+        <nav class="nav-bar" id="nav-bar">
+            <ul class="nav-links">
+                <li><a href="chambres.html">Chambres</a></li>
+                <li><a href="pauze.html">Restaurant</a></li>
+                <li><a href="mariages.html">Mariages & Réceptions</a></li>
+                <li><a href="seminaires.html" class="active">Séminaires</a></li>
+                <li><a href="spa.html">Spa & Bien-être</a></li>
+                <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
+                <li><a href="infos.html">Infos Pratiques</a></li>
+            </ul>
+        </nav>
+
+        <a href="#devis-seminaire" class="btn-reserver">Demander un Devis</a>
+    </header>
+
+    <main>
+        <!-- HERO SÉMINAIRES -->
+        <section class="page-hero-large seminaires-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="subtitle" data-cms="hero_subtitle">Espaces Professionnels & Résidents</span>
+                <h1 class="title" data-cms="hero_title">Séminaires & Entreprises</h1>
+                <p class="hero-desc" data-cms="hero_desc">Alliez efficacité professionnelle et art de vivre dans un cadre historique inspirant.</p>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION SÉMINAIRE -->
+        <section class="section-block block-creme reveal">
+            <div class="container-split">
+                <div class="block-media">
+                    <div class="image-placeholder" style="height: 420px;">
+                        <img src="img/hostelerieindex.jpg" data-cms="intro_img" alt="Espace Séminaire Hostellerie Saint-Louis">
+                    </div>
+                </div>
+                <div class="block-text">
+                    <span class="subtitle" data-cms="intro_subtitle">L'Excellence au Travail</span>
+                    <h2 class="title" style="color: var(--color-blue);" data-cms="intro_title">Un Cadre Propice à la Réflexion</h2>
+                    <p class="body-text" style="font-family: var(--font-body);" data-cms="intro_text1">
+                        L'Hostellerie Saint-Louis met à votre disposition des espaces de travail modulables et baignés de lumière naturelle. Offrez à vos collaborateurs, comités de direction ou partenaires un environnement calme et privilégié pour stimuler la créativité et renforcer la cohésion d'équipe.
+                    </p>
+                    <p class="body-text" style="font-size: 0.95rem; color: #555; font-family: var(--font-body);" data-cms="intro_text2">
+                        Équipements technologiques de pointe, service de conciergerie dédié et restauration sur-mesure orchestrée par notre table gastronomique PAUZE.
+                    </p>
+                    <div class="block-actions">
+                        <a href="#devis-seminaire" class="btn-gold">Organiser votre séminaire</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LES ATOUTS PRO -->
+        <section class="section-block block-blanc reveal">
+            <div class="container" style="max-width: 1100px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <span class="subtitle" data-cms="atouts_subtitle">Prestations Sur-Mesure</span>
+                    <h2 class="title" style="color: var(--color-blue); font-size: 3rem;" data-cms="atouts_title">Nos Solutions Professionnelles</h2>
+                    <p class="body-text" style="max-width: 750px; margin: 15px auto 0 auto; color: #555;" data-cms="atouts_desc">
+                        Du comité restreint au séminaire résidentiel complet, nous adaptons nos espaces et services à vos exigences.
+                    </p>
+                </div>
+
+                <div class="seminar-features-grid">
+                    <!-- Salles Équipées -->
+                    <div class="seminar-card">
+                        <div class="seminar-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <h3 data-cms="scard1_title">Salles de Travail Équipées</h3>
+                        <p data-cms="scard1_desc">Espaces lumineux dotés de écrans de projection haute définition, matériel de visioconférence et connexion Wi-Fi haut débit par fibre.</p>
+                    </div>
+
+                    <!-- Séminaires Résidentiels -->
+                    <div class="seminar-card">
+                        <div class="seminar-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M3 7v11m18-11v11M3 11h18"/></svg>
+                        </div>
+                        <h3 data-cms="scard2_title">Séminaires Résidentiels</h3>
+                        <p data-cms="scard2_desc">Profitez de nos 27 chambres et suites haut de gamme (possibilité de chambres TWIN) pour héberger vos équipes lors de séjours de plusieurs jours.</p>
+                    </div>
+
+                    <!-- Pauses & Gastronomie -->
+                    <div class="seminar-card">
+                        <div class="seminar-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                        </div>
+                        <h3 data-cms="scard3_title">Pauses Gourmandes & Dîners</h3>
+                        <p data-cms="scard3_desc">Café d'accueil, viennoiseries artisanales, pauses fruitées, déjeuners d'affaires et dîners privatifs au restaurant PAUZE.</p>
+                    </div>
+
+                    <!-- Activités & Team Building -->
+                    <div class="seminar-card">
+                        <div class="seminar-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 data-cms="scard4_title">Team Building & Bien-être</h3>
+                        <p data-cms="scard4_desc">Accès privatisable au Spa Saint-Louis (120 m²) et activités de découverte des Flandres pour renforcer la cohésion de vos équipes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULAIRE DE DEMANDE DE DEVIS SÉMINAIRE -->
+        <section class="section-block block-bleu reveal" id="devis-seminaire">
+            <div class="container" style="max-width: 1000px; margin: 0 auto;">
+                <div class="container-split">
+                    <div class="block-text">
+                        <span class="subtitle" style="color: var(--color-gold);" data-cms="quote_subtitle">Contact Professionnel</span>
+                        <h2 class="title" style="color: var(--color-white); font-size: 2.8rem;" data-cms="quote_title">Devis & Réservation</h2>
+                        <p class="body-text" style="color: #ddd; font-family: var(--font-body);" data-cms="quote_desc">
+                            Notre équipe dédiée aux entreprises est à votre écoute pour concevoir un événement sur-mesure adapté à votre budget et à vos objectifs.
+                        </p>
+
+                        <div class="contact-details-list">
+                            <div class="contact-detail-item">
+                                <div class="contact-icon">📍</div>
+                                <div>
+                                    <strong>Adresse du Domaine</strong>
+                                    <p data-cms="quote_address">47 Rue de l'Église, 59470 Bollezeele</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-icon">📞</div>
+                                <div>
+                                    <strong>Ligne Professionnelle</strong>
+                                    <p><a href="tel:+33328680000" style="color: var(--color-gold); text-decoration: none;" data-cms="quote_phone">+33 (0)3 28 68 00 00</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire de Devis Séminaire -->
+                    <div class="block-media">
+                        <form class="luxury-contact-form" onsubmit="event.preventDefault(); alert('Merci ! Votre demande de devis séminaire a bien été transmise à notre service commercial. Nous vous recontacterons sous 24h.');">
+                            <div class="form-group">
+                                <label for="sem-company">Nom de l'Entreprise</label>
+                                <input type="text" id="sem-company" placeholder="Votre entreprise" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sem-name">Nom du Contact</label>
+                                <input type="text" id="sem-name" placeholder="Nom & Prénom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sem-email">Adresse E-mail Professionnelle</label>
+                                <input type="email" id="sem-email" placeholder="contact@entreprise.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sem-format">Format de l'Événement</label>
+                                <select id="sem-format">
+                                    <option>Séminaire Résidentiel (avec hébergement)</option>
+                                    <option>Journée d'Étude (sans hébergement)</option>
+                                    <option>Comité de Direction / Réunion</option>
+                                    <option>Soirée d'Entreprise / Dîner</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sem-participants">Nombre de Participants</label>
+                                <input type="number" id="sem-participants" placeholder="Ex: 15" min="5" max="60" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sem-message">Détails de votre projet (Dates, besoins spécifiques...)</label>
+                                <textarea id="sem-message" rows="3" placeholder="Racontez-nous vos attentes..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer; font-weight: 600;">Recevoir votre proposition sur-mesure</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Non modifiable par le CMS) -->
+    <footer class="main-footer-new">
+        <div class="footer-container-grid">
+            <div class="footer-left">
+                <h3>Hostellerie Saint-Louis</h3>
+                <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
+                <p>Tél : <a href="tel:+33328680000">03 28 68 81 83</a></p>
+                <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
+                
+                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
+                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
+                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
+                    
+                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
+                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
+            </div>
+
+            <div class="footer-right">
+                <h3>Newsletter</h3>
+                <p>Recevez nos offres privilèges.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn-gold">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-legal">
+            <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
+            <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

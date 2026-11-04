@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariages & Réceptions - Hostellerie Saint-Louis</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/grandlogob.png">
+
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
+    
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ENTÊTE / HEADER (Non modifiable par le CMS) -->
+    <header id="main-header">
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="logo-container" id="logo-container">
+            <a href="index.html">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
+            </a>
+        </div>
+
+        <nav class="nav-bar" id="nav-bar">
+            <ul class="nav-links">
+                <li><a href="chambres.html">Chambres</a></li>
+                <li><a href="restaurant.html">Restaurant</a></li>
+                <li><a href="mariages.html" class="active">Mariages & Réceptions</a></li>
+                <li><a href="seminaires.html">Séminaires</a></li>
+                <li><a href="spa.html">Spa & Bien-être</a></li>
+                <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
+                <li><a href="infos.html">Infos Pratiques</a></li>
+            </ul>
+        </nav>
+
+        <a href="#devis-evenement" class="btn-reserver">Demander un Devis</a>
+    </header>
+
+    <main>
+        <!-- HERO MARIAGES & RÉCEPTIONS -->
+        <section class="page-hero-large mariages-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="subtitle" data-cms="hero_subtitle">Moments d'Exception & Fêtes de Famille</span>
+                <h1 class="title" data-cms="hero_title">Mariages & Réceptions</h1>
+                <p class="hero-desc" data-cms="hero_desc">Un cadre inspirant entre charme, authenticité et savoir-faire depuis plus de 40 ans.</p>
+            </div>
+        </section>
+
+        <!-- NAVIGATION ANCRES HAUT DE GAMME -->
+        <section class="anchors-nav-bar">
+            <div class="anchors-container">
+                <a href="#section-mariages" class="btn-anchor">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span>Section Mariages</span>
+                </a>
+                <a href="#section-receptions" class="btn-anchor">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>Section Réceptions & Groupes</span>
+                </a>
+                <a href="#section-confiance" class="btn-anchor">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span>Ils nous ont fait confiance</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION 1 : LES MARIAGES -->
+        <section class="section-block block-creme reveal" id="section-mariages">
+            <div class="container-split">
+                <div class="block-media">
+                    <div class="hotel-carousel-container room-carousel" id="wedding-carousel">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active"><img src="img/mariage2.jpg" data-cms="wedding_img1" alt="Mariage 1"></div>
+                            <div class="carousel-slide"><img src="img/mariage1.jpg" data-cms="wedding_img2" alt="Mariage 2"></div>
+                        </div>
+                        <button class="carousel-arrow prev-arrow">&#10094;</button>
+                        <button class="carousel-arrow next-arrow">&#10095;</button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span><span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="block-text">
+                    <span class="subtitle" data-cms="wedding_section_subtitle">Le Plus Beau Jour de Votre Vie</span>
+                    <h2 class="title" style="color: var(--color-blue);" data-cms="wedding_section_title">Des Mariages d'Exception</h2>
+                    <p class="body-text" style="font-family: var(--font-subtitle); font-style: italic; font-size: 1.25rem; color: var(--color-gold); margin-bottom: 20px;" data-cms="wedding_quote">
+                        Un cadre inspirant, entre charme et authenticité.
+                    </p>
+                    
+                    <div class="wedding-letter-box">
+                        <p data-cms="wedding_p1"><strong>Très chers futurs mariés,</strong></p>
+                        <p data-cms="wedding_p2">Depuis plus de quarante ans, l’Hostellerie Saint-Louis est un lieu d’exception pour accueillir les mariages. Toute l’équipe s’impliquera avec vous pour inscrire ce jour dans vos meilleurs souvenirs de joie.</p>
+                        <p data-cms="wedding_p3">Nous mobiliserons notre savoir-faire ainsi que nos partenaires privilégiés (fleuristes, photographes, DJ, décorateurs) pour faire de votre événement un moment inoubliable qui compte pour vous et vos invités.</p>
+                        <p data-cms="wedding_p4">Chaque mariage que nous accueillons est unique. Nous vous accompagnerons pas à pas pour que vous puissiez savourer cette journée à sa juste valeur, en toute sérénité.</p>
+                        <p style="text-align: right; font-family: var(--font-subtitle); font-style: italic; color: var(--color-blue); margin-top: 15px;" data-cms="wedding_signature">
+                            — L’équipe de l’Hostellerie Saint-Louis
+                        </p>
+                    </div>
+
+                    <div class="block-actions" style="margin-top: 25px;">
+                        <a href="#devis-evenement" class="btn-gold">Organiser votre mariage</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : GROUPES & RÉCEPTIONS -->
+        <section class="section-block block-blanc reveal" id="section-receptions">
+            <div class="container" style="max-width: 1100px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <span class="subtitle" data-cms="reception_section_subtitle">Fêtes de Famille & Retrouvailles</span>
+                    <h2 class="title" style="color: var(--color-blue); font-size: 3rem;" data-cms="reception_section_title">Groupes & Réceptions</h2>
+                    <p class="body-text" style="max-width: 800px; margin: 15px auto 0 auto; color: #555;" data-cms="reception_section_desc">
+                        Anniversaires, réunions familiales, baptêmes, événements d'amis... Pensez à l'Hostellerie Saint-Louis pour réaliser votre moment chaleureux.
+                    </p>
+                </div>
+
+                <div class="reception-features-grid">
+                    <!-- Capacité & Accueil -->
+                    <div class="reception-card">
+                        <div class="reception-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 data-cms="rcard1_title">Groupes de 12 à 60 Personnes</h3>
+                        <p data-cms="rcard1_desc">Nous avons l'habitude de recevoir des groupes sur-mesure avec des formules personnalisées (restauration seule, hébergement ou demi-pension).</p>
+                    </div>
+
+                    <!-- Hébergement -->
+                    <div class="reception-card">
+                        <div class="reception-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M3 7v11m18-11v11M3 11h18"/></svg>
+                        </div>
+                        <h3 data-cms="rcard2_title">27 Hébergements (63 Couchages)</h3>
+                        <p data-cms="rcard2_desc">Une capacité totale de 63 personnes. Nous disposons d'un grand nombre de chambres <strong>TWINS</strong> (2 lits séparés) idéales pour le confort de vos invités.</p>
+                    </div>
+
+                    <!-- Sur-Mesure & Menus -->
+                    <div class="reception-card">
+                        <div class="reception-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 data-cms="rcard3_title">Menus & Formules Groupes</h3>
+                        <p data-cms="rcard3_desc">Nous sommes à votre disposition pour la composition et l'élaboration de vos menus de réception ou de vos séjours tout compris (salles, hébergement, repas).</p>
+                    </div>
+
+                    <!-- Parkings & Vélos -->
+                    <div class="reception-card">
+                        <div class="reception-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M5 17h14M5 17a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-3h8l2 3h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2M5 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+                        </div>
+                        <h3 data-cms="rcard4_title">Parkings & Borne Vélo</h3>
+                        <p data-cms="rcard4_desc">Grand parking gratuit à l'avant et à l'arrière pour vos véhicules. Nous mettons également à disposition un <strong>parking vélo avec recharge électrique</strong> pour les cyclistes.</p>
+                    </div>
+                </div>
+
+                <!-- Partenaires & Découvertes -->
+                <div class="reception-partner-banner">
+                    <svg width="28" height="28" fill="none" stroke="var(--color-gold)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <div>
+                        <strong style="color: var(--color-blue); font-size: 1.1rem;" data-cms="partner_banner_title">Accompagnement & Découverte des Flandres :</strong>
+                        <p style="margin: 0; color: #555;" data-cms="partner_banner_desc">Nous pouvons vous mettre en relation avec des acteurs locaux pour enrichir votre séjour (visites guidées, dégustations, activités culturelles et sportives).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : ILS NOUS ONT FAIT CONFIANCE -->
+        <section class="section-block block-creme reveal" id="section-confiance">
+            <div class="container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
+                <span class="subtitle" data-cms="trust_section_subtitle">Souvenirs & Émotions</span>
+                <h2 class="title" style="color: var(--color-blue); font-size: 3rem; margin-bottom: 15px;" data-cms="trust_section_title">Ils nous ont fait confiance</h2>
+                <p class="body-text" style="color: #666; max-width: 700px; margin: 0 auto 40px auto;" data-cms="trust_section_desc">
+                    Découvrez quelques clichés immortalisés lors des mariages et réceptions accueillis au sein de notre demeure.
+                </p>
+
+                <!-- 1. DIAPORAMA / CARROUSEL INTERACTIF -->
+                <div class="hotel-carousel-container room-carousel" style="max-width: 900px; margin: 0 auto 50px auto; height: 450px;">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active"><img src="img/hostelerieindex.jpg" data-cms="trust_slider_img1" alt="Mariage 1"></div>
+                        <div class="carousel-slide"><img src="img/photo-restaurant.jpg" data-cms="trust_slider_img2" alt="Réception 2"></div>
+                        <div class="carousel-slide"><img src="img/chambreindex.jpg" data-cms="trust_slider_img3" alt="Mariage 3"></div>
+                    </div>
+                    <button class="carousel-arrow prev-arrow">&#10094;</button>
+                    <button class="carousel-arrow next-arrow">&#10095;</button>
+                    <div class="carousel-dots">
+                        <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+
+                <!-- 2. GALERIE PHOTO EN GRILLE -->
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="img/hostelerieindex.jpg" data-cms="g_img1" alt="Réception Jardin">
+                        <div class="gallery-overlay"><span data-cms="g_text1">Mariage d'Éléonore & Thomas</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo-restaurant.jpg" data-cms="g_img2" alt="Table Banquet">
+                        <div class="gallery-overlay"><span data-cms="g_text2">Anniversaire 50 ans</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/chambreindex.jpg" data-cms="g_img3" alt="Cocktail">
+                        <div class="gallery-overlay"><span data-cms="g_text3">Réception de Famille</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/sdb.jpg" data-cms="g_img4" alt="Préparation de la Mariée">
+                        <div class="gallery-overlay"><span data-cms="g_text4">Préparatifs en Suite</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : FORMULAIRE DE DEMANDE DE DEVIS SUR-MESURE -->
+        <section class="section-block block-bleu reveal" id="devis-evenement">
+            <div class="container" style="max-width: 1000px; margin: 0 auto;">
+                <div class="container-split">
+                    <div class="block-text">
+                        <span class="subtitle" style="color: var(--color-gold);" data-cms="quote_subtitle">Concevons Votre Événement</span>
+                        <h2 class="title" style="color: var(--color-white); font-size: 2.8rem;" data-cms="quote_title">Demande de Devis</h2>
+                        <p class="body-text" style="color: #ddd; font-family: var(--font-body);" data-cms="quote_desc">
+                            N’hésitez pas à nous contacter pour toute demande d'informations ou pour élaborer ensemble votre formule sur-mesure. Notre équipe événementielle vous recontactera sous 24h.
+                        </p>
+
+                        <div class="contact-details-list">
+                            <div class="contact-detail-item">
+                                <div class="contact-icon">📍</div>
+                                <div>
+                                    <strong>Adresse du Domaine</strong>
+                                    <p data-cms="quote_address">47 Rue de l'Église, 59470 Bollezeele</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-icon">📞</div>
+                                <div>
+                                    <strong>Ligne Événements & Groupes</strong>
+                                    <p><a href="tel:+33328680000" style="color: var(--color-gold); text-decoration: none;" data-cms="quote_phone">+33 (0)3 28 68 00 00</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire de Devis -->
+                    <div class="block-media">
+                        <form class="luxury-contact-form" onsubmit="event.preventDefault(); alert('Merci ! Votre demande de devis pour votre événement a bien été transmise à notre responsable des réceptions.');">
+                            <div class="form-group">
+                                <label for="event-name">Nom & Prénom</label>
+                                <input type="text" id="event-name" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-email">Adresse E-mail</label>
+                                <input type="email" id="event-email" placeholder="email@exemple.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-phone">Téléphone</label>
+                                <input type="tel" id="event-phone" placeholder="06 00 00 00 00" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-type">Type d'Événement</label>
+                                <select id="event-type">
+                                    <option>Mariage</option>
+                                    <option>Réception Familiale / Anniversaire (12 à 60 pers.)</option>
+                                    <option>Groupe d'amis / Cyclistes</option>
+                                    <option>Autre événement</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-guests">Nombre d'invités estimé</label>
+                                <input type="number" id="event-guests" placeholder="Ex: 40" min="10" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label for="event-message">Vos Souhaits (Hébergement, Menu, Dates...)</label>
+                                <textarea id="event-message" rows="3" placeholder="Racontez-nous votre projet..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer; font-weight: 600;">Demander mon devis personnalisé</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Non modifiable par le CMS) -->
+    <footer class="main-footer-new">
+        <div class="footer-container-grid">
+            <div class="footer-left">
+                <h3>Hostellerie Saint-Louis</h3>
+                <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
+                <p>Tél : <a href="tel:+33328680000">03 28 68 81 83</a></p>
+                <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
+                
+                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
+                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
+                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
+                    
+                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
+                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
+            </div>
+
+            <div class="footer-right">
+                <h3>Newsletter</h3>
+                <p>Recevez nos offres privilèges.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn-gold">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-legal">
+            <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
+            <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

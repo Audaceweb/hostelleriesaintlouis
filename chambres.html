@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chambres & Tarifs - Hostellerie Saint-Louis</title>
+    <link rel="icon" type="image/png" href="img/grandlogob.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Inclusion de jQuery indispensable pour le script du module de réservation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        /* Effet au survol des photos de chambres */
+        .room-gallery-trigger {
+            cursor: pointer;
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 420px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .room-gallery-trigger:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .room-gallery-trigger img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .room-gallery-trigger:hover img {
+            transform: scale(1.04);
+        }
+        .gallery-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.75);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(220,178,84,0.4);
+            transition: background 0.3s ease;
+        }
+        .room-gallery-trigger:hover .gallery-badge {
+            background: var(--color-gold);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ÉLÉMENTS DE LA FENÊTRE MODALE DE RÉSERVATION (Réservit / Logis) -->
+    <div class="iframeClose" style="display:none; z-index:99999; position:fixed; top:10px; right:40px; color:#000; font-size:30px; cursor:pointer; font-family:Arial; background: #fff; width: 40px; height: 40px; text-align: center; border-radius: 50%; line-height: 38px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">x</div>
+    <iframe id="ReservitBookingIframe" src="https://premium.logishotels.com/engine/booking/233/1237" style="z-index:1; opacity:1; border:none; width:100%; height:100%; position:fixed; transform:translateY(0px); background:#fff; top:0; bottom:0; left:0; right:0; z-index:100000; transition:transform 450ms cubic-bezier(0.23, 1, 0.32, 1), opacity 450ms cubic-bezier(0.23, 1, 0.32, 1); display:none;"></iframe>
+
+    <!-- ENTÊTE / HEADER (Non modifiable par le CMS) -->
+    <header id="main-header">
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="logo-container" id="logo-container">
+            <a href="index.html">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
+            </a>
+        </div>
+
+        <nav class="nav-bar" id="nav-bar">
+            <ul class="nav-links">
+                <li><a href="chambres.html" class="active">Chambres</a></li>
+                <li><a href="pauze.html">Restaurant</a></li>
+                <li><a href="mariages.html">Mariages & Réceptions</a></li>
+                <li><a href="seminaires.html">Séminaires</a></li>
+                <li><a href="spa.html">Spa & Bien-être</a></li>
+                <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
+                <li><a href="infos.html">Infos Pratiques</a></li>
+            </ul>
+        </nav>
+
+        <button class="btn-reserver ReservitBookingButton" style="cursor: pointer;">Réserver</button>
+    </header>
+
+    <main>
+        <!-- HERO PAGE CHAMBRES -->
+        <section class="page-hero-large">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="subtitle" data-cms="hero_subtitle">Parenthèse de sérénité</span>
+                <h1 class="title" data-cms="hero_title">Nos Chambres & Séjours</h1>
+                <p class="hero-desc" data-cms="hero_desc">Votre étape reposante entre Bergues et Saint-Omer, à proximité de Dunkerque et Cassel.</p>
+            </div>
+        </section>
+
+        <!-- PRÉSENTATION DE L'HÔTEL -->
+        <section class="section-block block-creme reveal" style="text-align: center; padding: 80px 20px;">
+            <div class="container" style="max-width: 950px; margin: 0 auto;">
+                <span class="subtitle" data-cms="intro_subtitle">L'Art de Recevoir</span>
+                <h2 class="title" style="font-size: 2.8rem; margin-bottom: 20px;" data-cms="intro_heading">Une Étape Chaleureuse dans le Nord</h2>
+                <p class="body-text" style="font-size: 1.1rem; line-height: 1.8; color: #444; font-family: var(--font-body);" data-cms="intro_text1">
+                    L’Hostellerie Saint-Louis conjugue le plaisir de la table et le bonheur d’une nuit tranquille. Un accueil chaleureux, un service discret et compétent vous donneront instantanément l’impression d’être comme chez vous.
+                </p>
+                <p class="body-text" style="font-size: 1.05rem; line-height: 1.8; color: #555; font-family: var(--font-body);" data-cms="intro_text2">
+                    La qualité et le confort de nos <strong>26 chambres et un appartement</strong>, toutes équipées de salles de bains privatives, WC, téléphone et TV, vous séduiront pour vos séjours de détente comme professionnels.
+                </p>
+
+                <!-- BADGES PRATIQUES & HORAIRES DE RÉCEPTION -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 35px;">
+                    <div style="background: #fff; padding: 15px 25px; border-radius: 4px; border: 1px solid rgba(220,178,84,0.3); text-align: left; min-width: 260px;">
+                        <strong style="color: var(--color-blue); display: block; margin-bottom: 5px;" data-cms="badge1_title">🔑 Ouverture & Réception</strong>
+                        <span style="font-size: 0.9rem; color: #666;" data-cms="badge1_text">Hôtel ouvert 7/7<br>Réception ouverte de 6h30 à 22h30 (Lun-Dim)</span>
+                    </div>
+                    <div style="background: #fff; padding: 15px 25px; border-radius: 4px; border: 1px solid rgba(220,178,84,0.3); text-align: left; min-width: 260px;">
+                        <strong style="color: var(--color-blue); display: block; margin-bottom: 5px;" data-cms="badge2_title">🍽️ Restaurant PAUZE</strong>
+                        <span style="font-size: 0.9rem; color: #666;" data-cms="badge2_text">Ouvert tous les jours<br><em>(sauf dimanche soir & lundi midi)</em></span>
+                    </div>
+                    <div style="background: #fff; padding: 15px 25px; border-radius: 4px; border: 1px solid rgba(220,178,84,0.3); text-align: left; min-width: 260px;">
+                        <strong style="color: var(--color-blue); display: block; margin-bottom: 5px;" data-cms="badge3_title">🚆 Accès & Éco-Mobilité</strong>
+                        <span style="font-size: 0.9rem; color: #666;" data-cms="badge3_text">Gares d'Arnèke & Esquelbecq<br>Accès PMR • Vélos et transports doux encouragés</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. CHAMBRE STANDARD -->
+        <section class="section-room-wrapper block-bg-blanc">
+            <div class="room-luxury-card">
+                <div class="room-header-title">
+                    <span class="subtitle" data-cms="std_subtitle">Intimité & Charme (Env. 19 m²)</span>
+                    <h2 class="title" data-cms="std_title">La Chambre Standard</h2>
+                </div>
+                
+                <div class="room-gallery-trigger" onclick="openGallery('standard')">
+                    <img src="img/chambresimple.jpg" data-cms="std_img" alt="Chambre Standard">
+                    <div class="gallery-badge">
+                        <span>🔍 Cliquer pour voir la galerie photos</span>
+                    </div>
+                </div>
+
+                <p class="room-desc" style="margin-top: 25px;" data-cms="std_desc">
+                    Nos chambres standards ont une superficie d’environ <strong>19 m²</strong>, équipées d'un lit double ou, pour certaines d'entre elles, de deux lits simples. 
+                    <br><em style="font-size: 0.95rem; color: #666;">Note : En chambre standard, l'accès au spa n'est pas inclus mais peut être ajouté en supplément durant votre séjour.</em>
+                </p>
+
+                <div class="amenities-luxury-grid">
+                    <div class="amenity-badge"><span data-cms="std_amenity1">☕ Plateau de courtoisie</span></div>
+                    <div class="amenity-badge"><span data-cms="std_amenity2">🧼 Produits d'accueil</span></div>
+                    <div class="amenity-badge"><span data-cms="std_amenity3">💨 Sèche-cheveux</span></div>
+                    <div class="amenity-badge"><span data-cms="std_amenity4">🚿 Toilettes & Douche</span></div>
+                    <div class="amenity-badge"><span data-cms="std_amenity5">📞 Téléphone</span></div>
+                    <div class="amenity-badge"><span data-cms="std_amenity6">📺 TV écran plat (TNT)</span></div>
+                    <div class="amenity-badge"><span data-cms="std_amenity7">📶 Wi-Fi gratuit</span></div>
+                </div>
+
+                <div class="room-action" style="display: flex; gap: 15px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <span style="display: block; font-weight: 700; color: var(--color-gold); font-size: 1.2rem; width: 100%; text-align: center; margin-bottom: 5px;" data-cms="std_price">De 80 € à 160 € / nuit</span>
+                    <a href="tel:+33328688183" class="btn-gold" style="background: #555; border-color: #555;">Tél : 03 28 68 81 83</a>
+                    <button class="btn-gold ReservitBookingButton" style="cursor: pointer;">Réserver cette chambre</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. CHAMBRE SUPÉRIEURE -->
+        <section class="section-room-wrapper block-bg-creme">
+            <div class="room-luxury-card">
+                <div class="room-header-title">
+                    <span class="subtitle" data-cms="sup_subtitle">Espace & Spa Inclus (25 à 30 m²)</span>
+                    <h2 class="title" data-cms="sup_title">La Chambre Supérieure</h2>
+                </div>
+                
+                <div class="room-gallery-trigger" onclick="openGallery('superieure')">
+                    <img src="img/chambreconfort.jpg" data-cms="sup_img" alt="Chambre Supérieure">
+                    <div class="gallery-badge">
+                        <span>🔍 Cliquer pour voir la galerie photos</span>
+                    </div>
+                </div>
+
+                <p class="room-desc" style="margin-top: 25px;" data-cms="sup_desc">
+                    D'une superficie comprise entre <strong>25 et 30 m²</strong>, nos chambres Supérieures sont équipées d'un grand lit (180/200) ou, selon vos besoins, de deux lits séparés.
+                    <br><strong style="color: var(--color-gold);">✨ Inclus :</strong> Les chambres Supérieures incluent un <strong>accès au spa de 2h par jour et par occupant</strong>.
+                </p>
+
+                <div class="amenities-luxury-grid">
+                    <div class="amenity-badge"><span data-cms="sup_amenity1">🧖‍♂️ Accès Spa 2h/jour inclus</span></div>
+                    <div class="amenity-badge"><span data-cms="sup_amenity2">🛋️ Coin salon</span></div>
+                    <div class="amenity-badge"><span data-cms="sup_amenity3">🚿 Douche à l'italienne</span></div>
+                    <div class="amenity-badge"><span data-cms="sup_amenity4">☕ Plateau de courtoisie</span></div>
+                    <div class="amenity-badge"><span data-cms="sup_amenity5">🧼 Produits d'accueil</span></div>
+                    <div class="amenity-badge"><span data-cms="sup_amenity6">💨 Sèche-cheveux & Toilettes</span></div>
+                    <div class="amenity-badge"><span data-cms="sup_amenity7">📺 TV écran plat TNT & Tél</span></div>
+                    <div class="amenity-badge"><span data-cms="sup_amenity8">📶 Wi-Fi gratuit</span></div>
+                </div>
+
+                <div class="room-action" style="display: flex; gap: 15px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <span style="display: block; font-weight: 700; color: var(--color-gold); font-size: 1.2rem; width: 100%; text-align: center; margin-bottom: 5px;" data-cms="sup_price">De 95 € à 190 € / nuit</span>
+                    <a href="tel:+33328688183" class="btn-gold" style="background: #555; border-color: #555;">Tél : 03 28 68 81 83</a>
+                    <button class="btn-gold ReservitBookingButton" style="cursor: pointer;">Réserver cette chambre</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CHAMBRE CONFORT -->
+        <section class="section-room-wrapper block-bg-blanc">
+            <div class="room-luxury-card">
+                <div class="room-header-title">
+                    <span class="subtitle" data-cms="conf_subtitle">Grand Prestige & Spa Inclus (32 à 43 m²)</span>
+                    <h2 class="title" data-cms="conf_title">La Chambre Confort</h2>
+                </div>
+                
+                <div class="room-gallery-trigger" onclick="openGallery('confort')">
+                    <img src="img/chambre-confort.jpg" data-cms="conf_img" alt="Chambre Confort">
+                    <div class="gallery-badge">
+                        <span>🔍 Cliquer pour voir la galerie photos</span>
+                    </div>
+                </div>
+
+                <p class="room-desc" style="margin-top: 25px;" data-cms="conf_desc">
+                    Nos chambres Confort sont les plus vastes de notre établissement (superficie comprise entre <strong>32 et 43 m²</strong>). Elles sont équipées d'un grand lit double, d'un troisième lit simple et offrent la possibilité pour certaines d'avoir 2 lits séparés.
+                    <br><strong style="color: var(--color-gold);">✨ Inclus :</strong> Les chambres Confort incluent un <strong>accès au spa de 2h par jour</strong>.
+                </p>
+
+                <div class="amenities-luxury-grid">
+                    <div class="amenity-badge"><span data-cms="conf_amenity1">🧖‍♂️ Accès Spa 2h/jour inclus</span></div>
+                    <div class="amenity-badge"><span data-cms="conf_amenity2">🛋️ Grand Coin salon</span></div>
+                    <div class="amenity-badge"><span data-cms="conf_amenity3">🛏️ Grand lit + 3e lit simple</span></div>
+                    <div class="amenity-badge"><span data-cms="conf_amenity4">🚿 Douche à l'italienne</span></div>
+                    <div class="amenity-badge"><span data-cms="conf_amenity5">☕ Plateau de courtoisie</span></div>
+                    <div class="amenity-badge"><span data-cms="conf_amenity6">🧼 Produits d'accueil</span></div>
+                    <div class="amenity-badge"><span data-cms="conf_amenity7">💨 Sèche-cheveux & Toilettes</span></div>
+                    <div class="amenity-badge"><span data-cms="conf_amenity8">📺 TV TNT, Tél & Wi-Fi gratuit</span></div>
+                </div>
+
+                <div class="room-action" style="display: flex; gap: 15px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <span style="display: block; font-weight: 700; color: var(--color-gold); font-size: 1.2rem; width: 100%; text-align: center; margin-bottom: 5px;" data-cms="conf_price">De 110 € à 220 € / nuit</span>
+                    <a href="tel:+33328688183" class="btn-gold" style="background: #555; border-color: #555;">Tél : 03 28 68 81 83</a>
+                    <button class="btn-gold ReservitBookingButton" style="cursor: pointer;">Réserver cette chambre</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOC DÉDIÉ AU PETIT-DÉJEUNER -->
+        <section class="section-block block-creme reveal">
+            <div class="container-split">
+                <div class="block-media">
+                    <div class="image-placeholder" style="height: 420px;">
+                        <img src="img/petitdej.jpg" data-cms="breakfast_img" alt="Buffet Petit-déjeuner Hostellerie Saint-Louis">
+                    </div>
+                </div>
+                <div class="block-text">
+                    <span class="subtitle" data-cms="breakfast_subtitle">Chaque matin, un réveil gourmand</span>
+                    <h2 class="title" style="color: var(--color-blue);" data-cms="breakfast_title">Le Petit-Déjeuner Buffet</h2>
+                    <p class="body-text" style="font-family: var(--font-body);" data-cms="breakfast_text1">
+                        Découvrez notre buffet continental pour bien démarrer la journée. Nous vous accueillons de <strong>7h00 à 9h30 en semaine</strong> et <strong>jusqu'à 10h00 le week-end</strong> autour d'un assortiment de produits frais et locaux : yaourts, viennoiseries, charcuteries, fromages, boissons chaudes et quelques surprises de la maison.
+                    </p>
+                    
+                    <div style="background: rgba(220,178,84,0.12); border-left: 3px solid var(--color-gold); padding: 15px; margin: 20px 0; border-radius: 2px;">
+                        <p style="margin: 0; font-size: 0.95rem; color: #444;" data-cms="breakfast_note1">
+                            <strong>🥐 Service en chambre :</strong> Possibilité de petit-déjeuner servi en chambre (+5 € / personne / jour).
+                        </p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.95rem; color: #444;" data-cms="breakfast_note2">
+                            <strong>🌅 Départ aux aurores ?</strong> Nous nous efforçons de nous adapter à vos horaires en vous préparant un petit-déjeuner sous forme de panier à emporter.
+                        </p>
+                    </div>
+
+                    <div class="block-actions">
+                        <span style="font-weight: 700; color: var(--color-gold); font-size: 1.2rem;" data-cms="breakfast_price">Tarif Buffet : 16,00 € / personne / jour</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRILLE TARIFS 2026-2027 & FORFAITS COMPLETS -->
+        <section class="section-block block-blanc reveal" id="tarifs-grille">
+            <div class="container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
+                <span class="subtitle" data-cms="tarifs_subtitle">Transparence & Sérénité</span>
+                <h2 class="title" style="color: var(--color-blue); font-size: 2.8rem; margin-bottom: 10px;" data-cms="tarifs_title">Les Tarifs de l'Hôtel 2026-2027</h2>
+                <p class="body-text" style="color: #666; max-width: 700px; margin: 0 auto 40px auto;" data-cms="tarifs_desc">
+                    <em>Les prix sont variables en fonction de la saison et de la disponibilité des chambres.</em>
+                </p>
+
+                <!-- TABLEAU / CARTES TARIFS -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; text-align: left; margin-bottom: 50px;">
+                    <!-- Carte 1 -->
+                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
+                        <h3 style="font-family: var(--font-body); font-size: 1.2rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card1_title">Chambre Standard</h3>
+                        <p style="font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card1_subtitle">1 ou 2 Personnes</p>
+                        <div style="font-size: 1.6rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card1_price">80 € – 160 € <span style="font-size:0.9rem; font-weight:400; color:#555;">/ nuit</span></div>
+                        <p style="font-size: 0.9rem; color: #555;" data-cms="card1_text">Superficie env. 19 m², lit double ou lits simples. Spa en supplément.</p>
+                    </div>
+
+                    <!-- Carte 2 -->
+                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
+                        <h3 style="font-family: var(--font-body); font-size: 1.2rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card2_title">Chambre Supérieure</h3>
+                        <p style="font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card2_subtitle">1 ou 2 Personnes</p>
+                        <div style="font-size: 1.6rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card2_price">95 € – 190 € <span style="font-size:0.9rem; font-weight:400; color:#555;">/ nuit</span></div>
+                        <p style="font-size: 0.9rem; color: #555;" data-cms="card2_text">25 à 30 m², grand lit (180/200), douche italienne & spa 2h inclus.</p>
+                    </div>
+
+                    <!-- Carte 3 -->
+                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
+                        <h3 style="font-family: var(--font-body); font-size: 1.2rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card3_title">Chambre Confort</h3>
+                        <p style="font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card3_subtitle">Jusqu'à 3 Personnes</p>
+                        <div style="font-size: 1.6rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card3_price">110 € – 220 € <span style="font-size:0.9rem; font-weight:400; color:#555;">/ nuit</span></div>
+                        <p style="font-size: 0.9rem; color: #555;" data-cms="card3_text">32 à 43 m², lit double + 3e lit simple, coin salon & spa 2h inclus.</p>
+                    </div>
+                </div>
+
+                <!-- TABLEAU ANEXES TARIFS (Suppléments, Demi-pension) -->
+                <div style="background: #f7f7f2; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 35px; text-align: left;">
+                    <h3 style="font-family: var(--font-subtitle); font-style: italic; font-size: 1.8rem; color: var(--color-blue); margin-bottom: 25px;" data-cms="supp_title">Suppléments & Formules Restauration</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+                        <div><strong style="color: var(--color-blue);" data-cms="supp1_label">Lit Supplémentaire :</strong> <span data-cms="supp1_val">35,00 € / nuit</span></div>
+                        <div><strong style="color: var(--color-blue);" data-cms="supp2_label">Petit-Déjeuner Buffet :</strong> <span data-cms="supp2_val">16,00 € / pers.</span></div>
+                        <div><strong style="color: var(--color-blue);" data-cms="supp3_label">Taxe de Séjour :</strong> <span data-cms="supp3_val">0,55 € / pers. / nuit</span></div>
+                        <div><strong style="color: var(--color-blue);" data-cms="supp4_label">Animaux de Compagnie :</strong> <span data-cms="supp4_val">20,00 € / nuit</span></div>
+                    </div>
+
+                    <hr style="border: 0; border-top: 1px solid rgba(220,178,84,0.3); margin: 25px 0;">
+
+                    <div>
+                        <h4 style="font-family: var(--font-body); font-size: 1.2rem; color: var(--color-gold); margin-bottom: 8px;" data-cms="dp_title">🍽️ Tarifs Demi-Pension</h4>
+                        <p style="font-size: 0.95rem; color: #444; line-height: 1.6;" data-cms="dp_text1">
+                            La demi-pension est accessible à partir de <strong>52 € TTC / personne / nuit</strong>.<br>
+                            <em>Le forfait comprend : Le menu du jour (entrée + plat + dessert, hors boissons) et l'accès au petit-déjeuner buffet du matin.</em>
+                        </p>
+                        <p style="font-size: 0.85rem; color: #777; margin-top: 6px;" data-cms="dp_text2">
+                            * Pour tout séjour inférieur à 2 nuits ou si vous ne souhaitez pas la demi-pension sur l'intégralité du séjour, vous pouvez compléter ou modifier les propositions à la carte (avec suppléments).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORFAIT SOIRÉE ÉTAPE COMMERCIAUX -->
+        <section class="section-block block-bleu reveal">
+            <div class="container" style="max-width: 1000px; margin: 0 auto;">
+                <div class="container-split">
+                    <div class="block-text">
+                        <span class="subtitle" style="color: var(--color-gold);" data-cms="se_subtitle">Professionnels & Techniciens</span>
+                        <h2 class="title" style="color: var(--color-white); font-size: 2.5rem;" data-cms="se_title">Offre Spéciale Soirée-Étape</h2>
+                        <p class="body-text" style="color: #ddd; font-family: var(--font-body);" data-cms="se_desc">
+                            L'hôtel entretient une longue tradition d'accueil chaleureux des commerciaux, techniciens et professionnels en déplacement. Situé à proximité immédiate des principaux grands bassins industriels et commerciaux du territoire (<strong>Dunkerque, Saint-Omer, Bergues, Hazebrouck</strong>), nous proposons une formule intégrale <em>du lundi au vendredi soir</em> :
+                        </p>
+                        
+                        <ul style="list-style: none; padding: 0; margin: 20px 0; color: #eee; font-family: var(--font-body);">
+                            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-gold);">✦</span> <span data-cms="se_point1">Occupation SINGLE de la chambre</span></li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-gold);">✦</span> <span data-cms="se_point2">Dîner du jour Entrée + Plat + Dessert (renouvelé quotidiennement)</span></li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-gold);">✦</span> <span data-cms="se_point3">Petit-déjeuner buffet continental au réveil</span></li>
+                        </ul>
+
+                        <div style="margin-top: 25px;">
+                            <a href="tel:+33328688183" class="btn-gold" style="display: inline-flex; align-items: center; gap: 10px;">
+                                Réserver une Soirée-Étape : 03 28 68 81 83
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="block-media">
+                        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(220,178,84,0.35); padding: 35px; border-radius: 6px; text-align: center;">
+                            <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">💼</span>
+                            <h3 style="font-family: var(--font-body); font-size: 1.4rem; color: var(--color-gold); margin-bottom: 20px;" data-cms="se_box_title">Forfaits Soirée-Étape</h3>
+                            
+                            <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 4px; margin-bottom: 15px;">
+                                <strong style="color: #fff; font-size: 1.1rem; display: block;" data-cms="se_box_std_label">Chambre Standard</strong>
+                                <span style="font-size: 1.6rem; font-weight: 700; color: var(--color-gold);" data-cms="se_box_std_price">123 € / jour</span>
+                            </div>
+
+                            <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 4px;">
+                                <strong style="color: #fff; font-size: 1.1rem; display: block;" data-cms="se_box_sup_label">Chambre Supérieure</strong>
+                                <span style="font-size: 1.6rem; font-weight: 700; color: var(--color-gold);" data-cms="se_box_sup_price">134 € / jour</span>
+                                <small style="display: block; color: #ccc; margin-top: 5px;" data-cms="se_box_sup_sub">(Chambre avec bureau ou coin salon)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFORMATIONS COMPLÉMENTAIRES (ANIMAUX & REGLEMENT) -->
+        <section class="section-block block-creme reveal">
+            <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <span class="subtitle" data-cms="pets_subtitle">Vos Compagnons</span>
+                <h2 class="title" style="color: var(--color-blue); font-size: 2.2rem; margin-bottom: 20px;" data-cms="pets_title">Accueil des Animaux de Compagnie</h2>
+                <p class="body-text" style="color: #444; max-width: 800px; margin: 0 auto 20px auto;" data-cms="pets_text">
+                    Nous acceptons les animaux de compagnie sous réserve de disponibilité des chambres adaptées pour leur accueil. Merci de nous contacter impérativement avant d'effectuer toute réservation avec un animal.
+                </p>
+                <div style="background: #fff; border: 1px solid rgba(220,178,84,0.3); padding: 20px; border-radius: 4px; display: inline-block; text-align: left;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #333;" data-cms="pets_details">
+                        <strong>🐾 Tarif :</strong> 20 € / nuit par animal.<br>
+                        <strong>⚠️ Attention :</strong> L'accès au restaurant n'est pas autorisé pour les animaux de compagnie.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FENÊTRE GALERIE MODALE LIGHTBOX (PLEIN ÉCRAN) -->
+    <div id="roomLightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.94); z-index:9999999; justify-content:center; align-items:center;">
+        <span onclick="closeGallery()" style="position:absolute; top:20px; right:35px; color:#fff; font-size:42px; cursor:pointer; font-family:Arial; z-index:10;">&times;</span>
+        <span onclick="prevGalleryImage()" style="position:absolute; left:25px; color:#fff; font-size:55px; cursor:pointer; user-select:none; z-index:10;">&#10094;</span>
+        <img id="lightboxImg" src="" alt="Photo Chambre" style="max-width:88%; max-height:85vh; border-radius:4px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); object-fit:contain;">
+        <span onclick="nextGalleryImage()" style="position:absolute; right:25px; color:#fff; font-size:55px; cursor:pointer; user-select:none; z-index:10;">&#10095;</span>
+    </div>
+
+    <!-- FOOTER (Non modifiable par le CMS) -->
+    <footer class="main-footer-new">
+        <div class="footer-container-grid">
+            <div class="footer-left">
+                <h3>Hostellerie Saint-Louis</h3>
+                <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
+                <p>Tél : <a href="tel:+33328688183">03 28 68 81 83</a></p>
+                <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
+                
+                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
+                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
+                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
+                    
+                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
+                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
+            </div>
+
+            <div class="footer-right">
+                <h3>Newsletter</h3>
+                <p>Recevez nos offres privilèges.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn-gold">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-legal">
+            <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
+            <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS JS -->
+    <script>
+        // --- 1. SCRIPT MODULE RESERVIT IFRAME ---
+        jQuery(document).ready(function() {
+            jQuery(".ReservitBookingButton").click(function () {
+                if (jQuery(this).hasClass("iframeShow")) {
+                    jQuery(this).removeClass("iframeShow");
+                    jQuery("iframe#ReservitBookingIframe, .iframeClose").hide("slow");
+                } else {
+                    jQuery(this).addClass("iframeShow");
+                    jQuery("iframe#ReservitBookingIframe, .iframeClose").show("slow");
+                }
+            });
+            jQuery(".iframeClose").click(function () {
+                jQuery(".ReservitBookingButton").removeClass("iframeShow");
+                jQuery("iframe#ReservitBookingIframe, .iframeClose").hide("slow");
+            });
+        });
+
+        // --- 2. SCRIPT GALERIE LIGHTBOX PLEIN ÉCRAN ---
+        const roomGalleries = {
+            standard: [
+                "img/chambresimple.jpg",
+                "img/chambresimpleen.jpg",
+                "img/chambresimplesdb.jpg"
+            ],
+            superieure: [
+                "img/chambreconfort.jpg",
+                "img/hostelerieindex.jpg"
+            ],
+            confort: [
+                "img/chambre-confort.jpg",
+                "img/hostelerieindex.jpg"
+            ]
+        };
+
+        let currentGallery = [];
+        let currentImgIndex = 0;
+
+        function openGallery(roomType) {
+            currentGallery = roomGalleries[roomType] || [];
+            currentImgIndex = 0;
+            if (currentGallery.length > 0) {
+                document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+                document.getElementById('roomLightbox').style.display = 'flex';
+            }
+        }
+
+        function closeGallery() {
+            document.getElementById('roomLightbox').style.display = 'none';
+        }
+
+        function nextGalleryImage() {
+            if (currentGallery.length === 0) return;
+            currentImgIndex = (currentImgIndex + 1) % currentGallery.length;
+            document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+        }
+
+        function prevGalleryImage() {
+            if (currentGallery.length === 0) return;
+            currentImgIndex = (currentImgIndex - 1 + currentGallery.length) % currentGallery.length;
+            document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeGallery();
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

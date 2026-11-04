@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa Saint-Louis & Bien-être - Hostellerie Saint-Louis</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/grandlogob.png">
+
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
+    
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="spa-theme">
+
+    <!-- ENTÊTE / HEADER (Non modifiable par le CMS) -->
+    <header id="main-header">
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="logo-container" id="logo-container">
+            <a href="index.html">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
+            </a>
+        </div>
+
+        <nav class="nav-bar" id="nav-bar">
+            <ul class="nav-links">
+                <li><a href="chambres.html">Chambres</a></li>
+                <li><a href="pauze.html">Restaurant</a></li>
+                <li><a href="mariages.html">Mariages & Réceptions</a></li>
+                <li><a href="seminaires.html">Séminaires</a></li>
+                <li><a href="spa.html" class="active">Spa & Bien-être</a></li>
+                <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
+                <li><a href="infos.html">Infos Pratiques</a></li>
+            </ul>
+        </nav>
+
+        <a href="#reservation-spa" class="btn-reserver">Réserver le Spa</a>
+    </header>
+
+    <main>
+        <!-- HERO SPA SAINT-LOUIS -->
+        <section class="page-hero-large spa-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="subtitle" data-cms="hero_subtitle">Sérénité & Volupté</span>
+                <h1 class="title" data-cms="hero_title">Le Spa Saint-Louis</h1>
+                <p class="hero-desc" data-cms="hero_desc">Un sanctuaire de 120 m² entièrement dédié à la relaxation et au ressourcement.</p>
+            </div>
+        </section>
+
+        <!-- PRÉSENTATION ESPACE SPA (120 m²) -->
+        <section class="section-block block-creme reveal">
+            <div class="container" style="max-width: 1100px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <span class="subtitle" data-cms="spa_intro_subtitle">Équipements Haut de Gamme</span>
+                    <h2 class="title" style="font-size: 3rem;" data-cms="spa_intro_title">Un Espace d'Exception de 120 m²</h2>
+                    <p class="body-text" style="max-width: 800px; margin: 15px auto 0 auto;" data-cms="spa_intro_desc">
+                        Pour préserver votre quiétude et la magie des lieux, l'accès au Spa Saint-Louis se fait uniquement sur réservation avec une capacité maximale de 12 personnes en simultané.
+                    </p>
+                </div>
+
+                <div class="spa-amenities-grid">
+                    <!-- Spa de Nage -->
+                    <div class="spa-card">
+                        <div class="spa-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M2 6c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2M2 12c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2M2 18c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2"/></svg>
+                        </div>
+                        <h3 data-cms="scard1_title">Spa de Nage</h3>
+                        <p data-cms="scard1_capacity">3 à 4 personnes</p>
+                        <span class="spa-card-desc" data-cms="scard1_desc">L'alliance idéale entre exercice doux et hydromassage apaisant.</span>
+                    </div>
+
+                    <!-- Bain à Remous -->
+                    <div class="spa-card">
+                        <div class="spa-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="17" r="3"/><circle cx="7" cy="10" r="2"/><circle cx="17" cy="8" r="2.5"/><circle cx="11" cy="4" r="1.5"/></svg>
+                        </div>
+                        <h3 data-cms="scard2_title">Bain à Remous</h3>
+                        <p data-cms="scard2_capacity">3 à 4 personnes</p>
+                        <span class="spa-card-desc" data-cms="scard2_desc">Des bulles massantes pour délier les tensions en profondeur.</span>
+                    </div>
+
+                    <!-- Sauna -->
+                    <div class="spa-card">
+                        <div class="spa-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 2v6M8 4v4M16 4v4M4 11h16M4 15h16M4 19h16"/></svg>
+                        </div>
+                        <h3 data-cms="scard3_title">Sauna Finlandais</h3>
+                        <p data-cms="scard3_capacity">3 à 4 personnes</p>
+                        <span class="spa-card-desc" data-cms="scard3_desc">Une chaleur sèche bienfaisante pour purifier le corps et l'esprit.</span>
+                    </div>
+
+                    <!-- Hammam -->
+                    <div class="spa-card">
+                        <div class="spa-card-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 21h15.3l-.62-3.39A8.97 8.97 0 0 0 21 12c0-4.97-4.03-9-9-9z"/><path d="M9 12c0-1.66 1.34-3 3-3s3 1.34 3 3"/></svg>
+                        </div>
+                        <h3 data-cms="scard4_title">Hammam Oriental</h3>
+                        <p data-cms="scard4_capacity">3 à 4 personnes</p>
+                        <span class="spa-card-desc" data-cms="scard4_desc">Une vapeur humide aux essences d'eucalyptus pour libérer les sens.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARIFS & HORAIRES SPA -->
+        <section class="section-block block-blanc reveal">
+            <div class="container-split">
+                <div class="block-text">
+                    <span class="subtitle" data-cms="tarifs_subtitle">Informations Accès</span>
+                    <h2 class="title" data-cms="tarifs_title">Horaires & Tarification</h2>
+                    
+                    <div class="spa-info-box">
+                        <div class="spa-price-tag">
+                            <div>
+                                <strong data-cms="t1_title">Résidents de l'hôtel</strong>
+                                <p data-cms="t1_price">28 € / personne (Créneau de 2 heures)</p>
+                            </div>
+                        </div>
+                        <div class="spa-price-tag">
+                            <div>
+                                <strong data-cms="t2_title">Clients Extérieurs</strong>
+                                <p data-cms="t2_price">34 € / personne (Créneau de 2 heures)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="body-text" style="font-size: 0.95rem; font-family: var(--font-body); margin-top: 15px;" data-cms="tarifs_note">
+                        <em>Enfants de moins de 12 ans (-50 %) acceptés uniquement accompagnés d'un adulte majeur. L'usage du sauna et du hammam leur est fortement déconseillé.</em>
+                    </p>
+
+                    <h3 style="font-family: var(--font-subtitle); font-size: 1.4rem; color: var(--color-gold); margin: 25px 0 10px 0;" data-cms="hours_title">Horaires d'Ouverture (Sur Réservation)</h3>
+                    <ul class="spa-hours-list">
+                        <li><strong data-cms="h1_day">Lundi :</strong> <span data-cms="h1_time">16h00 – 20h00</span> <span data-cms="h1_sub">(Dernier accès à 18h00)</span></li>
+                        <li><strong data-cms="h2_day">Mardi au Samedi :</strong> <span data-cms="h2_time">10h00 – 20h00</span> <span data-cms="h2_sub">(Dernier accès à 18h00)</span></li>
+                        <li><strong data-cms="h3_day">Dimanche :</strong> <span data-cms="h3_time">10h00 – 16h00</span> <span data-cms="h3_sub">(Dernier accès à 14h00)</span></li>
+                    </ul>
+                </div>
+
+                <!-- CARROUSEL INTÉGRÉ CÔTÉ DROIT -->
+                <div class="block-media">
+                    <div class="hotel-carousel-container room-carousel" style="height: 480px;">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active"><img src="img/spa1.jpg" data-cms="carrousel_img1" alt="Espace Spa Saint-Louis 1"></div>
+                            <div class="carousel-slide"><img src="img/spa2.png" data-cms="carrousel_img2" alt="Espace Spa Saint-Louis 2"></div>
+                            <div class="carousel-slide"><img src="img/spa3.jpg" data-cms="carrousel_img3" alt="Espace Détente Spa"></div>
+                        </div>
+                        <button class="carousel-arrow prev-arrow">&#10094;</button>
+                        <button class="carousel-arrow next-arrow">&#10095;</button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESPACE DE SOINS & CARTE DES SOINS AVEC ANDRÉA -->
+        <section class="section-block block-creme reveal" id="carte-soins">
+            <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+                <span class="subtitle" data-cms="soins_subtitle">Soins & Massages Signature</span>
+                <h2 class="title" style="font-size: 3rem; margin-bottom: 10px;" data-cms="soins_title">L'Espace de Soins</h2>
+                <p class="body-text" style="font-family: var(--font-body); max-width: 750px; margin: 0 auto 30px auto;" data-cms="soins_desc">
+                    Notre esthéticienne, <strong>Andréa</strong>, vous accueille sur rendez-vous (réservation minimum 48h à l'avance) pour une parenthèse sur-mesure.
+                </p>
+
+                <!-- Horaires d'Andréa -->
+                <div class="andrea-schedule-badge">
+                    <span data-cms="andrea_label">Créneaux d'Andréa :</span> 
+                    <strong data-cms="andrea_slots">Mardi & Jeudi (16h - 19h) | Samedi & Dimanche (10h - 19h)</strong>
+                </div>
+
+                <!-- CARTE DES SOINS -->
+                <div class="treatment-card-luxury">
+                    <div class="menu-category">
+                        <h3 style="color: var(--color-gold); font-family: var(--font-subtitle); font-style: italic; font-size: 1.8rem; text-align: center; margin-bottom: 25px;" data-cms="tcat1">Massages & Modelages du Monde</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" style="color: #fff;" data-cms="t1_name">Massage Signature Saint-Louis (Sur-Mesure)</span>
+                                <small style="display:block; color:#aaa;" data-cms="t1_sub">Aux huiles essentielles bio relaxantes ou tonifiantes</small>
+                            </div>
+                            <span class="dish-price" style="color: var(--color-gold);" data-cms="t1_price">60 min | 85 €</span>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" style="color: #fff;" data-cms="t2_name">Modelage Dos & Nuque Décontractant</span>
+                                <small style="display:block; color:#aaa;" data-cms="t2_sub">Ciblé sur les zones de tension nerveuse et musculaire</small>
+                            </div>
+                            <span class="dish-price" style="color: var(--color-gold);" data-cms="t2_price">30 min | 50 €</span>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" style="color: #fff;" data-cms="t3_name">Soin Évasion aux Pierres Chaudes</span>
+                                <small style="display:block; color:#aaa;" data-cms="t3_sub">Chaleur volcanique apaisante et bienfaits énergétiques</small>
+                            </div>
+                            <span class="dish-price" style="color: var(--color-gold);" data-cms="t3_price">75 min | 110 €</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-divider"><span>✦ ✦ ✦</span></div>
+
+                    <div class="menu-category">
+                        <h3 style="color: var(--color-gold); font-family: var(--font-subtitle); font-style: italic; font-size: 1.8rem; text-align: center; margin-bottom: 25px;" data-cms="tcat2">Soins du Visage</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" style="color: #fff;" data-cms="t4_name">Soin Visage Éclat & Vitalité</span>
+                                <small style="display:block; color:#aaa;" data-cms="t4_sub">Nettoyage profond, gommage et masque hydratant</small>
+                            </div>
+                            <span class="dish-price" style="color: var(--color-gold);" data-cms="t4_price">45 min | 65 €</span>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" style="color: #fff;" data-cms="t5_name">Rituel Anti-Âge Supérieur & Kobido</span>
+                                <small style="display:block; color:#aaa;" data-cms="t5_sub">Massage ancestral japonais liftant et repulpant</small>
+                            </div>
+                            <span class="dish-price" style="color: var(--color-gold);" data-cms="t5_price">60 min | 95 €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULAIRE DE RÉSERVATION -->
+        <section class="section-block block-bleu reveal" id="reservation-spa" style="background-color: #121217 !important;">
+            <div class="container" style="max-width: 1000px; margin: 0 auto;">
+                <div class="container-split">
+                    <div class="block-text">
+                        <span class="subtitle" style="color: var(--color-gold);" data-cms="form_subtitle">Réservez Votre Moment</span>
+                        <h2 class="title" style="color: var(--color-white); font-size: 2.8rem;" data-cms="form_title">Demande de Rendez-vous</h2>
+                        <p class="body-text" style="color: #ccc; font-family: var(--font-body);" data-cms="form_desc">
+                            Envoyez-nous directement votre demande de créneau pour le Spa ou un soin avec Andréa.
+                        </p>
+
+                        <div style="background: rgba(220, 178, 84, 0.12); border-left: 3px solid var(--color-gold); padding: 15px; margin: 20px 0; border-radius: 4px;">
+                            <strong style="color: var(--color-gold); display: block; margin-bottom: 5px; font-size: 1.05rem;" data-cms="alert_title">ℹ️ Pré-réservation :</strong>
+                            <p style="margin: 0; color: #ddd; font-size: 0.95rem; line-height: 1.5;" data-cms="alert_desc">
+                                Attention, l'envoi de ce formulaire constitue une <strong>demande de réservation</strong> et ne vaut pas confirmation automatique. Notre équipe vous recontactera très rapidement par email ou par téléphone pour vous confirmer votre rendez-vous.
+                            </p>
+                        </div>
+
+                        <div class="cancellation-policy-box" style="background: rgba(220, 178, 84, 0.08); border-color: var(--color-gold);">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                                <svg width="20" height="20" fill="none" stroke="var(--color-gold)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <strong style="color: var(--color-gold); margin:0;" data-cms="policy_title">Politiques & Conditions d'Annulation :</strong>
+                            </div>
+                            <p style="color: #bbb;" data-cms="policy_desc">Toute annulation effectuée à <strong>moins de 48 heures</strong> du rendez-vous sera intégralement facturée. Merci de nous prévenir au plus vite en cas d'imprévu.</p>
+                        </div>
+
+                        <div style="margin-top: 25px;">
+                            <p style="color: #fff; font-size: 1.05rem;" data-cms="phone_cta_text">Préférez-vous réserver directement par téléphone ?</p>
+                            <a href="tel:+33328688183" class="btn-gold" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 10px;">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                03 28 68 81 83
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire -->
+                    <div class="block-media">
+                        <form class="luxury-contact-form" style="background: #1a1a22; border-color: rgba(220,178,84,0.3);" onsubmit="event.preventDefault(); alert('Votre demande de réservation a bien été envoyée. Notre équipe vous recontactera par email ou téléphone pour confirmer votre rendez-vous.');">
+                            <div class="form-group">
+                                <label for="spa-name">Nom & Prénom</label>
+                                <input type="text" id="spa-name" placeholder="Votre nom" required style="background: #121217; color: #fff; border: 1px solid rgba(220,178,84,0.2);">
+                            </div>
+                            <div class="form-group">
+                                <label for="spa-phone">Numéro de Téléphone</label>
+                                <input type="tel" id="spa-phone" placeholder="06 00 00 00 00" required style="background: #121217; color: #fff; border: 1px solid rgba(220,178,84,0.2);">
+                            </div>
+                            <div class="form-group">
+                                <label for="spa-type">Type de Prestation</label>
+                                <select id="spa-type" style="background: #121217; color: #fff; border: 1px solid rgba(220,178,84,0.2);">
+                                    <option>Accès Spa (2 heures - 28€ Résidents / 34€ Extérieurs)</option>
+                                    <option>Soin ou Massage avec Andréa (Sur RDV 48h)</option>
+                                    <option>Accès Spa + Soin Andréa</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="spa-date">Date & Heure Souhaitées</label>
+                                <input type="datetime-local" id="spa-date" required style="background: #121217; color: #fff; border: 1px solid rgba(220,178,84,0.2);">
+                            </div>
+                            <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer; font-weight: 600;">Envoyer ma demande de RDV</button>
+                            <small style="display: block; text-align: center; color: #aaa; margin-top: 10px; font-size: 0.8rem;">
+                                * Confirmation sous réserve de disponibilité validée par l'hôtel.
+                            </small>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Non modifiable par le CMS) -->
+    <footer class="main-footer-new">
+        <div class="footer-container-grid">
+            <div class="footer-left">
+                <h3>Hostellerie Saint-Louis</h3>
+                <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
+                <p>Tél : <a href="tel:+33328680000">03 28 68 81 83</a></p>
+                <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
+                
+                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
+                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
+                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
+                    
+                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
+                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
+            </div>
+
+            <div class="footer-right">
+                <h3>Newsletter</h3>
+                <p>Recevez nos offres privilèges.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn-gold">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-legal">
+            <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
+            <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

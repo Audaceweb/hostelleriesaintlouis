@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant PAUZE - Hostellerie Saint-Louis</title>
+    <link rel="icon" type="image/png" href="img/logoor.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="restaurant-theme">
+
+    <!-- ENTÊTE / HEADER (Non modifiable par le CMS) -->
+    <header id="main-header">
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
+            </a>
+        </div>
+        <nav class="nav-bar" id="nav-bar">
+            <ul class="nav-links">
+                <li><a href="chambres.html">Chambres</a></li>
+                <li><a href="pauze.html" class="active">Restaurant</a></li>
+                <li><a href="mariages.html">Mariages & Réceptions</a></li>
+                <li><a href="seminaires.html">Séminaires</a></li>
+                <li><a href="spa.html">Spa & Bien-être</a></li>
+                <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
+                <li><a href="infos.html">Infos Pratiques</a></li>
+            </ul>
+        </nav>
+        <div class="cta-container">
+            <a href="#reservation" class="btn-gold">Réserver une table</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO RESTAURANT PAUZE -->
+        <section class="page-hero-large restaurant-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="subtitle" data-cms="hero_subtitle">Table Remarquable Teritoria</span>
+                <h1 class="title" data-cms="hero_title">Restaurant PAUZE</h1>
+                <p class="hero-desc" data-cms="hero_desc">Cuisine authentique & généreuse orchestrée par le Chef Cédric Barquant.</p>
+            </div>
+        </section>
+
+        <!-- BLOC DE PRÉSENTATION ET ENGAGEMENT DU CHEF -->
+        <section class="section-block block-creme reveal">
+            <div class="container-split">
+                <div class="block-media">
+                    <div class="hotel-carousel-container room-carousel">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active"><img src="img/pauze1.jpg" data-cms="carrousel_img1" alt="Ambiance Restaurant PAUZE"></div>
+                            <div class="carousel-slide"><img src="img/pauze6.jpg" data-cms="carrousel_img2" alt="Plat Gastronomique PAUZE"></div>
+                            <div class="carousel-slide"><img src="img/pauze2.jpg" data-cms="carrousel_img3" alt="Cuisine du Chef Cédric Barquant"></div>
+                            <div class="carousel-slide"><img src="img/pauze4.jpg" data-cms="carrousel_img4" alt="Sélection de Vins"></div>
+                        </div>
+                        <button class="carousel-arrow prev-arrow">&#10094;</button>
+                        <button class="carousel-arrow next-arrow">&#10095;</button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-text">
+                    <span class="subtitle" data-cms="intro_subtitle">Authenticité, Terroir & Passion</span>
+                    <h2 class="title" style="color: var(--color-restaurant-green);" data-cms="intro_title">Cuisine authentique & généreuse</h2>
+                    <p class="body-text" style="font-family: var(--font-body);" data-cms="intro_text1">
+                        Dans notre cuisine, chaque assiette raconte une histoire : celle d’un produit soigneusement sélectionné, issu de producteurs locaux engagés, cultivé avec respect et transformé avec passion. Privilégier des produits ancrés sur le territoire, c’est garantir une fraîcheur incomparable tout en soutenant celles et ceux qui font vivre nos Flandres.
+                    </p>
+
+                    <!-- DISTINCTION TERITORIA -->
+                    <div style="background: #fff; border-left: 4px solid var(--color-gold); padding: 15px 20px; border-radius: 4px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+                        <strong style="color: var(--color-restaurant-green); font-size: 1.05rem; display: flex; align-items: center; gap: 8px;" data-cms="badge_title">
+                            <span>⭐</span> Reconnu « Table Remarquable » par Teritoria
+                        </strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #555;" data-cms="badge_desc">Une distinction qui salue notre engagement pour une gastronomie sincère et écoresponsable.</p>
+                    </div>
+
+                    <div class="block-actions">
+                        <a href="#reservation" class="btn-restaurant-green">Réserver une table</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOC PARCOURS DU CHEF & CAVE À VINS -->
+        <section class="section-block block-blanc reveal">
+            <div class="container" style="max-width: 1100px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; text-align: left;">
+                    
+                    <!-- PARCOURS DU CHEF -->
+                    <div style="background: #fcfcfc; border: 1px solid rgba(76, 92, 75, 0.2); border-radius: 6px; padding: 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+                        <span class="subtitle" style="font-size: 1.4rem;" data-cms="chef_subtitle">Savoir-Faire & Rigueur</span>
+                        <h3 style="font-family: var(--font-body); font-size: 1.6rem; color: var(--color-restaurant-green); margin: 5px 0 15px 0;" data-cms="chef_title">Le Chef Cédric Barquant</h3>
+                        <p class="body-text" style="font-size: 0.98rem; color: #444; line-height: 1.7;" data-cms="chef_desc1">
+                            Notre chef, <strong>Cédric Barquant</strong>, a rejoint l'établissement en juin 2026. Auparavant second au <em>Château de Beaulieu (**)</em> puis chef exécutif à l'<em>Auberge du Vertmont</em>, il a à cœur de travailler les produits de saison avec passion, rigueur et innovation.
+                        </p>
+                        <p style="font-size: 0.95rem; color: var(--color-restaurant-green); font-weight: 500; font-style: italic; margin-top: 10px;" data-cms="chef_desc2">
+                            « Avec une carte qui évolue au gré des saisons et des menus de semaine variés, nous proposons une cuisine sincère pour réveiller vos papilles ! »
+                        </p>
+                    </div>
+
+                    <!-- CARTE DES VINS -->
+                    <div style="background: #fcfcfc; border: 1px solid rgba(220, 178, 84, 0.3); border-radius: 6px; padding: 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+                        <span class="subtitle" style="font-size: 1.4rem; color: var(--color-gold);" data-cms="wine_subtitle">Harmonie Mets & Vins</span>
+                        <h3 style="font-family: var(--font-body); font-size: 1.6rem; color: var(--color-blue); margin: 5px 0 15px 0;" data-cms="wine_title">La Sélection du Sommelier</h3>
+                        <p class="body-text" style="font-size: 0.98rem; color: #444; line-height: 1.7;" data-cms="wine_desc1">
+                            Pour sublimer les créations du chef, nous vous proposons notre carte des vins méticuleusement sélectionnée avec passion par <strong>L'Homme du Vin</strong>, notre principal fournisseur et partenaire.
+                        </p>
+                        <p style="font-size: 0.95rem; color: #555; font-family: var(--font-body);" data-cms="wine_desc2">
+                            🍷 Profitez également d'une belle sélection de <strong>crus servis au verre</strong> réinventée au fil des saisons pour accompagner parfaitement votre repas.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOC MENU DE LA SEMAINE -->
+        <section class="section-block block-creme reveal" id="menu-semaine">
+            <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <span class="subtitle" data-cms="menu_subtitle">Carte & Suggestions</span>
+                <h2 class="title" style="color: var(--color-restaurant-green); font-size: 3rem; margin-bottom: 10px;" data-cms="menu_title">Le Menu de la Semaine</h2>
+                <p class="menu-dates" data-cms="menu_dates">Du lundi 2 novembre au dimanche 8 novembre 2026</p>
+                
+                <div class="menu-card-luxury">
+                    <!-- Entrées -->
+                    <div class="menu-category">
+                        <h3 data-cms="m_cat1">Entrées</h3>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="m_item1_name">Oeuf parfait bio, émulsion de cèpes des Flandres et mouillettes croustillantes</span>
+                            </div>
+                            <span class="dish-price" data-cms="m_item1_price">16 €</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="m_item2_name">Carpaccio de Saint-Jacques marinées aux agrumes et huile d'aneth</span>
+                            </div>
+                            <span class="dish-price" data-cms="m_item2_price">19 €</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-divider"><span>✦ ✦ ✦</span></div>
+
+                    <!-- Plats -->
+                    <div class="menu-category">
+                        <h3 data-cms="m_cat2">Plats</h3>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="m_item3_name">Filet de Bar de ligne, mousseline de panais à la vanille et jus de carottes braisées</span>
+                            </div>
+                            <span class="dish-price" data-cms="m_item3_price">34 €</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="m_item4_name">Suprême de volaille fermière rôti, poêlée de champignons sauvages et jus corsé</span>
+                            </div>
+                            <span class="dish-price" data-cms="m_item4_price">29 €</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-divider"><span>✦ ✦ ✦</span></div>
+
+                    <!-- Desserts -->
+                    <div class="menu-category">
+                        <h3 data-cms="m_cat3">Desserts</h3>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="m_item5_name">Tarte tatin revisitée, caramel au beurre salé et glace artisanale à la vanille bourbon</span>
+                            </div>
+                            <span class="dish-price" data-cms="m_item5_price">12 €</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="m_item6_name">Chocolat grand cru Guanaja en texture, éclats de noisettes caramélisées</span>
+                            </div>
+                            <span class="dish-price" data-cms="m_item6_price">14 €</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-footer-note">
+                        <p data-cms="m_formula">Formule Entrée + Plat ou Plat + Dessert : <strong>38 €</strong> (Hors boissons)</p>
+                        <a href="#reservation" class="btn-restaurant-green" style="margin-top: 25px; display: inline-block;">Réserver votre table</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENU DE SAISON AUTOMNAL -->
+        <section class="section-block block-blanc reveal" id="menu-automne">
+            <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <span class="subtitle" data-cms="autumn-subtitle">L'Esprit des Flandres en Automne</span>
+                <h2 class="title" style="color: var(--color-restaurant-green); font-size: 2.8rem; margin-bottom: 10px;" data-cms="autumn-title">Le Menu de Saison Automnal</h2>
+                <p class="menu-dates" data-cms="autumn-dates">De fin septembre à décembre — Au rythme des récoltes du terroir</p>
+
+                <div class="menu-card-luxury autumn-menu-card">
+                    <!-- Entrées -->
+                    <div class="menu-category">
+                        <h3 data-cms="autumn-cat-1">Les Entrées de Saison</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="autumn-item-1-name">Velouté de potimarron rôti aux éclats de châtaignes</span>
+                                <small style="display:block; color:#666;" data-cms="autumn-item-1-desc">Émulsion légère au lard fumé paysan</small>
+                            </div>
+                            <span class="dish-price" data-cms="autumn-item-1-price">22 €</span>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="autumn-item-2-name">Œuf parfait bio, fricassée de cèpes et trompettes</span>
+                                <small style="display:block; color:#666;" data-cms="autumn-item-2-desc">Jus de viande corsé et tuile de pain au sarrasin</small>
+                            </div>
+                            <span class="dish-price" data-cms="autumn-item-2-price">24 €</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-divider"><span>✦ ✦ ✦</span></div>
+
+                    <!-- Plats -->
+                    <div class="menu-category">
+                        <h3 data-cms="autumn-cat-2">Les Plats Signatures</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="autumn-item-3-name">Filet de biche des forêts flamandes poêlé</span>
+                                <small style="display:block; color:#666;" data-cms="autumn-item-3-desc">Purée de panais vanillée, poêlée de coings et sauce grand veneur</small>
+                            </div>
+                            <span class="dish-price" data-cms="autumn-item-3-price">38 €</span>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="autumn-item-4-name">Pavé de cabillaud rôti sur peau, mousseline de céleri-rave</span>
+                                <small style="display:block; color:#666;" data-cms="autumn-item-4-desc">Chicon braisé au jus de bière ambrée artisanale</small>
+                            </div>
+                            <span class="dish-price" data-cms="autumn-item-4-price">34 €</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-divider"><span>✦ ✦ ✦</span></div>
+
+                    <!-- Desserts -->
+                    <div class="menu-category">
+                        <h3 data-cms="autumn-cat-3">Les Douceurs</h3>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <span class="dish-name" data-cms="autumn-item-5-name">Tartelette fine aux pommes reinettes et poires locales</span>
+                                <small style="display:block; color:#666;" data-cms="autumn-item-5-desc">Glace vanille bourbon et caramel au beurre salé</small>
+                            </div>
+                            <span class="dish-price" data-cms="autumn-item-5-price">15 €</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-footer-note">
+                        <p data-cms="autumn-footer">Accord Mets & Vins proposé par notre Sommelier avec l'Homme du Vin (3 verres) : <strong>+32 €</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANDEAU "FAIT MAISON" ET LOGO -->
+        <section class="section-block block-creme reveal" style="padding: 50px 20px; text-align: center; border-top: 1px solid rgba(220, 178, 84, 0.25);">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <p style="font-family: var(--font-subtitle); font-style: italic; font-size: 1.35rem; color: var(--color-restaurant-green); margin-bottom: 20px; letter-spacing: 0.5px;" data-cms="homemade_quote">
+                    « Plats « Fait maison » : tous nos plats sont préparés sur place à partir de produits bruts »
+                </p>
+                <div style="margin-top: 15px;">
+                    <img src="img/artisanenor.jpeg" data-cms="homemade_img" alt="Logo Plats Fait Maison" style="height: 75px; width: auto; opacity: 0.9; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.style.display='none'; document.getElementById('logo-placeholder-text').style.display='block';">
+                    <div id="logo-placeholder-text" style="display: none; font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 2px;">
+                        ✦ Cuisine Artisanale Certifiée ✦
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Non modifiable par le CMS) -->
+    <footer class="main-footer-new">
+        <div class="footer-container-grid">
+            <div class="footer-left">
+                <h3>Hostellerie Saint-Louis</h3>
+                <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
+                <p>Tél : <a href="tel:+33328680000">03 28 68 81 83</a></p>
+                <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
+                
+                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
+                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
+                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
+                    
+                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
+                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
+            </div>
+
+            <div class="footer-right">
+                <h3>Newsletter</h3>
+                <p>Recevez nos offres privilèges.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn-gold">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-legal">
+            <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
+            <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

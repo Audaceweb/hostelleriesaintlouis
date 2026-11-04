@@ -1,0 +1,2587 @@
+/* ==========================================================================
+   CHARTE GRAPHIQUE HOSTELLERIE SAINT-LOUIS
+   ========================================================================== */
+:root {
+    --color-gold: #dcb254;      /* Or */
+    --color-blue: #171761;      /* Bleu Roy */
+    --color-creme: #ebebe0;     /* Crème */
+    --color-white: #ffffff;     /* Blanc */
+    --color-black: #000000;     /* Noir */
+    
+    --font-title: 'Wire One', sans-serif;
+    --font-subtitle: 'Playfair Display', serif; /* Police plus chic et fluide pour les sous-titres */
+    --font-body: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-black);
+    background-color: var(--color-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   TYPOGRAPHIES
+   ========================================================================== */
+h1, h2, h3, .title {
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.subtitle {
+    font-family: var(--font-subtitle);
+    font-style: italic;
+    display: block;
+    font-size: 1.8rem;
+    color: var(--color-gold);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}
+
+.body-text {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION CENTRÉE (Grille 3 colonnes pour un centrage parfait)
+   ========================================================================== */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 25px 40px;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Header réduit au scroll */
+#main-header.scrolled {
+    background: rgba(23, 23, 97, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 12px 30px;
+    border-bottom: 1px solid rgba(220, 178, 84, 0.2);
+}
+
+/* Container du Logo (Colonne 1) */
+.logo-container {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+    grid-column: 1;
+}
+
+#main-header.scrolled .logo-container {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+}
+
+/* Navigation principale (Colonne 2 - Parfaitement centrée) */
+.nav-bar {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-gold) !important;
+}
+
+/* Bouton Réserver (Colonne 3 - À droite) */
+.btn-reserver {
+    grid-column: 3;
+    justify-self: end;
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-reserver:hover {
+    background-color: #c99f43;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 178, 84, 0.3);
+}
+
+/* Bouton Hamburger */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-menu .bar {
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: var(--color-gold);
+}
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: var(--color-gold);
+}
+
+/* ==========================================================================
+   BLOC HERO (Avec grand logo central)
+   ========================================================================== */
+/* ==========================================================================
+   BLOC HERO ULTRA-ÉLÉGANT & LISIBLE
+   ========================================================================== */
+.hero-block {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.hero-bg-image {
+    background-image: url('img/hostelerieindex.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dégradé sophistiqué : sombre en haut pour la navbar, mystérieux au milieu */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(23, 23, 97, 0.6) 0%, 
+        rgba(0, 0, 0, 0.45) 50%, 
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 20px;
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px; /* Décale légèrement l'ensemble vers le bas pour respirer */
+}
+
+/* Grand logo avec une lueur dorée subtile pour le détacher du fond */
+.hero-main-logo {
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 25px rgba(220, 178, 84, 0.35));
+}
+
+.hero-logo-large {
+    height: 220px;
+    width: auto;
+}
+
+/* Titre "Saint-Louis" en style or pur */
+.hero-content .title {
+    font-size: 4rem;
+    color: var(--color-white);
+    margin-bottom: 12px;
+    line-height: 1;
+    letter-spacing: 6px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Description élégante avec un espacement chic */
+.hero-desc {
+    font-size: 1.15rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    border-top: 1px solid rgba(220, 178, 84, 0.4);
+    border-bottom: 1px solid rgba(220, 178, 84, 0.4);
+    padding: 10px 25px;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   SECTIONS & BLOCS ALTERNÉS (Avec formes discrètes et cadres précieux)
+   ========================================================================== */
+.section-block {
+    position: relative;
+    padding: 120px 40px;
+    overflow: hidden;
+}
+
+/* Forme décorative géométrique subtile (arche / filigrane doré) dans les coins */
+.section-block::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgba(220, 178, 84, 0.15);
+    border-radius: 50%;
+    top: -80px;
+    left: -80px;
+    z-index: 1;
+    pointer-events: none;
+    transition: transform 0.6s ease;
+}
+
+.section-block::after {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(220, 178, 84, 0.08) 0%, transparent 70%);
+    bottom: -50px;
+    right: -50px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container-split {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.container-split.reverse {
+    flex-direction: row-reverse;
+}
+
+.block-media, .block-text {
+    flex: 1;
+}
+
+/* Effet ultra-attractif et luxueux sur les photos (Cadre précieux) */
+.image-placeholder {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background: #111;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+/* Cadre doré fin décalé pour un effet galerie d'art haut de gamme */
+.image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid var(--color-gold);
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95) contrast(1.05);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.image-placeholder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px -15px rgba(220, 178, 84, 0.25);
+}
+
+.image-placeholder:hover::before {
+    top: -12px;
+    left: -12px;
+    right: 12px;
+    bottom: 12px;
+    opacity: 1;
+}
+
+.image-placeholder:hover img {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.08);
+}
+
+.block-text .title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.block-creme {
+    background-color: var(--color-creme);
+    color: var(--color-black);
+}
+
+.block-bleu {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+}
+
+.block-bleu .title {
+    color: var(--color-white);
+}
+
+.block-blanc {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.block-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-gold {
+    padding: 12px 30px;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #c99f43;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    padding: 12px 30px;
+    background: transparent;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.block-bleu .btn-outline {
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   ACTUALITÉS & ÉVÉNEMENTS
+   ========================================================================== */
+#block-actualites {
+    background-color: var(--color-creme) !important;
+    color: var(--color-white);
+}
+
+#block-actualites .title {
+    color: var(--color-black);
+}
+
+#block-actualites .body-text {
+    color: #000000;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.news-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(220, 178, 84, 0.3); /* Fine bordure dorée élégante */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    text-align: left;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-gold);
+}
+
+.news-img {
+    height: 240px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.news-card:hover .news-img img {
+    transform: scale(1.06);
+}
+
+.news-content {
+    padding: 30px;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.news-content h3 {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 12px 0;
+    color: var(--color-white);
+    text-transform: none;
+}
+
+.news-content p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.news-link {
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s;
+}
+
+.news-link:hover {
+    color: var(--color-white);
+}
+/* ==========================================================================
+   FLUX INSTAGRAM
+   ========================================================================== */
+.instagram-section {
+    background-color: var(--color-blue);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.instagram-header {
+    margin-bottom: 40px;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.insta-item {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.insta-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.insta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(23, 23, 97, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.insta-overlay span {
+    color: var(--color-white);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.insta-item:hover img {
+    transform: scale(1.1);
+}
+
+.insta-item:hover .insta-overlay {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   AVIS CLIENTS
+   ========================================================================== */
+#block-avis {
+    background-color: #f7f7f2; /* Blanc cassé très pur et lumineux */
+    position: relative;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1150px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.review-card {
+    background: var(--color-white);
+    padding: 35px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(23, 23, 97, 0.06);
+    border-top: 3px solid var(--color-gold);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(23, 23, 97, 0.12);
+}
+
+.review-source {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-blue);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Étoiles dorées décoratives pour faire pro */
+.review-source::after {
+    content: '★★★★★';
+    color: var(--color-gold);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 1rem;
+    font-style: italic;
+    color: #444;
+    margin: 20px 0;
+    line-height: 1.7;
+}
+
+.review-author {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-gold);
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   BLOC PRÉSENTATION HÔTEL & RÉGION (Design asymétrique & chic)
+   ========================================================================== */
+#block-presentation-hotel {
+    background-color: #ffffff;
+    position: relative;
+}
+
+.presentation-media {
+    position: relative;
+    width: 100%;
+}
+
+/* Container du Carrousel */
+.hotel-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    background: #111;
+}
+
+/* Cadre doré "Galerie d'Art" autour du carrousel */
+.hotel-carousel-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid var(--color-gold);
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.7;
+    transition: all 0.4s ease;
+}
+
+/* Les Slides */
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), visibility 1s ease;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+/* Effet Ken Burns (Léger zoom lent sur l'image active) */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.08);
+    transition: transform 6s ease-out;
+}
+
+.carousel-slide.active img {
+    transform: scale(1);
+}
+
+/* Flèches de navigation ultra-chic */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(23, 23, 97, 0.6);
+    color: var(--color-gold);
+    border: 1px solid rgba(220, 178, 84, 0.4);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.prev-arrow { left: 15px; }
+.next-arrow { right: 15px; }
+
+.carousel-arrow:hover {
+    background: var(--color-gold);
+    color: var(--color-white);
+    border-color: var(--color-gold);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Indicateurs (Dots / Lignes dorées) */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 25px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.dot.active {
+    background: var(--color-gold);
+    width: 40px; /* S'allonge quand active */
+    box-shadow: 0 0 10px rgba(220, 178, 84, 0.8);
+}
+
+/* Badge élégant superposé */
+.presentation-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--color-blue);
+    color: var(--color-white);
+    padding: 20px 25px;
+    border-left: 3px solid var(--color-gold);
+    box-shadow: 0 15px 30px rgba(23, 23, 97, 0.2);
+    border-radius: 2px;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.badge-year {
+    font-family: var(--font-subtitle);
+    font-size: 1.1rem;
+    color: var(--color-gold);
+    margin-bottom: 2px;
+}
+
+.badge-text {
+    font-family: var(--font-title);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Responsive mobile */
+@media (max-width: 992px) {
+    .hotel-carousel-container {
+        height: 320px;
+    }
+    .presentation-badge {
+        bottom: 10px;
+        right: 10px;
+        padding: 12px 18px;
+    }
+    .badge-text {
+        font-size: 1rem;
+    }
+}
+/* ==========================================================================
+   DESIGN PAGE CHAMBRES (Style 5 Étoiles & Cartes Flottantes)
+   ========================================================================== */
+
+/* Hero plus grand pour les pages internes */
+.page-hero-large {
+    position: relative;
+    height: 60vh;
+    background-image: url('img/hostelerieindex.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.page-hero-large .hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.page-hero-large .title {
+    font-size: 4rem;
+    color: var(--color-white);
+    letter-spacing: 4px;
+    margin-top: 10px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Wrappers de chambres avec fonds alternés */
+.section-room-wrapper {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.block-bg-blanc {
+    background-color: #fcfcfc;
+}
+
+.block-bg-creme {
+    background-color: var(--color-creme);
+}
+
+/* La carte rectangulaire flottante de la chambre */
+.room-luxury-card {
+    background: var(--color-white);
+    width: 100%;
+    max-width: 900px;
+    padding: 60px;
+    border-radius: 6px;
+    box-shadow: 0 30px 60px rgba(23, 23, 97, 0.08);
+    border: 1px solid rgba(220, 178, 84, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.room-header-title {
+    margin-bottom: 30px;
+}
+
+.room-header-title .title {
+    font-size: 3rem;
+    color: var(--color-blue);
+    margin-top: 5px;
+}
+
+/* Carrousel intégré dans la carte */
+.room-carousel {
+    height: 420px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+.room-desc {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto 30px auto;
+}
+
+/* Grille des icônes d'équipements haut de gamme (Vrais SVG) */
+.amenities-luxury-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.amenity-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #fdfdfd;
+    border: 1px solid #eaeaea;
+    padding: 15px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.amenity-badge svg {
+    stroke: var(--color-gold);
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.amenity-badge span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-blue);
+}
+
+.amenity-badge:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.amenity-badge:hover svg {
+    transform: scale(1.15);
+}
+
+.room-action {
+    margin-top: 20px;
+}
+
+/* Responsive mobile */
+@media (max-width: 992px) {
+    .room-luxury-card {
+        padding: 30px 20px;
+    }
+    .room-carousel {
+        height: 260px;
+    }
+    .amenities-luxury-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .page-hero-large .title {
+        font-size: 3rem;
+    }
+.page-hero-large {
+        height: 100vh !important;
+        min-height: 100vh;
+    }
+
+    .page-hero-large .title {
+        font-size: 2.8rem !important;
+    }
+}
+
+/* ==========================================================================
+   MOTIFS DE FOND DIScrets & ÉLÉGANTS (Style Hôtellerie de Luxe)
+   ========================================================================== */
+
+/* 1. Fond global du site texturé avec des losanges / grille élégante */
+body {
+    position: relative;
+    background-color: var(--color-creme);
+    /* Motif géométrique chic inspiré des boiseries et ferronneries d'art 5 étoiles */
+    background-image: 
+        linear-gradient(30deg, rgba(220, 178, 84, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(220, 178, 84, 0.08) 87.5%, rgba(220, 178, 84, 0.08)),
+        linear-gradient(150deg, rgba(220, 178, 84, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(220, 178, 84, 0.08) 87.5%, rgba(220, 178, 84, 0.08)),
+        linear-gradient(30deg, rgba(23, 23, 97, 0.04) 37%, transparent 37.5%, transparent 62.5%, rgba(23, 23, 97, 0.04) 62.5%),
+        linear-gradient(150deg, rgba(23, 23, 97, 0.04) 37%, transparent 37.5%, transparent 62.5%, rgba(23, 23, 97, 0.04) 62.5());
+    background-size: 60px 104px; /* Un beau motif géométrique bien visible et large */
+    background-position: 0 0, 0 0, 30px 52px, 30px 52px;
+}
+
+/* 2. Ornements d'angle majestueux sur chaque bloc pour structurer la page */
+.section-room-wrapper, .section-block {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lignes et cadres dorés d'inspiration architecturale dans les coins */
+.section-room-wrapper::before, .section-block::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-top: 2px solid rgba(220, 178, 84, 0.35);
+    border-left: 2px solid rgba(220, 178, 84, 0.35);
+    top: 30px;
+    left: 30px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.section-room-wrapper::after, .section-block::after {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-bottom: 2px solid rgba(220, 178, 84, 0.35);
+    border-right: 2px solid rgba(220, 178, 84, 0.35);
+    bottom: 30px;
+    right: 30px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* S'assurer que les cartes restent bien au premier plan par-dessus les motifs */
+.room-luxury-card, .container-split, .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   CORRECTION DES TEXTES ET DES BLOCS D'INFO SÉJOUR
+   ========================================================================== */
+.info-stay-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.info-stay-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(220, 178, 84, 0.35);
+    padding: 35px;
+    border-radius: 4px;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.info-stay-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-gold);
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.info-card-icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.info-stay-card h3 {
+    font-family: var(--font-body); /* Correction de la police pour que ça ne prenne pas Wire One */
+    font-size: 1.3rem;
+    color: var(--color-gold);
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+.info-stay-card p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #e5e5e5;
+    line-height: 1.7;
+}
+/* ==========================================================================
+   NOUVEAU FOOTER RÉORGANISÉ
+   ========================================================================== */
+.main-footer-new {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: 70px 40px 30px 40px;
+    border-top: 2px solid var(--color-gold);
+}
+
+.footer-container-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+}
+
+.footer-left h3, .footer-right h3 {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: var(--color-gold);
+}
+
+.footer-left p, .footer-right p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #ddd;
+}
+
+.footer-left a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-left a:hover {
+    color: var(--color-gold);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: var(--color-white);
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background: var(--color-gold);
+    transform: translateY(-3px);
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-logo-central {
+    height: 70px;
+    width: auto;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: var(--color-white);
+    border-radius: 2px;
+    font-family: var(--font-body);
+}
+
+.newsletter-form input::placeholder {
+    color: #aaa;
+}
+
+.footer-bottom-legal {
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.footer-bottom-legal a {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+.footer-bottom-legal a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive mobile pour les grilles */
+@media (max-width: 992px) {
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-container-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-left {
+        text-align: center;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================================================
+   ANIMATIONS SCROLL REVEAL
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE MOBILE & TABLETTE
+   ========================================================================== */
+@media (max-width: 992px) {
+    #main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+    }
+
+    #main-header.scrolled .logo-container {
+        position: absolute;
+        left: 44%; /* Décalé légèrement vers la gauche pour être bien centré dans l'espace */
+        transform: translateX(-50%);
+    }
+
+    #main-header.scrolled .logo-img {
+        height: 42px; /* Garde la navbar fine */
+        width: auto;
+        max-width: 150px; /* Donne de la longueur au logo textuel */
+        object-fit: contain;
+    }
+
+    .hero-logo-mobile {
+        display: block;
+    }
+
+    .hero-logo-large {
+        height: 180px; /* Grand logo bien visible dans le hero sur mobile */
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(23, 23, 97, 0.92);
+        backdrop-filter: blur(16px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-bar.active {
+        left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+
+    .hero-content .title {
+        font-size: 3.5rem;
+    }
+
+    .container-split, .container-split.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .section-block {
+        padding: 70px 20px;
+        text-align: center;
+    }
+
+    .image-placeholder {
+        height: 260px;
+    }
+
+    .block-actions {
+        justify-content: center;
+    }
+}
+/* ==========================================================================
+   CORRECTIONS FINALES MOBILE (Menu Hamburger & Espacements)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* S'assure que le bouton hamburger s'affiche bien sur mobile */
+    .hamburger-menu {
+        display: flex !important;
+        z-index: 1002;
+    }
+
+    /* Ajuste la hauteur du grand hero sur mobile pour qu'il soit bien proportionné */
+    .page-hero-large {
+        height: 50vh;
+    }
+
+    .page-hero-large .title {
+        font-size: 2.8rem !important;
+    }
+
+    /* Espace le premier bloc sous le hero mobile */
+    .section-room-wrapper:first-of-type {
+        padding-top: 60px;
+    }
+
+    /* Redimensionne les cartes de chambres pour les petits écrans */
+    .room-luxury-card {
+        padding: 25px 15px;
+        margin: 0 10px;
+    }
+
+    .room-carousel {
+        height: 250px;
+    }
+}
+
+/* ==========================================================================
+   STYLE SPÉCIFIQUE RESTAURANT PAUZE (Accent Vert)
+   ========================================================================== */
+:root {
+    --color-restaurant-green: #4c5c4b; /* Vert PAUZE de la charte */
+}
+
+/* Bouton vert spécifique au restaurant */
+.btn-restaurant-green {
+    padding: 12px 30px;
+    background-color: var(--color-restaurant-green);
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-restaurant-green:hover {
+    background-color: #3b483a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 92, 75, 0.3);
+}
+
+/* Hero spécifique au restaurant */
+.restaurant-hero {
+    background-image: url('img/photo-restaurant.jpg');
+}
+
+/* Carte du menu de la semaine */
+.menu-dates {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 40px;
+    font-family: var(--font-subtitle);
+}
+
+.menu-card-luxury {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 6px;
+    box-shadow: 0 30px 60px rgba(76, 92, 75, 0.08);
+    border: 1px solid rgba(76, 92, 75, 0.2);
+    text-align: left;
+    position: relative;
+}
+
+.menu-category h3 {
+    font-family: var(--font-subtitle);
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--color-restaurant-green);
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: none;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.dish-name {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.dish-price {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-restaurant-green);
+    white-space: nowrap;
+}
+
+.menu-divider {
+    text-align: center;
+    color: var(--color-gold);
+    margin: 35px 0;
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+}
+
+.menu-footer-note {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.menu-footer-note p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--color-blue);
+}
+
+/* Responsive mobile pour le menu */
+@media (max-width: 992px) {
+    .menu-card-luxury {
+        padding: 30px 20px;
+    }
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .dish-price {
+        align-self: flex-end;
+    }
+}
+/* ==========================================================================
+   PERSONNALISATION EXCLUSIVE PAGE RESTAURANT (NAVBAR & FOOTER VERT PAUZE)
+   ========================================================================== */
+
+/* ==========================================================================
+   CORRECTION NAVBAR RESTAURANT (Transparente en haut, Verte au scroll)
+   ========================================================================== */
+
+/* 1. En haut de la page : Le header est 100% transparent (pas de fond vert) */
+body.restaurant-theme #main-header:not(.scrolled) {
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
+/* 2. Au scroll : Le header devient Vert PAUZE */
+body.restaurant-theme #main-header.scrolled {
+    background: rgba(76, 92, 75, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(220, 178, 84, 0.3) !important;
+}
+
+/* 3. Menu mobile (fond plein) en Vert PAUZE lors de son ouverture UNIQUEMENT sur téléphone/tablette */
+@media (max-width: 992px) {
+    body.restaurant-theme .nav-bar {
+        background: rgba(76, 92, 75, 0.96) !important;
+    }
+}
+
+/* 4. Footer en Vert PAUZE sur la page restaurant */
+body.restaurant-theme .main-footer-new {
+    background-color: var(--color-restaurant-green) !important;
+}
+/* ==========================================================================
+   CORRECTION BOUTON RÉSERVER SUR MOBILE (Pas de retour à la ligne)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* Évite le retour à la ligne "Réserver \n une table" */
+    #main-header .btn-gold, 
+    #main-header .btn-reserver-mobile {
+        white-space: nowrap !important;
+        padding: 8px 12px !important;
+        font-size: 0.72rem !important;
+        letter-spacing: 0.5px !important;
+    }
+}
+
+/* Ajustement spécifique sur très petits écrans (< 400px) */
+@media (max-width: 400px) {
+    #main-header .btn-gold {
+        padding: 6px 10px !important;
+        font-size: 0.7rem !important;
+    }
+}
+/* ==========================================================================
+   STYLE SPÉCIFIQUE PAGE INFOS PRATIQUES
+   ========================================================================== */
+
+.infos-hero {
+    background-image: url('img/hostelerieindex.jpg');
+}
+
+/* Grille des cartes d'accès */
+.access-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.access-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(23, 23, 97, 0.06);
+    border: 1px solid rgba(220, 178, 84, 0.25);
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.access-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(220, 178, 84, 0.15);
+}
+
+.access-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px auto;
+    background: rgba(220, 178, 84, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+}
+
+.access-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    color: var(--color-blue);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.access-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Carte Google Maps */
+.map-container {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border: 2px solid var(--color-gold);
+}
+
+/* Liste des points forts de la région */
+.region-highlights {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.region-highlights li {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.region-highlights li span {
+    color: var(--color-gold);
+}
+
+/* Informations de contact */
+.contact-details-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-icon {
+    font-size: 1.6rem;
+}
+
+.contact-detail-item strong {
+    color: var(--color-gold);
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-detail-item p {
+    color: #eee;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Formulaire de contact d'exception */
+.luxury-contact-form {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(220, 178, 84, 0.35);
+    padding: 40px;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #222;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    box-shadow: 0 0 10px rgba(220, 178, 84, 0.4);
+}
+
+/* ==========================================================================
+   STYLE SPÉCIFIQUE PAGE SPA & BIEN-ÊTRE
+   ========================================================================== */
+
+.spa-hero {
+    background-image: url('img/hostelerieindex.jpg');
+}
+
+/* Grille des 4 équipements Spa (120 m²) */
+.spa-amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.spa-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(23, 23, 97, 0.06);
+    border: 1px solid rgba(220, 178, 84, 0.3);
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.spa-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-gold);
+}
+
+.spa-card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px auto;
+    background: rgba(220, 178, 84, 0.12);
+    border: 1px solid rgba(220, 178, 84, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+.spa-card:hover .spa-card-icon {
+    background: var(--color-gold);
+    color: var(--color-white);
+    transform: scale(1.1);
+}
+.spa-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    color: var(--color-blue);
+    font-weight: 600;
+}
+
+.spa-card p {
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px 0 10px 0;
+}
+
+.spa-card-desc {
+    font-size: 0.9rem;
+    color: #666;
+    display: block;
+    line-height: 1.5;
+}
+
+/* Encadrés de prix Spa */
+.spa-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.spa-price-tag {
+    background: #fdfdfd;
+    border-left: 4px solid var(--color-gold);
+    padding: 15px 20px;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.spa-price-tag strong {
+    color: var(--color-blue);
+    font-size: 1.05rem;
+    display: block;
+}
+
+.spa-price-tag p {
+    color: var(--color-gold);
+    font-weight: 600;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Liste des horaires Spa */
+.spa-hours-list {
+    list-style: none;
+}
+
+.spa-hours-list li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.spa-hours-list span {
+    color: #888;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* Badge horaires d'Andréa */
+.andrea-schedule-badge {
+    background: var(--color-blue);
+    color: var(--color-white);
+    padding: 15px 25px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+    border: 1px solid var(--color-gold);
+}
+
+.andrea-schedule-badge span {
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Encadré d'annulation à 48h */
+.cancellation-policy-box {
+    background: rgba(220, 178, 84, 0.15);
+    border: 1px solid var(--color-gold);
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.cancellation-policy-box strong {
+    color: var(--color-gold);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.cancellation-policy-box p {
+    color: #eee;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Carte de soins */
+.treatment-card-luxury {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 25px 50px rgba(23, 23, 97, 0.08);
+    border: 1px solid rgba(220, 178, 84, 0.3);
+    text-align: left;
+}
+/* ==========================================================================
+   STYLE SPÉCIFIQUE MARIAGES & RÉCEPTIONS
+   ========================================================================== */
+
+.mariages-hero {
+    background-image: url('img/hostelerieindex.jpg');
+}
+
+/* Boîte de la lettre d'équipe pour le Mariage */
+.wedding-letter-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    border-left: 4px solid var(--color-gold);
+    box-shadow: 0 15px 35px rgba(23, 23, 97, 0.05);
+    line-height: 1.8;
+}
+
+.wedding-letter-box p {
+    font-size: 0.98rem;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+/* Grille des 4 atouts Réception */
+.reception-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.reception-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(23, 23, 97, 0.06);
+    border: 1px solid rgba(220, 178, 84, 0.25);
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.reception-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-gold);
+}
+
+.reception-card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px auto;
+    background: rgba(220, 178, 84, 0.12);
+    border: 1px solid rgba(220, 178, 84, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+}
+
+.reception-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    color: var(--color-blue);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.reception-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Bandeau Partenaires locaux */
+.reception-partner-banner {
+    background: #fdfdfd;
+    border: 1px solid rgba(220, 178, 84, 0.3);
+    padding: 20px 30px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+}
+
+/* Galerie Photo en Grille */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 220px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(23, 23, 97, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 15px;
+    text-align: center;
+}
+
+.gallery-overlay span {
+    color: var(--color-gold);
+    font-family: var(--font-subtitle);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+/* ==========================================================================
+   STYLE BARRE D'ANCRES MARIAGES & RÉCEPTIONS
+   ========================================================================== */
+
+.anchors-nav-bar {
+    background-color: var(--color-blue);
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(220, 178, 84, 0.3);
+}
+
+.anchors-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.btn-anchor {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    background: transparent;
+}
+
+/* Effet au survol & clic : Fond Or + Texte et icône Blanc pur */
+.btn-anchor:hover,
+.btn-anchor:active,
+.btn-anchor:focus {
+    background-color: var(--color-gold) !important;
+    color: #ffffff !important;
+    border-color: var(--color-gold) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 178, 84, 0.3);
+}
+
+.btn-anchor svg {
+    stroke: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.btn-anchor:hover svg {
+    transform: scale(1.15);
+}
+/* ==========================================================================
+   CORRECTION AFFICHAGE CARROUSEL SUR MOBILE (Page Mariages)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* Force une hauteur visible et correcte pour le carrousel sur mobile */
+    .section-block .hotel-carousel-container {
+        height: 280px !important;
+        min-height: 280px !important;
+        width: 100% !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* S'assure que les images du carrousel remplissent bien l'espace mobile */
+    .section-block .carousel-slide img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+/* ==========================================================================
+   CORRECTION FORCÉE CARROUSEL MARIAGE SUR MOBILE
+   ========================================================================== */
+@media (max-width: 992px) {
+    #wedding-carousel {
+        display: block !important;
+        width: 100% !important;
+        height: 300px !important;
+        min-height: 300px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        margin: 0 auto 30px auto !important;
+    }
+
+    #wedding-carousel .carousel-track {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    #wedding-carousel .carousel-slide {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    #wedding-carousel .carousel-slide img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+/* ==========================================================================
+   STYLE SPÉCIFIQUE PAGE SÉMINAIRES & ENTREPRISES
+   ========================================================================== */
+
+.seminaires-hero {
+    background-image: url('img/hostelerieindex.jpg');
+}
+
+/* Grille des atouts séminaire */
+.seminar-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.seminar-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(23, 23, 97, 0.06);
+    border: 1px solid rgba(220, 178, 84, 0.3);
+    text-align: center;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.seminar-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-gold);
+}
+
+.seminar-card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    background: rgba(220, 178, 84, 0.12);
+    border: 1px solid rgba(220, 178, 84, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+.seminar-card:hover .seminar-card-icon {
+    background: var(--color-gold);
+    color: var(--color-white);
+    transform: scale(1.1);
+}
+
+.seminar-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    color: var(--color-blue);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.seminar-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+/* ==========================================================================
+   STYLE GRILLE "À FAIRE DANS LES ENVIRONS" (Page Infos Pratiques)
+   ========================================================================== */
+
+.surroundings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.surrounding-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(23, 23, 97, 0.05);
+    border: 1px solid rgba(220, 178, 84, 0.25);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.surrounding-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-gold);
+}
+
+.surrounding-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(220, 178, 84, 0.2);
+}
+
+.surrounding-icon {
+    font-size: 1.8rem;
+}
+
+.surrounding-header h3 {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--color-blue);
+    font-weight: 600;
+}
+
+.surrounding-list {
+    list-style: none;
+    padding: 0;
+}
+
+.surrounding-list li {
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 15px;
+}
+
+.surrounding-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+    font-size: 0.75rem;
+}
+
+.surrounding-list li strong {
+    color: #222;
+}
+
+/* Carte spéciale pour les Golfs */
+.highlight-card {
+    background: #fcfbfa;
+    border: 1px solid var(--color-gold);
+}
+/* ==========================================================================
+   STYLE SPÉCIFIQUE PAGE COFFRETS CADEAUX & BOUTIQUE ZENCHEF
+   ========================================================================== */
+
+.coffrets-hero {
+    background-image: url('img/hostelerieindex.jpg');
+}
+
+/* Grille des 4 avantages cadeau */
+.gift-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.gift-benefit-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(23, 23, 97, 0.05);
+    border: 1px solid rgba(220, 178, 84, 0.3);
+    text-align: center;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.gift-benefit-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-gold);
+}
+
+.gift-benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    background: rgba(220, 178, 84, 0.12);
+    border: 1px solid rgba(220, 178, 84, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+.gift-benefit-card:hover .gift-benefit-icon {
+    background: var(--color-gold);
+    color: var(--color-white);
+    transform: scale(1.1);
+}
+
+.gift-benefit-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    color: var(--color-blue);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.gift-benefit-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Grille des coffrets cadeaux */
+.gift-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.gift-package-card {
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(23, 23, 97, 0.08);
+    border: 1px solid rgba(220, 178, 84, 0.25);
+    text-align: left;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.gift-package-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-gold);
+}
+
+.gift-package-img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.gift-package-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gift-package-card:hover .gift-package-img img {
+    transform: scale(1.08);
+}
+
+.gift-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--color-blue);
+    color: var(--color-gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 2px;
+    border: 1px solid var(--color-gold);
+}
+
+.gift-package-content {
+    padding: 25px;
+}
+
+.gift-package-content h3 {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    color: var(--color-blue);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.gift-package-content p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.gift-package-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.gift-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+.btn-gold-small {
+    padding: 8px 18px;
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-gold-small:hover {
+    background-color: #c99f43;
+}
+
+/* Bandeau d'intégration ZenChef */
+.zenchef-integration-banner {
+    background: var(--color-blue);
+    border: 1px solid var(--color-gold);
+    padding: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   STYLE SPÉCIFIQUE MENU AUTOMNAL (Restaurant PAUZE)
+   ========================================================================== */
+
+.autumn-menu-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(139, 94, 60, 0.3) !important; /* Ligne fine couleur bois / automne */
+    box-shadow: 0 30px 60px rgba(76, 92, 75, 0.12) !important;
+    position: relative;
+}
+
+/* Petit liseré décoratif supérieur aux couleurs de l'automne */
+.autumn-menu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-restaurant-green), var(--color-gold), #8b5e3c);
+}
+
+#menu-automne .menu-category h3 {
+    color: #5c4033 !important; /* Marron chaud automnal pour les titres de catégories */
+}
+
+#menu-automne .dish-price {
+    color: #8b5e3c !important; /* Prix en ton chaud/cuivré */
+}
+/* ==========================================================================
+   PERSONNALISATION EXCLUSIVE PAGE SPA (THEME NOIR & OR)
+   ========================================================================== */
+
+/* 1. Fond général noir / anthracite très chic pour le spa */
+body.spa-theme {
+    background-color: #0b0b0e !important;
+    color: #f0f0f0 !important;
+}
+
+/* Texture de fond plus sombre et subtilement dorée */
+body.spa-theme {
+    background-image: 
+        linear-gradient(30deg, rgba(220, 178, 84, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(220, 178, 84, 0.04) 87.5%, rgba(220, 178, 84, 0.04)),
+        linear-gradient(150deg, rgba(220, 178, 84, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(220, 178, 84, 0.04) 87.5%, rgba(220, 178, 84, 0.04)),
+        linear-gradient(30deg, rgba(0, 0, 0, 0.2) 37%, transparent 37.5%, transparent 62.5%, rgba(0, 0, 0, 0.2) 62.5%),
+        linear-gradient(150deg, rgba(0, 0, 0, 0.2) 37%, transparent 37.5%, transparent 62.5%, rgba(0, 0, 0, 0.2) 62.5%);
+    background-size: 60px 104px;
+}
+
+/* 2. Adaptation des blocs de contenu (cartes blanches transformées en noir & or) */
+body.spa-theme .block-creme,
+body.spa-theme .block-blanc {
+    background-color: #121217 !important;
+    color: #f0f0f0 !important;
+    border-top: 1px solid rgba(220, 178, 84, 0.2);
+    border-bottom: 1px solid rgba(220, 178, 84, 0.2);
+}
+
+body.spa-theme .block-creme h2,
+body.spa-theme .block-blanc h2,
+body.spa-theme .spa-card h3,
+body.spa-theme .spa-price-tag strong {
+    color: var(--color-gold) !important;
+}
+
+body.spa-theme .spa-card,
+body.spa-theme .treatment-card-luxury,
+body.spa-theme .spa-price-tag {
+    background-color: #1a1a22 !important;
+    border: 1px solid rgba(220, 178, 84, 0.3) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+    color: #e0e0e0 !important;
+}
+
+body.spa-theme .spa-card-desc,
+body.spa-theme .spa-hours-list li,
+body.spa-theme .body-text {
+    color: #cccccc !important;
+}
+
+/* 3. Header transparent en haut et noir/or au scroll */
+body.spa-theme #main-header:not(.scrolled) {
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
+body.spa-theme #main-header.scrolled {
+    background: rgba(11, 11, 14, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(220, 178, 84, 0.3) !important;
+}
+
+@media (max-width: 992px) {
+    body.spa-theme .nav-bar {
+        background: rgba(11, 11, 14, 0.98) !important;
+    }
+}
+
+/* 4. Footer aux couleurs Noir & Or sur la page spa */
+body.spa-theme .main-footer-new {
+    background-color: #0b0b0e !important;
+    border-top: 2px solid var(--color-gold) !important;
+}
