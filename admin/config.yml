@@ -15,6 +15,7 @@ collections:
       - name: "index"
         label: "Page d'Accueil"
         file: "content/index.json"
+        preview_path: "index.html"
         fields:
           - { label: "Logo Hero", name: "hero_logo", widget: "image" }
           - { label: "Description Hero", name: "hero_desc", widget: "string" }
@@ -74,6 +75,7 @@ collections:
       - name: "chambres"
         label: "Page Chambres"
         file: "content/chambres.json"
+        preview_path: "chambres.html"
         fields:
           - { label: "Hero Sous-titre", name: "chambres_hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "chambres_hero_title", widget: "string" }
@@ -183,6 +185,7 @@ collections:
       - name: "pauze"
         label: "Page Restaurant PAUZE"
         file: "content/pauze.json"
+        preview_path: "pauze.html"
         fields:
           - { label: "Hero Sous-titre", name: "pauze_hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "pauze_hero_title", widget: "string" }
@@ -254,6 +257,7 @@ collections:
       - name: "mariages"
         label: "Page Mariages"
         file: "content/mariages.json"
+        preview_path: "mariages.html"
         fields:
           - { label: "Hero Sous-titre", name: "mariages_hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "mariages_hero_title", widget: "string" }
@@ -307,6 +311,7 @@ collections:
       - name: "seminaires"
         label: "Page Séminaires"
         file: "content/seminaires.json"
+        preview_path: "seminaires.html"
         fields:
           - { label: "Hero Sous-titre", name: "seminaires_hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "seminaires_hero_title", widget: "string" }
@@ -334,11 +339,12 @@ collections:
           - { label: "Téléphone", name: "seminaires_quote_phone", widget: "string" }
 
       # ==========================================
-      # 6. PAGE SPA (spa.html) - CORRIGÉE SANS DOUBLONS
+      # 6. PAGE SPA (spa.html)
       # ==========================================
       - name: "spa"
         label: "Page Spa"
         file: "content/spa.json"
+        preview_path: "spa.html"
         fields:
           - { label: "Hero Sous-titre", name: "spa_hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "spa_hero_title", widget: "string" }
@@ -378,7 +384,7 @@ collections:
           - { label: "Carrousel Image 1", name: "spa_carrousel_img1", widget: "image" }
           - { label: "Carrousel Image 2", name: "spa_carrousel_img2", widget: "image" }
           - { label: "Carrousel Image 3", name: "spa_carrousel_img3", widget: "image" }
-          # Soins Andréa (Renommés avec le préfixe andrea_ pour éviter les conflits avec le bloc du dessus)
+          # Soins Andréa
           - { label: "Soins Sous-titre", name: "soins_subtitle", widget: "string" }
           - { label: "Soins Titre", name: "soins_title", widget: "string" }
           - { label: "Soins Description", name: "soins_desc", widget: "text" }
@@ -417,6 +423,7 @@ collections:
       - name: "infos"
         label: "Page Infos Pratiques"
         file: "content/infos.json"
+        preview_path: "infos.html"
         fields:
           - { label: "Hero Sous-titre", name: "infos_hero_subtitle", widget: "string" }
           - { label: "Hero Titre", name: "infos_hero_title", widget: "string" }
