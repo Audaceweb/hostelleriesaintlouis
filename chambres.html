@@ -457,75 +457,107 @@
     </footer>
 
     <!-- SCRIPTS JS -->
-    <script>
-        // --- 1. SCRIPT MODULE RESERVIT IFRAME ---
-        jQuery(document).ready(function() {
-            jQuery(".ReservitBookingButton").click(function () {
-                if (jQuery(this).hasClass("iframeShow")) {
-                    jQuery(this).removeClass("iframeShow");
-                    jQuery("iframe#ReservitBookingIframe, .iframeClose").hide("slow");
-                } else {
-                    jQuery(this).addClass("iframeShow");
-                    jQuery("iframe#ReservitBookingIframe, .iframeClose").show("slow");
-                }
-            });
-            jQuery(".iframeClose").click(function () {
-                jQuery(".ReservitBookingButton").removeClass("iframeShow");
+<script>
+    // --- 1. SCRIPT MODULE RESERVIT IFRAME ---
+    jQuery(document).ready(function() {
+        jQuery(".ReservitBookingButton").click(function () {
+            if (jQuery(this).hasClass("iframeShow")) {
+                jQuery(this).removeClass("iframeShow");
                 jQuery("iframe#ReservitBookingIframe, .iframeClose").hide("slow");
-            });
-        });
-
-        // --- 2. SCRIPT GALERIE LIGHTBOX PLEIN ÉCRAN ---
-        const roomGalleries = {
-            standard: [
-                "img/chambresimple.jpg",
-                "img/chambresimpleen.jpg",
-                "img/chambresimplesdb.jpg"
-            ],
-            superieure: [
-                "img/chambreconfort.jpg",
-                "img/hostelerieindex.jpg"
-            ],
-            confort: [
-                "img/chambre-confort.jpg",
-                "img/hostelerieindex.jpg"
-            ]
-        };
-
-        let currentGallery = [];
-        let currentImgIndex = 0;
-
-        function openGallery(roomType) {
-            currentGallery = roomGalleries[roomType] || [];
-            currentImgIndex = 0;
-            if (currentGallery.length > 0) {
-                document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
-                document.getElementById('roomLightbox').style.display = 'flex';
-            }
-        }
-
-        function closeGallery() {
-            document.getElementById('roomLightbox').style.display = 'none';
-        }
-
-        function nextGalleryImage() {
-            if (currentGallery.length === 0) return;
-            currentImgIndex = (currentImgIndex + 1) % currentGallery.length;
-            document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
-        }
-
-        function prevGalleryImage() {
-            if (currentGallery.length === 0) return;
-            currentImgIndex = (currentImgIndex - 1 + currentGallery.length) % currentGallery.length;
-            document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeGallery();
+            } else {
+                jQuery(this).addClass("iframeShow");
+                jQuery("iframe#ReservitBookingIframe, .iframeClose").show("slow");
             }
         });
-    </script>
+        jQuery(".iframeClose").click(function () {
+            jQuery(".ReservitBookingButton").removeClass("iframeShow");
+            jQuery("iframe#ReservitBookingIframe, .iframeClose").hide("slow");
+        });
+    });
+
+    // --- 2. SCRIPT GALERIE LIGHTBOX PLEIN ÉCRAN ---
+    const roomGalleries = {
+        standard: [
+            "img/chambresimple.jpg",
+            "img/chambresimpleen.jpg",
+            "img/chambresimplesdb.jpg"
+        ],
+        superieure: [
+            "img/chambreconfort.jpg",
+            "img/hostelerieindex.jpg"
+        ],
+        confort: [
+            "img/chambre-confort.jpg",
+            "img/hostelerieindex.jpg"
+        ]
+    };
+
+    let currentGallery = [];
+    let currentImgIndex = 0;
+
+    function openGallery(roomType) {
+        currentGallery = roomGalleries[roomType] || [];
+        currentImgIndex = 0;
+        if (currentGallery.length > 0) {
+            document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+            document.getElementById('roomLightbox').style.display = 'flex';
+        }
+    }
+
+    function closeGallery() {
+        document.getElementById('roomLightbox').style.display = 'none';
+    }
+
+    function nextGalleryImage() {
+        if (currentGallery.length === 0) return;
+        currentImgIndex = (currentImgIndex + 1) % currentGallery.length;
+        document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+    }
+
+    function prevGalleryImage() {
+        if (currentGallery.length === 0) return;
+        currentImgIndex = (currentImgIndex - 1 + currentGallery.length) % currentGallery.length;
+        document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeGallery();
+        }
+    });
+
+    // --- 3. SCRIPT DE CHARGEMENT CMS (INDISPENSABLE) ---
+    async function loadCMSContent() {
+        try {
+            let pageName = window.location.pathname.split('/').pop().replace('.html', '');
+            if (!pageName || pageName === 'index' || pageName === '') {
+                pageName = 'index';
+            }
+
+            const response = await fetch(`content/${pageName}.json`);
+            if (!response.ok) return;
+            
+            const data = await response.json();
+
+            for (const [key, value] of Object.entries(data)) {
+                if (Array.isArray(value)) continue;
+
+                const elements = document.querySelectorAll(`[data-cms="${key}"]`);
+                elements.forEach(element => {
+                    if (element.tagName === 'IMG') {
+                        element.src = value;
+                    } else if (value) {
+                        element.innerHTML = value;
+                    }
+                });
+            }
+        } catch (error) {
+            console.log("Erreur CMS:", error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadCMSContent);
+</script>
     <script src="script.js"></script>
 </body>
 </html>
