@@ -346,40 +346,43 @@
             </div>
         </div>
         
-        <div class="footer-bottom-legal">
+<div class="footer-bottom-legal">
             <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
+            <p style="margin-top: 5px;">Fait par passion par <a href="https://audaceweb.fr" target="_blank" style="color: var(--color-gold); text-decoration: underline;">Audaceweb</a></p>
             <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-    <script>
+<script>
   async function loadCMSContent() {
     try {
-      // 1. Détection automatique de la page actuelle (ex: "chambres.html" -> "chambres")
+      // 1. Détection automatique de la page actuelle
       let pageName = window.location.pathname.split('/').pop().replace('.html', '');
       if (!pageName || pageName === 'index' || pageName === '') {
         pageName = 'index';
       }
 
-      // 2. Chargement du fichier JSON correspondant dans le dossier content/
-      const response = await fetch(`content/${pageName}.json`);
-      if (!response.ok) return; // Si le fichier JSON n'existe pas encore, on garde le HTML de base
+      // 2. Chargement du fichier JSON correspondant (avec un slash absolu /)
+      const response = await fetch(`/content/${pageName}.json`);
+      if (!response.ok) {
+        console.warn(`Fichier JSON introuvable pour : ${pageName}`);
+        return; 
+      }
       
       const data = await response.json();
 
       // 3. Injection des données simples (Textes & Images avec data-cms)
       for (const [key, value] of Object.entries(data)) {
-        // Si c'est une liste (comme les actualités), on la traite séparément ci-dessous
         if (Array.isArray(value)) continue;
 
         const elements = document.querySelectorAll(`[data-cms="${key}"]`);
         elements.forEach(element => {
           if (element.tagName === 'IMG') {
             element.src = value;
-          } else {
-            element.textContent = value;
+          } else if (value !== null && value !== undefined) {
+            element.innerHTML = value; // innerHTML pour garder les balises HTML/strong
           }
         });
       }
@@ -388,14 +391,12 @@
       if (data.home_news && Array.isArray(data.home_news)) {
         const newsContainer = document.querySelector('.news-grid');
         if (newsContainer) {
-          // On vide les cartes de démonstration
           newsContainer.innerHTML = '';
 
-          // On génère dynamiquement chaque carte d'actualité depuis le JSON
           data.home_news.forEach(item => {
             const cardHTML = `
               <article class="news-card">
-                <div class="news-img"><img src="${item.image || 'img/jazzindex.jfif'}" alt="${item.title}"></div>
+                <div class="news-img"><img src="${item.image || 'img/jazzindex.jfif'}" alt="${item.title || ''}"></div>
                 <div class="news-content">
                   <span class="news-date">${item.date || ''}</span>
                   <h3>${item.title || ''}</h3>
@@ -410,7 +411,7 @@
       }
 
     } catch (error) {
-      console.log("Lecture du contenu CMS...", error);
+      console.error("Erreur lors de la lecture du contenu CMS :", error);
     }
   }
 
