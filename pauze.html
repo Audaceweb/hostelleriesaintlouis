@@ -10,8 +10,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
     <!-- Feuille de style principale -->
     <link rel="stylesheet" href="style.css">
+    <!-- Style du bouton flottant de réservation -->
+    <style>
+        .floating-reserve-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            background-color: var(--color-restaurant-green, #4C5C4B);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-family: var(--font-body, 'Outfit', sans-serif);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .floating-reserve-btn:hover {
+            transform: scale(1.05);
+            background-color: #3b473a;
+        }
+        @media (max-width: 768px) {
+            .floating-reserve-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
 <body class="restaurant-theme">
+
+    <!-- BOUTON FLOTTANT DE RÉSERVATION (Fixe en bas à droite) -->
+    <a href="#zc-action-open" class="floating-reserve-btn">
+        <span>📅</span> Réserver une table
+    </a>
 
     <!-- ENTÊTE / HEADER (Non modifiable par le CMS) -->
     <header id="main-header">
@@ -37,7 +76,7 @@
             </ul>
         </nav>
         <div class="cta-container">
-            <a href="#reservation" class="btn-gold">Réserver une table</a>
+            <a href="#zc-action-open" class="btn-gold">Réserver une table</a>
         </div>
     </header>
 
@@ -87,7 +126,7 @@
                     </div>
 
                     <div class="block-actions">
-                        <a href="#reservation" class="btn-restaurant-green">Réserver une table</a>
+                        <a href="#zc-action-open" class="btn-restaurant-green">Réserver une table</a>
                     </div>
                 </div>
             </div>
@@ -191,7 +230,7 @@
 
                     <div class="menu-footer-note">
                         <p data-cms="m_formula">Formule Entrée + Plat ou Plat + Dessert : <strong>38 €</strong> (Hors boissons)</p>
-                        <a href="#reservation" class="btn-restaurant-green" style="margin-top: 25px; display: inline-block;">Réserver votre table</a>
+                        <a href="#zc-action-open" class="btn-restaurant-green" style="margin-top: 25px; display: inline-block;">Réserver votre table</a>
                     </div>
                 </div>
             </div>
@@ -321,55 +360,58 @@
             </div>
         </div>
         
-   <div class="footer-bottom-legal">
+        <div class="footer-bottom-legal">
             <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
             <p style="margin-top: 5px;">Fait par passion par <a href="https://audaceweb.fr" target="_blank" style="color: var(--color-gold); text-decoration: underline;">Audaceweb</a></p>
             <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- SDK ZENCHEF & CONFIGURATION -->
+    <script>
+      ;(function (d, s, id) {
+        const el = d.getElementsByTagName(s)[0]
+        if (d.getElementById(id) || el.parentNode == null) return
+        var js = d.createElement(s)
+        js.id = id
+        js.src = 'https://sdk.zenchef.com/v1/sdk.min.js'
+        el.parentNode.insertBefore(js, el)
+      })(document, 'script', 'zenchef-sdk');
+    </script>
+    <div class="zc-widget-config" data-restaurant="375005"></div>
+
+    <!-- JavaScript CMS -->
     <script src="script.js"></script>
 <script>
-  async function loadCMSContent() {
-    try {
-      // 1. Détection automatique de la page actuelle
-      let pageName = window.location.pathname.split('/').pop().replace('.html', '');
-      if (!pageName || pageName === 'index' || pageName === '') {
-        pageName = 'index';
-      }
+      ;(function (d, s, id) {
+        const el = d.getElementsByTagName(s)[0]
+        if (d.getElementById(id) || el.parentNode == null) return
+        var js = d.createElement(s)
+        js.id = id
+        js.src = 'https://sdk.zenchef.com/v1/sdk.min.js'
+        el.parentNode.insertBefore(js, el)
+      })(document, 'script', 'zenchef-sdk');
+    </script>
+    <div class="zc-widget-config" data-restaurant="375005"></div>
 
-      // 2. Chargement du fichier JSON (avec un slash au début pour éviter les erreurs de chemin)
-      const response = await fetch(`/content/${pageName}.json`);
-      if (!response.ok) {
-        console.warn(`Impossible de charger : /content/${pageName}.json (Statut : ${response.status})`);
-        return;
-      }
-      
-      const data = await response.json();
-      console.log("Données JSON chargées avec succès :", data);
-
-      // 3. Injection des données simples (Textes & Images avec data-cms)
-      for (const [key, value] of Object.entries(data)) {
-        if (Array.isArray(value)) continue;
-
-        const elements = document.querySelectorAll(`[data-cms="${key}"]`);
-        elements.forEach(element => {
-          if (element.tagName === 'IMG') {
-            element.src = value;
-          } else if (value !== null && value !== undefined) {
-            element.innerHTML = value; // innerHTML pour préserver les balises HTML/strong si besoin
+    <!-- SCRIPT DE SÉCURITÉ POUR FORCER L'OUVERTURE DES BOUTONS DE RÉSERVATION -->
+    <script>
+      document.addEventListener('click', function(e) {
+        // Vérifie si l'élément cliqué (ou son parent) est un lien de réservation Zenchef
+        const target = e.target.closest('a[href="#zc-action-open"], .floating-reserve-btn, .btn-gold, .btn-restaurant-green');
+        
+        if (target && target.getAttribute('href') === '#zc-action-open') {
+          e.preventDefault(); // Empêche le saut de page par défaut
+          
+          // Vérifie si l'API Zenchef est bien chargée et l'ouvre
+          if (typeof ZenchefWidget !== 'undefined' && typeof ZenchefWidget.open === 'function') {
+            ZenchefWidget.open();
+          } else {
+            // Solution de secours : force le hash si le SDK met une seconde à réagir
+            window.location.hash = 'zc-action-open';
           }
-        });
-      }
-
-    } catch (error) {
-      console.error("Erreur lors de la lecture du contenu CMS :", error);
-    }
-  }
-
-  // Lancement automatique au chargement de la page
-  document.addEventListener('DOMContentLoaded', loadCMSContent);
-</script>
+        }
+      });
+    </script>
 </body>
 </html>
