@@ -476,57 +476,58 @@
         });
     });
 
-    // --- 2. SCRIPT GALERIE LIGHTBOX PLEIN ÉCRAN ---
-    let currentGallery = [];
-    let currentImgIndex = 0;
+   // --- 2. SCRIPT GALERIE LIGHTBOX PLEIN ÉCRAN (DYNAMIQUE) ---
+let currentGallery = [];
+let currentImgIndex = 0;
 
-    function openGallery(roomType) {
-        if (roomType === 'standard') {
-            currentGallery = [
-                document.querySelector('[data-cms="std_img"]').src,
-                document.querySelector('[data-cms="std_img2"]').src,
-                document.querySelector('[data-cms="std_img3"]').src
-            ];
-        } else if (roomType === 'superieure') {
-            currentGallery = [
-                document.querySelector('[data-cms="sup_img"]').src,
-                document.querySelector('[data-cms="sup_img2"]').src
-            ];
-        } else if (roomType === 'confort') {
-            currentGallery = [
-                document.querySelector('[data-cms="conf_img"]').src,
-                document.querySelector('[data-cms="conf_img2"]').src
-            ];
-        }
-        
-        currentImgIndex = 0;
-        if (currentGallery.length > 0) {
-            document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
-            document.getElementById('roomLightbox').style.display = 'flex';
-        }
+function openGallery(roomType) {
+    currentGallery = [];
+
+    if (roomType === 'standard' && window.cmsData && window.cmsData.std_galeries) {
+        currentGallery = window.cmsData.std_galeries.map(item => item.image);
+    } else if (roomType === 'superieure' && window.cmsData && window.cmsData.sup_galeries) {
+        currentGallery = window.cmsData.sup_galeries.map(item => item.image);
+    } else if (roomType === 'confort' && window.cmsData && window.cmsData.conf_galeries) {
+        currentGallery = window.cmsData.conf_galeries.map(item => item.image);
     }
 
-    function closeGallery() {
-        document.getElementById('roomLightbox').style.display = 'none';
+    // Sécurité de secours : si la liste est vide, on prend l'image principale simple de la chambre
+    if (currentGallery.length === 0) {
+        if (roomType === 'standard' && window.cmsData?.std_img) currentGallery = [window.cmsData.std_img];
+        if (roomType === 'superieure' && window.cmsData?.sup_img) currentGallery = [window.cmsData.sup_img];
+        if (roomType === 'confort' && window.cmsData?.conf_img) currentGallery = [window.cmsData.conf_img];
     }
-
-    function nextGalleryImage() {
-        if (currentGallery.length === 0) return;
-        currentImgIndex = (currentImgIndex + 1) % currentGallery.length;
+    
+    currentImgIndex = 0;
+    if (currentGallery.length > 0) {
         document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+        document.getElementById('roomLightbox').style.display = 'flex';
+    } else {
+        console.log("Aucune image trouvée pour cette galerie.");
     }
+}
 
-    function prevGalleryImage() {
-        if (currentGallery.length === 0) return;
-        currentImgIndex = (currentImgIndex - 1 + currentGallery.length) % currentGallery.length;
-        document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+function closeGallery() {
+    document.getElementById('roomLightbox').style.display = 'none';
+}
+
+function nextGalleryImage() {
+    if (currentGallery.length === 0) return;
+    currentImgIndex = (currentImgIndex + 1) % currentGallery.length;
+    document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+}
+
+function prevGalleryImage() {
+    if (currentGallery.length === 0) return;
+    currentImgIndex = (currentImgIndex - 1 + currentGallery.length) % currentGallery.length;
+    document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeGallery();
     }
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeGallery();
-        }
-    });
+});
 
     // --- 3. SCRIPT DE CHARGEMENT CMS (INDISPENSABLE) ---
     async function loadCMSContent() {
