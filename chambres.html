@@ -483,15 +483,16 @@ let currentImgIndex = 0;
 function openGallery(roomType) {
     currentGallery = [];
 
-    if (roomType === 'standard' && window.cmsData && window.cmsData.std_galeries) {
-        currentGallery = window.cmsData.std_galeries.map(item => item.image);
-    } else if (roomType === 'superieure' && window.cmsData && window.cmsData.sup_galeries) {
-        currentGallery = window.cmsData.sup_galeries.map(item => item.image);
-    } else if (roomType === 'confort' && window.cmsData && window.cmsData.conf_galeries) {
-        currentGallery = window.cmsData.conf_galeries.map(item => item.image);
+    // Utilisation des nouveaux noms de listes configurés
+    if (roomType === 'standard' && window.cmsData && window.cmsData.std_photos_liste) {
+        currentGallery = window.cmsData.std_photos_liste.map(item => item.image);
+    } else if (roomType === 'superieure' && window.cmsData && window.cmsData.sup_photos_liste) {
+        currentGallery = window.cmsData.sup_photos_liste.map(item => item.image);
+    } else if (roomType === 'confort' && window.cmsData && window.cmsData.conf_photos_liste) {
+        currentGallery = window.cmsData.conf_photos_liste.map(item => item.image);
     }
 
-    // Sécurité de secours : si la liste est vide, on prend l'image principale simple de la chambre
+    // Sécurité de secours : si la liste est vide, on cherche une image de secours
     if (currentGallery.length === 0) {
         if (roomType === 'standard' && window.cmsData?.std_img) currentGallery = [window.cmsData.std_img];
         if (roomType === 'superieure' && window.cmsData?.sup_img) currentGallery = [window.cmsData.sup_img];
@@ -529,7 +530,7 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// --- 3. SCRIPT DE CHARGEMENT CMS (CORRIGÉ) ---
+// --- 3. SCRIPT DE CHARGEMENT CMS ---
 async function loadCMSContent() {
     try {
         let pageName = window.location.pathname.split('/').pop().replace('.html', '');
@@ -542,7 +543,7 @@ async function loadCMSContent() {
         
         const data = await response.json();
         
-        // 🔑 C'EST CETTE LIGNE QUI MANQUAIT :
+        // Stockage global indispensable pour la lightbox
         window.cmsData = data;
 
         for (const [key, value] of Object.entries(data)) {
