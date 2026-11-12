@@ -582,7 +582,7 @@ content:
         name: "phone_cta_text"
         type: string
 
-  # ==========================================
+# ==========================================
   # 4. PAGE CHAMBRES (chambres.json)
   # ==========================================
   - name: "chambres"
@@ -631,15 +631,21 @@ content:
         name: "badge3_text"
         type: text
 
-      # --- Chambre Standard ---
+      # --- Chambre Standard & Galerie ---
       - label: "Standard Sous-titre"
         name: "std_subtitle"
         type: string
       - label: "Standard Titre"
         name: "std_title"
         type: string
-      - label: "Standard Image"
+      - label: "Standard Image Principale"
         name: "std_img"
+        type: image
+      - label: "Standard Galerie - Photo 2"
+        name: "std_img2"
+        type: image
+      - label: "Standard Galerie - Photo 3"
+        name: "std_img3"
         type: image
       - label: "Standard Description"
         name: "std_desc"
@@ -669,15 +675,18 @@ content:
         name: "std_price"
         type: string
 
-      # --- Chambre Supérieure ---
+      # --- Chambre Supérieure & Galerie ---
       - label: "Supérieure Sous-titre"
         name: "sup_subtitle"
         type: string
       - label: "Supérieure Titre"
         name: "sup_title"
         type: string
-      - label: "Supérieure Image"
+      - label: "Supérieure Image Principale"
         name: "sup_img"
+        type: image
+      - label: "Supérieure Galerie - Photo 2"
+        name: "sup_img2"
         type: image
       - label: "Supérieure Description"
         name: "sup_desc"
@@ -710,15 +719,18 @@ content:
         name: "sup_price"
         type: string
 
-      # --- Chambre Confort ---
+      # --- Chambre Confort & Galerie ---
       - label: "Confort Sous-titre"
         name: "conf_subtitle"
         type: string
       - label: "Confort Titre"
         name: "conf_title"
         type: string
-      - label: "Confort Image"
+      - label: "Confort Image Principale"
         name: "conf_img"
+        type: image
+      - label: "Confort Galerie - Photo 2"
+        name: "conf_img2"
         type: image
       - label: "Confort Description"
         name: "conf_desc"
