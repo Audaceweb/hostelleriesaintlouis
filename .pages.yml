@@ -631,22 +631,20 @@ content:
         name: "badge3_text"
         type: text
 
-      # --- Chambre Standard & Galerie ---
+      # --- Chambre Standard & Galerie Dynamique ---
       - label: "Standard Sous-titre"
         name: "std_subtitle"
         type: string
       - label: "Standard Titre"
         name: "std_title"
         type: string
-      - label: "Standard Image Principale"
-        name: "std_img"
-        type: image
-      - label: "Standard Galerie - Photo 2"
-        name: "std_img2"
-        type: image
-      - label: "Standard Galerie - Photo 3"
-        name: "std_img3"
-        type: image
+      - label: "Standard - Galerie Photos (Illimité)"
+        name: "std_gallery"
+        type: list
+        fields:
+          - label: "Photo de la galerie"
+            name: "image"
+            type: image
       - label: "Standard Description"
         name: "std_desc"
         type: text
@@ -675,19 +673,20 @@ content:
         name: "std_price"
         type: string
 
-      # --- Chambre Supérieure & Galerie ---
+      # --- Chambre Supérieure & Galerie Dynamique ---
       - label: "Supérieure Sous-titre"
         name: "sup_subtitle"
         type: string
       - label: "Supérieure Titre"
         name: "sup_title"
         type: string
-      - label: "Supérieure Image Principale"
-        name: "sup_img"
-        type: image
-      - label: "Supérieure Galerie - Photo 2"
-        name: "sup_img2"
-        type: image
+      - label: "Supérieure - Galerie Photos (Illimité)"
+        name: "sup_gallery"
+        type: list
+        fields:
+          - label: "Photo de la galerie"
+            name: "image"
+            type: image
       - label: "Supérieure Description"
         name: "sup_desc"
         type: text
@@ -719,19 +718,20 @@ content:
         name: "sup_price"
         type: string
 
-      # --- Chambre Confort & Galerie ---
+      # --- Chambre Confort & Galerie Dynamique ---
       - label: "Confort Sous-titre"
         name: "conf_subtitle"
         type: string
       - label: "Confort Titre"
         name: "conf_title"
         type: string
-      - label: "Confort Image Principale"
-        name: "conf_img"
-        type: image
-      - label: "Confort Galerie - Photo 2"
-        name: "conf_img2"
-        type: image
+      - label: "Confort - Galerie Photos (Illimité)"
+        name: "conf_gallery"
+        type: list
+        fields:
+          - label: "Photo de la galerie"
+            name: "image"
+            type: image
       - label: "Confort Description"
         name: "conf_desc"
         type: text
@@ -925,7 +925,6 @@ content:
       - label: "Animaux Détails"
         name: "pets_details"
         type: text
-
   # ==========================================
   # 5. PAGE MARIAGES & RÉCEPTIONS (mariages.json)
   # ==========================================
