@@ -22,23 +22,23 @@
   "news_section_title": "Actualités & Événements",
   "news_section_desc": "Découvrez nos prochains événements, soirées à thèmes et menus de saison concoctés par notre équipe.",
   "actualites_liste": [
-  {
-    "image": "img/chambresimple.jpg",
-    "date": "15 NOVEMBRE 2026",
-    "title": "Soirée Dîner-Concert Jazz",
-    "desc": "Vivez une expérience sensorielle unique alliant haute gastronomie et mélodies envoûtantes.",
-    "btn_text": "RÉSERVER SA TABLE",
-    "btn_link": "#"
-  },
-  {
-    "image": "img/chambreconfort.jpg",
-    "date": "CHAQUE SEMAINE",
-    "title": "Le Menu du Marché",
-    "desc": "Renouvelé chaque semaine par notre chef selon les trésors de notre terroir nordiste.",
-    "btn_text": "DÉCOUVRIR LA CARTE",
-    "btn_link": "#"
-  }
-]
+    {
+      "image": "img/chambresimple.jpg",
+      "date": "15 NOVEMBRE 2026",
+      "title": "Soirée Dîner-Concert Jazz",
+      "desc": "Vivez une expérience sensorielle unique alliant haute gastronomie et mélodies envoûtantes.",
+      "btn_text": "RÉSERVER SA TABLE",
+      "btn_link": "#"
+    },
+    {
+      "image": "img/chambreconfort.jpg",
+      "date": "CHAQUE SEMAINE",
+      "title": "Le Menu du Marché",
+      "desc": "Renouvelé chaque semaine par notre chef selon les trésors de notre terroir nordiste.",
+      "btn_text": "DÉCOUVRIR LA CARTE",
+      "btn_link": "#"
+    }
+  ]
   "wedding_img": "img/mariageindex.jpg",
   "wedding_subtitle": "Moments Inoubliables",
   "wedding_title": "Mariages & Réceptions",
