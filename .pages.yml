@@ -582,7 +582,7 @@ content:
         name: "phone_cta_text"
         type: string
 
-  # ==========================================
+# ==========================================
   # 4. PAGE CHAMBRES (chambres.json)
   # ==========================================
   - name: "chambres"
@@ -609,25 +609,310 @@ content:
       - label: "Intro Texte 1"
         name: "intro_text1"
         type: text
+      - label: "Intro Texte 2"
+        name: "intro_text2"
+        type: text
+      - label: "Badge 1 - Titre"
+        name: "badge1_title"
+        type: string
+      - label: "Badge 1 - Texte"
+        name: "badge1_text"
+        type: text
+      - label: "Badge 2 - Titre"
+        name: "badge2_title"
+        type: string
+      - label: "Badge 2 - Texte"
+        name: "badge2_text"
+        type: text
+      - label: "Badge 3 - Titre"
+        name: "badge3_title"
+        type: string
+      - label: "Badge 3 - Texte"
+        name: "badge3_text"
+        type: text
+
+      # --- Chambre Standard ---
+      - label: "Standard Sous-titre"
+        name: "std_subtitle"
+        type: string
       - label: "Standard Titre"
         name: "std_title"
+        type: string
+      - label: "Standard Image"
+        name: "std_img"
+        type: image
+      - label: "Standard Description"
+        name: "std_desc"
+        type: text
+      - label: "Standard Équipement 1"
+        name: "std_amenity1"
+        type: string
+      - label: "Standard Équipement 2"
+        name: "std_amenity2"
+        type: string
+      - label: "Standard Équipement 3"
+        name: "std_amenity3"
+        type: string
+      - label: "Standard Équipement 4"
+        name: "std_amenity4"
+        type: string
+      - label: "Standard Équipement 5"
+        name: "std_amenity5"
+        type: string
+      - label: "Standard Équipement 6"
+        name: "std_amenity6"
+        type: string
+      - label: "Standard Équipement 7"
+        name: "std_amenity7"
         type: string
       - label: "Standard Prix"
         name: "std_price"
         type: string
+
+      # --- Chambre Supérieure ---
+      - label: "Supérieure Sous-titre"
+        name: "sup_subtitle"
+        type: string
       - label: "Supérieure Titre"
         name: "sup_title"
+        type: string
+      - label: "Supérieure Image"
+        name: "sup_img"
+        type: image
+      - label: "Supérieure Description"
+        name: "sup_desc"
+        type: text
+      - label: "Supérieure Équipement 1"
+        name: "sup_amenity1"
+        type: string
+      - label: "Supérieure Équipement 2"
+        name: "sup_amenity2"
+        type: string
+      - label: "Supérieure Équipement 3"
+        name: "sup_amenity3"
+        type: string
+      - label: "Supérieure Équipement 4"
+        name: "sup_amenity4"
+        type: string
+      - label: "Supérieure Équipement 5"
+        name: "sup_amenity5"
+        type: string
+      - label: "Supérieure Équipement 6"
+        name: "sup_amenity6"
+        type: string
+      - label: "Supérieure Équipement 7"
+        name: "sup_amenity7"
+        type: string
+      - label: "Supérieure Équipement 8"
+        name: "sup_amenity8"
         type: string
       - label: "Supérieure Prix"
         name: "sup_price"
         type: string
+
+      # --- Chambre Confort ---
+      - label: "Confort Sous-titre"
+        name: "conf_subtitle"
+        type: string
       - label: "Confort Titre"
         name: "conf_title"
+        type: string
+      - label: "Confort Image"
+        name: "conf_img"
+        type: image
+      - label: "Confort Description"
+        name: "conf_desc"
+        type: text
+      - label: "Confort Équipement 1"
+        name: "conf_amenity1"
+        type: string
+      - label: "Confort Équipement 2"
+        name: "conf_amenity2"
+        type: string
+      - label: "Confort Équipement 3"
+        name: "conf_amenity3"
+        type: string
+      - label: "Confort Équipement 4"
+        name: "conf_amenity4"
+        type: string
+      - label: "Confort Équipement 5"
+        name: "conf_amenity5"
+        type: string
+      - label: "Confort Équipement 6"
+        name: "conf_amenity6"
+        type: string
+      - label: "Confort Équipement 7"
+        name: "conf_amenity7"
+        type: string
+      - label: "Confort Équipement 8"
+        name: "conf_amenity8"
         type: string
       - label: "Confort Prix"
         name: "conf_price"
         type: string
 
+      # --- Petit-Déjeuner ---
+      - label: "Petit-Déjeuner Sous-titre"
+        name: "breakfast_subtitle"
+        type: string
+      - label: "Petit-Déjeuner Titre"
+        name: "breakfast_title"
+        type: string
+      - label: "Petit-Déjeuner Image"
+        name: "breakfast_img"
+        type: image
+      - label: "Petit-Déjeuner Texte"
+        name: "breakfast_text1"
+        type: text
+      - label: "Petit-Déjeuner Note 1"
+        name: "breakfast_note1"
+        type: text
+      - label: "Petit-Déjeuner Note 2"
+        name: "breakfast_note2"
+        type: text
+      - label: "Petit-Déjeuner Prix"
+        name: "breakfast_price"
+        type: string
+
+      # --- Grille Tarifs & Suppléments ---
+      - label: "Tarifs Sous-titre"
+        name: "tarifs_subtitle"
+        type: string
+      - label: "Tarifs Titre"
+        name: "tarifs_title"
+        type: string
+      - label: "Tarifs Description"
+        name: "tarifs_desc"
+        type: text
+
+      - label: "Carte 1 - Titre"
+        name: "card1_title"
+        type: string
+      - label: "Carte 1 - Sous-titre"
+        name: "card1_subtitle"
+        type: string
+      - label: "Carte 1 - Prix"
+        name: "card1_price"
+        type: string
+      - label: "Carte 1 - Texte"
+        name: "card1_text"
+        type: text
+
+      - label: "Carte 2 - Titre"
+        name: "card2_title"
+        type: string
+      - label: "Carte 2 - Sous-titre"
+        name: "card2_subtitle"
+        type: string
+      - label: "Carte 2 - Prix"
+        name: "card2_price"
+        type: string
+      - label: "Carte 2 - Texte"
+        name: "card2_text"
+        type: text
+
+      - label: "Carte 3 - Titre"
+        name: "card3_title"
+        type: string
+      - label: "Carte 3 - Sous-titre"
+        name: "card3_subtitle"
+        type: string
+      - label: "Carte 3 - Prix"
+        name: "card3_price"
+        type: string
+      - label: "Carte 3 - Texte"
+        name: "card3_text"
+        type: text
+
+      - label: "Suppléments - Titre"
+        name: "supp_title"
+        type: string
+      - label: "Supplément 1 - Label"
+        name: "supp1_label"
+        type: string
+      - label: "Supplément 1 - Valeur"
+        name: "supp1_val"
+        type: string
+      - label: "Supplément 2 - Label"
+        name: "supp2_label"
+        type: string
+      - label: "Supplément 2 - Valeur"
+        name: "supp2_val"
+        type: string
+      - label: "Supplément 3 - Label"
+        name: "supp3_label"
+        type: string
+      - label: "Supplément 3 - Valeur"
+        name: "supp3_val"
+        type: string
+      - label: "Supplément 4 - Label"
+        name: "supp4_label"
+        type: string
+      - label: "Supplément 4 - Valeur"
+        name: "supp4_val"
+        type: string
+
+      - label: "Demi-pension - Titre"
+        name: "dp_title"
+        type: string
+      - label: "Demi-pension - Texte 1"
+        name: "dp_text1"
+        type: text
+      - label: "Demi-pension - Texte 2"
+        name: "dp_text2"
+        type: text
+
+      # --- Offre Soirée-Étape ---
+      - label: "Soirée-Étape Sous-titre"
+        name: "se_subtitle"
+        type: string
+      - label: "Soirée-Étape Titre"
+        name: "se_title"
+        type: string
+      - label: "Soirée-Étape Description"
+        name: "se_desc"
+        type: text
+      - label: "Soirée-Étape Point 1"
+        name: "se_point1"
+        type: string
+      - label: "Soirée-Étape Point 2"
+        name: "se_point2"
+        type: string
+      - label: "Soirée-Étape Point 3"
+        name: "se_point3"
+        type: string
+      - label: "Soirée-Étape Box Titre"
+        name: "se_box_title"
+        type: string
+      - label: "Box Standard Label"
+        name: "se_box_std_label"
+        type: string
+      - label: "Box Standard Prix"
+        name: "se_box_std_price"
+        type: string
+      - label: "Box Supérieure Label"
+        name: "se_box_sup_label"
+        type: string
+      - label: "Box Supérieure Prix"
+        name: "se_box_sup_price"
+        type: string
+      - label: "Box Supérieure Sub"
+        name: "se_box_sup_sub"
+        type: string
+
+      # --- Animaux ---
+      - label: "Animaux Sous-titre"
+        name: "pets_subtitle"
+        type: string
+      - label: "Animaux Titre"
+        name: "pets_title"
+        type: string
+      - label: "Animaux Texte"
+        name: "pets_text"
+        type: text
+      - label: "Animaux Détails"
+        name: "pets_details"
+        type: text
   # ==========================================
   # 5. PAGE MARIAGES & RÉCEPTIONS (mariages.json)
   # ==========================================
