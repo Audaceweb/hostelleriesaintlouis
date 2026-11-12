@@ -631,7 +631,7 @@ content:
         name: "badge3_text"
         type: text
 
-     # --- Chambre Standard & Galerie Dynamique ---
+      # --- Chambre Standard & Galerie Dynamique ---
       - label: "Standard Sous-titre"
         name: "std_subtitle"
         type: string
@@ -640,8 +640,8 @@ content:
         type: string
       - label: "Standard - Galerie Photos"
         name: "std_photos_liste"
-        type: list
-        itemLabel: "Photo"
+        type: object
+        list: true
         fields:
           - label: "Image"
             name: "image"
@@ -683,8 +683,8 @@ content:
         type: string
       - label: "Supérieure - Galerie Photos"
         name: "sup_photos_liste"
-        type: list
-        itemLabel: "Photo"
+        type: object
+        list: true
         fields:
           - label: "Image"
             name: "image"
@@ -729,8 +729,8 @@ content:
         type: string
       - label: "Confort - Galerie Photos"
         name: "conf_photos_liste"
-        type: list
-        itemLabel: "Photo"
+        type: object
+        list: true
         fields:
           - label: "Image"
             name: "image"
@@ -765,6 +765,7 @@ content:
       - label: "Confort Prix"
         name: "conf_price"
         type: string
+
       # --- Petit-Déjeuner ---
       - label: "Petit-Déjeuner Sous-titre"
         name: "breakfast_subtitle"
