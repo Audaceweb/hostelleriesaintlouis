@@ -12,14 +12,8 @@
   "badge2_text": "Ouvert tous les jours<br><em>(sauf dimanche soir & lundi midi)</em>",
   "badge3_title": "🚆 Accès & Éco-Mobilité",
   "badge3_text": "Gares d'Arnèke & Esquelbecq<br>Accès PMR • Vélos et transports doux encouragés",
-
   "std_subtitle": "Intimité & Charme (Env. 19 m²)",
   "std_title": "La Chambre Standard",
-  "std_gallery": [
-    { "image": "img/chambresimple.jpg" },
-    { "image": "img/chambresimpleen.jpg" },
-    { "image": "img/chambresimplesdb.jpg" }
-  ],
   "std_desc": "Nos chambres standards ont une superficie d’environ <strong>19 m²</strong>, équipées d'un lit double ou, pour certaines d'entre elles, de deux lits simples.<br><em style='font-size: 0.95rem; color: #666;'>Note : En chambre standard, l'accès au spa n'est pas inclus mais peut être ajouté en supplément durant votre séjour.</em>",
   "std_amenity1": "☕ Plateau de courtoisie",
   "std_amenity2": "🧼 Produits d'accueil",
@@ -29,13 +23,9 @@
   "std_amenity6": "📺 TV écran plat (TNT)",
   "std_amenity7": "📶 Wi-Fi gratuit",
   "std_price": "De 80 € à 160 € / nuit",
-
   "sup_subtitle": "Espace & Spa Inclus (25 à 30 m²)",
   "sup_title": "La Chambre Supérieure",
-  "sup_gallery": [
-    { "image": "img/chambreconfort.jpg" },
-    { "image": "img/hostelerieindex.jpg" }
-  ],
+  "sup_gallery": "\n",
   "sup_desc": "D'une superficie comprise entre <strong>25 et 30 m²</strong>, nos chambres Supérieures sont équipées d'un grand lit (180/200) ou, selon vos besoins, de deux lits séparés.<br><strong style='color: var(--color-gold);'>✨ Inclus :</strong> Les chambres Supérieures incluent un <strong>accès au spa de 2h par jour et par occupant</strong>.",
   "sup_amenity1": "🧖‍♂️ Accès Spa 2h/jour inclus",
   "sup_amenity2": "🛋️ Coin salon",
@@ -46,13 +36,8 @@
   "sup_amenity7": "📺 TV écran plat TNT & Tél",
   "sup_amenity8": "📶 Wi-Fi gratuit",
   "sup_price": "De 95 € à 190 € / nuit",
-
   "conf_subtitle": "Grand Prestige & Spa Inclus (32 à 43 m²)",
   "conf_title": "La Chambre Confort",
-  "conf_gallery": [
-    { "image": "img/chambre-confort.jpg" },
-    { "image": "img/hostelerieindex.jpg" }
-  ],
   "conf_desc": "Nos chambres Confort sont les plus vastes de notre établissement (superficie comprise entre <strong>32 et 43 m²</strong>). Elles sont équipées d'un grand lit double, d'un troisième lit simple et offrent la possibilité pour certaines d'avoir 2 lits séparés.<br><strong style='color: var(--color-gold);'>✨ Inclus :</strong> Les chambres Confort incluent un <strong>accès au spa de 2h par jour</strong>.",
   "conf_amenity1": "🧖‍♂️ Accès Spa 2h/jour inclus",
   "conf_amenity2": "🛋️ Grand Coin salon",
@@ -63,34 +48,28 @@
   "conf_amenity7": "💨 Sèche-cheveux & Toilettes",
   "conf_amenity8": "📺 TV TNT, Tél & Wi-Fi gratuit",
   "conf_price": "De 110 € à 220 € / nuit",
-
   "breakfast_subtitle": "Chaque matin, un réveil gourmand",
   "breakfast_title": "Le Petit-Déjeuner Buffet",
-  "breakfast_img": "img/petitdej.jpg",
+  "breakfast_img": "/img/petitdej.jpg",
   "breakfast_text1": "Découvrez notre buffet continental pour bien démarrer la journée. Nous vous accueillons de <strong>7h00 à 9h30 en semaine</strong> et <strong>jusqu'à 10h00 le week-end</strong> autour d'un assortiment de produits frais et locaux : yaourts, viennoiseries, charcuteries, fromages, boissons chaudes et quelques surprises de la maison.",
   "breakfast_note1": "<strong>🥐 Service en chambre :</strong> Possibilité de petit-déjeuner servi en chambre (+5 € / personne / jour).",
   "breakfast_note2": "<strong>🌅 Départ aux aurores ?</strong> Nous nous efforçons de nous adapter à vos horaires en vous préparant un petit-déjeuner sous forme de panier à emporter.",
   "breakfast_price": "Tarif Buffet : 16,00 € / personne / jour",
-
   "tarifs_subtitle": "Transparence & Sérénité",
   "tarifs_title": "Les Tarifs de l'Hôtel 2026-2027",
   "tarifs_desc": "<em>Les prix sont variables en fonction de la saison et de la disponibilité des chambres.</em>",
-
   "card1_title": "Chambre Standard",
   "card1_subtitle": "1 ou 2 Personnes",
   "card1_price": "80 € – 160 €",
   "card1_text": "Superficie env. 19 m², lit double ou lits simples. Spa en supplément.",
-
   "card2_title": "Chambre Supérieure",
   "card2_subtitle": "1 ou 2 Personnes",
   "card2_price": "95 € – 190 €",
   "card2_text": "25 à 30 m², grand lit (180/200), douche italienne & spa 2h inclus.",
-
   "card3_title": "Chambre Confort",
   "card3_subtitle": "Jusqu'à 3 Personnes",
   "card3_price": "110 € – 220 €",
   "card3_text": "32 à 43 m², lit double + 3e lit simple, coin salon & spa 2h inclus.",
-
   "supp_title": "Suppléments & Formules Restauration",
   "supp1_label": "Lit Supplémentaire :",
   "supp1_val": "35,00 € / nuit",
@@ -100,11 +79,9 @@
   "supp3_val": "0,55 € / pers. / nuit",
   "supp4_label": "Animaux de Compagnie :",
   "supp4_val": "20,00 € / nuit",
-
   "dp_title": "🍽️ Tarifs Demi-Pension",
   "dp_text1": "La demi-pension est accessible à partir de <strong>52 € TTC / personne / nuit</strong>.<br><em>Le forfait comprend : Le menu du jour (entrée + plat + dessert, hors boissons) et l'accès au petit-déjeuner buffet du matin.</em>",
   "dp_text2": "* Pour tout séjour inférieur à 2 nuits ou si vous ne souhaitez pas la demi-pension sur l'intégralité du séjour, vous pouvez compléter ou modifier les propositions à la carte (avec suppléments).",
-
   "se_subtitle": "Professionnels & Techniciens",
   "se_title": "Offre Spéciale Soirée-Étape",
   "se_desc": "L'hôtel entretient une longue tradition d'accueil chaleureux des commerciaux, techniciens et professionnels en déplacement. Situé à proximité immédiate des principaux grands bassins industriels et commerciaux du territoire (<strong>Dunkerque, Saint-Omer, Bergues, Hazebrouck</strong>), nous proposons une formule intégrale <em>du lundi au vendredi soir</em> :",
@@ -117,7 +94,6 @@
   "se_box_sup_label": "Chambre Supérieure",
   "se_box_sup_price": "134 € / jour",
   "se_box_sup_sub": "(Chambre avec bureau ou coin salon)",
-
   "pets_subtitle": "Vos Compagnons",
   "pets_title": "Accueil des Animaux de Compagnie",
   "pets_text": "Nous acceptons les animaux de compagnie sous réserve de disponibilité des chambres adaptées pour leur accueil. Merci de nous contacter impérativement avant d'effectuer toute réservation avec un animal.",
