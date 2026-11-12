@@ -638,11 +638,12 @@ content:
       - label: "Standard Titre"
         name: "std_title"
         type: string
-      - label: "Standard - Galerie Photos (Illimité)"
+      - label: "Standard - Galerie Photos"
         name: "std_gallery"
         type: list
+        itemLabel: "Photo"
         fields:
-          - label: "Photo de la galerie"
+          - label: "Image"
             name: "image"
             type: image
       - label: "Standard Description"
@@ -680,11 +681,12 @@ content:
       - label: "Supérieure Titre"
         name: "sup_title"
         type: string
-      - label: "Supérieure - Galerie Photos (Illimité)"
+      - label: "Supérieure - Galerie Photos"
         name: "sup_gallery"
         type: list
+        itemLabel: "Photo"
         fields:
-          - label: "Photo de la galerie"
+          - label: "Image"
             name: "image"
             type: image
       - label: "Supérieure Description"
@@ -725,11 +727,12 @@ content:
       - label: "Confort Titre"
         name: "conf_title"
         type: string
-      - label: "Confort - Galerie Photos (Illimité)"
+      - label: "Confort - Galerie Photos"
         name: "conf_gallery"
         type: list
+        itemLabel: "Photo"
         fields:
-          - label: "Photo de la galerie"
+          - label: "Image"
             name: "image"
             type: image
       - label: "Confort Description"
