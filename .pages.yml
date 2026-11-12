@@ -81,13 +81,14 @@ content:
         name: "news_section_desc"
         type: text
       - label: "Actualités Accueil (Liste)"
-        name: "home_news"
-        type: list
+        name: "actualites_liste"
+        type: object
+        list: true
         fields:
-          - label: "Image"
+          - label: "Image de l'actualité"
             name: "image"
             type: image
-          - label: "Date"
+          - label: "Date / Badge (ex: 15 NOVEMBRE 2026)"
             name: "date"
             type: string
           - label: "Titre"
@@ -96,6 +97,12 @@ content:
           - label: "Description"
             name: "desc"
             type: text
+          - label: "Texte du Bouton (ex: RÉSERVER SA TABLE)"
+            name: "btn_text"
+            type: string
+          - label: "Lien du Bouton (URL)"
+            name: "btn_link"
+            type: string
       - label: "Mariages Image"
         name: "wedding_img"
         type: image
