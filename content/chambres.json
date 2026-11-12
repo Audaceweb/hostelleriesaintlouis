@@ -12,10 +12,12 @@
   "badge2_text": "Ouvert tous les jours<br><em>(sauf dimanche soir & lundi midi)</em>",
   "badge3_title": "🚆 Accès & Éco-Mobilité",
   "badge3_text": "Gares d'Arnèke & Esquelbecq<br>Accès PMR • Vélos et transports doux encouragés",
-  
+
   "std_subtitle": "Intimité & Charme (Env. 19 m²)",
   "std_title": "La Chambre Standard",
   "std_img": "img/chambresimple.jpg",
+  "std_img2": "img/chambresimpleen.jpg",
+  "std_img3": "img/chambresimplesdb.jpg",
   "std_desc": "Nos chambres standards ont une superficie d’environ <strong>19 m²</strong>, équipées d'un lit double ou, pour certaines d'entre elles, de deux lits simples.<br><em style='font-size: 0.95rem; color: #666;'>Note : En chambre standard, l'accès au spa n'est pas inclus mais peut être ajouté en supplément durant votre séjour.</em>",
   "std_amenity1": "☕ Plateau de courtoisie",
   "std_amenity2": "🧼 Produits d'accueil",
@@ -29,6 +31,7 @@
   "sup_subtitle": "Espace & Spa Inclus (25 à 30 m²)",
   "sup_title": "La Chambre Supérieure",
   "sup_img": "img/chambreconfort.jpg",
+  "sup_img2": "img/hostelerieindex.jpg",
   "sup_desc": "D'une superficie comprise entre <strong>25 et 30 m²</strong>, nos chambres Supérieures sont équipées d'un grand lit (180/200) ou, selon vos besoins, de deux lits séparés.<br><strong style='color: var(--color-gold);'>✨ Inclus :</strong> Les chambres Supérieures incluent un <strong>accès au spa de 2h par jour et par occupant</strong>.",
   "sup_amenity1": "🧖‍♂️ Accès Spa 2h/jour inclus",
   "sup_amenity2": "🛋️ Coin salon",
@@ -43,6 +46,7 @@
   "conf_subtitle": "Grand Prestige & Spa Inclus (32 à 43 m²)",
   "conf_title": "La Chambre Confort",
   "conf_img": "img/chambre-confort.jpg",
+  "conf_img2": "img/hostelerieindex.jpg",
   "conf_desc": "Nos chambres Confort sont les plus vastes de notre établissement (superficie comprise entre <strong>32 et 43 m²</strong>). Elles sont équipées d'un grand lit double, d'un troisième lit simple et offrent la possibilité pour certaines d'avoir 2 lits séparés.<br><strong style='color: var(--color-gold);'>✨ Inclus :</strong> Les chambres Confort incluent un <strong>accès au spa de 2h par jour</strong>.",
   "conf_amenity1": "🧖‍♂️ Accès Spa 2h/jour inclus",
   "conf_amenity2": "🛋️ Grand Coin salon",
@@ -65,7 +69,7 @@
   "tarifs_subtitle": "Transparence & Sérénité",
   "tarifs_title": "Les Tarifs de l'Hôtel 2026-2027",
   "tarifs_desc": "<em>Les prix sont variables en fonction de la saison et de la disponibilité des chambres.</em>",
-  
+
   "card1_title": "Chambre Standard",
   "card1_subtitle": "1 ou 2 Personnes",
   "card1_price": "80 € – 160 €",
