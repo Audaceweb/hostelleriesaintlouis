@@ -1,0 +1,392 @@
+# Configuration Pages CMS complète - Hostellerie Saint-Louis
+media:
+  - name: images
+    input: img
+    output: /img
+    extensions: [png, jpg, jpeg, webp, svg, jfif]
+
+content:
+  # ==========================================
+  # 1. PAGE D'ACCUEIL (index.json)
+  # ==========================================
+  - name: "index"
+    label: "Page d'Accueil"
+    type: file
+    path: "content/index.json"
+    format: json
+    fields:
+      - label: "Logo Hero"
+        name: "hero_logo"
+        type: image
+      - label: "Description Hero"
+        name: "hero_desc"
+        type: string
+      - label: "Carrousel Accueil - Image 1"
+        name: "home_carrousel_img1"
+        type: image
+      - label: "Carrousel Accueil - Image 2"
+        name: "home_carrousel_img2"
+        type: image
+      - label: "Carrousel Accueil - Image 3"
+        name: "home_carrousel_img3"
+        type: image
+      - label: "Badge Année"
+        name: "badge_year"
+        type: string
+      - label: "Badge Texte"
+        name: "badge_text"
+        type: string
+      - label: "Intro Sous-titre"
+        name: "intro_subtitle"
+        type: string
+      - label: "Intro Titre"
+        name: "intro_title"
+        type: string
+      - label: "Intro Texte 1"
+        name: "intro_text1"
+        type: text
+      - label: "Intro Texte 2"
+        name: "intro_text2"
+        type: text
+      - label: "Chambres Image"
+        name: "rooms_img"
+        type: image
+      - label: "Chambres Sous-titre"
+        name: "rooms_subtitle"
+        type: string
+      - label: "Chambres Titre"
+        name: "rooms_title"
+        type: string
+      - label: "Chambres Description"
+        name: "rooms_desc"
+        type: text
+      - label: "Restaurant Image"
+        name: "resto_img"
+        type: image
+      - label: "Restaurant Sous-titre"
+        name: "resto_subtitle"
+        type: string
+      - label: "Restaurant Titre"
+        name: "resto_title"
+        type: string
+      - label: "Restaurant Description"
+        name: "resto_desc"
+        type: text
+      - label: "Mariages Image"
+        name: "wedding_img"
+        type: image
+      - label: "Mariages Sous-titre"
+        name: "wedding_subtitle"
+        type: string
+      - label: "Mariages Titre"
+        name: "wedding_title"
+        type: string
+      - label: "Mariages Description"
+        name: "wedding_desc"
+        type: text
+      - label: "Séminaires Image"
+        name: "seminar_img"
+        type: image
+      - label: "Séminaires Sous-titre"
+        name: "seminar_subtitle"
+        type: string
+      - label: "Séminaires Titre"
+        name: "seminar_title"
+        type: string
+      - label: "Séminaires Description"
+        name: "seminar_desc"
+        type: text
+      - label: "Spa Image"
+        name: "spa_img"
+        type: image
+      - label: "Spa Sous-titre"
+        name: "spa_subtitle"
+        type: string
+      - label: "Spa Titre"
+        name: "spa_title"
+        type: string
+      - label: "Spa Description"
+        name: "spa_desc"
+        type: text
+      - label: "Coffrets Image"
+        name: "gift_img"
+        type: image
+      - label: "Coffrets Sous-titre"
+        name: "gift_subtitle"
+        type: string
+      - label: "Coffrets Titre"
+        name: "gift_title"
+        type: string
+      - label: "Coffrets Description"
+        name: "gift_desc"
+        type: text
+      - label: "Infos Image"
+        name: "infos_img"
+        type: image
+      - label: "Infos Sous-titre"
+        name: "infos_subtitle"
+        type: string
+      - label: "Infos Titre"
+        name: "infos_title"
+        type: string
+      - label: "Infos Description"
+        name: "infos_desc"
+        type: text
+      - label: "Avis Sous-titre"
+        name: "reviews_subtitle"
+        type: string
+      - label: "Avis Titre"
+        name: "reviews_title"
+        type: string
+
+  # ==========================================
+  # 2. PAGE CHAMBRES (chambres.html)
+  # ==========================================
+  - name: "chambres"
+    label: "Page Chambres"
+    type: file
+    path: "content/chambres.json"
+    format: json
+    fields:
+      - label: "Hero Sous-titre"
+        name: "chambres_hero_subtitle"
+        type: string
+      - label: "Hero Titre"
+        name: "chambres_hero_title"
+        type: string
+      - label: "Hero Description"
+        name: "chambres_hero_desc"
+        type: string
+      - label: "Intro Sous-titre"
+        name: "chambres_intro_subtitle"
+        type: string
+      - label: "Intro Titre"
+        name: "chambres_intro_heading"
+        type: string
+      - label: "Intro Texte 1"
+        name: "chambres_intro_text1"
+        type: text
+      - label: "Intro Texte 2"
+        name: "chambres_intro_text2"
+        type: text
+      - label: "Standard Sous-titre"
+        name: "std_subtitle"
+        type: string
+      - label: "Standard Titre"
+        name: "std_title"
+        type: string
+      - label: "Standard Image"
+        name: "std_img"
+        type: image
+      - label: "Standard Description"
+        name: "std_desc"
+        type: text
+      - label: "Standard Prix"
+        name: "std_price"
+        type: string
+      - label: "Supérieure Sous-titre"
+        name: "sup_subtitle"
+        type: string
+      - label: "Supérieure Titre"
+        name: "sup_title"
+        type: string
+      - label: "Supérieure Image"
+        name: "sup_img"
+        type: image
+      - label: "Supérieure Description"
+        name: "sup_desc"
+        type: text
+      - label: "Supérieure Prix"
+        name: "sup_price"
+        type: string
+      - label: "Confort Sous-titre"
+        name: "conf_subtitle"
+        type: string
+      - label: "Confort Titre"
+        name: "conf_title"
+        type: string
+      - label: "Confort Image"
+        name: "conf_img"
+        type: image
+      - label: "Confort Description"
+        name: "conf_desc"
+        type: text
+      - label: "Confort Prix"
+        name: "conf_price"
+        type: string
+
+  # ==========================================
+  # 3. PAGE RESTAURANT PAUZE (pauze.html)
+  # ==========================================
+  - name: "pauze"
+    label: "Page Restaurant PAUZE"
+    type: file
+    path: "content/pauze.json"
+    format: json
+    fields:
+      - label: "Hero Sous-titre"
+        name: "pauze_hero_subtitle"
+        type: string
+      - label: "Hero Titre"
+        name: "pauze_hero_title"
+        type: string
+      - label: "Hero Description"
+        name: "pauze_hero_desc"
+        type: string
+      - label: "Carrousel Image 1"
+        name: "pauze_carrousel_img1"
+        type: image
+      - label: "Carrousel Image 2"
+        name: "pauze_carrousel_img2"
+        type: image
+      - label: "Carrousel Image 3"
+        name: "pauze_carrousel_img3"
+        type: image
+      - label: "Carrousel Image 4"
+        name: "pauze_carrousel_img4"
+        type: image
+      - label: "Intro Sous-titre"
+        name: "pauze_intro_subtitle"
+        type: string
+      - label: "Intro Titre"
+        name: "pauze_intro_title"
+        type: string
+      - label: "Intro Texte 1"
+        name: "pauze_intro_text1"
+        type: text
+      - label: "Badge Titre"
+        name: "pauze_badge_title"
+        type: string
+      - label: "Badge Description"
+        name: "pauze_badge_desc"
+        type: text
+      - label: "Chef Sous-titre"
+        name: "chef_subtitle"
+        type: string
+      - label: "Chef Titre"
+        name: "chef_title"
+        type: string
+      - label: "Chef Description 1"
+        name: "chef_desc1"
+        type: text
+      - label: "Chef Description 2"
+        name: "chef_desc2"
+        type: text
+      - label: "Menu Sous-titre"
+        name: "menu_subtitle"
+        type: string
+      - label: "Menu Titre"
+        name: "menu_title"
+        type: string
+      - label: "Menu Dates"
+        name: "menu_dates"
+        type: string
+      - label: "Citation Fait Maison"
+        name: "homemade_quote"
+        type: string
+      - label: "Logo Fait Maison Image"
+        name: "homemade_img"
+        type: image
+
+  # ==========================================
+  # 4. PAGE MARIAGES & RÉCEPTIONS (mariages.html)
+  # ==========================================
+  - name: "mariages"
+    label: "Page Mariages"
+    type: file
+    path: "content/mariages.json"
+    format: json
+    fields:
+      - label: "Hero Sous-titre"
+        name: "mariages_hero_subtitle"
+        type: string
+      - label: "Hero Titre"
+        name: "mariages_hero_title"
+        type: string
+      - label: "Hero Description"
+        name: "mariages_hero_desc"
+        type: string
+      - label: "Mariage Sous-titre"
+        name: "wedding_section_subtitle"
+        type: string
+      - label: "Mariage Titre"
+        name: "wedding_section_title"
+        type: string
+
+  # ==========================================
+  # 5. PAGE SÉMINAIRES (seminaires.html)
+  # ==========================================
+  - name: "seminaires"
+    label: "Page Séminaires"
+    type: file
+    path: "content/seminaires.json"
+    format: json
+    fields:
+      - label: "Hero Sous-titre"
+        name: "seminaires_hero_subtitle"
+        type: string
+      - label: "Hero Titre"
+        name: "seminaires_hero_title"
+        type: string
+      - label: "Hero Description"
+        name: "seminaires_hero_desc"
+        type: string
+      - label: "Intro Image"
+        name: "intro_img"
+        type: image
+      - label: "Intro Sous-titre"
+        name: "seminaires_intro_subtitle"
+        type: string
+      - label: "Intro Titre"
+        name: "seminaires_intro_title"
+        type: string
+
+  # ==========================================
+  # 6. PAGE SPA (spa.html)
+  # ==========================================
+  - name: "spa"
+    label: "Page Spa"
+    type: file
+    path: "content/spa.json"
+    format: json
+    fields:
+      - label: "Hero Sous-titre"
+        name: "spa_hero_subtitle"
+        type: string
+      - label: "Hero Titre"
+        name: "spa_hero_title"
+        type: string
+      - label: "Hero Description"
+        name: "spa_hero_desc"
+        type: string
+      - label: "Spa Intro Sous-titre"
+        name: "spa_intro_subtitle"
+        type: string
+      - label: "Spa Intro Titre"
+        name: "spa_intro_title"
+        type: string
+
+  # ==========================================
+  # 7. PAGE INFOS PRATIQUES (infos.html)
+  # ==========================================
+  - name: "infos"
+    label: "Page Infos Pratiques"
+    type: file
+    path: "content/infos.json"
+    format: json
+    fields:
+      - label: "Hero Sous-titre"
+        name: "infos_hero_subtitle"
+        type: string
+      - label: "Hero Titre"
+        name: "infos_hero_title"
+        type: string
+      - label: "Hero Description"
+        name: "infos_hero_desc"
+        type: string
+      - label: "Accès Sous-titre"
+        name: "access_subtitle"
+        type: string
+      - label: "Accès Titre"
+        name: "access_title"
+        type: string
