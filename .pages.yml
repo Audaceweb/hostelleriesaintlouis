@@ -21,13 +21,13 @@ content:
         name: "hero_desc"
         type: string
       - label: "Carrousel Accueil - Image 1"
-        name: "home_carrousel_img1"
+        name: "carrousel_img1"
         type: image
       - label: "Carrousel Accueil - Image 2"
-        name: "home_carrousel_img2"
+        name: "carrousel_img2"
         type: image
       - label: "Carrousel Accueil - Image 3"
-        name: "home_carrousel_img3"
+        name: "carrousel_img3"
         type: image
       - label: "Badge Année"
         name: "badge_year"
@@ -71,6 +71,31 @@ content:
       - label: "Restaurant Description"
         name: "resto_desc"
         type: text
+      - label: "Actualités Section - Sous-titre"
+        name: "news_section_subtitle"
+        type: string
+      - label: "Actualités Section - Titre"
+        name: "news_section_title"
+        type: string
+      - label: "Actualités Section - Description"
+        name: "news_section_desc"
+        type: text
+      - label: "Actualités Accueil (Liste)"
+        name: "home_news"
+        type: list
+        fields:
+          - label: "Image"
+            name: "image"
+            type: image
+          - label: "Date"
+            name: "date"
+            type: string
+          - label: "Titre"
+            name: "title"
+            type: string
+          - label: "Description"
+            name: "desc"
+            type: text
       - label: "Mariages Image"
         name: "wedding_img"
         type: image
@@ -139,83 +164,7 @@ content:
         type: string
 
   # ==========================================
-  # 2. PAGE CHAMBRES (chambres.html)
-  # ==========================================
-  - name: "chambres"
-    label: "Page Chambres"
-    type: file
-    path: "content/chambres.json"
-    format: json
-    fields:
-      - label: "Hero Sous-titre"
-        name: "chambres_hero_subtitle"
-        type: string
-      - label: "Hero Titre"
-        name: "chambres_hero_title"
-        type: string
-      - label: "Hero Description"
-        name: "chambres_hero_desc"
-        type: string
-      - label: "Intro Sous-titre"
-        name: "chambres_intro_subtitle"
-        type: string
-      - label: "Intro Titre"
-        name: "chambres_intro_heading"
-        type: string
-      - label: "Intro Texte 1"
-        name: "chambres_intro_text1"
-        type: text
-      - label: "Intro Texte 2"
-        name: "chambres_intro_text2"
-        type: text
-      - label: "Standard Sous-titre"
-        name: "std_subtitle"
-        type: string
-      - label: "Standard Titre"
-        name: "std_title"
-        type: string
-      - label: "Standard Image"
-        name: "std_img"
-        type: image
-      - label: "Standard Description"
-        name: "std_desc"
-        type: text
-      - label: "Standard Prix"
-        name: "std_price"
-        type: string
-      - label: "Supérieure Sous-titre"
-        name: "sup_subtitle"
-        type: string
-      - label: "Supérieure Titre"
-        name: "sup_title"
-        type: string
-      - label: "Supérieure Image"
-        name: "sup_img"
-        type: image
-      - label: "Supérieure Description"
-        name: "sup_desc"
-        type: text
-      - label: "Supérieure Prix"
-        name: "sup_price"
-        type: string
-      - label: "Confort Sous-titre"
-        name: "conf_subtitle"
-        type: string
-      - label: "Confort Titre"
-        name: "conf_title"
-        type: string
-      - label: "Confort Image"
-        name: "conf_img"
-        type: image
-      - label: "Confort Description"
-        name: "conf_desc"
-        type: text
-      - label: "Confort Prix"
-        name: "conf_price"
-        type: string
-
-  # ==========================================
-  # 3. PAGE RESTAURANT PAUZE (pauze.html)
+  # 2. PAGE RESTAURANT PAUZE (pauze.json)
   # ==========================================
   - name: "pauze"
     label: "Page Restaurant PAUZE"
@@ -224,40 +173,40 @@ content:
     format: json
     fields:
       - label: "Hero Sous-titre"
-        name: "pauze_hero_subtitle"
+        name: "hero_subtitle"
         type: string
       - label: "Hero Titre"
-        name: "pauze_hero_title"
+        name: "hero_title"
         type: string
       - label: "Hero Description"
-        name: "pauze_hero_desc"
-        type: string
+        name: "hero_desc"
+        type: text
       - label: "Carrousel Image 1"
-        name: "pauze_carrousel_img1"
+        name: "carrousel_img1"
         type: image
       - label: "Carrousel Image 2"
-        name: "pauze_carrousel_img2"
+        name: "carrousel_img2"
         type: image
       - label: "Carrousel Image 3"
-        name: "pauze_carrousel_img3"
+        name: "carrousel_img3"
         type: image
       - label: "Carrousel Image 4"
-        name: "pauze_carrousel_img4"
+        name: "carrousel_img4"
         type: image
       - label: "Intro Sous-titre"
-        name: "pauze_intro_subtitle"
+        name: "intro_subtitle"
         type: string
       - label: "Intro Titre"
-        name: "pauze_intro_title"
+        name: "intro_title"
         type: string
       - label: "Intro Texte 1"
-        name: "pauze_intro_text1"
+        name: "intro_text1"
         type: text
-      - label: "Badge Titre"
-        name: "pauze_badge_title"
+      - label: "Badge Teritoria - Titre"
+        name: "badge_title"
         type: string
-      - label: "Badge Description"
-        name: "pauze_badge_desc"
+      - label: "Badge Teritoria - Desc"
+        name: "badge_desc"
         type: text
       - label: "Chef Sous-titre"
         name: "chef_subtitle"
@@ -268,18 +217,146 @@ content:
       - label: "Chef Description 1"
         name: "chef_desc1"
         type: text
-      - label: "Chef Description 2"
+      - label: "Chef Citation"
         name: "chef_desc2"
         type: text
-      - label: "Menu Sous-titre"
+      - label: "Vin Sous-titre"
+        name: "wine_subtitle"
+        type: string
+      - label: "Vin Titre"
+        name: "wine_title"
+        type: string
+      - label: "Vin Description 1"
+        name: "wine_desc1"
+        type: text
+      - label: "Vin Description 2"
+        name: "wine_desc2"
+        type: text
+      # --- MENU DE LA SEMAINE ---
+      - label: "Menu Semaine - Sous-titre"
         name: "menu_subtitle"
         type: string
-      - label: "Menu Titre"
+      - label: "Menu Semaine - Titre"
         name: "menu_title"
         type: string
-      - label: "Menu Dates"
+      - label: "Menu Semaine - Dates"
         name: "menu_dates"
         type: string
+      - label: "Catégorie 1 (Entrées)"
+        name: "m_cat1"
+        type: string
+      - label: "Entrée 1 - Nom"
+        name: "m_item1_name"
+        type: string
+      - label: "Entrée 1 - Prix"
+        name: "m_item1_price"
+        type: string
+      - label: "Entrée 2 - Nom"
+        name: "m_item2_name"
+        type: string
+      - label: "Entrée 2 - Prix"
+        name: "m_item2_price"
+        type: string
+      - label: "Catégorie 2 (Plats)"
+        name: "m_cat2"
+        type: string
+      - label: "Plat 1 - Nom"
+        name: "m_item3_name"
+        type: string
+      - label: "Plat 1 - Prix"
+        name: "m_item3_price"
+        type: string
+      - label: "Plat 2 - Nom"
+        name: "m_item4_name"
+        type: string
+      - label: "Plat 2 - Prix"
+        name: "m_item4_price"
+        type: string
+      - label: "Catégorie 3 (Desserts)"
+        name: "m_cat3"
+        type: string
+      - label: "Dessert 1 - Nom"
+        name: "m_item5_name"
+        type: string
+      - label: "Dessert 1 - Prix"
+        name: "m_item5_price"
+        type: string
+      - label: "Dessert 2 - Nom"
+        name: "m_item6_name"
+        type: string
+      - label: "Dessert 2 - Prix"
+        name: "m_item6_price"
+        type: string
+      - label: "Formule Note"
+        name: "m_formula"
+        type: text
+      # --- MENU SAISONNIER AUTOMNE ---
+      - label: "Automne - Sous-titre"
+        name: "autumn-subtitle"
+        type: string
+      - label: "Automne - Titre"
+        name: "autumn-title"
+        type: string
+      - label: "Automne - Dates"
+        name: "autumn-dates"
+        type: string
+      - label: "Automne Cat 1"
+        name: "autumn-cat-1"
+        type: string
+      - label: "Automne Item 1 Nom"
+        name: "autumn-item-1-name"
+        type: string
+      - label: "Automne Item 1 Desc"
+        name: "autumn-item-1-desc"
+        type: string
+      - label: "Automne Item 1 Prix"
+        name: "autumn-item-1-price"
+        type: string
+      - label: "Automne Item 2 Nom"
+        name: "autumn-item-2-name"
+        type: string
+      - label: "Automne Item 2 Desc"
+        name: "autumn-item-2-desc"
+        type: string
+      - label: "Automne Item 2 Prix"
+        name: "autumn-item-2-price"
+        type: string
+      - label: "Automne Cat 2"
+        name: "autumn-cat-2"
+        type: string
+      - label: "Automne Item 3 Nom"
+        name: "autumn-item-3-name"
+        type: string
+      - label: "Automne Item 3 Desc"
+        name: "autumn-item-3-desc"
+        type: string
+      - label: "Automne Item 3 Prix"
+        name: "autumn-item-3-price"
+        type: string
+      - label: "Automne Item 4 Nom"
+        name: "autumn-item-4-name"
+        type: string
+      - label: "Automne Item 4 Desc"
+        name: "autumn-item-4-desc"
+        type: string
+      - label: "Automne Item 4 Prix"
+        name: "autumn-item-4-price"
+        type: string
+      - label: "Automne Cat 3"
+        name: "autumn-cat-3"
+        type: string
+      - label: "Automne Item 5 Nom"
+        name: "autumn-item-5-name"
+        type: string
+      - label: "Automne Item 5 Desc"
+        name: "autumn-item-5-desc"
+        type: string
+      - label: "Automne Item 5 Prix"
+        name: "autumn-item-5-price"
+        type: string
+      - label: "Automne Footer"
+        name: "autumn-footer"
+        type: text
       - label: "Citation Fait Maison"
         name: "homemade_quote"
         type: string
@@ -288,7 +365,271 @@ content:
         type: image
 
   # ==========================================
-  # 4. PAGE MARIAGES & RÉCEPTIONS (mariages.html)
+  # 3. PAGE SPA & BIEN-ÊTRE (spa.json)
+  # ==========================================
+  - name: "spa"
+    label: "Page Spa & Bien-être"
+    type: file
+    path: "content/spa.json"
+    format: json
+    fields:
+      - label: "Hero Sous-titre"
+        name: "hero_subtitle"
+        type: string
+      - label: "Hero Titre"
+        name: "hero_title"
+        type: string
+      - label: "Hero Description"
+        name: "hero_desc"
+        type: text
+      - label: "Spa Intro Sous-titre"
+        name: "spa_intro_subtitle"
+        type: string
+      - label: "Spa Intro Titre"
+        name: "spa_intro_title"
+        type: string
+      - label: "Spa Intro Desc"
+        name: "spa_intro_desc"
+        type: text
+      # Équipements Spa
+      - label: "Card 1 Titre (Spa de Nage)"
+        name: "scard1_title"
+        type: string
+      - label: "Card 1 Capacité"
+        name: "scard1_capacity"
+        type: string
+      - label: "Card 1 Description"
+        name: "scard1_desc"
+        type: string
+      - label: "Card 2 Titre (Bain à remous)"
+        name: "scard2_title"
+        type: string
+      - label: "Card 2 Capacité"
+        name: "scard2_capacity"
+        type: string
+      - label: "Card 2 Description"
+        name: "scard2_desc"
+        type: string
+      - label: "Card 3 Titre (Sauna)"
+        name: "scard3_title"
+        type: string
+      - label: "Card 3 Capacité"
+        name: "scard3_capacity"
+        type: string
+      - label: "Card 3 Description"
+        name: "scard3_desc"
+        type: string
+      - label: "Card 4 Titre (Hammam)"
+        name: "scard4_title"
+        type: string
+      - label: "Card 4 Capacité"
+        name: "scard4_capacity"
+        type: string
+      - label: "Card 4 Description"
+        name: "scard4_desc"
+        type: string
+      # Tarifs & Accès
+      - label: "Tarifs Sous-titre"
+        name: "tarifs_subtitle"
+        type: string
+      - label: "Tarifs Titre"
+        name: "tarifs_title"
+        type: string
+      - label: "Résidents Titre"
+        name: "t1_title"
+        type: string
+      - label: "Résidents Prix"
+        name: "t1_price"
+        type: string
+      - label: "Extérieurs Titre"
+        name: "t2_title"
+        type: string
+      - label: "Extérieurs Prix"
+        name: "t2_price"
+        type: string
+      - label: "Note Tarifs"
+        name: "tarifs_note"
+        type: text
+      - label: "Horaires Titre"
+        name: "hours_title"
+        type: string
+      - label: "Horaire 1 Jour"
+        name: "h1_day"
+        type: string
+      - label: "Horaire 1 Heure"
+        name: "h1_time"
+        type: string
+      - label: "Horaire 1 Sub"
+        name: "h1_sub"
+        type: string
+      - label: "Horaire 2 Jour"
+        name: "h2_day"
+        type: string
+      - label: "Horaire 2 Heure"
+        name: "h2_time"
+        type: string
+      - label: "Horaire 2 Sub"
+        name: "h2_sub"
+        type: string
+      - label: "Horaire 3 Jour"
+        name: "h3_day"
+        type: string
+      - label: "Horaire 3 Heure"
+        name: "h3_time"
+        type: string
+      - label: "Horaire 3 Sub"
+        name: "h3_sub"
+        type: string
+      - label: "Carrousel Spa - Image 1"
+        name: "carrousel_img1"
+        type: image
+      - label: "Carrousel Spa - Image 2"
+        name: "carrousel_img2"
+        type: image
+      - label: "Carrousel Spa - Image 3"
+        name: "carrousel_img3"
+        type: image
+      # Soins Andréa
+      - label: "Soins Sous-titre"
+        name: "soins_subtitle"
+        type: string
+      - label: "Soins Titre"
+        name: "soins_title"
+        type: string
+      - label: "Soins Description"
+        name: "soins_desc"
+        type: text
+      - label: "Label Créneaux Andréa"
+        name: "andrea_label"
+        type: string
+      - label: "Créneaux Andréa"
+        name: "andrea_slots"
+        type: string
+      - label: "Catégorie Soins 1"
+        name: "tcat1"
+        type: string
+      - label: "Soin 1 Nom"
+        name: "t1_name"
+        type: string
+      - label: "Soin 1 Description"
+        name: "t1_sub"
+        type: string
+      - label: "Soin 1 Prix/Durée"
+        name: "t1_price"
+        type: string
+      - label: "Soin 2 Nom"
+        name: "t2_name"
+        type: string
+      - label: "Soin 2 Description"
+        name: "t2_sub"
+        type: string
+      - label: "Soin 2 Prix/Durée"
+        name: "t2_price"
+        type: string
+      - label: "Soin 3 Nom"
+        name: "t3_name"
+        type: string
+      - label: "Soin 3 Description"
+        name: "t3_sub"
+        type: string
+      - label: "Soin 3 Prix/Durée"
+        name: "t3_price"
+        type: string
+      - label: "Catégorie Soins 2"
+        name: "tcat2"
+        type: string
+      - label: "Soin 4 Nom"
+        name: "t4_name"
+        type: string
+      - label: "Soin 4 Description"
+        name: "t4_sub"
+        type: string
+      - label: "Soin 4 Prix/Durée"
+        name: "t4_price"
+        type: string
+      - label: "Soin 5 Nom"
+        name: "t5_name"
+        type: string
+      - label: "Soin 5 Description"
+        name: "t5_sub"
+        type: string
+      - label: "Soin 5 Prix/Durée"
+        name: "t5_price"
+        type: string
+      # Formulaire Réservation Spa
+      - label: "Formulaire Sous-titre"
+        name: "form_subtitle"
+        type: string
+      - label: "Formulaire Titre"
+        name: "form_title"
+        type: string
+      - label: "Formulaire Description"
+        name: "form_desc"
+        type: text
+      - label: "Alerte Titre"
+        name: "alert_title"
+        type: string
+      - label: "Alerte Description"
+        name: "alert_desc"
+        type: text
+      - label: "Politique Titre"
+        name: "policy_title"
+        type: string
+      - label: "Politique Description"
+        name: "policy_desc"
+        type: text
+      - label: "CTA Téléphone Texte"
+        name: "phone_cta_text"
+        type: string
+
+  # ==========================================
+  # 4. PAGE CHAMBRES (chambres.json)
+  # ==========================================
+  - name: "chambres"
+    label: "Page Chambres"
+    type: file
+    path: "content/chambres.json"
+    format: json
+    fields:
+      - label: "Hero Sous-titre"
+        name: "hero_subtitle"
+        type: string
+      - label: "Hero Titre"
+        name: "hero_title"
+        type: string
+      - label: "Hero Description"
+        name: "hero_desc"
+        type: string
+      - label: "Intro Sous-titre"
+        name: "intro_subtitle"
+        type: string
+      - label: "Intro Titre"
+        name: "intro_heading"
+        type: string
+      - label: "Intro Texte 1"
+        name: "intro_text1"
+        type: text
+      - label: "Standard Titre"
+        name: "std_title"
+        type: string
+      - label: "Standard Prix"
+        name: "std_price"
+        type: string
+      - label: "Supérieure Titre"
+        name: "sup_title"
+        type: string
+      - label: "Supérieure Prix"
+        name: "sup_price"
+        type: string
+      - label: "Confort Titre"
+        name: "conf_title"
+        type: string
+      - label: "Confort Prix"
+        name: "conf_price"
+        type: string
+
+  # ==========================================
+  # 5. PAGE MARIAGES & RÉCEPTIONS (mariages.json)
   # ==========================================
   - name: "mariages"
     label: "Page Mariages"
@@ -297,23 +638,104 @@ content:
     format: json
     fields:
       - label: "Hero Sous-titre"
-        name: "mariages_hero_subtitle"
+        name: "hero_subtitle"
         type: string
       - label: "Hero Titre"
-        name: "mariages_hero_title"
+        name: "hero_title"
         type: string
       - label: "Hero Description"
-        name: "mariages_hero_desc"
-        type: string
-      - label: "Mariage Sous-titre"
+        name: "hero_desc"
+        type: text
+      - label: "Mariage Section - Sous-titre"
         name: "wedding_section_subtitle"
         type: string
-      - label: "Mariage Titre"
+      - label: "Mariage Section - Titre"
         name: "wedding_section_title"
+        type: string
+      - label: "Citation Mariage"
+        name: "wedding_quote"
+        type: string
+      - label: "Paragraphe 1"
+        name: "wedding_p1"
+        type: text
+      - label: "Paragraphe 2"
+        name: "wedding_p2"
+        type: text
+      - label: "Paragraphe 3"
+        name: "wedding_p3"
+        type: text
+      - label: "Paragraphe 4"
+        name: "wedding_p4"
+        type: text
+      - label: "Signature"
+        name: "wedding_signature"
+        type: string
+      - label: "Réception Section - Sous-titre"
+        name: "reception_section_subtitle"
+        type: string
+      - label: "Réception Section - Titre"
+        name: "reception_section_title"
+        type: string
+      - label: "Réception Section - Desc"
+        name: "reception_section_desc"
+        type: text
+      - label: "Carte 1 Titre"
+        name: "rcard1_title"
+        type: string
+      - label: "Carte 1 Desc"
+        name: "rcard1_desc"
+        type: text
+      - label: "Carte 2 Titre"
+        name: "rcard2_title"
+        type: string
+      - label: "Carte 2 Desc"
+        name: "rcard2_desc"
+        type: text
+      - label: "Carte 3 Titre"
+        name: "rcard3_title"
+        type: string
+      - label: "Carte 3 Desc"
+        name: "rcard3_desc"
+        type: text
+      - label: "Carte 4 Titre"
+        name: "rcard4_title"
+        type: string
+      - label: "Carte 4 Desc"
+        name: "rcard4_desc"
+        type: text
+      - label: "Partenaire Titre"
+        name: "partner_banner_title"
+        type: string
+      - label: "Partenaire Desc"
+        name: "partner_banner_desc"
+        type: text
+      - label: "Confiance Sous-titre"
+        name: "trust_section_subtitle"
+        type: string
+      - label: "Confiance Titre"
+        name: "trust_section_title"
+        type: string
+      - label: "Confiance Desc"
+        name: "trust_section_desc"
+        type: text
+      - label: "Devis Sous-titre"
+        name: "quote_subtitle"
+        type: string
+      - label: "Devis Titre"
+        name: "quote_title"
+        type: string
+      - label: "Devis Desc"
+        name: "quote_desc"
+        type: text
+      - label: "Adresse"
+        name: "quote_address"
+        type: string
+      - label: "Téléphone"
+        name: "quote_phone"
         type: string
 
   # ==========================================
-  # 5. PAGE SÉMINAIRES (seminaires.html)
+  # 6. PAGE SÉMINAIRES (seminaires.json)
   # ==========================================
   - name: "seminaires"
     label: "Page Séminaires"
@@ -322,51 +744,53 @@ content:
     format: json
     fields:
       - label: "Hero Sous-titre"
-        name: "seminaires_hero_subtitle"
+        name: "hero_subtitle"
         type: string
       - label: "Hero Titre"
-        name: "seminaires_hero_title"
+        name: "hero_title"
         type: string
       - label: "Hero Description"
-        name: "seminaires_hero_desc"
-        type: string
-      - label: "Intro Image"
-        name: "intro_img"
-        type: image
+        name: "hero_desc"
+        type: text
       - label: "Intro Sous-titre"
-        name: "seminaires_intro_subtitle"
+        name: "intro_subtitle"
         type: string
       - label: "Intro Titre"
-        name: "seminaires_intro_title"
+        name: "intro_title"
+        type: string
+      - label: "Intro Texte 1"
+        name: "intro_text1"
+        type: text
+      - label: "Intro Texte 2"
+        name: "intro_text2"
+        type: text
+      - label: "Atouts Sous-titre"
+        name: "atouts_subtitle"
+        type: string
+      - label: "Atouts Titre"
+        name: "atouts_title"
+        type: string
+      - label: "Atouts Description"
+        name: "atouts_desc"
+        type: text
+      - label: "Devis Sous-titre"
+        name: "quote_subtitle"
+        type: string
+      - label: "Devis Titre"
+        name: "quote_title"
+        type: string
+      - label: "Devis Description"
+        name: "quote_desc"
+        type: text
+      - label: "Adresse"
+        name: "quote_address"
+        type: string
+      - label: "Téléphone"
+        name: "quote_phone"
         type: string
 
   # ==========================================
-  # 6. PAGE SPA (spa.html)
-  # ==========================================
-  - name: "spa"
-    label: "Page Spa"
-    type: file
-    path: "content/spa.json"
-    format: json
-    fields:
-      - label: "Hero Sous-titre"
-        name: "spa_hero_subtitle"
-        type: string
-      - label: "Hero Titre"
-        name: "spa_hero_title"
-        type: string
-      - label: "Hero Description"
-        name: "spa_hero_desc"
-        type: string
-      - label: "Spa Intro Sous-titre"
-        name: "spa_intro_subtitle"
-        type: string
-      - label: "Spa Intro Titre"
-        name: "spa_intro_title"
-        type: string
-
-  # ==========================================
-  # 7. PAGE INFOS PRATIQUES (infos.html)
+  # 7. PAGE INFOS PRATIQUES (infos.json)
   # ==========================================
   - name: "infos"
     label: "Page Infos Pratiques"
@@ -375,17 +799,68 @@ content:
     format: json
     fields:
       - label: "Hero Sous-titre"
-        name: "infos_hero_subtitle"
+        name: "hero_subtitle"
         type: string
       - label: "Hero Titre"
-        name: "infos_hero_title"
+        name: "hero_title"
         type: string
       - label: "Hero Description"
-        name: "infos_hero_desc"
-        type: string
+        name: "hero_desc"
+        type: text
       - label: "Accès Sous-titre"
         name: "access_subtitle"
         type: string
       - label: "Accès Titre"
         name: "access_title"
+        type: string
+      - label: "Voiture Titre"
+        name: "car_title"
+        type: string
+      - label: "Voiture Desc"
+        name: "car_desc"
+        type: text
+      - label: "Shuttle Titre"
+        name: "shuttle_title"
+        type: string
+      - label: "Shuttle Desc"
+        name: "shuttle_desc"
+        type: text
+      - label: "Train Titre"
+        name: "train_title"
+        type: string
+      - label: "Train Desc"
+        name: "train_desc"
+        type: text
+      - label: "Environs Sous-titre"
+        name: "surroundings_subtitle"
+        type: string
+      - label: "Environs Titre"
+        name: "surroundings_title"
+        type: string
+      - label: "Environs Desc"
+        name: "surroundings_desc"
+        type: text
+      - label: "Actualités Section - Sous-titre"
+        name: "news_subtitle"
+        type: string
+      - label: "Actualités Section - Titre"
+        name: "news_title"
+        type: string
+      - label: "Contact Sous-titre"
+        name: "contact_subtitle"
+        type: string
+      - label: "Contact Titre"
+        name: "contact_title"
+        type: string
+      - label: "Contact Desc"
+        name: "contact_desc"
+        type: text
+      - label: "Adresse"
+        name: "contact_address"
+        type: string
+      - label: "Téléphone"
+        name: "contact_phone"
+        type: string
+      - label: "Email"
+        name: "contact_email"
         type: string
