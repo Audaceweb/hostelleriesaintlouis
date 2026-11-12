@@ -1,1 +1,60 @@
-{}
+{
+  "hero_subtitle": "Votre Voyage Commence Ici",
+  "hero_title": "Infos Pratiques & Accès",
+  "hero_desc": "Au cœur du charmant village de Bollezeele en Flandre intérieure.",
+  "access_subtitle": "Comment nous rejoindre",
+  "access_title": "Accès & Transports",
+  "car_title": "En Voiture",
+  "car_desc": "Accès rapide via l'A25 (Sortie 15 Wormhout / Herzeele ou Sortie 14). À 20 min de Dunkerque et 45 min de Lille. Parking privé et sécurisé sur place.",
+  "shuttle_title": "Le Shuttle (Calais / Eurotunnel)",
+  "shuttle_desc": "À seulement 35 minutes du terminal Eurotunnel de Calais et des Ferries via l'A26/A25. Une halte idéale pour nos visiteurs venus du Royaume-Uni.",
+  "train_title": "En Train",
+  "train_desc": "Gares TGV / TER les plus proches : Hazebrouck (20 min) et Dunkerque (25 min). Service de taxi et réservation de chauffeur sur demande à la réception.",
+  "surroundings_subtitle": "Escapades & Patrimoine",
+  "surroundings_title": "À faire dans les environs",
+  "surroundings_desc": "Entre Monts de Flandre, cités fortifiées et côtes sauvages, explorez les richesses culturelles et naturelles entourant Bollezeele.",
+  
+  "flandres_title": "Cassel & La Flandre Intérieure",
+  "flandres_item1": "<strong>Cassel (Village préféré des Français) :</strong> Musée de Flandre, le Moulin en bois et les remparts panoramiques.",
+  "flandres_item2": "<strong>Jardins des Récollets :</strong> Un havre de paix paysager sur les hauteurs.",
+  "flandres_item3": "<strong>Noordpeene :</strong> Maison de la Bataille du Val de Cassel.",
+  "flandres_item4": "<strong>Rubrouck & Herzeele :</strong> Maison Guillaume de Rubrouck et les célèbres Orgues d'Herzeele.",
+  "flandres_item5": "<strong>Volckerinckhove :</strong> Découverte du patrimoine rural et son moulin à cheval.",
+
+  "bergues_title": "Bergues & Esquelbecq",
+  "bergues_item1": "<strong>Bergues la Fortifiée :</strong> Le Beffroi classé UNESCO, l'Abbaye Saint-Winoc, le Mont-de-Piété et l'Église Saint-Martin.",
+  "bergues_item2": "<strong>Esquelbecq :</strong> \"Village du Livre\", son Château aux 8 tourelles et sa grande place flamande.",
+  "bergues_item3": "<strong>Route des Moulins :</strong> Circuits de randonnées pédestres (Cartes disponibles à l'Office de Tourisme du Coin de l'Yser).",
+
+  "dunkerque_title": "Dunkerque & Le Littoral",
+  "dunkerque_item1": "<strong>Opération Dynamo :</strong> Musée Dunkerque 1940 - Mémorial du Souvenir.",
+  "dunkerque_item2": "<strong>Culture & Art :</strong> FRAC, LAAC (Art contemporain), Musée Portuaire et le voilier <em>Duchesse Anne</em>.",
+  "dunkerque_item3": "<strong>Malo-les-Bains :</strong> Plage de sable fin et magnifiques Villas Malouines.",
+  "dunkerque_item4": "<strong>Nature & Faune :</strong> Le PLUS (Palais des Sciences), Parc Zoologique de Fort-Mardyck et la Ferme du Camélus à Ghyvelde.",
+
+  "gravelines_title": "Gravelines & Les Fortifications",
+  "gravelines_item1": "<strong>Cité Fortifiée de Vauban :</strong> Remparts, fossés, Arsenal et Musée du Dessin.",
+  "gravelines_item2": "<strong>Petit & Grand-Fort-Philippe :</strong> Le Phare et les plages authentiques.",
+  "gravelines_item3": "<strong>Bourbourg :</strong> Le Chœur de Lumière par Anthony Caro et l'ancienne prison.",
+  "gravelines_item4": "<strong>Loon-Plage :</strong> Le Parc Galamé (4,5 Ha de nature et filtration végétale).",
+
+  "stomer_title": "Saint-Omer & L'Audomarois",
+  "stomer_item1": "<strong>Cathédrale Notre-Dame :</strong> Chef-d'œuvre gothique (Descente de Croix de Rubens, Horloge Astrolabe).",
+  "stomer_item2": "<strong>Le Marais Audomarois :</strong> Balades en barque et Réserve Naturelle des Étangs du Romelaëre.",
+  "stomer_item3": "<strong>Musée Sandelin & Bibliothèque :</strong> Collections prestigieuses et manuscrits médiévaux.",
+  "stomer_item4": "<strong>Histoire & Vérité :</strong> La Coupole d'Helfaut et le Blockhaus d'Éperlecques.",
+
+  "golf_title": "Parcours de Golf à Proximité",
+  "golf_item1": "<strong>Golf de la Vallée de l'Aa (Saint-Omer) :</strong> Un parcours de niveau international au cœur du vallon.",
+  "golf_item2": "<strong>Golf de Ruminghem :</strong> Parcours boisé et technique entre Saint-Omer et Calais.",
+  "golf_item3": "<strong>Golf de Dunkerque (Coudekerque-Village) :</strong> Inspiré des fortifications de Vauban.",
+
+  "news_subtitle": "La Vie à l'Hostellerie",
+  "news_title": "Actualités & Événements",
+  "contact_subtitle": "À Votre Écoute",
+  "contact_title": "Nous Contacter",
+  "contact_desc": "Notre équipe se tient à votre entière disposition pour répondre à toutes vos questions et préparer votre venue à Bollezeele.",
+  "contact_address": "47 Rue de l'Église, 59470 Bollezeele, France",
+  "contact_phone": "+33 (0)3 28 68 00 00",
+  "contact_email": "contact@saintlouis.fr"
+}
