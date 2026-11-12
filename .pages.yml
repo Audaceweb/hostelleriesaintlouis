@@ -582,7 +582,7 @@ content:
         name: "phone_cta_text"
         type: string
 
-# ==========================================
+  # ==========================================
   # 4. PAGE CHAMBRES (chambres.json)
   # ==========================================
   - name: "chambres"
@@ -913,6 +913,7 @@ content:
       - label: "Animaux Détails"
         name: "pets_details"
         type: text
+
   # ==========================================
   # 5. PAGE MARIAGES & RÉCEPTIONS (mariages.json)
   # ==========================================
@@ -940,6 +941,12 @@ content:
       - label: "Citation Mariage"
         name: "wedding_quote"
         type: string
+      - label: "Mariage Image 1"
+        name: "wedding_img1"
+        type: image
+      - label: "Mariage Image 2"
+        name: "wedding_img2"
+        type: image
       - label: "Paragraphe 1"
         name: "wedding_p1"
         type: text
@@ -1003,6 +1010,39 @@ content:
       - label: "Confiance Desc"
         name: "trust_section_desc"
         type: text
+      - label: "Diaporama Confiance - Image 1"
+        name: "trust_slider_img1"
+        type: image
+      - label: "Diaporama Confiance - Image 2"
+        name: "trust_slider_img2"
+        type: image
+      - label: "Diaporama Confiance - Image 3"
+        name: "trust_slider_img3"
+        type: image
+      - label: "Galerie Image 1"
+        name: "g_img1"
+        type: image
+      - label: "Galerie Texte 1"
+        name: "g_text1"
+        type: string
+      - label: "Galerie Image 2"
+        name: "g_img2"
+        type: image
+      - label: "Galerie Texte 2"
+        name: "g_text2"
+        type: string
+      - label: "Galerie Image 3"
+        name: "g_img3"
+        type: image
+      - label: "Galerie Texte 3"
+        name: "g_text3"
+        type: string
+      - label: "Galerie Image 4"
+        name: "g_img4"
+        type: image
+      - label: "Galerie Texte 4"
+        name: "g_text4"
+        type: string
       - label: "Devis Sous-titre"
         name: "quote_subtitle"
         type: string
@@ -1037,6 +1077,15 @@ content:
       - label: "Hero Description"
         name: "hero_desc"
         type: text
+      - label: "Carrousel Séminaire - Image 1"
+        name: "carrousel_img1"
+        type: image
+      - label: "Carrousel Séminaire - Image 2"
+        name: "carrousel_img2"
+        type: image
+      - label: "Carrousel Séminaire - Image 3"
+        name: "carrousel_img3"
+        type: image
       - label: "Intro Sous-titre"
         name: "intro_subtitle"
         type: string
@@ -1057,6 +1106,30 @@ content:
         type: string
       - label: "Atouts Description"
         name: "atouts_desc"
+        type: text
+      - label: "Card 1 Titre"
+        name: "scard1_title"
+        type: string
+      - label: "Card 1 Desc"
+        name: "scard1_desc"
+        type: text
+      - label: "Card 2 Titre"
+        name: "scard2_title"
+        type: string
+      - label: "Card 2 Desc"
+        name: "scard2_desc"
+        type: text
+      - label: "Card 3 Titre"
+        name: "scard3_title"
+        type: string
+      - label: "Card 3 Desc"
+        name: "scard3_desc"
+        type: text
+      - label: "Card 4 Titre"
+        name: "scard4_title"
+        type: string
+      - label: "Card 4 Desc"
+        name: "scard4_desc"
         type: text
       - label: "Devis Sous-titre"
         name: "quote_subtitle"
