@@ -476,7 +476,7 @@
         });
     });
 
-   // --- 2. SCRIPT GALERIE LIGHTBOX PLEIN ÉCRAN (DYNAMIQUE) ---
+// --- 2. SCRIPT GALERIE LIGHTBOX PLEIN ÉCRAN (DYNAMIQUE) ---
 let currentGallery = [];
 let currentImgIndex = 0;
 
@@ -529,37 +529,40 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-    // --- 3. SCRIPT DE CHARGEMENT CMS (INDISPENSABLE) ---
-    async function loadCMSContent() {
-        try {
-            let pageName = window.location.pathname.split('/').pop().replace('.html', '');
-            if (!pageName || pageName === 'index' || pageName === '') {
-                pageName = 'index';
-            }
-
-            const response = await fetch(`content/${pageName}.json`);
-            if (!response.ok) return;
-            
-            const data = await response.json();
-
-            for (const [key, value] of Object.entries(data)) {
-                if (Array.isArray(value)) continue;
-
-                const elements = document.querySelectorAll(`[data-cms="${key}"]`);
-                elements.forEach(element => {
-                    if (element.tagName === 'IMG') {
-                        element.src = value;
-                    } else if (value) {
-                        element.innerHTML = value;
-                    }
-                });
-            }
-        } catch (error) {
-            console.log("Erreur CMS:", error);
+// --- 3. SCRIPT DE CHARGEMENT CMS (CORRIGÉ) ---
+async function loadCMSContent() {
+    try {
+        let pageName = window.location.pathname.split('/').pop().replace('.html', '');
+        if (!pageName || pageName === 'index' || pageName === '') {
+            pageName = 'index';
         }
-    }
 
-    document.addEventListener('DOMContentLoaded', loadCMSContent);
+        const response = await fetch(`content/${pageName}.json`);
+        if (!response.ok) return;
+        
+        const data = await response.json();
+        
+        // 🔑 C'EST CETTE LIGNE QUI MANQUAIT :
+        window.cmsData = data;
+
+        for (const [key, value] of Object.entries(data)) {
+            if (Array.isArray(value)) continue;
+
+            const elements = document.querySelectorAll(`[data-cms="${key}"]`);
+            elements.forEach(element => {
+                if (element.tagName === 'IMG') {
+                    element.src = value;
+                } else if (value) {
+                    element.innerHTML = value;
+                }
+            });
+        }
+    } catch (error) {
+        console.log("Erreur CMS:", error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadCMSContent);
 </script>
     <script src="script.js"></script>
 </body>
