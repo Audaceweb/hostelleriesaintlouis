@@ -408,7 +408,7 @@ content:
         type: image
 
   # ==========================================
-  # 3. PAGE SPA & BIEN-ÊTRE (spa.json)
+  # 7. PAGE SPA (spa.json)
   # ==========================================
   - name: "spa"
     label: "Page Spa & Bien-être"
@@ -424,207 +424,239 @@ content:
         type: string
       - label: "Hero Description"
         name: "hero_desc"
-        type: text
-      - label: "Spa Intro Sous-titre"
+        type: string
+
+      - label: "Introduction Sous-titre"
         name: "spa_intro_subtitle"
         type: string
-      - label: "Spa Intro Titre"
+      - label: "Introduction Titre"
         name: "spa_intro_title"
         type: string
-      - label: "Spa Intro Desc"
+      - label: "Introduction Texte"
         name: "spa_intro_desc"
         type: text
-      # Équipements Spa
-      - label: "Card 1 Titre (Spa de Nage)"
+
+      # --- Équipements Spa ---
+      - label: "Carte 1 - Titre"
         name: "scard1_title"
         type: string
-      - label: "Card 1 Capacité"
+      - label: "Carte 1 - Capacité"
         name: "scard1_capacity"
         type: string
-      - label: "Card 1 Description"
+      - label: "Carte 1 - Description"
         name: "scard1_desc"
-        type: string
-      - label: "Card 2 Titre (Bain à remous)"
+        type: text
+
+      - label: "Carte 2 - Titre"
         name: "scard2_title"
         type: string
-      - label: "Card 2 Capacité"
+      - label: "Carte 2 - Capacité"
         name: "scard2_capacity"
         type: string
-      - label: "Card 2 Description"
+      - label: "Carte 2 - Description"
         name: "scard2_desc"
-        type: string
-      - label: "Card 3 Titre (Sauna)"
+        type: text
+
+      - label: "Carte 3 - Titre"
         name: "scard3_title"
         type: string
-      - label: "Card 3 Capacité"
+      - label: "Carte 3 - Capacité"
         name: "scard3_capacity"
         type: string
-      - label: "Card 3 Description"
+      - label: "Carte 3 - Description"
         name: "scard3_desc"
-        type: string
-      - label: "Card 4 Titre (Hammam)"
+        type: text
+
+      - label: "Carte 4 - Titre"
         name: "scard4_title"
         type: string
-      - label: "Card 4 Capacité"
+      - label: "Carte 4 - Capacité"
         name: "scard4_capacity"
         type: string
-      - label: "Card 4 Description"
+      - label: "Carte 4 - Description"
         name: "scard4_desc"
-        type: string
-      # Tarifs & Accès
+        type: text
+
+      # --- Tarifs & Horaires ---
       - label: "Tarifs Sous-titre"
         name: "tarifs_subtitle"
         type: string
       - label: "Tarifs Titre"
         name: "tarifs_title"
         type: string
-      - label: "Résidents Titre"
+      - label: "Tarif 1 - Titre"
         name: "t1_title"
         type: string
-      - label: "Résidents Prix"
+      - label: "Tarif 1 - Prix"
         name: "t1_price"
         type: string
-      - label: "Extérieurs Titre"
+      - label: "Tarif 2 - Titre"
         name: "t2_title"
         type: string
-      - label: "Extérieurs Prix"
+      - label: "Tarif 2 - Prix"
         name: "t2_price"
-        type: string
-      - label: "Note Tarifs"
-        name: "tarifs_note"
-        type: text
-      - label: "Horaires Titre"
-        name: "hours_title"
-        type: string
-      - label: "Horaire 1 Jour"
-        name: "h1_day"
-        type: string
-      - label: "Horaire 1 Heure"
-        name: "h1_time"
-        type: string
-      - label: "Horaire 1 Sub"
-        name: "h1_sub"
-        type: string
-      - label: "Horaire 2 Jour"
-        name: "h2_day"
-        type: string
-      - label: "Horaire 2 Heure"
-        name: "h2_time"
-        type: string
-      - label: "Horaire 2 Sub"
-        name: "h2_sub"
-        type: string
-      - label: "Horaire 3 Jour"
-        name: "h3_day"
-        type: string
-      - label: "Horaire 3 Heure"
-        name: "h3_time"
-        type: string
-      - label: "Horaire 3 Sub"
-        name: "h3_sub"
-        type: string
-      - label: "Carrousel Spa - Image 1"
-        name: "carrousel_img1"
-        type: image
-      - label: "Carrousel Spa - Image 2"
-        name: "carrousel_img2"
-        type: image
-      - label: "Carrousel Spa - Image 3"
-        name: "carrousel_img3"
-        type: image
-      # Soins Andréa
-      - label: "Soins Sous-titre"
-        name: "soins_subtitle"
-        type: string
-      - label: "Soins Titre"
-        name: "soins_title"
-        type: string
-      - label: "Soins Description"
-        name: "soins_desc"
-        type: text
-      - label: "Label Créneaux Andréa"
-        name: "andrea_label"
-        type: string
-      - label: "Créneaux Andréa"
-        name: "andrea_slots"
-        type: string
-      - label: "Catégorie Soins 1"
-        name: "tcat1"
-        type: string
-      - label: "Soin 1 Nom"
-        name: "t1_name"
-        type: string
-      - label: "Soin 1 Description"
-        name: "t1_sub"
-        type: string
-      - label: "Soin 1 Prix/Durée"
-        name: "t1_price"
-        type: string
-      - label: "Soin 2 Nom"
-        name: "t2_name"
-        type: string
-      - label: "Soin 2 Description"
-        name: "t2_sub"
-        type: string
-      - label: "Soin 2 Prix/Durée"
-        name: "t2_price"
-        type: string
-      - label: "Soin 3 Nom"
-        name: "t3_name"
-        type: string
-      - label: "Soin 3 Description"
-        name: "t3_sub"
-        type: string
-      - label: "Soin 3 Prix/Durée"
-        name: "t3_price"
-        type: string
-      - label: "Catégorie Soins 2"
-        name: "tcat2"
-        type: string
-      - label: "Soin 4 Nom"
-        name: "t4_name"
-        type: string
-      - label: "Soin 4 Description"
-        name: "t4_sub"
-        type: string
-      - label: "Soin 4 Prix/Durée"
-        name: "t4_price"
-        type: string
-      - label: "Soin 5 Nom"
-        name: "t5_name"
-        type: string
-      - label: "Soin 5 Description"
-        name: "t5_sub"
-        type: string
-      - label: "Soin 5 Prix/Durée"
-        name: "t5_price"
-        type: string
-      # Formulaire Réservation Spa
-      - label: "Formulaire Sous-titre"
-        name: "form_subtitle"
-        type: string
-      - label: "Formulaire Titre"
-        name: "form_title"
-        type: string
-      - label: "Formulaire Description"
-        name: "form_desc"
-        type: text
-      - label: "Alerte Titre"
-        name: "alert_title"
-        type: string
-      - label: "Alerte Description"
-        name: "alert_desc"
-        type: text
-      - label: "Politique Titre"
-        name: "policy_title"
-        type: string
-      - label: "Politique Description"
-        name: "policy_desc"
-        type: text
-      - label: "CTA Téléphone Texte"
-        name: "phone_cta_text"
         type: string
 
+      - label: "Horaires - Titre"
+        name: "hours_title"
+        type: string
+      - label: "Lundi - Jour"
+        name: "h1_day"
+        type: string
+      - label: "Lundi - Heures"
+        name: "h1_time"
+        type: string
+      - label: "Mardi au Samedi - Jour"
+        name: "h2_day"
+        type: string
+      - label: "Mardi au Samedi - Heures"
+        name: "h2_time"
+        type: string
+      - label: "Dimanche - Jour"
+        name: "h3_day"
+        type: string
+      - label: "Dimanche - Heures"
+        name: "h3_time"
+        type: string
+
+      # --- Carte des Soins (Nohèm & Rituels) ---
+      - label: "Soins - Sous-titre"
+        name: "soins_subtitle"
+        type: string
+      - label: "Soins - Titre"
+        name: "soins_title"
+        type: string
+      - label: "Soins - Description"
+        name: "soins_desc"
+        type: text
+
+      # Visage Nohèm
+      - label: "Catégorie 1 - Nom"
+        name: "tcat1"
+        type: string
+      - label: "Soin 1 - Nom"
+        name: "t1_name"
+        type: string
+      - label: "Soin 1 - Détails"
+        name: "t1_sub"
+        type: text
+      - label: "Soin 1 - Prix"
+        name: "t1_price"
+        type: string
+      - label: "Soin 2 - Nom"
+        name: "t2_name"
+        type: string
+      - label: "Soin 2 - Détails"
+        name: "t2_sub"
+        type: text
+      - label: "Soin 2 - Prix"
+        name: "t2_price"
+        type: string
+      - label: "Soin 3 - Nom"
+        name: "t3_name"
+        type: string
+      - label: "Soin 3 - Détails"
+        name: "t3_sub"
+        type: text
+      - label: "Soin 3 - Prix"
+        name: "t3_price"
+        type: string
+
+      # Corps / Massages
+      - label: "Catégorie 2 - Nom"
+        name: "tcat2"
+        type: string
+      - label: "Soin 4 - Nom"
+        name: "t4_name"
+        type: string
+      - label: "Soin 4 - Détails"
+        name: "t4_sub"
+        type: text
+      - label: "Soin 4 - Prix"
+        name: "t4_price"
+        type: string
+      - label: "Soin 5 - Nom"
+        name: "t5_name"
+        type: string
+      - label: "Soin 5 - Détails"
+        name: "t5_sub"
+        type: text
+      - label: "Soin 5 - Prix"
+        name: "t5_price"
+        type: string
+      - label: "Soin 6 - Nom"
+        name: "t6_name"
+        type: string
+      - label: "Soin 6 - Détails"
+        name: "t6_sub"
+        type: text
+      - label: "Soin 6 - Prix"
+        name: "t6_price"
+        type: string
+      - label: "Soin 7 - Nom"
+        name: "t7_name"
+        type: string
+      - label: "Soin 7 - Détails"
+        name: "t7_sub"
+        type: text
+      - label: "Soin 7 - Prix"
+        name: "t7_price"
+        type: string
+
+      # Rituels Signatures
+      - label: "Catégorie 3 - Nom"
+        name: "tcat3"
+        type: string
+      - label: "Soin 8 - Nom"
+        name: "t8_name"
+        type: string
+      - label: "Soin 8 - Détails"
+        name: "t8_sub"
+        type: text
+      - label: "Soin 8 - Prix"
+        name: "t8_price"
+        type: string
+      - label: "Soin 9 - Nom"
+        name: "t9_name"
+        type: string
+      - label: "Soin 9 - Détails"
+        name: "t9_sub"
+        type: text
+      - label: "Soin 9 - Prix"
+        name: "t9_price"
+        type: string
+      - label: "Soin 10 - Nom"
+        name: "t10_name"
+        type: string
+      - label: "Soin 10 - Détails"
+        name: "t10_sub"
+        type: text
+      - label: "Soin 10 - Prix"
+        name: "t10_price"
+        type: string
+
+      # Onglerie & Épilation
+      - label: "Catégorie 4 - Nom"
+        name: "tcat4"
+        type: string
+      - label: "Soin 11 - Nom"
+        name: "t11_name"
+        type: string
+      - label: "Soin 11 - Détails"
+        name: "t11_sub"
+        type: text
+      - label: "Soin 11 - Prix"
+        name: "t11_price"
+        type: string
+      - label: "Soin 12 - Nom"
+        name: "t12_name"
+        type: string
+      - label: "Soin 12 - Détails"
+        name: "t12_sub"
+        type: text
+      - label: "Soin 12 - Prix"
+        name: "t12_price"
+        type: string
 # ==========================================
   # 4. PAGE CHAMBRES (chambres.json)
   # ==========================================
