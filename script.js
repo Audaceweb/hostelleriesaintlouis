@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. GESTION DU MENU HAMBURGER (Animation croix + flou)
-    if (hamburgerBtn && navBar) {
+        if (hamburgerBtn && navBar) {
         hamburgerBtn.addEventListener('click', () => {
             hamburgerBtn.classList.toggle('open');
             navBar.classList.toggle('active');
@@ -27,8 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 navBar.classList.remove('active');
             });
         });
-    }
 
+        // Fermer le menu au clic sur le logo
+        document.querySelectorAll('.mobile-menu-logo a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('open');
+                navBar.classList.remove('active');
+            });
+        });
+    }
     // 3. GESTION DU LIEN ACTIF
     const currentPath = window.location.pathname.split("/").pop();
     navLinks.forEach(link => {
