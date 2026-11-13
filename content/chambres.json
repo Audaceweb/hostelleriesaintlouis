@@ -89,6 +89,20 @@
   "conf_price": "De 110 € à 220 € / nuit",
   "apt_subtitle": "Espace Familial & Autonomie",
   "apt_title": "Appartement pour 6 Personnes",
+  "apt_photos_liste": [
+    {
+      "image": "img/20251213_135903 (1)-1.jpg"
+    },
+    {
+      "image": "img/20251213_135852 (1)-1.jpg"
+    },
+    {
+      "image": "img/20251213_140001-1.jpg"
+    },
+    {
+      "image": "img/IMG_9571-1.jpg"
+    }
+  ],
   "apt_desc": "Spacieux et parfaitement agencé, notre appartement accueille confortablement jusqu'à <strong>6 personnes</strong>. Idéal pour les grands séjours en famille ou entre amis, il offre un cadre chaleureux alliant espace et indépendance.",
   "apt_view1": "🌿 Vue : Rue calme",
   "apt_view2": "🌳 Vue : Cour intérieure",
