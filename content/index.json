@@ -61,3 +61,22 @@
   "reviews_subtitle": "Témoignages",
   "reviews_title": "Ce que nos hôtes disent de nous"
 }
+{
+  "hero_subtitle": "...",
+  "hero_title": "...",
+  
+  "reviews_subtitle": "Témoignages",
+  "reviews_title": "Ce que nos hôtes disent de nous",
+  
+  "review1_source": "Google Avis",
+  "review1_text": "\"Un cadre magnifique, un service irréprochable et des chambres d'une propreté et d'un raffinement absolu. Une parenthèse magique dans le Nord !\"",
+  "review1_author": "— Thomas V.",
+
+  "review2_source": "Booking.com (9.6/10)",
+  "review2_text": "\"Le charme de l'ancien allié au confort moderne. Le restaurant est une pure merveille pour les papilles. Personnel aux petits soins.\"",
+  "review2_author": "— Éléonore M.",
+
+  "review3_source": "Label Terratoria",
+  "review3_text": "\"Une authenticité rare et un engagement sincère pour le terroir. L'esprit de l'hostellerie à son paroxysme.\"",
+  "review3_author": "— Marc & Sophie L."
+}
