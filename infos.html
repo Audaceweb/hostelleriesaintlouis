@@ -312,41 +312,37 @@
         </section>
     </main>
 
-    <!-- FOOTER (Non modifiable par le CMS) -->
+   <!-- FOOTER -->
     <footer class="main-footer-new">
         <div class="footer-container-grid">
             <div class="footer-left">
                 <h3>Hostellerie Saint-Louis</h3>
                 <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
-                <p>Tél : <a href="tel:+33328680000">03 28 68 81 83</a></p>
+                <p>Tél : <a href="tel:+33328688183">03 28 68 81 83</a></p>
                 <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
-                
-                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
-                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
-                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
-                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
-                    
-                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
-                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
-                    </div>
-                </div>
             </div>
-
             <div class="footer-center">
                 <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
             </div>
+<div class="footer-right">
+    <h3>Newsletter</h3>
+    <p>Recevez nos offres privilèges.</p>
+    <form class="newsletter-form" id="newsletter-form" action="subscribe.php" method="POST">
+        <!-- anti-spam : champ invisible -->
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-            <div class="footer-right">
-                <h3>Newsletter</h3>
-                <p>Recevez nos offres privilèges.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
-                    <input type="email" placeholder="Votre adresse email" required>
-                    <button type="submit" class="btn-gold">S'inscrire</button>
-                </form>
-            </div>
+        <input type="email" name="email" placeholder="Votre adresse email" required>
+        <button type="submit" class="btn-gold">S'inscrire</button>
+
+        <label class="newsletter-consent">
+            <input type="checkbox" required>
+            J'accepte de recevoir la newsletter de l'Hostellerie Saint-Louis.
+        </label>
+        <p id="newsletter-msg" class="newsletter-msg"></p>
+    </form>
+</div>
         </div>
-        
-<div class="footer-bottom-legal">
+        <div class="footer-bottom-legal">
             <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
             <p style="margin-top: 5px;">Fait par passion par <a href="https://audaceweb.fr" target="_blank" style="color: var(--color-gold); text-decoration: underline;">Audaceweb</a></p>
             <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
