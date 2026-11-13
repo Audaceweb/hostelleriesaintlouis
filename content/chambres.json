@@ -123,6 +123,10 @@
   "apt_price": "À partir de 317,10 € / nuit",
   "breakfast_subtitle": "Chaque matin, un réveil gourmand",
   "breakfast_title": "Le Petit-Déjeuner Buffet",
+  "breakfast_photos_liste": [
+    {},
+    {}
+  ],
   "breakfast_text1": "Découvrez notre buffet continental pour bien démarrer la journée. Nous vous accueillons de <strong>7h00 à 9h30 en semaine</strong> et <strong>jusqu'à 10h00 le week-end</strong> autour d'un assortiment de produits frais et locaux : yaourts, viennoiseries, charcuteries, fromages, boissons chaudes et quelques surprises de la maison.",
   "breakfast_note1": "<strong>🥐 Service en chambre :</strong> Possibilité de petit-déjeuner servi en chambre (+5 € / personne / jour).",
   "breakfast_note2": "<strong>🌅 Départ aux aurores ?</strong> Nous nous efforçons de nous adapter à vos horaires en vous préparant un petit-déjeuner sous forme de panier à emporter.",
