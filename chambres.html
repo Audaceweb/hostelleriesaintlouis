@@ -562,7 +562,43 @@
     }
 
     setInterval(() => { moveBreakfastSlide(1); }, 5000);
+    function buildBreakfastCarousel(list) {
+        const carousel = document.getElementById('breakfastCarousel');
+        if (!carousel || !Array.isArray(list)) return;
 
+        const paths = list
+            .map(item => cleanPath(typeof item === 'string' ? item : item?.image))
+            .filter(Boolean);
+        if (paths.length === 0) return; // garde les images écrites dans le HTML
+
+        carousel.querySelectorAll('img').forEach(img => img.remove());
+        const firstBtn = carousel.querySelector('.carousel-btn');
+
+        paths.forEach((src, i) => {
+            const img = document.createElement('img');
+            img.alt = 'Petit-déjeuner Hostellerie Saint-Louis';
+            if (i === 0) img.classList.add('active-slide');
+            // Image introuvable : on l'ignore et on signale le chemin en console
+            img.onerror = () => {
+                console.warn('Carrousel petit-déjeuner : image introuvable →', src);
+                img.remove();
+                const slides = carousel.querySelectorAll('img');
+                slides.forEach(s => s.classList.remove('active-slide'));
+                if (slides.length) slides[0].classList.add('active-slide');
+                currentBreakfastSlide = 0;
+                carousel.querySelectorAll('.carousel-btn').forEach(b => {
+                    b.style.display = slides.length > 1 ? '' : 'none';
+                });
+            };
+            img.src = src;
+            carousel.insertBefore(img, firstBtn);
+        });
+
+        currentBreakfastSlide = 0;
+        carousel.querySelectorAll('.carousel-btn').forEach(b => {
+            b.style.display = paths.length > 1 ? '' : 'none';
+        });
+    }
     // --- 3. GALERIE LIGHTBOX PLEIN ÉCRAN ---
     let currentGallery = [];
     let currentImgIndex = 0;
@@ -649,7 +685,7 @@
 
             const data = await response.json();
             window.cmsData = data;
-
+             buildBreakfastCarousel(data.breakfast_photos_liste);
             for (const [key, value] of Object.entries(data)) {
                 if (Array.isArray(value)) continue;
 
