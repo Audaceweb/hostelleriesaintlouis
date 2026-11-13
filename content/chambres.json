@@ -37,6 +37,20 @@
   "std_price": "De 80 € à 160 € / nuit",
   "sup_subtitle": "Espace & Spa Inclus (25 à 30 m²)",
   "sup_title": "La Chambre Supérieure",
+  "sup_photos_liste": [
+    {
+      "image": "img/Capture d'écran 2026-11-13 101555.png"
+    },
+    {
+      "image": "img/Capture d'écran 2026-11-13 103912.png"
+    },
+    {
+      "image": "img/Capture d'écran 2026-11-13 103939.png"
+    },
+    {
+      "image": "img/Capture d'écran 2026-11-13 103946.png"
+    }
+  ],
   "sup_desc": "D'une superficie comprise entre <strong>25 et 30 m²</strong>, nos chambres Supérieures sont équipées d'un grand lit (180/200) ou, selon vos besoins, de deux lits séparés.<br><strong style='color: var(--color-gold);'>✨ Inclus :</strong> Les chambres Supérieures incluent un <strong>accès au spa de 2h par jour et par occupant</strong>.",
   "sup_amenity1": "🧖‍♂️ Accès Spa 2h/jour inclus",
   "sup_amenity2": "🛋️ Coin salon",
