@@ -5,59 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hostellerie Saint-Louis - Accueil</title>
     <link rel="icon" type="image/png" href="img/logoor.png">
+    <!-- Typographies Google Fonts (Bad Script, Outfit, Wire One & Playfair Display pour l'élégance) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Fichier de style CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="iframeClose" style="display:none; position:fixed; top:20px; right:40px; color:#000; font-size:35px; cursor:pointer; font-family:Arial; background: #fff; width: 45px; height: 45px; text-align: center; border-radius: 50%; line-height: 42px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); z-index: 9999999;">&times;</div>
-<iframe id="ReservitBookingIframe" src="https://premium.logishotels.com/engine/booking/233/1237" style="opacity:1; border:none; width:100%; height:100%; position:fixed; transform:translateY(0px); background:#fff; top:0; bottom:0; left:0; right:0; z-index:100000; transition:transform 450ms cubic-bezier(0.23, 1, 0.32, 1), opacity 450ms cubic-bezier(0.23, 1, 0.32, 1); display:none;"></iframe>
+
+    <!-- ENTÊTE / HEADER EN SUPERPOSITION SUR LA VIDÉO (Non modifiable par le CMS) -->
     <header id="main-header">
-    <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
+        <!-- Bouton Hamburger (À gauche sur mobile) -->
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
-    <div class="logo-container" id="logo-container">
-        <a href="index.html">
-            <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
-        </a>
-    </div>
-
-    <nav class="nav-bar" id="nav-bar">
-        <div class="mobile-menu-logo">
+        <!-- Logo de l'Hôtel (Centré au scroll sur desktop/mobile) -->
+        <div class="logo-container" id="logo-container">
             <a href="index.html">
-                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
             </a>
         </div>
 
-        <ul class="nav-links">
-            <li><a href="chambres.html">Chambres</a></li>
-            <li><a href="pauze.html">Restaurant</a></li>
-            <li><a href="mariages.html">Mariages & Réceptions</a></li>
-            <li><a href="seminaires.html">Séminaires</a></li>
-            <li><a href="spa.html">Spa & Bien-être</a></li>
-            <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
-            <li><a href="infos.html">Infos Pratiques</a></li>
-        </ul>
-    </nav>
+        <!-- Barre de Navigation (Parfaitement centrée) -->
+        <nav class="nav-bar" id="nav-bar">
+            <ul class="nav-links">
+                <li><a href="chambres.html">Chambres</a></li>
+                <li><a href="pauze.html">Restaurant</a></li>
+                <li><a href="mariages.html">Mariages & Réceptions</a></li>
+                <li><a href="seminaires.html">Séminaires</a></li>
+                <li><a href="spa.html">Spa & Bien-être</a></li>
+                <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
+                <li><a href="infos.html">Infos Pratiques</a></li>
+            </ul>
+        </nav>
 
-        <button class="btn-reserver ReservitBookingButton" style="cursor: pointer;">Réserver</button>
+        <!-- Bouton Réserver Toujours Présent -->
+        <a href="#reservation" class="btn-reserver">Réserver</a>
     </header>
 
+    <!-- MAIN CONTENT -->
     <main>
         <!-- BLOC HERO -->
         <section class="hero-block hero-bg-image">
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
+                <!-- Grand Logo au centre à la place du texte de bienvenue -->
                 <div class="hero-main-logo animate-fade">
                     <img src="img/grandlogob.png" data-cms="hero_logo" alt="Hostellerie Saint-Louis Logo" class="hero-logo-large">
                 </div>
                 
+                <!-- Titre et description en dessous -->
                 <p class="hero-desc animate-fade" data-cms="hero_desc">Un écrin d'élégance et d'histoire au cœur du Nord de la France.</p>
             </div>
         </section>
@@ -66,31 +69,33 @@
         <section class="section-block block-blanc reveal" id="block-presentation-hotel">
             <div class="container-split">
                 
+                <!-- Côté Gauche : Carrousel Photo de Luxe -->
                 <div class="block-media presentation-media">
                     <div class="hotel-carousel-container">
                         <div class="carousel-track" id="hotel-carousel-track">
+                            <!-- Image 1 -->
                             <div class="carousel-slide active">
                                 <img src="img/carrousel1.jpg" data-cms="carrousel_img1" alt="Façade de l'Hostellerie Saint-Louis">
                             </div>
+                            <!-- Image 2 -->
                             <div class="carousel-slide">
-                                <img src="img/decoindex.jpg" data-cms="carrousel_img2" alt="Interieur de l'hôtel">
+                                <img src="img/carroussel2.jpg" data-cms="carrousel_img2" alt="Interieur de l'hôtel">
                             </div>
+                            <!-- Image 3 -->
                             <div class="carousel-slide">
                                 <img src="img/carrousel3.jpg" data-cms="carrousel_img3" alt="Le cadre enchanteur">
                             </div>
-                                    <div class="carousel-slide">
-                                <img src="img/decoindex2.jpg" data-cms="carrousel_img3" alt="Le cadre enchanteur">
-                            </div>
                         </div>
 
+                        <!-- Flèches de navigation élégantes -->
                         <button class="carousel-arrow prev-arrow" id="carousel-prev" aria-label="Photo précédente">&#10094;</button>
                         <button class="carousel-arrow next-arrow" id="carousel-next" aria-label="Photo suivante">&#10095;</button>
 
+                        <!-- Lignes / Puces de navigation dorées -->
                         <div class="carousel-dots" id="carousel-dots">
                             <span class="dot active" data-index="0"></span>
                             <span class="dot" data-index="1"></span>
                             <span class="dot" data-index="2"></span>
-                            <span class="dot" data-index="3"></span>
                         </div>
                     </div>
 
@@ -136,32 +141,33 @@
                     </p>
                     <div class="block-actions">
                         <a href="chambres.html" class="btn-outline">Découvrir</a>
-                        <button class="btn-gold ReservitBookingButton" style="cursor: pointer;">Réserver une chambre</button>
+                        <a href="#reservation" class="btn-gold">Réserver</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 2. BLOC RESTAURANT -->
         <section class="section-block block-bleu reveal" id="block-restaurant">
-    <div class="container-split reverse">
-        <div class="block-media">
-            <div class="image-placeholder">
-                <img src="img/restaurantindex.jpg" data-cms="resto_img" alt="Restaurant Saint-Louis">
+            <div class="container-split reverse">
+                <div class="block-media">
+                    <div class="image-placeholder">
+                        <img src="img/restaurantindex.jpg" data-cms="resto_img" alt="Restaurant Saint-Louis">
+                    </div>
+                </div>
+                <div class="block-text">
+                    <span class="subtitle" data-cms="resto_subtitle">Gastronomie & Terroir</span>
+                    <h2 class="title" data-cms="resto_title">Le Restaurant</h2>
+                    <p class="body-text" data-cms="resto_desc">
+                        Une cuisine savoureuse et délicate mettant en valeur les trésors de notre région dans une atmosphère chaleureuse.
+                    </p>
+                    <div class="block-actions">
+                        <a href="pauze.html" class="btn-outline">Voir la carte</a>
+                        <a href="#reservation" class="btn-gold">Réserver une table</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="block-text">
-            <span class="subtitle" data-cms="resto_subtitle">Gastronomie & Terroir</span>
-            <h2 class="title" data-cms="resto_title">Le Restaurant</h2>
-            <p class="body-text" data-cms="resto_desc">
-                Une cuisine savoureuse et délicate mettant en valeur les trésors de notre région dans une atmosphère chaleureuse.
-            </p>
-            <div class="block-actions">
-                <a href="pauze.html#menu-semaine" class="btn-outline">Voir la carte</a>
-                <a href="pauze.html" class="btn-gold">Réserver une table</a>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- BLOC ACTUALITÉS & ÉVÉNEMENTS (Modifiable via liste CMS) -->
         <section class="section-block block-creme reveal" id="block-actualites">
@@ -195,98 +201,100 @@
             </div>
         </section>
 
-       <section class="section-block block-blanc reveal" id="block-mariages">
-    <div class="container-split">
-        <div class="block-media">
-            <div class="image-placeholder">
-                <img src="img/mariageindex.jpg" data-cms="wedding_img" alt="Mariages et Réceptions">
+        <!-- 3. BLOC MARIAGES & RÉCEPTIONS -->
+        <section class="section-block block-blanc reveal" id="block-mariages">
+            <div class="container-split">
+                <div class="block-media">
+                    <div class="image-placeholder">
+                        <img src="img/mariageindex.jpg" data-cms="wedding_img" alt="Mariages et Réceptions">
+                    </div>
+                </div>
+                <div class="block-text">
+                    <span class="subtitle" data-cms="wedding_subtitle">Moments Inoubliables</span>
+                    <h2 class="title" data-cms="wedding_title">Mariages & Réceptions</h2>
+                    <p class="body-text" data-cms="wedding_desc">
+                        Célébrez vos événements précieux dans un cadre prestigieux dédié à la féerie et au partage.
+                    </p>
+                    <div class="block-actions">
+                        <a href="mariages.html" class="btn-outline">En savoir plus</a>
+                        <a href="#reservation" class="btn-gold">Réserver un événement</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="block-text">
-            <span class="subtitle" data-cms="wedding_subtitle">Moments Inoubliables</span>
-            <h2 class="title" data-cms="wedding_title">Mariages & Réceptions</h2>
-            <p class="body-text" data-cms="wedding_desc">
-                Célébrez vos événements précieux dans un cadre prestigieux dédié à la féerie et au partage.
-            </p>
-            <div class="block-actions">
-                <a href="mariages.html" class="btn-outline">En savoir plus</a>
-                <a href="mariages.html#devis-evenement" class="btn-gold">Réserver un événement</a>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+
         <!-- 4. BLOC SÉMINAIRES -->
-    <section class="section-block block-creme reveal" id="block-seminaires">
-    <div class="container-split reverse">
-        <div class="block-media">
-            <div class="image-placeholder">
-                <img src="img/seminaireindex.jpg" data-cms="seminar_img" alt="Séminaires et Affaires">
+        <section class="section-block block-creme reveal" id="block-seminaires">
+            <div class="container-split reverse">
+                <div class="block-media">
+                    <div class="image-placeholder">
+                        <img src="img/seminaireindex.jpg" data-cms="seminar_img" alt="Séminaires et Affaires">
+                    </div>
+                </div>
+                <div class="block-text">
+                    <span class="subtitle" data-cms="seminar_subtitle">Travail & Sérénité</span>
+                    <h2 class="title" data-cms="seminar_title">Séminaires & Pro</h2>
+                    <p class="body-text" data-cms="seminar_desc">
+                        Des salons entièrement équipés et une organisation sur-mesure pour la réussite de vos rendez-vous d'affaires.
+                    </p>
+                    <div class="block-actions">
+                        <a href="seminaires.html" class="btn-outline">Espaces & Équipements</a>
+                        <a href="#reservation" class="btn-gold">Réserver une salle</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="block-text">
-            <span class="subtitle" data-cms="seminar_subtitle">Travail & Sérénité</span>
-            <h2 class="title" data-cms="seminar_title">Séminaires & Pro</h2>
-            <p class="body-text" data-cms="seminar_desc">
-                Des salons entièrement équipés et une organisation sur-mesure pour la réussite de vos rendez-vous d'affaires.
-            </p>
-            <div class="block-actions">
-                <a href="seminaires.html" class="btn-outline">Espaces & Équipements</a>
-                <a href="seminaires.html#devis-seminaire" class="btn-gold">Réserver une salle</a>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- 5. BLOC SPA & BIEN-ÊTRE -->
         <section class="section-block block-bleu reveal" id="block-spa">
-    <div class="container-split">
-        <div class="block-media">
-            <div class="image-placeholder">
-                <img src="img/spaindex.jpg" data-cms="spa_img" alt="Spa et Bien-être">
+            <div class="container-split">
+                <div class="block-media">
+                    <div class="image-placeholder">
+                        <img src="img/spaindex.jpg" data-cms="spa_img" alt="Spa et Bien-être">
+                    </div>
+                </div>
+                <div class="block-text">
+                    <span class="subtitle" data-cms="spa_subtitle">Détente Absolue</span>
+                    <h2 class="title" data-cms="spa_title">Spa & Bien-être</h2>
+                    <p class="body-text" data-cms="spa_desc">
+                        Laissez-vous transporter par des soins apaisants et profitez d'un véritable havre de paix.
+                    </p>
+                    <div class="block-actions">
+                        <a href="spa.html" class="btn-outline">Découvrir le Spa</a>
+                        <a href="#reservation" class="btn-gold">Réserver un soin</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="block-text">
-            <span class="subtitle" data-cms="spa_subtitle">Détente Absolue</span>
-            <h2 class="title" data-cms="spa_title">Spa & Bien-être</h2>
-            <p class="body-text" data-cms="spa_desc">
-                Laissez-vous transporter par des soins apaisants et profitez d'un véritable havre de paix.
-            </p>
-            <div class="block-actions">
-                <a href="spa.html" class="btn-outline">Découvrir le Spa</a>
-                <a href="spa.html#reservation-spa" class="btn-gold">Réserver un soin</a>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- 6. BLOC COFFRETS CADEAUX -->
         <section class="section-block block-blanc reveal" id="block-coffrets">
-    <div class="container-split reverse">
-        <div class="block-media">
-            <div class="image-placeholder">
-                <img src="photo-coffrets.jpg" data-cms="gift_img" alt="Coffrets Cadeaux">
+            <div class="container-split reverse">
+                <div class="block-media">
+                    <div class="image-placeholder">
+                        <img src="photo-coffrets.jpg" data-cms="gift_img" alt="Coffrets Cadeaux">
+                    </div>
+                </div>
+                <div class="block-text">
+                    <span class="subtitle" data-cms="gift_subtitle">Offrir l'Exception</span>
+                    <h2 class="title" data-cms="gift_title">Coffrets Cadeaux</h2>
+                    <p class="body-text" data-cms="gift_desc">
+                        Faites plaisir à vos proches avec nos chèques et séjours cadeaux faits sur mesure.
+                    </p>
+                    <div class="block-actions">
+                        <a href="coffrets.html" class="btn-outline">Nos offres cadeaux</a>
+                        <a href="#reservation" class="btn-gold">Offrir maintenant</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="block-text">
-            <span class="subtitle" data-cms="gift_subtitle">Offrir l'Exception</span>
-            <h2 class="title" data-cms="gift_title">Coffrets Cadeaux</h2>
-            <p class="body-text" data-cms="gift_desc">
-                Faites plaisir à vos proches avec nos chèques et séjours cadeaux faits sur mesure.
-            </p>
-            <div class="block-actions">
-                <a href="coffrets.html" class="btn-outline">Nos offres cadeaux</a>
-                <a href="coffrets.html#boutique-zenchef" class="btn-gold">Offrir maintenant</a>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- 7. BLOC INFOS PRATIQUES -->
         <section class="section-block block-creme reveal" id="block-infos">
             <div class="container-split">
                 <div class="block-media">
                     <div class="image-placeholder">
-                        <img src="img/bozellesindex.jpg" data-cms="infos_img" alt="Infos Pratiques et Région">
+                        <img src="img/bozelles.jfif" data-cms="infos_img" alt="Infos Pratiques et Région">
                     </div>
                 </div>
                 <div class="block-text">
@@ -303,100 +311,94 @@
             </div>
         </section>
 
+        <!-- SECTION AVIS -->
         <section class="section-block block-blanc reveal" id="block-avis">
-    <div class="container">
-        <span class="subtitle" data-cms="reviews_subtitle">Témoignages</span>
-        <h2 class="title" data-cms="reviews_title">Ce que nos hôtes disent de nous</h2>
-        
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-source google" data-cms="review1_source">Google Avis</div>
-                <p class="review-text" data-cms="review1_text">"Un cadre magnifique, un service irréprochable et des chambres d'une propreté et d'un raffinement absolu. Une parenthèse magique dans le Nord !"</p>
-                <div class="review-author" data-cms="review1_author">— Thomas V.</div>
+            <div class="container">
+                <span class="subtitle" data-cms="reviews_subtitle">Témoignages</span>
+                <h2 class="title" data-cms="reviews_title">Ce que nos hôtes disent de nous</h2>
+                
+                <div class="reviews-grid">
+                    <div class="review-card" data-cms="review1">
+                        <div class="review-source google" data-cms="source">Google Avis</div>
+                        <p class="review-text" data-cms="text">"Un cadre magnifique, un service irréprochable et des chambres d'une propreté et d'un raffinement absolu. Une parenthèse magique dans le Nord !"</p>
+                        <div class="review-author" data-cms="author">— Thomas V.</div>
+                    </div>
+                    <div class="review-card" data-cms="review2">
+                        <div class="review-source booking" data-cms="source">Booking.com (9.6/10)</div>
+                        <p class="review-text" data-cms="text">"Le charme de l'ancien allié au confort moderne. Le restaurant est une pure merveille pour les papilles. Personnel aux petits soins."</p>
+                        <div class="review-author" data-cms="author">— Éléonore M.</div>
+                    </div>
+                    <div class="review-card" data-cms="review3">
+                        <div class="review-source terratoria" data-cms="source">Label Terratoria</div>
+                        <p class="review-text" data-cms="text">"Une authenticité rare et un engagement sincère pour le terroir. L'esprit de l'hostellerie à son paroxysme."</p>
+                        <div class="review-author" data-cms="author">— Marc & Sophie L.</div>
+                    </div>
+                </div>
             </div>
-            <div class="review-card">
-                <div class="review-source booking" data-cms="review2_source">Booking.com (9.6/10)</div>
-                <p class="review-text" data-cms="review2_text">"Le charme de l'ancien allié au confort moderne. Le restaurant est une pure merveille pour les papilles. Personnel aux petits soins."</p>
-                <div class="review-author" data-cms="review2_author">— Éléonore M.</div>
-            </div>
-            <div class="review-card">
-                <div class="review-source terratoria" data-cms="review3_source">Label Terratoria</div>
-                <p class="review-text" data-cms="review3_text">"Une authenticité rare et un engagement sincère pour le terroir. L'esprit de l'hostellerie à son paroxysme."</p>
-                <div class="review-author" data-cms="review3_author">— Marc & Sophie L.</div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
-        <footer class="main-footer-new">
+    <!-- FOOTER ÉPURÉ (Non modifiable par le CMS) -->
+    <footer class="main-footer-new">
         <div class="footer-container-grid">
             <div class="footer-left">
                 <h3>Hostellerie Saint-Louis</h3>
                 <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
-                <p>Tél : <a href="tel:+33328688183">03 28 68 81 83</a></p>
+                <p>Tél : <a href="tel:+33328680000">03 28 68 81 83</a></p>
                 <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
+                
+                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
+                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
+                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
+                    
+                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
+                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
+                    </div>
+                </div>
             </div>
+
             <div class="footer-center">
                 <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
             </div>
-<div class="footer-right">
-    <h3>Newsletter</h3>
-    <p>Recevez nos offres privilèges.</p>
-    <form class="newsletter-form" id="newsletter-form" action="subscribe.php" method="POST">
-        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-        <input type="email" name="email" placeholder="Votre adresse email" required>
-        <button type="submit" class="btn-gold">S'inscrire</button>
-
-        <label class="newsletter-consent">
-            <input type="checkbox" required>
-            J'accepte de recevoir la newsletter de l'Hostellerie Saint-Louis.
-        </label>
-        <p id="newsletter-msg" class="newsletter-msg"></p>
-    </form>
-</div>
+            <div class="footer-right">
+                <h3>Newsletter</h3>
+                <p>Recevez nos offres privilèges.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn-gold">S'inscrire</button>
+                </form>
+            </div>
         </div>
-        <div class="footer-bottom-legal">
+        
+<div class="footer-bottom-legal">
             <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
             <p style="margin-top: 5px;">Fait par passion par <a href="https://audaceweb.fr" target="_blank" style="color: var(--color-gold); text-decoration: underline;">Audaceweb</a></p>
             <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
         </div>
     </footer>
+
     <!-- Fichier JavaScript -->
     <script src="script.js"></script>
     <script>
-         // --- 1. MODULE RESERVIT ---
-    jQuery(document).ready(function() {
-        jQuery(".ReservitBookingButton").click(function () {
-            if (jQuery(this).hasClass("iframeShow")) {
-                jQuery(this).removeClass("iframeShow");
-                jQuery("iframe#ReservitBookingIframe, .iframeClose").hide("slow");
-            } else {
-                jQuery(this).addClass("iframeShow");
-                jQuery("iframe#ReservitBookingIframe, .iframeClose").show("slow");
-            }
-        });
-        jQuery(".iframeClose").click(function () {
-            jQuery(".ReservitBookingButton").removeClass("iframeShow");
-            jQuery("iframe#ReservitBookingIframe, .iframeClose").hide("slow");
-        });
-    });
-        
   async function loadCMSContent() {
     try {
+      // 1. Détection automatique de la page actuelle (ex: "chambres.html" -> "chambres")
       let pageName = window.location.pathname.split('/').pop().replace('.html', '');
       if (!pageName || pageName === 'index' || pageName === '') {
         pageName = 'index';
       }
 
+      // 2. Chargement du fichier JSON correspondant dans le dossier content/
       const response = await fetch(`content/${pageName}.json`);
-      if (!response.ok) return; 
+      if (!response.ok) return; // Si le fichier JSON n'existe pas encore, on garde le HTML de base
       
       const data = await response.json();
 
-     
+      // 3. Injection des données simples (Textes & Images avec data-cms)
       for (const [key, value] of Object.entries(data)) {
+        // Si c'est une liste (comme les actualités), on la traite séparément ci-dessous
         if (Array.isArray(value)) continue;
 
         const elements = document.querySelectorAll(`[data-cms="${key}"]`);
@@ -409,11 +411,14 @@
         });
       }
 
+      // 4. Gestion spéciale de la LISTE D'ACTUALITÉS (sur la page index)
       if (data.home_news && Array.isArray(data.home_news)) {
         const newsContainer = document.querySelector('.news-grid');
         if (newsContainer) {
+          // On vide les cartes de démonstration
           newsContainer.innerHTML = '';
 
+          // On génère dynamiquement chaque carte d'actualité depuis le JSON
           data.home_news.forEach(item => {
             const cardHTML = `
               <article class="news-card">
@@ -436,6 +441,7 @@
     }
   }
 
+  // Lancement automatique au chargement de la page
   document.addEventListener('DOMContentLoaded', loadCMSContent);
 </script>
 </body>

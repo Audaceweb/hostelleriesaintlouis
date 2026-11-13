@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mariages & Réceptions - Hostellerie Saint-Louis</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/grandlogob.png">
 
     <!-- Polices Google Fonts -->
@@ -76,19 +75,19 @@
             </div>
         </section>
 
-        <!-- SECTION 1 : LES MARIAGES -->
         <section class="section-block block-creme reveal" id="section-mariages">
             <div class="container-split">
                 <div class="block-media">
                     <div class="hotel-carousel-container room-carousel" id="wedding-carousel">
-                        <div class="carousel-track">
-                            <div class="carousel-slide active"><img src="img/mariage2.jpg" data-cms="wedding_img1" alt="Mariage 1"></div>
-                            <div class="carousel-slide"><img src="img/mariage1.jpg" data-cms="wedding_img2" alt="Mariage 2"></div>
+                        <div class="carousel-track" data-cms-list="wedding_photos_liste">
+                            <div class="carousel-slide active"><img src="img/mariage2.jpg" data-cms="image" alt="Mariage 1"></div>
+                            <div class="carousel-slide"><img src="img/mariage1.jpg" data-cms="image" alt="Mariage 2"></div>
+                            <div class="carousel-slide"><img src="img/hostelerieindex.jpg" data-cms="image" alt="Mariage 3"></div>
                         </div>
                         <button class="carousel-arrow prev-arrow">&#10094;</button>
                         <button class="carousel-arrow next-arrow">&#10095;</button>
                         <div class="carousel-dots">
-                            <span class="dot active"></span><span class="dot"></span>
+                            <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
                         </div>
                     </div>
                 </div>
@@ -112,6 +111,37 @@
 
                     <div class="block-actions" style="margin-top: 25px;">
                         <a href="#devis-evenement" class="btn-gold">Organiser votre mariage</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOUVEAU : CAPACITÉS DES SALLES (Style Séminaires) -->
+        <section class="section-block block-blanc reveal" id="section-capacites">
+            <div class="container" style="max-width: 1100px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <span class="subtitle" data-cms="capacity_section_subtitle">Espaces & Configurations</span>
+                    <h2 class="title" style="color: var(--color-blue); font-size: 2.8rem;" data-cms="capacity_section_title">Capacités de nos Salons de Réception</h2>
+                    <p class="body-text" style="max-width: 750px; margin: 15px auto 0 auto; color: #555;" data-cms="capacity_section_desc">
+                        Des espaces modulables et élégants pour recevoir vos convives dans les meilleures conditions.
+                    </p>
+                </div>
+
+                <div class="seminar-features-grid">
+                    <div class="seminar-card">
+                        <div class="seminar-card-icon">🏛️</div>
+                        <h3 data-cms="cap1_title">Le Grand Salon</h3>
+                        <p data-cms="cap1_desc">Jusqu'à 60 personnes en repas assis. Idéal pour les banquets de mariage et grandes réceptions familiales.</p>
+                    </div>
+                    <div class="seminar-card">
+                        <div class="seminar-card-icon">✨</div>
+                        <h3 data-cms="cap2_title">Salon Intime & Privatif</h3>
+                        <p data-cms="cap2_desc">De 12 à 30 personnes. Parfait pour les anniversaires, baptêmes ou comités restreints.</p>
+                    </div>
+                    <div class="seminar-card">
+                        <div class="seminar-card-icon">🌿</div>
+                        <h3 data-cms="cap3_title">Espace Cocktail & Jardin</h3>
+                        <p data-cms="cap3_desc">Espace extérieur et terrasses attenantes pour vos vin d'honneur et cocktails de saison.</p>
                     </div>
                 </div>
             </div>
@@ -177,7 +207,7 @@
             </div>
         </section>
 
-        <!-- SECTION 3 : ILS NOUS ONT FAIT CONFIANCE -->
+        <!-- SECTION 3 : ILS NOUS ONT FAIT CONFIANCE (Galerie Illimitée CMS) -->
         <section class="section-block block-creme reveal" id="section-confiance">
             <div class="container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
                 <span class="subtitle" data-cms="trust_section_subtitle">Souvenirs & Émotions</span>
@@ -186,12 +216,12 @@
                     Découvrez quelques clichés immortalisés lors des mariages et réceptions accueillis au sein de notre demeure.
                 </p>
 
-                <!-- 1. DIAPORAMA / CARROUSEL INTERACTIF -->
+                <!-- Carrousel interactif -->
                 <div class="hotel-carousel-container room-carousel" style="max-width: 900px; margin: 0 auto 50px auto; height: 450px;">
-                    <div class="carousel-track">
-                        <div class="carousel-slide active"><img src="img/hostelerieindex.jpg" data-cms="trust_slider_img1" alt="Mariage 1"></div>
-                        <div class="carousel-slide"><img src="img/photo-restaurant.jpg" data-cms="trust_slider_img2" alt="Réception 2"></div>
-                        <div class="carousel-slide"><img src="img/chambreindex.jpg" data-cms="trust_slider_img3" alt="Mariage 3"></div>
+                    <div class="carousel-track" data-cms-list="trust_photos_liste">
+                        <div class="carousel-slide active"><img src="img/hostelerieindex.jpg" data-cms="image" alt="Mariage 1"></div>
+                        <div class="carousel-slide"><img src="img/photo-restaurant.jpg" data-cms="image" alt="Réception 2"></div>
+                        <div class="carousel-slide"><img src="img/chambreindex.jpg" data-cms="image" alt="Mariage 3"></div>
                     </div>
                     <button class="carousel-arrow prev-arrow">&#10094;</button>
                     <button class="carousel-arrow next-arrow">&#10095;</button>
@@ -200,23 +230,23 @@
                     </div>
                 </div>
 
-                <!-- 2. GALERIE PHOTO EN GRILLE -->
-                <div class="gallery-grid">
+                <!-- Galerie Photo en Grille (Illimitée gérée par le CMS) -->
+                <div class="gallery-grid" data-cms-list="trust_grid_liste">
                     <div class="gallery-item">
-                        <img src="img/hostelerieindex.jpg" data-cms="g_img1" alt="Réception Jardin">
-                        <div class="gallery-overlay"><span data-cms="g_text1">Mariage d'Éléonore & Thomas</span></div>
+                        <img src="img/hostelerieindex.jpg" data-cms="image" alt="Réception Jardin">
+                        <div class="gallery-overlay"><span data-cms="title">Mariage d'Éléonore & Thomas</span></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="img/photo-restaurant.jpg" data-cms="g_img2" alt="Table Banquet">
-                        <div class="gallery-overlay"><span data-cms="g_text2">Anniversaire 50 ans</span></div>
+                        <img src="img/photo-restaurant.jpg" data-cms="image" alt="Table Banquet">
+                        <div class="gallery-overlay"><span data-cms="title">Anniversaire 50 ans</span></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="img/chambreindex.jpg" data-cms="g_img3" alt="Cocktail">
-                        <div class="gallery-overlay"><span data-cms="g_text3">Réception de Famille</span></div>
+                        <img src="img/chambreindex.jpg" data-cms="image" alt="Cocktail">
+                        <div class="gallery-overlay"><span data-cms="title">Réception de Famille</span></div>
                     </div>
                     <div class="gallery-item">
-                        <img src="img/sdb.jpg" data-cms="g_img4" alt="Préparation de la Mariée">
-                        <div class="gallery-overlay"><span data-cms="g_text4">Préparatifs en Suite</span></div>
+                        <img src="img/sdb.jpg" data-cms="image" alt="Préparation de la Mariée">
+                        <div class="gallery-overlay"><span data-cms="title">Préparatifs en Suite</span></div>
                     </div>
                 </div>
             </div>
@@ -396,6 +426,56 @@
 
   // Lancement automatique au chargement de la page
   document.addEventListener('DOMContentLoaded', loadCMSContent);
+</script>
+<div id="gallery-lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:999999; justify-content:center; align-items:center; flex-direction:column; padding:20px; box-sizing:border-box;">
+    <span id="lightbox-close" style="position:fixed; top:20px; right:35px; color:#fff; font-size:45px; font-weight:300; cursor:pointer; line-height:1; z-index:1000000;">&times;</span>
+    <img id="lightbox-img" src="" alt="" style="max-width:90%; max-height:80vh; border-radius:4px; box-shadow:0 10px 40px rgba(0,0,0,0.6); object-fit:contain;">
+    <p id="lightbox-caption" style="color:var(--color-gold, #dcb254); font-family:var(--font-subtitle, serif); font-style:italic; font-size:1.3rem; margin-top:15px; text-align:center;"></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('lightbox-close');
+
+    // Détection dynamique sur toute la grille (même les photos ajoutées par le CMS)
+    document.addEventListener('click', function(e) {
+        const galleryItem = e.target.closest('.gallery-grid .gallery-item');
+        if (galleryItem) {
+            const img = galleryItem.querySelector('img');
+            const caption = galleryItem.querySelector('.gallery-overlay span');
+            if (img) {
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = caption ? caption.textContent : '';
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Bloque le défilement derrière
+            }
+        }
+    });
+
+    // Fermeture via la croix
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Fermeture en cliquant sur le fond noir autour de l'image
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Fermeture avec la touche Échap du clavier
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+            closeLightbox();
+        }
+    });
+});
 </script>
 </body>
 </html>

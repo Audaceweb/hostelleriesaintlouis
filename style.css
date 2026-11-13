@@ -1,6 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
 /* ==========================================================================
    CHARTE GRAPHIQUE HOSTELLERIE SAINT-LOUIS
    ========================================================================== */
@@ -1236,7 +1233,7 @@ body {
 }
 
 .footer-bottom-legal {
-    grid-column: 1 / -1;      
+    grid-column: 1 / -1;      /* occupe toutes les colonnes de la grille */
     width: 100%;
     max-width: 1200px;
     margin: 50px auto 0 auto;
@@ -1256,6 +1253,7 @@ body {
     text-decoration: underline;
 }
 
+/* Responsive mobile pour les grilles */
 @media (max-width: 992px) {
     .instagram-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1303,14 +1301,14 @@ body {
 
     #main-header.scrolled .logo-container {
         position: absolute;
-        left: 44%; 
+        left: 44%; /* Décalé légèrement vers la gauche pour être bien centré dans l'espace */
         transform: translateX(-50%);
     }
 
     #main-header.scrolled .logo-img {
-        height: 42px; 
+        height: 42px; /* Garde la navbar fine */
         width: auto;
-        max-width: 150px; 
+        max-width: 150px; /* Donne de la longueur au logo textuel */
         object-fit: contain;
     }
 
@@ -1319,7 +1317,7 @@ body {
     }
 
     .hero-logo-large {
-        height: 180px; 
+        height: 180px; /* Grand logo bien visible dans le hero sur mobile */
     }
 
     .hamburger-menu {
@@ -1380,11 +1378,13 @@ body {
    CORRECTIONS FINALES MOBILE (Menu Hamburger & Espacements)
    ========================================================================== */
 @media (max-width: 992px) {
+    /* S'assure que le bouton hamburger s'affiche bien sur mobile */
     .hamburger-menu {
         display: flex !important;
         z-index: 1002;
     }
 
+    /* Ajuste la hauteur du grand hero sur mobile pour qu'il soit bien proportionné */
     .page-hero-large {
         height: 50vh;
     }
@@ -1393,10 +1393,12 @@ body {
         font-size: 2.8rem !important;
     }
 
+    /* Espace le premier bloc sous le hero mobile */
     .section-room-wrapper:first-of-type {
         padding-top: 60px;
     }
 
+    /* Redimensionne les cartes de chambres pour les petits écrans */
     .room-luxury-card {
         padding: 25px 15px;
         margin: 0 10px;
@@ -1408,12 +1410,13 @@ body {
 }
 
 /* ==========================================================================
-   STYLE RESTAURANT PAUZE 
+   STYLE SPÉCIFIQUE RESTAURANT PAUZE (Accent Vert)
    ========================================================================== */
 :root {
-    --color-restaurant-green: #4c5c4b; 
+    --color-restaurant-green: #4c5c4b; /* Vert PAUZE de la charte */
 }
 
+/* Bouton vert spécifique au restaurant */
 .btn-restaurant-green {
     padding: 12px 30px;
     background-color: var(--color-restaurant-green);
@@ -1433,10 +1436,12 @@ body {
     box-shadow: 0 5px 15px rgba(76, 92, 75, 0.3);
 }
 
+/* Hero spécifique au restaurant */
 .restaurant-hero {
     background-image: url('img/photo-restaurant.jpg');
 }
 
+/* Carte du menu de la semaine */
 .menu-dates {
     font-size: 1.1rem;
     font-style: italic;
@@ -1509,6 +1514,7 @@ body {
     color: var(--color-blue);
 }
 
+/* Responsive mobile pour le menu */
 @media (max-width: 992px) {
     .menu-card-luxury {
         padding: 30px 20px;
@@ -1522,29 +1528,43 @@ body {
         align-self: flex-end;
     }
 }
+/* ==========================================================================
+   PERSONNALISATION EXCLUSIVE PAGE RESTAURANT (NAVBAR & FOOTER VERT PAUZE)
+   ========================================================================== */
 
+/* ==========================================================================
+   CORRECTION NAVBAR RESTAURANT (Transparente en haut, Verte au scroll)
+   ========================================================================== */
+
+/* 1. En haut de la page : Le header est 100% transparent (pas de fond vert) */
 body.restaurant-theme #main-header:not(.scrolled) {
     background: transparent !important;
     backdrop-filter: none !important;
 }
 
+/* 2. Au scroll : Le header devient Vert PAUZE */
 body.restaurant-theme #main-header.scrolled {
     background: rgba(76, 92, 75, 0.95) !important;
     backdrop-filter: blur(12px) !important;
     border-bottom: 1px solid rgba(220, 178, 84, 0.3) !important;
 }
 
+/* 3. Menu mobile (fond plein) en Vert PAUZE lors de son ouverture UNIQUEMENT sur téléphone/tablette */
 @media (max-width: 992px) {
     body.restaurant-theme .nav-bar {
         background: rgba(76, 92, 75, 0.96) !important;
     }
 }
 
+/* 4. Footer en Vert PAUZE sur la page restaurant */
 body.restaurant-theme .main-footer-new {
     background-color: var(--color-restaurant-green) !important;
 }
-
+/* ==========================================================================
+   CORRECTION BOUTON RÉSERVER SUR MOBILE (Pas de retour à la ligne)
+   ========================================================================== */
 @media (max-width: 992px) {
+    /* Évite le retour à la ligne "Réserver \n une table" */
     #main-header .btn-gold, 
     #main-header .btn-reserver-mobile {
         white-space: nowrap !important;
@@ -1554,6 +1574,7 @@ body.restaurant-theme .main-footer-new {
     }
 }
 
+/* Ajustement spécifique sur très petits écrans (< 400px) */
 @media (max-width: 400px) {
     #main-header .btn-gold {
         padding: 6px 10px !important;
@@ -1561,13 +1582,14 @@ body.restaurant-theme .main-footer-new {
     }
 }
 /* ==========================================================================
-   PAGE INFOS PRATIQUES
+   STYLE SPÉCIFIQUE PAGE INFOS PRATIQUES
    ========================================================================== */
 
 .infos-hero {
     background-image: url('img/hostelerieindex.jpg');
 }
 
+/* Grille des cartes d'accès */
 .access-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1616,6 +1638,7 @@ body.restaurant-theme .main-footer-new {
     line-height: 1.6;
 }
 
+/* Carte Google Maps */
 .map-container {
     border-radius: 6px;
     overflow: hidden;
@@ -1623,6 +1646,7 @@ body.restaurant-theme .main-footer-new {
     border: 2px solid var(--color-gold);
 }
 
+/* Liste des points forts de la région */
 .region-highlights {
     list-style: none;
     margin-top: 20px;
@@ -1641,6 +1665,7 @@ body.restaurant-theme .main-footer-new {
     color: var(--color-gold);
 }
 
+/* Informations de contact */
 .contact-details-list {
     margin-top: 30px;
     display: flex;
@@ -1672,6 +1697,7 @@ body.restaurant-theme .main-footer-new {
     margin: 0;
 }
 
+/* Formulaire de contact d'exception */
 .luxury-contact-form {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(220, 178, 84, 0.35);
@@ -1718,13 +1744,14 @@ body.restaurant-theme .main-footer-new {
 }
 
 /* ==========================================================================
-   STYLE PAGE SPA & BIEN-ÊTRE
+   STYLE SPÉCIFIQUE PAGE SPA & BIEN-ÊTRE
    ========================================================================== */
 
 .spa-hero {
     background-image: url('img/hostelerieindex.jpg');
 }
 
+/* Grille des 4 équipements Spa (120 m²) */
 .spa-amenities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1789,6 +1816,7 @@ body.restaurant-theme .main-footer-new {
     line-height: 1.5;
 }
 
+/* Encadrés de prix Spa */
 .spa-info-box {
     display: flex;
     flex-direction: column;
@@ -1817,6 +1845,7 @@ body.restaurant-theme .main-footer-new {
     font-size: 0.95rem;
 }
 
+/* Liste des horaires Spa */
 .spa-hours-list {
     list-style: none;
 }
@@ -1833,6 +1862,7 @@ body.restaurant-theme .main-footer-new {
     font-style: italic;
 }
 
+/* Badge horaires d'Andréa */
 .andrea-schedule-badge {
     background: var(--color-blue);
     color: var(--color-white);
@@ -1851,6 +1881,7 @@ body.restaurant-theme .main-footer-new {
     font-weight: 600;
 }
 
+/* Encadré d'annulation à 48h */
 .cancellation-policy-box {
     background: rgba(220, 178, 84, 0.15);
     border: 1px solid var(--color-gold);
@@ -1874,6 +1905,7 @@ body.restaurant-theme .main-footer-new {
     line-height: 1.5;
 }
 
+/* Carte de soins */
 .treatment-card-luxury {
     background: #ffffff;
     padding: 40px;
@@ -1883,13 +1915,14 @@ body.restaurant-theme .main-footer-new {
     text-align: left;
 }
 /* ==========================================================================
-   MARIAGES & RÉCEPTIONS
+   STYLE SPÉCIFIQUE MARIAGES & RÉCEPTIONS
    ========================================================================== */
 
 .mariages-hero {
     background-image: url('img/hostelerieindex.jpg');
 }
 
+/* Boîte de la lettre d'équipe pour le Mariage */
 .wedding-letter-box {
     background: #ffffff;
     padding: 30px;
@@ -1905,6 +1938,7 @@ body.restaurant-theme .main-footer-new {
     margin-bottom: 12px;
 }
 
+/* Grille des 4 atouts Réception */
 .reception-features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1954,6 +1988,7 @@ body.restaurant-theme .main-footer-new {
     line-height: 1.6;
 }
 
+/* Bandeau Partenaires locaux */
 .reception-partner-banner {
     background: #fdfdfd;
     border: 1px solid rgba(220, 178, 84, 0.3);
@@ -1965,6 +2000,7 @@ body.restaurant-theme .main-footer-new {
     box-shadow: 0 10px 25px rgba(0,0,0,0.03);
 }
 
+/* Galerie Photo en Grille */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -2017,7 +2053,7 @@ body.restaurant-theme .main-footer-new {
     opacity: 1;
 }
 /* ==========================================================================
-  MARIAGES & RÉCEPTIONS 2
+   STYLE BARRE D'ANCRES MARIAGES & RÉCEPTIONS
    ========================================================================== */
 
 .anchors-nav-bar {
@@ -2053,6 +2089,7 @@ body.restaurant-theme .main-footer-new {
     background: transparent;
 }
 
+/* Effet au survol & clic : Fond Or + Texte et icône Blanc pur */
 .btn-anchor:hover,
 .btn-anchor:active,
 .btn-anchor:focus {
@@ -2071,8 +2108,11 @@ body.restaurant-theme .main-footer-new {
 .btn-anchor:hover svg {
     transform: scale(1.15);
 }
-
+/* ==========================================================================
+   CORRECTION AFFICHAGE CARROUSEL SUR MOBILE (Page Mariages)
+   ========================================================================== */
 @media (max-width: 992px) {
+    /* Force une hauteur visible et correcte pour le carrousel sur mobile */
     .section-block .hotel-carousel-container {
         height: 280px !important;
         min-height: 280px !important;
@@ -2080,13 +2120,16 @@ body.restaurant-theme .main-footer-new {
         margin-bottom: 25px !important;
     }
 
+    /* S'assure que les images du carrousel remplissent bien l'espace mobile */
     .section-block .carousel-slide img {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
     }
 }
-
+/* ==========================================================================
+   CORRECTION FORCÉE CARROUSEL MARIAGE SUR MOBILE
+   ========================================================================== */
 @media (max-width: 992px) {
     #wedding-carousel {
         display: block !important;
@@ -2119,13 +2162,14 @@ body.restaurant-theme .main-footer-new {
     }
 }
 /* ==========================================================================
-  PAGE SÉMINAIRES & ENTREPRISES
+   STYLE SPÉCIFIQUE PAGE SÉMINAIRES & ENTREPRISES
    ========================================================================== */
 
 .seminaires-hero {
     background-image: url('img/hostelerieindex.jpg');
 }
 
+/* Grille des atouts séminaire */
 .seminar-features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -2181,7 +2225,7 @@ body.restaurant-theme .main-footer-new {
     line-height: 1.6;
 }
 /* ==========================================================================
-   GRILLE "À FAIRE DANS LES ENVIRONS" (Page Infos Pratiques)
+   STYLE GRILLE "À FAIRE DANS LES ENVIRONS" (Page Infos Pratiques)
    ========================================================================== */
 
 .surroundings-grid {
@@ -2257,13 +2301,14 @@ body.restaurant-theme .main-footer-new {
     border: 1px solid var(--color-gold);
 }
 /* ==========================================================================
-    PAGE COFFRETS CADEAUX & BOUTIQUE ZENCHEF
+   STYLE SPÉCIFIQUE PAGE COFFRETS CADEAUX & BOUTIQUE ZENCHEF
    ========================================================================== */
 
 .coffrets-hero {
     background-image: url('img/hostelerieindex.jpg');
 }
 
+/* Grille des 4 avantages cadeau */
 .gift-benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -2320,6 +2365,7 @@ body.restaurant-theme .main-footer-new {
     line-height: 1.6;
 }
 
+/* Grille des coffrets cadeaux */
 .gift-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -2423,6 +2469,7 @@ body.restaurant-theme .main-footer-new {
     background-color: #c99f43;
 }
 
+/* Bandeau d'intégration ZenChef */
 .zenchef-integration-banner {
     background: var(--color-blue);
     border: 1px solid var(--color-gold);
@@ -2438,16 +2485,17 @@ body.restaurant-theme .main-footer-new {
 }
 
 /* ==========================================================================
-   MENU AUTOMNAL (PAUZE)
+   STYLE SPÉCIFIQUE MENU AUTOMNAL (Restaurant PAUZE)
    ========================================================================== */
 
 .autumn-menu-card {
     background: #ffffff !important;
-    border: 1px solid rgba(139, 94, 60, 0.3) !important; 
+    border: 1px solid rgba(139, 94, 60, 0.3) !important; /* Ligne fine couleur bois / automne */
     box-shadow: 0 30px 60px rgba(76, 92, 75, 0.12) !important;
     position: relative;
 }
 
+/* Petit liseré décoratif supérieur aux couleurs de l'automne */
 .autumn-menu-card::before {
     content: '';
     position: absolute;
@@ -2459,21 +2507,23 @@ body.restaurant-theme .main-footer-new {
 }
 
 #menu-automne .menu-category h3 {
-    color: #5c4033 !important; 
+    color: #5c4033 !important; /* Marron chaud automnal pour les titres de catégories */
 }
 
 #menu-automne .dish-price {
-    color: #8b5e3c !important; 
+    color: #8b5e3c !important; /* Prix en ton chaud/cuivré */
 }
 /* ==========================================================================
-   PERSONNALISATION EXCLUSIVE PAGE SPA 
+   PERSONNALISATION EXCLUSIVE PAGE SPA (THEME NOIR & OR)
    ========================================================================== */
 
+/* 1. Fond général noir / anthracite très chic pour le spa */
 body.spa-theme {
     background-color: #0b0b0e !important;
     color: #f0f0f0 !important;
 }
 
+/* Texture de fond plus sombre et subtilement dorée */
 body.spa-theme {
     background-image: 
         linear-gradient(30deg, rgba(220, 178, 84, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(220, 178, 84, 0.04) 87.5%, rgba(220, 178, 84, 0.04)),
@@ -2483,6 +2533,7 @@ body.spa-theme {
     background-size: 60px 104px;
 }
 
+/* 2. Adaptation des blocs de contenu (cartes blanches transformées en noir & or) */
 body.spa-theme .block-creme,
 body.spa-theme .block-blanc {
     background-color: #121217 !important;
@@ -2513,6 +2564,7 @@ body.spa-theme .body-text {
     color: #cccccc !important;
 }
 
+/* 3. Header transparent en haut et noir/or au scroll */
 body.spa-theme #main-header:not(.scrolled) {
     background: transparent !important;
     backdrop-filter: none !important;
@@ -2530,17 +2582,17 @@ body.spa-theme #main-header.scrolled {
     }
 }
 
+/* 4. Footer aux couleurs Noir & Or sur la page spa */
 body.spa-theme .main-footer-new {
     background-color: #0b0b0e !important;
     border-top: 2px solid var(--color-gold) !important;
 }
-
 .newsletter-form {
-    flex-wrap: wrap;          
+    flex-wrap: wrap;          /* permet à la case de passer sous la ligne */
 }
 
 .newsletter-consent {
-    flex: 0 0 100%;           
+    flex: 0 0 100%;           /* prend toute la largeur : le champ et le bouton ne s'étirent plus */
     display: flex;
     align-items: flex-start;
     gap: 8px;
@@ -2550,7 +2602,7 @@ body.spa-theme .main-footer-new {
 }
 
 .newsletter-consent input[type="checkbox"] {
-    width: auto;              
+    width: auto;              /* évite qu'elle hérite du style des champs texte */
     height: auto;
     flex: 0 0 auto;
     margin-top: 2px;
@@ -2562,24 +2614,6 @@ body.spa-theme .main-footer-new {
     font-size: 0.85rem;
 }
 
-.nav-bar .mobile-menu-logo {
-    display: none;
-}
-
-@media (max-width: 992px) {
-    .nav-bar {
-        flex-direction: column;   /* logo au-dessus des liens */
-    }
-    .nav-bar .mobile-menu-logo {
-        display: block;
-        text-align: center;
-        padding: 0 0 25px 0;
-        margin-bottom: 25px;
-        border-bottom: 1px solid rgba(220, 178, 84, 0.25);
-    }
-    .nav-bar .mobile-menu-logo img {
-        display: block;
-        max-width: 160px;
-        height: auto;
-    }
+.gallery-grid .gallery-item {
+    cursor: pointer;
 }
