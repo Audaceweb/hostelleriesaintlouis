@@ -169,7 +169,43 @@ content:
       - label: "Avis Titre"
         name: "reviews_title"
         type: string
+# --- Section Avis & Témoignages ---
+      - label: "Avis - Sous-titre"
+        name: "reviews_subtitle"
+        type: string
+      - label: "Avis - Titre"
+        name: "reviews_title"
+        type: string
 
+      - label: "Avis 1 - Source"
+        name: "review1_source"
+        type: string
+      - label: "Avis 1 - Texte"
+        name: "review1_text"
+        type: text
+      - label: "Avis 1 - Auteur"
+        name: "review1_author"
+        type: string
+
+      - label: "Avis 2 - Source"
+        name: "review2_source"
+        type: string
+      - label: "Avis 2 - Texte"
+        name: "review2_text"
+        type: text
+      - label: "Avis 2 - Auteur"
+        name: "review2_author"
+        type: string
+
+      - label: "Avis 3 - Source"
+        name: "review3_source"
+        type: string
+      - label: "Avis 3 - Texte"
+        name: "review3_text"
+        type: text
+      - label: "Avis 3 - Auteur"
+        name: "review3_author"
+        type: string
   # ==========================================
   # 2. PAGE RESTAURANT PAUZE (pauze.json)
   # ==========================================
