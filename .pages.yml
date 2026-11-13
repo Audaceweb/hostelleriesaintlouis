@@ -1203,7 +1203,70 @@ content:
       - label: "Téléphone"
         name: "quote_phone"
         type: string
+# --- Carrousel Mariage (3 images) ---
+      - label: "Mariage - Galerie Carrousel"
+        name: "wedding_photos_liste"
+        type: object
+        list: true
+        fields:
+          - label: "Image"
+            name: "image"
+            type: image
 
+      # --- Capacités des Salons ---
+      - label: "Capacités - Sous-titre"
+        name: "capacity_section_subtitle"
+        type: string
+      - label: "Capacités - Titre"
+        name: "capacity_section_title"
+        type: string
+      - label: "Capacités - Description"
+        name: "capacity_section_desc"
+        type: text
+
+      - label: "Salon 1 - Titre"
+        name: "cap1_title"
+        type: string
+      - label: "Salon 1 - Description"
+        name: "cap1_desc"
+        type: text
+
+      - label: "Salon 2 - Titre"
+        name: "cap2_title"
+        type: string
+      - label: "Salon 2 - Description"
+        name: "cap2_desc"
+        type: text
+
+      - label: "Salon 3 - Titre"
+        name: "cap3_title"
+        type: string
+      - label: "Salon 3 - Description"
+        name: "cap3_desc"
+        type: text
+
+      # --- Carrousel de Confiance ---
+      - label: "Confiance - Galerie Carrousel"
+        name: "trust_photos_liste"
+        type: object
+        list: true
+        fields:
+          - label: "Image"
+            name: "image"
+            type: image
+
+      # --- Grille Galerie Illimitée ---
+      - label: "Confiance - Grille Photos Illimitée"
+        name: "trust_grid_liste"
+        type: object
+        list: true
+        fields:
+          - label: "Image"
+            name: "image"
+            type: image
+          - label: "Légende / Titre"
+            name: "title"
+            type: string
   # ==========================================
   # 6. PAGE SÉMINAIRES (seminaires.json)
   # ==========================================
