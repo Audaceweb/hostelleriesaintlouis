@@ -14,6 +14,11 @@
   "badge3_text": "Gares d'Arnèke & Esquelbecq<br>Accès PMR • Vélos et transports doux encouragés",
   "std_subtitle": "Intimité & Charme (Env. 19 m²)",
   "std_title": "La Chambre Standard",
+  "std_photos_liste": [
+    {
+      "image": "img/chambreconfort-2.jpg"
+    }
+  ],
   "std_desc": "Nos chambres standards ont une superficie d’environ <strong>19 m²</strong>, équipées d'un lit double ou, pour certaines d'entre elles, de deux lits simples.<br><em style='font-size: 0.95rem; color: #666;'>Note : En chambre standard, l'accès au spa n'est pas inclus mais peut être ajouté en supplément durant votre séjour.</em>",
   "std_amenity1": "☕ Plateau de courtoisie",
   "std_amenity2": "🧼 Produits d'accueil",
