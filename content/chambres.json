@@ -15,7 +15,7 @@
 
   "std_subtitle": "Intimité & Charme (Env. 19 m²)",
   "std_title": "La Chambre Standard",
-  "std_photos_liste": [
+  "std_galeries": [
     { "image": "img/chambresimple.jpg" },
     { "image": "img/chambresimpleen.jpg" },
     { "image": "img/chambresimplesdb.jpg" }
@@ -32,7 +32,7 @@
 
   "sup_subtitle": "Espace & Spa Inclus (25 à 30 m²)",
   "sup_title": "La Chambre Supérieure",
-  "sup_photos_liste": [
+  "sup_galeries": [
     { "image": "img/chambreconfort.jpg" },
     { "image": "img/hostelerieindex.jpg" }
   ],
@@ -49,7 +49,7 @@
 
   "conf_subtitle": "Grand Prestige & Spa Inclus (32 à 43 m²)",
   "conf_title": "La Chambre Confort",
-  "conf_photos_liste": [
+  "conf_galeries": [
     { "image": "img/chambre-confort.jpg" },
     { "image": "img/hostelerieindex.jpg" }
   ],
@@ -64,9 +64,37 @@
   "conf_amenity8": "📺 TV TNT, Tél & Wi-Fi gratuit",
   "conf_price": "De 110 € à 220 € / nuit",
 
+  "apt_subtitle": "Espace Familial & Autonomie",
+  "apt_title": "Appartement pour 6 Personnes",
+  "apt_galeries": [
+    { "image": "img/appartement.jpg" }
+  ],
+  "apt_desc": "Spacieux et parfaitement agencé, notre appartement accueille confortablement jusqu'à <strong>6 personnes</strong>. Idéal pour les grands séjours en famille ou entre amis, il offre un cadre chaleureux alliant espace et indépendance.",
+  "apt_view1": "🌿 Vue : Rue calme",
+  "apt_view2": "🌳 Vue : Cour intérieure",
+  "apt_view3": "🏊 Vue : Piscine",
+  "apt_amenity1": "🔥 Chauffage",
+  "apt_amenity2": "🔒 Coffre-fort",
+  "apt_amenity3": "💧 Bouteille d'eau",
+  "apt_amenity4": "📞 Téléphone",
+  "apt_amenity5": "🚭 Non fumeur",
+  "apt_amenity6": "🧼 Articles de toilettes",
+  "apt_amenity7": "🛏️ Linge de maison",
+  "apt_amenity8": "☕ Machine à café",
+  "apt_amenity9": "🫖 Bouilloire électrique",
+  "apt_amenity10": "🔌 Prises électriques",
+  "apt_amenity11": "📶 Wifi",
+  "apt_amenity12": "📺 Télévision",
+  "apt_amenity13": "👶 Lit bébé",
+  "apt_price": "À partir de 317,10 € / nuit",
+
   "breakfast_subtitle": "Chaque matin, un réveil gourmand",
   "breakfast_title": "Le Petit-Déjeuner Buffet",
-  "breakfast_img": "img/petitdej.jpg",
+  "breakfast_galeries": [
+    { "image": "img/petitdej1.jpg" },
+    { "image": "img/petitdej2.jpg" },
+    { "image": "img/petitdej3.jpg" }
+  ],
   "breakfast_text1": "Découvrez notre buffet continental pour bien démarrer la journée. Nous vous accueillons de <strong>7h00 à 9h30 en semaine</strong> et <strong>jusqu'à 10h00 le week-end</strong> autour d'un assortiment de produits frais et locaux : yaourts, viennoiseries, charcuteries, fromages, boissons chaudes et quelques surprises de la maison.",
   "breakfast_note1": "<strong>🥐 Service en chambre :</strong> Possibilité de petit-déjeuner servi en chambre (+5 € / personne / jour).",
   "breakfast_note2": "<strong>🌅 Départ aux aurores ?</strong> Nous nous efforçons de nous adapter à vos horaires en vous préparant un petit-déjeuner sous forme de panier à emporter.",
@@ -90,6 +118,11 @@
   "card3_subtitle": "Jusqu'à 3 Personnes",
   "card3_price": "110 € – 220 €",
   "card3_text": "32 à 43 m², lit double + 3e lit simple, coin salon & spa 2h inclus.",
+
+  "card4_title": "Appartement Familial",
+  "card4_subtitle": "Jusqu'à 6 Personnes",
+  "card4_price": "Dès 317,10 €",
+  "card4_text": "Grand appartement tout équipé, vues calmes, piscine & cour.",
 
   "supp_title": "Suppléments & Formules Restauration",
   "supp1_label": "Lit Supplémentaire :",
