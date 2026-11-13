@@ -5,33 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hostellerie Saint-Louis - Accueil</title>
     <link rel="icon" type="image/png" href="img/logoor.png">
-    <!-- Typographies Google Fonts (Bad Script, Outfit, Wire One & Playfair Display pour l'élégance) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
     
-    <!-- Fichier de style CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ENTÊTE / HEADER EN SUPERPOSITION SUR LA VIDÉO (Non modifiable par le CMS) -->
     <header id="main-header">
-        <!-- Bouton Hamburger (À gauche sur mobile) -->
         <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
 
-        <!-- Logo de l'Hôtel (Centré au scroll sur desktop/mobile) -->
         <div class="logo-container" id="logo-container">
             <a href="index.html">
                 <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
             </a>
         </div>
 
-        <!-- Barre de Navigation (Parfaitement centrée) -->
         <nav class="nav-bar" id="nav-bar">
             <ul class="nav-links">
                 <li><a href="chambres.html">Chambres</a></li>
@@ -311,7 +305,6 @@
             </div>
         </section>
 
-        <!-- SECTION AVIS -->
         <section class="section-block block-blanc reveal" id="block-avis">
             <div class="container">
                 <span class="subtitle" data-cms="reviews_subtitle">Témoignages</span>
@@ -338,67 +331,57 @@
         </section>
     </main>
 
-    <!-- FOOTER ÉPURÉ (Non modifiable par le CMS) -->
-    <footer class="main-footer-new">
+        <footer class="main-footer-new">
         <div class="footer-container-grid">
             <div class="footer-left">
                 <h3>Hostellerie Saint-Louis</h3>
                 <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
-                <p>Tél : <a href="tel:+33328680000">03 28 68 81 83</a></p>
+                <p>Tél : <a href="tel:+33328688183">03 28 68 81 83</a></p>
                 <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
-                
-                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
-                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
-                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
-                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
-                    
-                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
-                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
-                    </div>
-                </div>
             </div>
-
             <div class="footer-center">
                 <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
             </div>
+<div class="footer-right">
+    <h3>Newsletter</h3>
+    <p>Recevez nos offres privilèges.</p>
+    <form class="newsletter-form" id="newsletter-form" action="subscribe.php" method="POST">
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-            <div class="footer-right">
-                <h3>Newsletter</h3>
-                <p>Recevez nos offres privilèges.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
-                    <input type="email" placeholder="Votre adresse email" required>
-                    <button type="submit" class="btn-gold">S'inscrire</button>
-                </form>
-            </div>
+        <input type="email" name="email" placeholder="Votre adresse email" required>
+        <button type="submit" class="btn-gold">S'inscrire</button>
+
+        <label class="newsletter-consent">
+            <input type="checkbox" required>
+            J'accepte de recevoir la newsletter de l'Hostellerie Saint-Louis.
+        </label>
+        <p id="newsletter-msg" class="newsletter-msg"></p>
+    </form>
+</div>
         </div>
-        
-<div class="footer-bottom-legal">
+        <div class="footer-bottom-legal">
             <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
             <p style="margin-top: 5px;">Fait par passion par <a href="https://audaceweb.fr" target="_blank" style="color: var(--color-gold); text-decoration: underline;">Audaceweb</a></p>
             <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
         </div>
     </footer>
-
     <!-- Fichier JavaScript -->
     <script src="script.js"></script>
     <script>
   async function loadCMSContent() {
     try {
-      // 1. Détection automatique de la page actuelle (ex: "chambres.html" -> "chambres")
       let pageName = window.location.pathname.split('/').pop().replace('.html', '');
       if (!pageName || pageName === 'index' || pageName === '') {
         pageName = 'index';
       }
 
-      // 2. Chargement du fichier JSON correspondant dans le dossier content/
       const response = await fetch(`content/${pageName}.json`);
-      if (!response.ok) return; // Si le fichier JSON n'existe pas encore, on garde le HTML de base
+      if (!response.ok) return; 
       
       const data = await response.json();
 
-      // 3. Injection des données simples (Textes & Images avec data-cms)
+     
       for (const [key, value] of Object.entries(data)) {
-        // Si c'est une liste (comme les actualités), on la traite séparément ci-dessous
         if (Array.isArray(value)) continue;
 
         const elements = document.querySelectorAll(`[data-cms="${key}"]`);
@@ -411,14 +394,11 @@
         });
       }
 
-      // 4. Gestion spéciale de la LISTE D'ACTUALITÉS (sur la page index)
       if (data.home_news && Array.isArray(data.home_news)) {
         const newsContainer = document.querySelector('.news-grid');
         if (newsContainer) {
-          // On vide les cartes de démonstration
           newsContainer.innerHTML = '';
 
-          // On génère dynamiquement chaque carte d'actualité depuis le JSON
           data.home_news.forEach(item => {
             const cardHTML = `
               <article class="news-card">
@@ -441,7 +421,6 @@
     }
   }
 
-  // Lancement automatique au chargement de la page
   document.addEventListener('DOMContentLoaded', loadCMSContent);
 </script>
 </body>
