@@ -1354,7 +1354,31 @@ content:
       - label: "Téléphone"
         name: "quote_phone"
         type: string
+# --- Capacités & Configurations des Salles Séminaires ---
+      - label: "Capacités Salles - Sous-titre"
+        name: "capacities_section_subtitle"
+        type: string
+      - label: "Capacités Salles - Titre"
+        name: "capacities_section_title"
+        type: string
+      - label: "Capacités Salles - Description"
+        name: "capacities_section_desc"
+        type: text
 
+      - label: "Liste des Configurations de Salles"
+        name: "seminar_capacities_liste"
+        type: object
+        list: true
+        fields:
+          - label: "Nom du Salon / Configuration"
+            name: "room_name"
+            type: string
+          - label: "Capacité (ex: Jusqu'à X pers.)"
+            name: "room_capacity"
+            type: string
+          - label: "Description de la configuration"
+            name: "room_desc"
+            type: text
   # ==========================================
   # 7. PAGE INFOS PRATIQUES (infos.json)
   # ==========================================
