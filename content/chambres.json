@@ -17,7 +17,14 @@
   "std_photos_liste": [
     {
       "image": "img/chambreconfort-2.jpg"
-    }
+    },
+    {
+      "image": "img/20250416_153053.jpg"
+    },
+    {
+      "image": "img/HSL 27.jpg"
+    },
+    {}
   ],
   "std_desc": "Nos chambres standards ont une superficie d’environ <strong>19 m²</strong>, équipées d'un lit double ou, pour certaines d'entre elles, de deux lits simples.<br><em style='font-size: 0.95rem; color: #666;'>Note : En chambre standard, l'accès au spa n'est pas inclus mais peut être ajouté en supplément durant votre séjour.</em>",
   "std_amenity1": "☕ Plateau de courtoisie",
