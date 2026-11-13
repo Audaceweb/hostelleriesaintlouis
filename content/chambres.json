@@ -63,6 +63,20 @@
   "sup_price": "De 95 € à 190 € / nuit",
   "conf_subtitle": "Grand Prestige & Spa Inclus (32 à 43 m²)",
   "conf_title": "La Chambre Confort",
+  "conf_photos_liste": [
+    {
+      "image": "img/HSL 21.jpg"
+    },
+    {
+      "image": "img/HSL 24.jpg"
+    },
+    {
+      "image": "img/HSL 26.jpg"
+    },
+    {
+      "image": "img/HSL-20.jpg"
+    }
+  ],
   "conf_desc": "Nos chambres Confort sont les plus vastes de notre établissement (superficie comprise entre <strong>32 et 43 m²</strong>). Elles sont équipées d'un grand lit double, d'un troisième lit simple et offrent la possibilité pour certaines d'avoir 2 lits séparés.<br><strong style='color: var(--color-gold);'>✨ Inclus :</strong> Les chambres Confort incluent un <strong>accès au spa de 2h par jour</strong>.",
   "conf_amenity1": "🧖‍♂️ Accès Spa 2h/jour inclus",
   "conf_amenity2": "🛋️ Grand Coin salon",
