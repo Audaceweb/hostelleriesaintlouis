@@ -141,7 +141,7 @@
                     </p>
                     <div class="block-actions">
                         <a href="chambres.html" class="btn-outline">Découvrir</a>
-                        <a href="#reservation" class="btn-gold">Réserver</a>
+                        <button class="btn-gold ReservitBookingButton" style="cursor: pointer;">Réserver une chambre</button>
                     </div>
                 </div>
             </div>
@@ -374,6 +374,23 @@
     <!-- Fichier JavaScript -->
     <script src="script.js"></script>
     <script>
+         // --- 1. MODULE RESERVIT ---
+    jQuery(document).ready(function() {
+        jQuery(".ReservitBookingButton").click(function () {
+            if (jQuery(this).hasClass("iframeShow")) {
+                jQuery(this).removeClass("iframeShow");
+                jQuery("iframe#ReservitBookingIframe, .iframeClose").hide("slow");
+            } else {
+                jQuery(this).addClass("iframeShow");
+                jQuery("iframe#ReservitBookingIframe, .iframeClose").show("slow");
+            }
+        });
+        jQuery(".iframeClose").click(function () {
+            jQuery(".ReservitBookingButton").removeClass("iframeShow");
+            jQuery("iframe#ReservitBookingIframe, .iframeClose").hide("slow");
+        });
+    });
+        
   async function loadCMSContent() {
     try {
       let pageName = window.location.pathname.split('/').pop().replace('.html', '');
