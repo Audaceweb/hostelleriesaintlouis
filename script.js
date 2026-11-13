@@ -119,3 +119,27 @@ document.addEventListener('DOMContentLoaded', () => {
         startTimer();
     });
 });
+const newsletterForm = document.getElementById('newsletter-form');
+const newsletterMsg = document.getElementById('newsletter-msg');
+
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        newsletterMsg.textContent = 'Envoi en cours...';
+        try {
+            const res = await fetch(newsletterForm.action, {
+                method: 'POST',
+                body: new FormData(newsletterForm)
+            });
+            const data = await res.json();
+            if (data.success) {
+                newsletterMsg.textContent = 'Merci, votre inscription est bien enregistrée !';
+                newsletterForm.reset();
+            } else {
+                newsletterMsg.textContent = data.message || 'Une erreur est survenue, merci de réessayer.';
+            }
+        } catch (err) {
+            newsletterMsg.textContent = 'Une erreur est survenue, merci de réessayer.';
+        }
+    });
+}

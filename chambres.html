@@ -57,15 +57,53 @@
             background: var(--color-gold);
             color: #000;
         }
+
+        /* Style spécifique pour le carrousel du petit-déjeuner */
+        .breakfast-carousel {
+            position: relative;
+            height: 420px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .breakfast-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+        .breakfast-carousel img.active-slide {
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            transition: background 0.3s;
+            z-index: 10;
+        }
+        .carousel-btn:hover {
+            background: var(--color-gold);
+            color: #000;
+        }
+        .carousel-prev { left: 15px; }
+        .carousel-next { right: 15px; }
     </style>
 </head>
 <body>
 
     <!-- ÉLÉMENTS DE LA FENÊTRE MODALE DE RÉSERVATION (Réservit / Logis) -->
-    <div class="iframeClose" style="display:none; z-index:99999; position:fixed; top:10px; right:40px; color:#000; font-size:30px; cursor:pointer; font-family:Arial; background: #fff; width: 40px; height: 40px; text-align: center; border-radius: 50%; line-height: 38px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">x</div>
+    <div class="iframeClose" style="display:none; position:fixed; top:20px; right:40px; color:#000; font-size:35px; cursor:pointer; font-family:Arial; background: #fff; width: 45px; height: 45px; text-align: center; border-radius: 50%; line-height: 42px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); z-index: 9999999;">&times;</div>
     <iframe id="ReservitBookingIframe" src="https://premium.logishotels.com/engine/booking/233/1237" style="z-index:1; opacity:1; border:none; width:100%; height:100%; position:fixed; transform:translateY(0px); background:#fff; top:0; bottom:0; left:0; right:0; z-index:100000; transition:transform 450ms cubic-bezier(0.23, 1, 0.32, 1), opacity 450ms cubic-bezier(0.23, 1, 0.32, 1); display:none;"></iframe>
 
-    <!-- ENTÊTE / HEADER (Non modifiable par le CMS) -->
+    <!-- ENTÊTE / HEADER -->
     <header id="main-header">
         <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
             <span class="bar"></span>
@@ -117,7 +155,7 @@
                     La qualité et le confort de nos <strong>26 chambres et un appartement</strong>, toutes équipées de salles de bains privatives, WC, téléphone et TV, vous séduiront pour vos séjours de détente comme professionnels.
                 </p>
 
-                <!-- BADGES PRATIQUES & HORAIRES DE RÉCEPTION -->
+                <!-- BADGES PRATIQUES -->
                 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 35px;">
                     <div style="background: #fff; padding: 15px 25px; border-radius: 4px; border: 1px solid rgba(220,178,84,0.3); text-align: left; min-width: 260px;">
                         <strong style="color: var(--color-blue); display: block; margin-bottom: 5px;" data-cms="badge1_title">🔑 Ouverture & Réception</strong>
@@ -251,12 +289,64 @@
             </div>
         </section>
 
-        <!-- BLOC DÉDIÉ AU PETIT-DÉJEUNER -->
-        <section class="section-block block-creme reveal">
+        <!-- 4. APPARTEMENT POUR 6 PERSONNES (NOUVEAU) -->
+        <section class="section-room-wrapper block-bg-creme">
+            <div class="room-luxury-card">
+                <div class="room-header-title">
+                    <span class="subtitle" data-cms="apt_subtitle">Espace Familial & Autonomie</span>
+                    <h2 class="title" data-cms="apt_title">Appartement pour 6 Personnes</h2>
+                </div>
+                
+                <div class="room-gallery-trigger" onclick="openGallery('appartement')">
+                    <img src="img/appartement.jpg" data-cms="apt_img" alt="Appartement pour 6 personnes">
+                    <div class="gallery-badge">
+                        <span>🔍 Cliquer pour voir la galerie photos</span>
+                    </div>
+                </div>
+
+                <p class="room-desc" style="margin-top: 25px;" data-cms="apt_desc">
+                    Spacieux et parfaitement agencé, notre appartement accueille confortablement jusqu'à <strong>6 personnes</strong>. Idéal pour les grands séjours en famille ou entre amis, il offre un cadre chaleureux alliant espace et indépendance.
+                </p>
+
+                <!-- Vues & Aménagements demandés -->
+                <div class="amenities-luxury-grid">
+                    <div class="amenity-badge"><span data-cms="apt_view1">🌿 Vue : Rue calme</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_view2">🌳 Vue : Cour intérieure</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_view3">🏊 Vue : Piscine</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity1">🔥 Chauffage</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity2">🔒 Coffre-fort</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity3">💧 Bouteille d'eau</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity4">📞 Téléphone</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity5">🚭 Non fumeur</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity6">🧼 Articles de toilettes</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity7">🛏️ Linge de maison</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity8">☕ Machine à café</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity9">🫖 Bouilloire électrique</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity10">🔌 Prises électriques</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity11">📶 Wifi</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity12">📺 Télévision</span></div>
+                    <div class="amenity-badge"><span data-cms="apt_amenity13">👶 Lit bébé</span></div>
+                </div>
+
+                <div class="room-action" style="display: flex; gap: 15px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <span style="display: block; font-weight: 700; color: var(--color-gold); font-size: 1.2rem; width: 100%; text-align: center; margin-bottom: 5px;" data-cms="apt_price">À partir de 317,10 € / nuit</span>
+                    <a href="tel:+33328688183" class="btn-gold" style="background: #555; border-color: #555;">Tél : 03 28 68 81 83</a>
+                    <button class="btn-gold ReservitBookingButton" style="cursor: pointer;">Réserver cet appartement</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOC DÉDIÉ AU PETIT-DÉJEUNER (AVEC CARROUSEL INFINI) -->
+        <section class="section-block block-blanc reveal">
             <div class="container-split">
                 <div class="block-media">
-                    <div class="image-placeholder" style="height: 420px;">
-                        <img src="img/petitdej.jpg" data-cms="breakfast_img" alt="Buffet Petit-déjeuner Hostellerie Saint-Louis">
+                    <!-- Carrousel interactif petit-déjeuner -->
+                    <div class="breakfast-carousel" id="breakfastCarousel">
+                        <img src="img/petitdej1.jpg" class="active-slide" alt="Petit-déjeuner Hostellerie Saint-Louis">
+                        <img src="img/petitdej2.jpg" alt="Buffet petit-déjeuner">
+                        <img src="img/petitdej3.jpg" alt="Produits frais petit-déjeuner">
+                        <button class="carousel-btn carousel-prev" onclick="moveBreakfastSlide(-1)">&#10094;</button>
+                        <button class="carousel-btn carousel-next" onclick="moveBreakfastSlide(1)">&#10095;</button>
                     </div>
                 </div>
                 <div class="block-text">
@@ -283,7 +373,7 @@
         </section>
 
         <!-- GRILLE TARIFS 2026-2027 & FORFAITS COMPLETS -->
-        <section class="section-block block-blanc reveal" id="tarifs-grille">
+        <section class="section-block block-creme reveal" id="tarifs-grille">
             <div class="container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
                 <span class="subtitle" data-cms="tarifs_subtitle">Transparence & Sérénité</span>
                 <h2 class="title" style="color: var(--color-blue); font-size: 2.8rem; margin-bottom: 10px;" data-cms="tarifs_title">Les Tarifs de l'Hôtel 2026-2027</h2>
@@ -291,35 +381,43 @@
                     <em>Les prix sont variables en fonction de la saison et de la disponibilité des chambres.</em>
                 </p>
 
-                <!-- TABLEAU / CARTES TARIFS -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; text-align: left; margin-bottom: 50px;">
+                <!-- TABLEAU / CARTES TARIFS (4 cartes désormais) -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; text-align: left; margin-bottom: 50px;">
                     <!-- Carte 1 -->
-                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
-                        <h3 style="font-family: var(--font-body); font-size: 1.2rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card1_title">Chambre Standard</h3>
-                        <p style="font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card1_subtitle">1 ou 2 Personnes</p>
-                        <div style="font-size: 1.6rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card1_price">80 € – 160 € <span style="font-size:0.9rem; font-weight:400; color:#555;">/ nuit</span></div>
-                        <p style="font-size: 0.9rem; color: #555;" data-cms="card1_text">Superficie env. 19 m², lit double ou lits simples. Spa en supplément.</p>
+                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
+                        <h3 style="font-family: var(--font-body); font-size: 1.1rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card1_title">Chambre Standard</h3>
+                        <p style="font-size: 0.8rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card1_subtitle">1 ou 2 Personnes</p>
+                        <div style="font-size: 1.4rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card1_price">80 € – 160 €</div>
+                        <p style="font-size: 0.85rem; color: #555;" data-cms="card1_text">Superficie env. 19 m², lit double ou lits simples.</p>
                     </div>
 
                     <!-- Carte 2 -->
-                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
-                        <h3 style="font-family: var(--font-body); font-size: 1.2rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card2_title">Chambre Supérieure</h3>
-                        <p style="font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card2_subtitle">1 ou 2 Personnes</p>
-                        <div style="font-size: 1.6rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card2_price">95 € – 190 € <span style="font-size:0.9rem; font-weight:400; color:#555;">/ nuit</span></div>
-                        <p style="font-size: 0.9rem; color: #555;" data-cms="card2_text">25 à 30 m², grand lit (180/200), douche italienne & spa 2h inclus.</p>
+                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
+                        <h3 style="font-family: var(--font-body); font-size: 1.1rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card2_title">Chambre Supérieure</h3>
+                        <p style="font-size: 0.8rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card2_subtitle">1 ou 2 Personnes</p>
+                        <div style="font-size: 1.4rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card2_price">95 € – 190 €</div>
+                        <p style="font-size: 0.85rem; color: #555;" data-cms="card2_text">25 à 30 m², grand lit, douche italienne & spa 2h inclus.</p>
                     </div>
 
                     <!-- Carte 3 -->
-                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
-                        <h3 style="font-family: var(--font-body); font-size: 1.2rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card3_title">Chambre Confort</h3>
-                        <p style="font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card3_subtitle">Jusqu'à 3 Personnes</p>
-                        <div style="font-size: 1.6rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card3_price">110 € – 220 € <span style="font-size:0.9rem; font-weight:400; color:#555;">/ nuit</span></div>
-                        <p style="font-size: 0.9rem; color: #555;" data-cms="card3_text">32 à 43 m², lit double + 3e lit simple, coin salon & spa 2h inclus.</p>
+                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
+                        <h3 style="font-family: var(--font-body); font-size: 1.1rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card3_title">Chambre Confort</h3>
+                        <p style="font-size: 0.8rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card3_subtitle">Jusqu'à 3 Personnes</p>
+                        <div style="font-size: 1.4rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card3_price">110 € – 220 €</div>
+                        <p style="font-size: 0.85rem; color: #555;" data-cms="card3_text">32 à 43 m², lit double + 3e lit simple & spa 2h inclus.</p>
+                    </div>
+
+                    <!-- Carte 4 (Appartement) -->
+                    <div style="background: #fdfdfd; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
+                        <h3 style="font-family: var(--font-body); font-size: 1.1rem; color: var(--color-blue); margin-bottom: 10px;" data-cms="card4_title">Appartement Familial</h3>
+                        <p style="font-size: 0.8rem; color: #777; text-transform: uppercase; letter-spacing: 1px;" data-cms="card4_subtitle">Jusqu'à 6 Personnes</p>
+                        <div style="font-size: 1.4rem; font-weight: 700; color: var(--color-gold); margin: 15px 0;" data-cms="card4_price">Dès 317,10 €</div>
+                        <p style="font-size: 0.85rem; color: #555;" data-cms="card4_text">Grand appartement tout équipé, vues calmes, piscine & cour.</p>
                     </div>
                 </div>
 
-                <!-- TABLEAU ANEXES TARIFS (Suppléments, Demi-pension) -->
-                <div style="background: #f7f7f2; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 35px; text-align: left;">
+                <!-- TABLEAU ANNEXES TARIFS -->
+                <div style="background: #fff; border: 1px solid rgba(220,178,84,0.3); border-radius: 6px; padding: 35px; text-align: left;">
                     <h3 style="font-family: var(--font-subtitle); font-style: italic; font-size: 1.8rem; color: var(--color-blue); margin-bottom: 25px;" data-cms="supp_title">Suppléments & Formules Restauration</h3>
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
@@ -337,9 +435,6 @@
                             La demi-pension est accessible à partir de <strong>52 € TTC / personne / nuit</strong>.<br>
                             <em>Le forfait comprend : Le menu du jour (entrée + plat + dessert, hors boissons) et l'accès au petit-déjeuner buffet du matin.</em>
                         </p>
-                        <p style="font-size: 0.85rem; color: #777; margin-top: 6px;" data-cms="dp_text2">
-                            * Pour tout séjour inférieur à 2 nuits ou si vous ne souhaitez pas la demi-pension sur l'intégralité du séjour, vous pouvez compléter ou modifier les propositions à la carte (avec suppléments).
-                        </p>
                     </div>
                 </div>
             </div>
@@ -353,12 +448,12 @@
                         <span class="subtitle" style="color: var(--color-gold);" data-cms="se_subtitle">Professionnels & Techniciens</span>
                         <h2 class="title" style="color: var(--color-white); font-size: 2.5rem;" data-cms="se_title">Offre Spéciale Soirée-Étape</h2>
                         <p class="body-text" style="color: #ddd; font-family: var(--font-body);" data-cms="se_desc">
-                            L'hôtel entretient une longue tradition d'accueil chaleureux des commerciaux, techniciens et professionnels en déplacement. Situé à proximité immédiate des principaux grands bassins industriels et commerciaux du territoire (<strong>Dunkerque, Saint-Omer, Bergues, Hazebrouck</strong>), nous proposons une formule intégrale <em>du lundi au vendredi soir</em> :
+                            L'hôtel entretient une longue tradition d'accueil chaleureux des commerciaux, techniciens et professionnels en déplacement.
                         </p>
                         
                         <ul style="list-style: none; padding: 0; margin: 20px 0; color: #eee; font-family: var(--font-body);">
                             <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-gold);">✦</span> <span data-cms="se_point1">Occupation SINGLE de la chambre</span></li>
-                            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-gold);">✦</span> <span data-cms="se_point2">Dîner du jour Entrée + Plat + Dessert (renouvelé quotidiennement)</span></li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-gold);">✦</span> <span data-cms="se_point2">Dîner du jour Entrée + Plat + Dessert</span></li>
                             <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-gold);">✦</span> <span data-cms="se_point3">Petit-déjeuner buffet continental au réveil</span></li>
                         </ul>
 
@@ -382,27 +477,9 @@
                             <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 4px;">
                                 <strong style="color: #fff; font-size: 1.1rem; display: block;" data-cms="se_box_sup_label">Chambre Supérieure</strong>
                                 <span style="font-size: 1.6rem; font-weight: 700; color: var(--color-gold);" data-cms="se_box_sup_price">134 € / jour</span>
-                                <small style="display: block; color: #ccc; margin-top: 5px;" data-cms="se_box_sup_sub">(Chambre avec bureau ou coin salon)</small>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- INFORMATIONS COMPLÉMENTAIRES (ANIMAUX & REGLEMENT) -->
-        <section class="section-block block-creme reveal">
-            <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <span class="subtitle" data-cms="pets_subtitle">Vos Compagnons</span>
-                <h2 class="title" style="color: var(--color-blue); font-size: 2.2rem; margin-bottom: 20px;" data-cms="pets_title">Accueil des Animaux de Compagnie</h2>
-                <p class="body-text" style="color: #444; max-width: 800px; margin: 0 auto 20px auto;" data-cms="pets_text">
-                    Nous acceptons les animaux de compagnie sous réserve de disponibilité des chambres adaptées pour leur accueil. Merci de nous contacter impérativement avant d'effectuer toute réservation avec un animal.
-                </p>
-                <div style="background: #fff; border: 1px solid rgba(220,178,84,0.3); padding: 20px; border-radius: 4px; display: inline-block; text-align: left;">
-                    <p style="margin: 0; font-size: 0.95rem; color: #333;" data-cms="pets_details">
-                        <strong>🐾 Tarif :</strong> 20 € / nuit par animal.<br>
-                        <strong>⚠️ Attention :</strong> L'accès au restaurant n'est pas autorisé pour les animaux de compagnie.
-                    </p>
                 </div>
             </div>
         </section>
@@ -416,7 +493,7 @@
         <span onclick="nextGalleryImage()" style="position:absolute; right:25px; color:#fff; font-size:55px; cursor:pointer; user-select:none; z-index:10;">&#10095;</span>
     </div>
 
-    <!-- FOOTER (Non modifiable par le CMS) -->
+    <!-- FOOTER -->
     <footer class="main-footer-new">
         <div class="footer-container-grid">
             <div class="footer-left">
@@ -424,42 +501,37 @@
                 <p>47 Rue de l'Église, 59470 Bollezeele, France</p>
                 <p>Tél : <a href="tel:+33328688183">03 28 68 81 83</a></p>
                 <p>Email : <a href="mailto:contact@hostelleriesaintlouis.com">contact@hostelleriesaintlouis.com</a></p>
-                
-                <div style="margin-top: 15px; border-top: 1px solid rgba(220,178,84,0.3); padding-top: 12px; font-size: 0.9rem; color: #ddd; line-height: 1.5;">
-                    <strong style="color: var(--color-gold); display: block; margin-bottom: 4px;">Horaires d'Ouverture</strong>
-                    <p style="margin: 0;">Du mardi au dimanche : 10h00 – 20h00</p>
-                    <p style="margin: 0; font-size: 0.85rem; color: #aaa;"><em>Fermé le dimanche soir et le lundi</em></p>
-                    
-                    <div style="margin-top: 8px; font-size: 0.85rem; color: #ccc;">
-                        <span>🔑 Check-in : 16h00 – 20h00</span> | <span>🔑 Check-out : 11h00</span>
-                    </div>
-                </div>
             </div>
-
             <div class="footer-center">
                 <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
             </div>
+<div class="footer-right">
+    <h3>Newsletter</h3>
+    <p>Recevez nos offres privilèges.</p>
+    <form class="newsletter-form" id="newsletter-form" action="subscribe.php" method="POST">
+        <!-- anti-spam : champ invisible -->
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-            <div class="footer-right">
-                <h3>Newsletter</h3>
-                <p>Recevez nos offres privilèges.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci !');">
-                    <input type="email" placeholder="Votre adresse email" required>
-                    <button type="submit" class="btn-gold">S'inscrire</button>
-                </form>
-            </div>
+        <input type="email" name="email" placeholder="Votre adresse email" required>
+        <button type="submit" class="btn-gold">S'inscrire</button>
+
+        <label class="newsletter-consent">
+            <input type="checkbox" required>
+            J'accepte de recevoir la newsletter de l'Hostellerie Saint-Louis.
+        </label>
+        <p id="newsletter-msg" class="newsletter-msg"></p>
+    </form>
+</div>
         </div>
-        
-<div class="footer-bottom-legal">
+        <div class="footer-bottom-legal">
             <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
             <p style="margin-top: 5px;">Fait par passion par <a href="https://audaceweb.fr" target="_blank" style="color: var(--color-gold); text-decoration: underline;">Audaceweb</a></p>
             <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
         </div>
     </footer>
-
-    <!-- SCRIPTS JS -->
+<script src="script.js"></script>
 <script>
-    // --- 1. SCRIPT MODULE RESERVIT IFRAME ---
+    // --- 1. MODULE RESERVIT ---
     jQuery(document).ready(function() {
         jQuery(".ReservitBookingButton").click(function () {
             if (jQuery(this).hasClass("iframeShow")) {
@@ -476,95 +548,102 @@
         });
     });
 
-// --- 2. SCRIPT GALERIE LIGHTBOX PLEIN ÉCRAN (DYNAMIQUE) ---
-let currentGallery = [];
-let currentImgIndex = 0;
+    // --- 2. CARROUSEL INFINI PETIT-DÉJEUNER ---
+    let currentBreakfastSlide = 0;
+    function moveBreakfastSlide(direction) {
+        const carousel = document.getElementById('breakfastCarousel');
+        if (!carousel) return;
+        const slides = carousel.querySelectorAll('img');
+        if (slides.length === 0) return;
 
-function openGallery(roomType) {
-    currentGallery = [];
-
-    // Utilisation des nouveaux noms de listes configurés
-    if (roomType === 'standard' && window.cmsData && window.cmsData.std_photos_liste) {
-        currentGallery = window.cmsData.std_photos_liste.map(item => item.image);
-    } else if (roomType === 'superieure' && window.cmsData && window.cmsData.sup_photos_liste) {
-        currentGallery = window.cmsData.sup_photos_liste.map(item => item.image);
-    } else if (roomType === 'confort' && window.cmsData && window.cmsData.conf_photos_liste) {
-        currentGallery = window.cmsData.conf_photos_liste.map(item => item.image);
+        slides[currentBreakfastSlide].classList.remove('active-slide');
+        currentBreakfastSlide = (currentBreakfastSlide + direction + slides.length) % slides.length;
+        slides[currentBreakfastSlide].classList.add('active-slide');
     }
 
-    // Sécurité de secours : si la liste est vide, on cherche une image de secours
-    if (currentGallery.length === 0) {
-        if (roomType === 'standard' && window.cmsData?.std_img) currentGallery = [window.cmsData.std_img];
-        if (roomType === 'superieure' && window.cmsData?.sup_img) currentGallery = [window.cmsData.sup_img];
-        if (roomType === 'confort' && window.cmsData?.conf_img) currentGallery = [window.cmsData.conf_img];
+    setInterval(() => { moveBreakfastSlide(1); }, 5000);
+
+    // --- 3. GALERIE LIGHTBOX PLEIN ÉCRAN ---
+    let currentGallery = [];
+    let currentImgIndex = 0;
+
+    function openGallery(roomType) {
+        currentGallery = [];
+
+        if (roomType === 'standard' && window.cmsData?.std_galeries) {
+            currentGallery = window.cmsData.std_galeries.map(item => item.image);
+        } else if (roomType === 'superieure' && window.cmsData?.sup_galeries) {
+            currentGallery = window.cmsData.sup_galeries.map(item => item.image);
+        } else if (roomType === 'confort' && window.cmsData?.conf_galeries) {
+            currentGallery = window.cmsData.conf_galeries.map(item => item.image);
+        } else if (roomType === 'appartement' && window.cmsData?.apt_galeries) {
+            currentGallery = window.cmsData.apt_galeries.map(item => item.image);
+        }
+
+        if (currentGallery.length === 0) {
+            if (roomType === 'standard' && window.cmsData?.std_img) currentGallery = [window.cmsData.std_img];
+            if (roomType === 'superieure' && window.cmsData?.sup_img) currentGallery = [window.cmsData.sup_img];
+            if (roomType === 'confort' && window.cmsData?.conf_img) currentGallery = [window.cmsData.conf_img];
+            if (roomType === 'appartement' && window.cmsData?.apt_img) currentGallery = [window.cmsData.apt_img];
+        }
+        
+        currentImgIndex = 0;
+        if (currentGallery.length > 0) {
+            document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+            document.getElementById('roomLightbox').style.display = 'flex';
+        }
     }
-    
-    currentImgIndex = 0;
-    if (currentGallery.length > 0) {
+
+    function closeGallery() {
+        document.getElementById('roomLightbox').style.display = 'none';
+    }
+
+    function nextGalleryImage() {
+        if (currentGallery.length === 0) return;
+        currentImgIndex = (currentImgIndex + 1) % currentGallery.length;
         document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
-        document.getElementById('roomLightbox').style.display = 'flex';
-    } else {
-        console.log("Aucune image trouvée pour cette galerie.");
     }
-}
 
-function closeGallery() {
-    document.getElementById('roomLightbox').style.display = 'none';
-}
-
-function nextGalleryImage() {
-    if (currentGallery.length === 0) return;
-    currentImgIndex = (currentImgIndex + 1) % currentGallery.length;
-    document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
-}
-
-function prevGalleryImage() {
-    if (currentGallery.length === 0) return;
-    currentImgIndex = (currentImgIndex - 1 + currentGallery.length) % currentGallery.length;
-    document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
-}
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeGallery();
+    function prevGalleryImage() {
+        if (currentGallery.length === 0) return;
+        currentImgIndex = (currentImgIndex - 1 + currentGallery.length) % currentGallery.length;
+        document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
     }
-});
 
-// --- 3. SCRIPT DE CHARGEMENT CMS ---
-async function loadCMSContent() {
-    try {
-        let pageName = window.location.pathname.split('/').pop().replace('.html', '');
-        if (!pageName || pageName === 'index' || pageName === '') {
-            pageName = 'index';
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeGallery();
+    });
+
+    // --- 4. CHARGEMENT CMS ---
+    async function loadCMSContent() {
+        try {
+            let pageName = window.location.pathname.split('/').pop().replace('.html', '');
+            if (!pageName || pageName === 'index' || pageName === '') pageName = 'index';
+
+            const response = await fetch(`content/${pageName}.json`);
+            if (!response.ok) return;
+            
+            const data = await response.json();
+            window.cmsData = data;
+
+            for (const [key, value] of Object.entries(data)) {
+                if (Array.isArray(value)) continue;
+
+                const elements = document.querySelectorAll(`[data-cms="${key}"]`);
+                elements.forEach(element => {
+                    if (element.tagName === 'IMG') {
+                        element.src = value;
+                    } else if (value) {
+                        element.innerHTML = value;
+                    }
+                });
+            }
+        } catch (error) {
+            console.log("Erreur CMS:", error);
         }
-
-        const response = await fetch(`content/${pageName}.json`);
-        if (!response.ok) return;
-        
-        const data = await response.json();
-        
-        // Stockage global indispensable pour la lightbox
-        window.cmsData = data;
-
-        for (const [key, value] of Object.entries(data)) {
-            if (Array.isArray(value)) continue;
-
-            const elements = document.querySelectorAll(`[data-cms="${key}"]`);
-            elements.forEach(element => {
-                if (element.tagName === 'IMG') {
-                    element.src = value;
-                } else if (value) {
-                    element.innerHTML = value;
-                }
-            });
-        }
-    } catch (error) {
-        console.log("Erreur CMS:", error);
     }
-}
 
-document.addEventListener('DOMContentLoaded', loadCMSContent);
+    document.addEventListener('DOMContentLoaded', loadCMSContent);
 </script>
-    <script src="script.js"></script>
 </body>
 </html>
