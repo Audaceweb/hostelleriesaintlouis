@@ -773,6 +773,76 @@ content:
         name: "conf_price"
         type: string
 
+      # --- Appartement 6 Personnes & Galerie Dynamique ---
+      - label: "Appartement Sous-titre"
+        name: "apt_subtitle"
+        type: string
+      - label: "Appartement Titre"
+        name: "apt_title"
+        type: string
+      - label: "Appartement - Galerie Photos"
+        name: "apt_photos_liste"
+        type: object
+        list: true
+        fields:
+          - label: "Image"
+            name: "image"
+            type: image
+      - label: "Appartement Description"
+        name: "apt_desc"
+        type: text
+      - label: "Appartement Vue 1"
+        name: "apt_view1"
+        type: string
+      - label: "Appartement Vue 2"
+        name: "apt_view2"
+        type: string
+      - label: "Appartement Vue 3"
+        name: "apt_view3"
+        type: string
+      - label: "Appartement Équipement 1"
+        name: "apt_amenity1"
+        type: string
+      - label: "Appartement Équipement 2"
+        name: "apt_amenity2"
+        type: string
+      - label: "Appartement Équipement 3"
+        name: "apt_amenity3"
+        type: string
+      - label: "Appartement Équipement 4"
+        name: "apt_amenity4"
+        type: string
+      - label: "Appartement Équipement 5"
+        name: "apt_amenity5"
+        type: string
+      - label: "Appartement Équipement 6"
+        name: "apt_amenity6"
+        type: string
+      - label: "Appartement Équipement 7"
+        name: "apt_amenity7"
+        type: string
+      - label: "Appartement Équipement 8"
+        name: "apt_amenity8"
+        type: string
+      - label: "Appartement Équipement 9"
+        name: "apt_amenity9"
+        type: string
+      - label: "Appartement Équipement 10"
+        name: "apt_amenity10"
+        type: string
+      - label: "Appartement Équipement 11"
+        name: "apt_amenity11"
+        type: string
+      - label: "Appartement Équipement 12"
+        name: "apt_amenity12"
+        type: string
+      - label: "Appartement Équipement 13"
+        name: "apt_amenity13"
+        type: string
+      - label: "Appartement Prix"
+        name: "apt_price"
+        type: string
+
       # --- Petit-Déjeuner ---
       - label: "Petit-Déjeuner Sous-titre"
         name: "breakfast_subtitle"
@@ -780,9 +850,14 @@ content:
       - label: "Petit-Déjeuner Titre"
         name: "breakfast_title"
         type: string
-      - label: "Petit-Déjeuner Image"
-        name: "breakfast_img"
-        type: image
+      - label: "Petit-Déjeuner - Galerie Photos"
+        name: "breakfast_photos_liste"
+        type: object
+        list: true
+        fields:
+          - label: "Image"
+            name: "image"
+            type: image
       - label: "Petit-Déjeuner Texte"
         name: "breakfast_text1"
         type: text
@@ -844,6 +919,19 @@ content:
         type: string
       - label: "Carte 3 - Texte"
         name: "card3_text"
+        type: text
+
+      - label: "Carte 4 - Titre"
+        name: "card4_title"
+        type: string
+      - label: "Carte 4 - Sous-titre"
+        name: "card4_subtitle"
+        type: string
+      - label: "Carte 4 - Prix"
+        name: "card4_price"
+        type: string
+      - label: "Carte 4 - Texte"
+        name: "card4_text"
         type: text
 
       - label: "Suppléments - Titre"
