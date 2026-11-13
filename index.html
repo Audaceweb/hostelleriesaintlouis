@@ -8,38 +8,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Wire+One&display=swap" rel="stylesheet">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<div class="iframeClose" style="display:none; position:fixed; top:20px; right:40px; color:#000; font-size:35px; cursor:pointer; font-family:Arial; background: #fff; width: 45px; height: 45px; text-align: center; border-radius: 50%; line-height: 42px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); z-index: 9999999;">&times;</div>
+<iframe id="ReservitBookingIframe" src="https://premium.logishotels.com/engine/booking/233/1237" style="opacity:1; border:none; width:100%; height:100%; position:fixed; transform:translateY(0px); background:#fff; top:0; bottom:0; left:0; right:0; z-index:100000; transition:transform 450ms cubic-bezier(0.23, 1, 0.32, 1), opacity 450ms cubic-bezier(0.23, 1, 0.32, 1); display:none;"></iframe>
     <header id="main-header">
-        <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
+    <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 
-        <div class="logo-container" id="logo-container">
+    <div class="logo-container" id="logo-container">
+        <a href="index.html">
+            <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
+        </a>
+    </div>
+
+    <nav class="nav-bar" id="nav-bar">
+        <div class="mobile-menu-logo">
             <a href="index.html">
-                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo" class="logo-img">
+                <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis Logo">
             </a>
         </div>
 
-        <nav class="nav-bar" id="nav-bar">
-            <ul class="nav-links">
-                <li><a href="chambres.html">Chambres</a></li>
-                <li><a href="pauze.html">Restaurant</a></li>
-                <li><a href="mariages.html">Mariages & Réceptions</a></li>
-                <li><a href="seminaires.html">Séminaires</a></li>
-                <li><a href="spa.html">Spa & Bien-être</a></li>
-                <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
-                <li><a href="infos.html">Infos Pratiques</a></li>
-            </ul>
-        </nav>
+        <ul class="nav-links">
+            <li><a href="chambres.html">Chambres</a></li>
+            <li><a href="pauze.html">Restaurant</a></li>
+            <li><a href="mariages.html">Mariages & Réceptions</a></li>
+            <li><a href="seminaires.html">Séminaires</a></li>
+            <li><a href="spa.html">Spa & Bien-être</a></li>
+            <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
+            <li><a href="infos.html">Infos Pratiques</a></li>
+        </ul>
+    </nav>
 
-        <!-- Bouton Réserver Toujours Présent -->
-        <a href="#reservation" class="btn-reserver">Réserver</a>
+        <button class="btn-reserver ReservitBookingButton" style="cursor: pointer;">Réserver</button>
     </header>
 
     <!-- MAIN CONTENT -->
