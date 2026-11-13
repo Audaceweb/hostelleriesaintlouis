@@ -220,7 +220,7 @@
                 </div>
                 
                 <div class="room-gallery-trigger" onclick="openGallery('superieure')">
-                    <img src="img/chambresup.jpg" data-cms="sup_img" alt="Chambre Supérieure">
+                    <img src="img/chambreconfort.jpg" data-cms="sup_img" alt="Chambre Supérieure">
                     <div class="gallery-badge">
                         <span>🔍 Cliquer pour voir la galerie photos</span>
                     </div>
@@ -567,31 +567,50 @@
     let currentGallery = [];
     let currentImgIndex = 0;
 
-    function openGallery(roomType) {
-        currentGallery = [];
+    // Retire un éventuel "/" au début d'un chemin d'image
+    function cleanPath(p) {
+        return typeof p === 'string' ? p.replace(/^\/+/, '') : '';
+    }
 
-        if (roomType === 'standard' && window.cmsData?.std_galeries) {
-            currentGallery = window.cmsData.std_galeries.map(item => item.image);
-        } else if (roomType === 'superieure' && window.cmsData?.sup_galeries) {
-            currentGallery = window.cmsData.sup_galeries.map(item => item.image);
-        } else if (roomType === 'confort' && window.cmsData?.conf_galeries) {
-            currentGallery = window.cmsData.conf_galeries.map(item => item.image);
-        } else if (roomType === 'appartement' && window.cmsData?.apt_galeries) {
-            currentGallery = window.cmsData.apt_galeries.map(item => item.image);
+    // Noms des champs dans content/chambres.json (identiques à ton .pages.yml)
+    const GALLERY_KEYS = {
+        standard:    { list: 'std_photos_liste',  single: 'std_img'  },
+        superieure:  { list: 'sup_photos_liste',  single: 'sup_img'  },
+        confort:     { list: 'conf_photos_liste', single: 'conf_img' },
+        appartement: { list: 'apt_photos_liste',  single: 'apt_img'  }
+    };
+
+    function openGallery(roomType) {
+        const keys = GALLERY_KEYS[roomType];
+        if (!keys) return;
+
+        const data = window.cmsData || {};
+        const list = Array.isArray(data[keys.list]) ? data[keys.list] : [];
+
+        // Accepte [{ "image": "img/a.jpg" }] et ["img/a.jpg"], ignore les entrées vides
+        currentGallery = list
+            .map(item => cleanPath(typeof item === 'string' ? item : item?.image))
+            .filter(Boolean);
+
+        // Secours 1 : image unique du CMS
+        if (currentGallery.length === 0 && data[keys.single]) {
+            currentGallery = [cleanPath(data[keys.single])];
+        }
+
+        // Secours 2 : l'image déjà affichée dans la page
+        if (currentGallery.length === 0) {
+            const img = document.querySelector(`[onclick="openGallery('${roomType}')"] img`);
+            if (img) currentGallery = [img.getAttribute('src')];
         }
 
         if (currentGallery.length === 0) {
-            if (roomType === 'standard' && window.cmsData?.std_img) currentGallery = [window.cmsData.std_img];
-            if (roomType === 'superieure' && window.cmsData?.sup_img) currentGallery = [window.cmsData.sup_img];
-            if (roomType === 'confort' && window.cmsData?.conf_img) currentGallery = [window.cmsData.conf_img];
-            if (roomType === 'appartement' && window.cmsData?.apt_img) currentGallery = [window.cmsData.apt_img];
+            console.warn(`Galerie "${roomType}" : aucune image trouvée (clé attendue : ${keys.list})`, data);
+            return;
         }
-        
+
         currentImgIndex = 0;
-        if (currentGallery.length > 0) {
-            document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
-            document.getElementById('roomLightbox').style.display = 'flex';
-        }
+        document.getElementById('lightboxImg').src = currentGallery[currentImgIndex];
+        document.getElementById('roomLightbox').style.display = 'flex';
     }
 
     function closeGallery() {
@@ -612,6 +631,8 @@
 
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeGallery();
+        if (e.key === 'ArrowRight') nextGalleryImage();
+        if (e.key === 'ArrowLeft') prevGalleryImage();
     });
 
     // --- 4. CHARGEMENT CMS ---
@@ -621,8 +642,11 @@
             if (!pageName || pageName === 'index' || pageName === '') pageName = 'index';
 
             const response = await fetch(`content/${pageName}.json`);
-            if (!response.ok) return;
-            
+            if (!response.ok) {
+                console.warn(`CMS : content/${pageName}.json introuvable (code ${response.status})`);
+                return;
+            }
+
             const data = await response.json();
             window.cmsData = data;
 
@@ -632,14 +656,14 @@
                 const elements = document.querySelectorAll(`[data-cms="${key}"]`);
                 elements.forEach(element => {
                     if (element.tagName === 'IMG') {
-                        element.src = value;
+                        if (value) element.src = cleanPath(value);
                     } else if (value) {
                         element.innerHTML = value;
                     }
                 });
             }
         } catch (error) {
-            console.log("Erreur CMS:", error);
+            console.error("Erreur CMS:", error);
         }
     }
 
