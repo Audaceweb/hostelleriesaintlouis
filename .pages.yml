@@ -1316,6 +1316,69 @@ content:
           - label: "Légende / Titre"
             name: "title"
             type: string
+        # --- CAPACITÉS DES 4 SALLES ---
+      - label: "Titre de la section Capacités"
+        name: "capacity_section_title"
+        type: string
+      - label: "Description de la section Capacités"
+        name: "capacity_section_desc"
+        type: text
+
+      # Salle 1 : L'Écrin
+      - label: "Salle 1 - Nom"
+        name: "cap1_title"
+        type: string
+      - label: "Salle 1 - Surface (ex: 75 m²)"
+        name: "cap1_size"
+        type: string
+      - label: "Salle 1 - Places assises"
+        name: "cap1_seats"
+        type: string
+      - label: "Salle 1 - Places debout"
+        name: "cap1_standing"
+        type: string
+
+      # Salle 2 : Salle des miroirs
+      - label: "Salle 2 - Nom"
+        name: "cap2_title"
+        type: string
+      - label: "Salle 2 - Surface"
+        name: "cap2_size"
+        type: string
+      - label: "Salle 2 - Places assises"
+        name: "cap2_seats"
+        type: string
+      - label: "Salle 2 - Places debout"
+        name: "cap2_standing"
+        type: string
+
+      # Salle 3 : Parenthèse
+      - label: "Salle 3 - Nom"
+        name: "cap3_title"
+        type: string
+      - label: "Salle 3 - Surface"
+        name: "cap3_size"
+        type: string
+      - label: "Salle 3 - Places assises"
+        name: "cap3_seats"
+        type: string
+      - label: "Salle 3 - Places debout"
+        name: "cap3_standing"
+        type: string
+
+      # Salle 4 : Jardin d'hiver
+      - label: "Salle 4 - Nom"
+        name: "cap4_title"
+        type: string
+      - label: "Salle 4 - Surface"
+        name: "cap4_size"
+        type: string
+      - label: "Salle 4 - Places assises"
+        name: "cap4_seats"
+        type: string
+      - label: "Salle 4 - Places debout"
+        name: "cap4_standing"
+        type: string
   # ==========================================
   # 6. PAGE SÉMINAIRES (seminaires.json)
   # ==========================================
