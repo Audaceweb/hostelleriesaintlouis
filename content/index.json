@@ -1,13 +1,17 @@
 {
   "hero_logo": "img/grandlogob.png",
   "hero_desc": "Un écrin d'élégance et d'histoire au cœur du Nord de la France.",
-  
   "hero_carrousel_liste": [
-    { "image": "img/carrousel1.jpg" },
-    { "image": "img/carroussel2.jpg" },
-    { "image": "img/chambreindex-2.jpg" }
+    {
+      "image": "img/carrousel1.jpg"
+    },
+    {
+      "image": "img/carroussel2.jpg"
+    },
+    {
+      "image": "img/chambreindex-2.jpg"
+    }
   ],
-
   "badge_year": "Ancrage & Histoire",
   "badge_text": "Au cœur du Nord",
   "intro_subtitle": "L'Art de Vivre à la Nordiste",
@@ -55,17 +59,16 @@
   "spa_subtitle": "Détente Absolue",
   "spa_title": "Spa & Bien-être",
   "spa_desc": "Laissez-vous transporter par des soins apaisants et profitez d'un véritable havre de paix.",
-  "gift_img": "photo-coffrets.jpg",
+  "gift_img": "img/FB_IMG_1769542421139.jpg",
   "gift_subtitle": "Offrir l'Exception",
   "gift_title": "Coffrets Cadeaux",
   "gift_desc": "Faites plaisir à vos proches avec nos chèques et séjours cadeaux faits sur mesure.",
+  "infos_img": "img/christelle-ferreira-chalon-sur-saone-bollezele-hostellerie-saint-louis-1140346.jpg",
   "infos_subtitle": "Votre Séjour dans le Nord",
   "infos_title": "Infos Pratiques & Région",
   "infos_desc": "Préparez au mieux votre arrivée et explorez les lieux touristiques emblématiques aux alentours de notre hôtel.",
-  
   "reviews_subtitle": "Témoignages",
   "reviews_title": "Ce que nos hôtes disent de nous",
-  
   "reviews_liste": [
     {
       "source": "Google Avis",
