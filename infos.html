@@ -338,4 +338,70 @@
             </div>
         </div>
         <div class="footer-bottom-legal">
-            <a
+            <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
+            <p style="margin-top: 5px;">Fait par passion par <a href="https://audaceweb.fr" target="_blank" style="color: var(--color-gold); text-decoration: underline;">Audaceweb</a></p>
+            <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+      async function loadCMSContent() {
+        try {
+          let pageName = window.location.pathname.split('/').pop().replace('.html', '');
+          if (!pageName || pageName === 'index' || pageName === '') {
+            pageName = 'index';
+          }
+
+          const response = await fetch(`content/${pageName}.json`);
+          if (!response.ok) return;
+          
+          const data = await response.json();
+
+          // Injection des données simples
+          for (const [key, value] of Object.entries(data)) {
+            if (Array.isArray(value)) continue;
+            const elements = document.querySelectorAll(`[data-cms="${key}"]`);
+            elements.forEach(element => {
+              if (element.tagName === 'IMG') {
+                element.src = value;
+              } else if (value !== null && value !== undefined) {
+                element.innerHTML = value;
+              }
+            });
+          }
+
+          // Gestion de la LISTE D'ACTUALITÉS dynamique
+          if (data.news && Array.isArray(data.news)) {
+            const newsContainer = document.getElementById('news-container');
+            if (newsContainer) {
+              newsContainer.innerHTML = '';
+              data.news.forEach(item => {
+                const cardHTML = `
+                  <article class="news-card">
+                    <div class="news-img">
+                      <img src="${item.image || 'img/photo-restaurant.jpg'}" alt="${item.title || ''}">
+                    </div>
+                    <div class="news-content">
+                      <span class="news-date">${item.date || ''}</span>
+                      <h3>${item.title || ''}</h3>
+                      <p>${item.desc || ''}</p>
+                      <a href="#contact" class="news-link">En savoir plus &rarr;</a>
+                    </div>
+                  </article>
+                `;
+                newsContainer.insertAdjacentHTML('beforeend', cardHTML);
+              });
+            }
+          }
+
+        } catch (error) {
+          console.error("Erreur lors de la lecture du contenu CMS :", error);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', loadCMSContent);
+    </script>
+</body>
+</html>
