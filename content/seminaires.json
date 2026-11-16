@@ -46,3 +46,33 @@
     }
   ]
 }
+"capacities_section_subtitle": "Sur-Mesure & Modularité",
+  "capacities_section_title": "Capacités & Configurations de nos Salons",
+  "capacities_section_desc": "Offrez à vos collaborateurs et partenaires un cadre d'exception. Nos salons modulables s'adaptent avec élégance à tous vos formats professionnels, de la réunion exécutive au cocktail d'entreprise.",
+  
+  "seminar_capacities_liste": [
+    {
+      "room_name": "L'Écrin",
+      "room_size": "75 m²",
+      "room_capacity": "45 pers. assises • 60 pers. debout",
+      "room_desc": "Un espace baigné de lumière naturelle, idéal pour vos assemblées plénières, séminaires studieux et présentations de projets."
+    },
+    {
+      "room_name": "Salle des Miroirs",
+      "room_size": "78 m²",
+      "room_capacity": "65 pers. assises • 80 pers. debout",
+      "room_desc": "Le choix prestigieux pour vos grands banquets d'entreprise, cocktails dînatoires et conventions professionnelles d'envergure."
+    },
+    {
+      "room_name": "Parenthèse",
+      "room_size": "78 m²",
+      "room_capacity": "40 pers. assises • 60 pers. debout",
+      "room_desc": "Un cadre intimiste et chaleureux, parfaitement agencé pour vos comités de direction, ateliers de travail et formations ciblées."
+    },
+    {
+      "room_name": "Jardin d'Hiver",
+      "room_size": "102 m²",
+      "room_capacity": "70 pers. assises • 120 pers. debout",
+      "room_desc": "Notre plus grand volume. Un espace ouvert et lumineux, exceptionnel pour recevoir vos partenaires lors d'événements d'envergure."
+    }
+  ]
