@@ -547,16 +547,18 @@ content:
       name: "soins_desc"
       type: text
 
-    - label: "Catégories de Soins (Illimité)"
+    - label: "Catégories de Soins (illimité)"
       name: "spa_categories"
-      type: list
+      type: object
+      list: true
       fields:
-        - label: "Titre de la Catégorie"
+        - label: "Titre de la catégorie"
           name: "category_title"
           type: string
-        - label: "Liste des Soins"
+        - label: "Liste des soins"
           name: "items"
-          type: list
+          type: object
+          list: true
           fields:
             - label: "Nom du soin"
               name: "name"
