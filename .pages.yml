@@ -258,7 +258,8 @@ content:
       - label: "Vin Description 2"
         name: "wine_desc2"
         type: text
-      # --- MENU DE LA SEMAINE ---
+
+      # --- MENU DE LA SEMAINE (Dynamique) ---
       - label: "Menu Semaine - Sous-titre"
         name: "menu_subtitle"
         type: string
@@ -268,55 +269,33 @@ content:
       - label: "Menu Semaine - Dates"
         name: "menu_dates"
         type: string
-      - label: "Catégorie 1 (Entrées)"
-        name: "m_cat1"
-        type: string
-      - label: "Entrée 1 - Nom"
-        name: "m_item1_name"
-        type: string
-      - label: "Entrée 1 - Prix"
-        name: "m_item1_price"
-        type: string
-      - label: "Entrée 2 - Nom"
-        name: "m_item2_name"
-        type: string
-      - label: "Entrée 2 - Prix"
-        name: "m_item2_price"
-        type: string
-      - label: "Catégorie 2 (Plats)"
-        name: "m_cat2"
-        type: string
-      - label: "Plat 1 - Nom"
-        name: "m_item3_name"
-        type: string
-      - label: "Plat 1 - Prix"
-        name: "m_item3_price"
-        type: string
-      - label: "Plat 2 - Nom"
-        name: "m_item4_name"
-        type: string
-      - label: "Plat 2 - Prix"
-        name: "m_item4_price"
-        type: string
-      - label: "Catégorie 3 (Desserts)"
-        name: "m_cat3"
-        type: string
-      - label: "Dessert 1 - Nom"
-        name: "m_item5_name"
-        type: string
-      - label: "Dessert 1 - Prix"
-        name: "m_item5_price"
-        type: string
-      - label: "Dessert 2 - Nom"
-        name: "m_item6_name"
-        type: string
-      - label: "Dessert 2 - Prix"
-        name: "m_item6_price"
-        type: string
+
+      - label: "Catégories du Menu de la Semaine (Illimité)"
+        name: "weekly_categories"
+        type: list
+        fields:
+          - label: "Nom de la Catégorie (ex: Entrées, Plats...)"
+            name: "category_title"
+            type: string
+          - label: "Liste des Plats"
+            name: "items"
+            type: list
+            fields:
+              - label: "Nom du plat"
+                name: "name"
+                type: string
+              - label: "Description (optionnelle)"
+                name: "sub"
+                type: text
+              - label: "Prix (ex: 16 €)"
+                name: "price"
+                type: string
+
       - label: "Formule Note"
         name: "m_formula"
         type: text
-      # --- MENU SAISONNIER AUTOMNE ---
+
+      # --- MENU SAISONNIER AUTOMNE (Dynamique) ---
       - label: "Automne - Sous-titre"
         name: "autumn-subtitle"
         type: string
@@ -326,60 +305,28 @@ content:
       - label: "Automne - Dates"
         name: "autumn-dates"
         type: string
-      - label: "Automne Cat 1"
-        name: "autumn-cat-1"
-        type: string
-      - label: "Automne Item 1 Nom"
-        name: "autumn-item-1-name"
-        type: string
-      - label: "Automne Item 1 Desc"
-        name: "autumn-item-1-desc"
-        type: string
-      - label: "Automne Item 1 Prix"
-        name: "autumn-item-1-price"
-        type: string
-      - label: "Automne Item 2 Nom"
-        name: "autumn-item-2-name"
-        type: string
-      - label: "Automne Item 2 Desc"
-        name: "autumn-item-2-desc"
-        type: string
-      - label: "Automne Item 2 Prix"
-        name: "autumn-item-2-price"
-        type: string
-      - label: "Automne Cat 2"
-        name: "autumn-cat-2"
-        type: string
-      - label: "Automne Item 3 Nom"
-        name: "autumn-item-3-name"
-        type: string
-      - label: "Automne Item 3 Desc"
-        name: "autumn-item-3-desc"
-        type: string
-      - label: "Automne Item 3 Prix"
-        name: "autumn-item-3-price"
-        type: string
-      - label: "Automne Item 4 Nom"
-        name: "autumn-item-4-name"
-        type: string
-      - label: "Automne Item 4 Desc"
-        name: "autumn-item-4-desc"
-        type: string
-      - label: "Automne Item 4 Prix"
-        name: "autumn-item-4-price"
-        type: string
-      - label: "Automne Cat 3"
-        name: "autumn-cat-3"
-        type: string
-      - label: "Automne Item 5 Nom"
-        name: "autumn-item-5-name"
-        type: string
-      - label: "Automne Item 5 Desc"
-        name: "autumn-item-5-desc"
-        type: string
-      - label: "Automne Item 5 Prix"
-        name: "autumn-item-5-price"
-        type: string
+
+      - label: "Catégories du Menu d'Automne (Illimité)"
+        name: "autumn_categories"
+        type: list
+        fields:
+          - label: "Nom de la Catégorie (ex: Les Entrées de Saison)"
+            name: "category_title"
+            type: string
+          - label: "Liste des Plats"
+            name: "items"
+            type: list
+            fields:
+              - label: "Nom du plat"
+                name: "name"
+                type: string
+              - label: "Description détaillée"
+                name: "sub"
+                type: text
+              - label: "Prix"
+                name: "price"
+                type: string
+
       - label: "Automne Footer"
         name: "autumn-footer"
         type: text
@@ -389,41 +336,7 @@ content:
       - label: "Logo Fait Maison Image"
         name: "homemade_img"
         type: image
-# --- Carrousel Principal (Photos illimitées) ---
-      - label: "Carrousel Principal (Accueil)"
-        name: "hero_carrousel_liste"
-        type: object
-        list: true
-        fields:
-          - label: "Photo du Carrousel"
-            name: "image"
-            type: image
 
-      # --- Section Avis & Témoignages (Modifiable et illimité) ---
-      - label: "Avis - Sous-titre"
-        name: "reviews_subtitle"
-        type: string
-      - label: "Avis - Titre"
-        name: "reviews_title"
-        type: string
-
-      - label: "Liste des Avis / Témoignages"
-        name: "reviews_liste"
-        type: object
-        list: true
-        fields:
-          - label: "Source (ex: Google, Booking...)"
-            name: "source"
-            type: string
-          - label: "Étoiles (ex: ★★★★★)"
-            name: "stars"
-            type: string
-          - label: "Commentaire / Texte de l'avis"
-            name: "text"
-            type: text
-          - label: "Auteur (ex: — Thomas V.)"
-            name: "author"
-            type: string
 # ==========================================
 # 7. PAGE SPA (spa.json)
 # ==========================================
