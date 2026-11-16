@@ -1,0 +1,31 @@
+{
+  "hero_subtitle": "Immersions & Instants Vécus",
+  "hero_title": "La Galerie Photo",
+  "hero_desc": "Explorez les espaces d'exception de l'Hostellerie Saint-Louis à travers notre regard.",
+  "photos": [
+    {
+      "image": "img/spa1.jpg",
+      "category": "spa",
+      "category_label": "Spa & Bien-être",
+      "title": "Espace Détente & Jacuzzi"
+    },
+    {
+      "image": "img/pauze1.jpg",
+      "category": "restaurant",
+      "category_label": "Restaurant",
+      "title": "Salle principale du Restaurant PAUZE"
+    },
+    {
+      "image": "img/pauze2.jpg",
+      "category": "restaurant",
+      "category_label": "Restaurant",
+      "title": "Détails d'une création du Chef"
+    },
+    {
+      "image": "img/spa2.png",
+      "category": "spa",
+      "category_label": "Spa & Bien-être",
+      "title": "Bassin et couloir de nage"
+    }
+  ]
+}
