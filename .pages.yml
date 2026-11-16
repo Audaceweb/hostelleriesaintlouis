@@ -424,149 +424,149 @@ content:
           - label: "Auteur (ex: — Thomas V.)"
             name: "author"
             type: string
- # ==========================================
- # 7. PAGE SPA (spa.json)
- # ==========================================
+# ==========================================
+# 7. PAGE SPA (spa.json)
+# ==========================================
 - name: "spa"
   label: "Page Spa & Bien-être"
   type: file
   path: "content/spa.json"
   format: json
   fields:
-      - label: "Hero Sous-titre"
-        name: "hero_subtitle"
-        type: string
-      - label: "Hero Titre"
-        name: "hero_title"
-        type: string
-      - label: "Hero Description"
-        name: "hero_desc"
-        type: string
+    - label: "Hero Sous-titre"
+      name: "hero_subtitle"
+      type: string
+    - label: "Hero Titre"
+      name: "hero_title"
+      type: string
+    - label: "Hero Description"
+      name: "hero_desc"
+      type: string
 
-      - label: "Introduction Sous-titre"
-        name: "spa_intro_subtitle"
-        type: string
-      - label: "Introduction Titre"
-        name: "spa_intro_title"
-        type: string
-      - label: "Introduction Texte"
-        name: "spa_intro_desc"
-        type: text
+    - label: "Introduction Sous-titre"
+      name: "spa_intro_subtitle"
+      type: string
+    - label: "Introduction Titre"
+      name: "spa_intro_title"
+      type: string
+    - label: "Introduction Texte"
+      name: "spa_intro_desc"
+      type: text
 
-      # --- Équipements Spa ---
-      - label: "Carte 1 - Titre"
-        name: "scard1_title"
-        type: string
-      - label: "Carte 1 - Capacité"
-        name: "scard1_capacity"
-        type: string
-      - label: "Carte 1 - Description"
-        name: "scard1_desc"
-        type: text
+    # --- Équipements Spa ---
+    - label: "Carte 1 - Titre"
+      name: "scard1_title"
+      type: string
+    - label: "Carte 1 - Capacité"
+      name: "scard1_capacity"
+      type: string
+    - label: "Carte 1 - Description"
+      name: "scard1_desc"
+      type: text
 
-      - label: "Carte 2 - Titre"
-        name: "scard2_title"
-        type: string
-      - label: "Carte 2 - Capacité"
-        name: "scard2_capacity"
-        type: string
-      - label: "Carte 2 - Description"
-        name: "scard2_desc"
-        type: text
+    - label: "Carte 2 - Titre"
+      name: "scard2_title"
+      type: string
+    - label: "Carte 2 - Capacité"
+      name: "scard2_capacity"
+      type: string
+    - label: "Carte 2 - Description"
+      name: "scard2_desc"
+      type: text
 
-      - label: "Carte 3 - Titre"
-        name: "scard3_title"
-        type: string
-      - label: "Carte 3 - Capacité"
-        name: "scard3_capacity"
-        type: string
-      - label: "Carte 3 - Description"
-        name: "scard3_desc"
-        type: text
+    - label: "Carte 3 - Titre"
+      name: "scard3_title"
+      type: string
+    - label: "Carte 3 - Capacité"
+      name: "scard3_capacity"
+      type: string
+    - label: "Carte 3 - Description"
+      name: "scard3_desc"
+      type: text
 
-      - label: "Carte 4 - Titre"
-        name: "scard4_title"
-        type: string
-      - label: "Carte 4 - Capacité"
-        name: "scard4_capacity"
-        type: string
-      - label: "Carte 4 - Description"
-        name: "scard4_desc"
-        type: text
+    - label: "Carte 4 - Titre"
+      name: "scard4_title"
+      type: string
+    - label: "Carte 4 - Capacité"
+      name: "scard4_capacity"
+      type: string
+    - label: "Carte 4 - Description"
+      name: "scard4_desc"
+      type: text
 
-      # --- Tarifs & Horaires ---
-      - label: "Tarifs Sous-titre"
-        name: "tarifs_subtitle"
-        type: string
-      - label: "Tarifs Titre"
-        name: "tarifs_title"
-        type: string
-      - label: "Tarif 1 - Titre"
-        name: "t1_title"
-        type: string
-      - label: "Tarif 1 - Prix"
-        name: "t1_price"
-        type: string
-      - label: "Tarif 2 - Titre"
-        name: "t2_title"
-        type: string
-      - label: "Tarif 2 - Prix"
-        name: "t2_price"
-        type: string
+    # --- Tarifs & Horaires ---
+    - label: "Tarifs Sous-titre"
+      name: "tarifs_subtitle"
+      type: string
+    - label: "Tarifs Titre"
+      name: "tarifs_title"
+      type: string
+    - label: "Tarif 1 - Titre"
+      name: "t1_title"
+      type: string
+    - label: "Tarif 1 - Prix"
+      name: "t1_price"
+      type: string
+    - label: "Tarif 2 - Titre"
+      name: "t2_title"
+      type: string
+    - label: "Tarif 2 - Prix"
+      name: "t2_price"
+      type: string
 
-      - label: "Horaires - Titre"
-        name: "hours_title"
-        type: string
-      - label: "Lundi - Jour"
-        name: "h1_day"
-        type: string
-      - label: "Lundi - Heures"
-        name: "h1_time"
-        type: string
-      - label: "Mardi au Samedi - Jour"
-        name: "h2_day"
-        type: string
-      - label: "Mardi au Samedi - Heures"
-        name: "h2_time"
-        type: string
-      - label: "Dimanche - Jour"
-        name: "h3_day"
-        type: string
-      - label: "Dimanche - Heures"
-        name: "h3_time"
-        type: string
+    - label: "Horaires - Titre"
+      name: "hours_title"
+      type: string
+    - label: "Lundi - Jour"
+      name: "h1_day"
+      type: string
+    - label: "Lundi - Heures"
+      name: "h1_time"
+      type: string
+    - label: "Mardi au Samedi - Jour"
+      name: "h2_day"
+      type: string
+    - label: "Mardi au Samedi - Heures"
+      name: "h2_time"
+      type: string
+    - label: "Dimanche - Jour"
+      name: "h3_day"
+      type: string
+    - label: "Dimanche - Heures"
+      name: "h3_time"
+      type: string
 
-      # --- Carte des Soins (Dynamique via listes CMS) ---
-      - label: "Soins - Sous-titre"
-        name: "soins_subtitle"
-        type: string
-      - label: "Soins - Titre"
-        name: "soins_title"
-        type: string
-      - label: "Soins - Description"
-        name: "soins_desc"
-        type: text
+    # --- Carte des Soins (Dynamique via listes CMS) ---
+    - label: "Soins - Sous-titre"
+      name: "soins_subtitle"
+      type: string
+    - label: "Soins - Titre"
+      name: "soins_title"
+      type: string
+    - label: "Soins - Description"
+      name: "soins_desc"
+      type: text
 
-      - label: "Catégories de Soins (Illimité)"
-        name: "spa_categories"
-        type: list
-        fields:
-          - label: "Titre de la Catégorie (ex: Soins Visage — Rituels Nohèm)"
-            name: "category_title"
-            type: string
-          - label: "Liste des Soins"
-            name: "items"
-            type: list
-            fields:
-              - label: "Nom du soin"
-                name: "name"
-                type: string
-              - label: "Description / Sous-titre"
-                name: "sub"
-                type: text
-              - label: "Durée & Prix"
-                name: "price"
-                type: string
+    - label: "Catégories de Soins (Illimité)"
+      name: "spa_categories"
+      type: list
+      fields:
+        - label: "Titre de la Catégorie"
+          name: "category_title"
+          type: string
+        - label: "Liste des Soins"
+          name: "items"
+          type: list
+          fields:
+            - label: "Nom du soin"
+              name: "name"
+              type: string
+            - label: "Description / Sous-titre"
+              name: "sub"
+              type: text
+            - label: "Durée & Prix"
+              name: "price"
+              type: string
   # ==========================================
   # 4. PAGE CHAMBRES (chambres.json)
   # ==========================================
