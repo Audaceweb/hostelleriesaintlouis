@@ -18,7 +18,10 @@
 </head>
 <body>
 
-    <!-- ENTÊTE / HEADER (Non modifiable par le CMS) -->
+    <div class="iframeClose" style="display:none; position:fixed; top:20px; right:40px; color:#000; font-size:35px; cursor:pointer; font-family:Arial; background: #fff; width: 45px; height: 45px; text-align: center; border-radius: 50%; line-height: 42px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); z-index: 9999999;">&times;</div>
+    <iframe id="ReservitBookingIframe" src="https://premium.logishotels.com/engine/booking/233/1237" style="z-index:1; opacity:1; border:none; width:100%; height:100%; position:fixed; transform:translateY(0px); background:#fff; top:0; bottom:0; left:0; right:0; z-index:100000; transition:transform 450ms cubic-bezier(0.23, 1, 0.32, 1), opacity 450ms cubic-bezier(0.23, 1, 0.32, 1); display:none;"></iframe>
+
+    <!-- ENTÊTE / HEADER -->
     <header id="main-header">
         <button class="hamburger-menu" id="hamburger-btn" aria-label="Ouvrir le menu">
             <span class="bar"></span>
@@ -39,12 +42,28 @@
                 <li><a href="mariages.html">Mariages & Réceptions</a></li>
                 <li><a href="seminaires.html">Séminaires</a></li>
                 <li><a href="spa.html">Spa & Bien-être</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
                 <li><a href="coffrets.html">Coffrets Cadeaux</a></li>
                 <li><a href="infos.html" class="active">Infos Pratiques</a></li>
             </ul>
+
+            <!-- Sélecteur de langue pour le menu mobile -->
+            <div class="mobile-lang-switcher">
+                <a href="#" class="lang-option active">FR</a>
+                <span class="lang-separator">/</span>
+                <a href="#" class="lang-option">EN</a>
+            </div>
         </nav>
 
-        <a href="#reservation" class="btn-reserver">Réserver</a>
+        <!-- Actions de droite : Sélecteur de langue Desktop + Bouton Réserver -->
+        <div class="header-actions">
+            <div class="desktop-lang-switcher">
+                <a href="#" class="lang-option active" title="Français">FR</a>
+                <span class="lang-separator">/</span>
+                <a href="#" class="lang-option" title="English">EN</a>
+            </div>
+            <a href="#reservation" class="btn-reserver">Réserver</a>
+        </div>
     </header>
 
     <main>
@@ -208,36 +227,15 @@
             </div>
         </section>
 
-        <!-- BLOC 3 : ACTUALITÉS ET ÉVÉNEMENTS DE L'HÔTEL -->
+        <!-- BLOC 3 : ACTUALITÉS ET ÉVÉNEMENTS DE L'HÔTEL (Dynamique CMS) -->
         <section class="section-block block-creme reveal" id="block-actualites">
             <div class="container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
                 <span class="subtitle" data-cms="news_subtitle">La Vie à l'Hostellerie</span>
                 <h2 class="title" style="margin-bottom: 50px; font-size: 3rem;" data-cms="news_title">Actualités & Événements</h2>
                 
-                <div class="news-grid">
-                    <article class="news-card" data-cms="latest_news">
-                        <div class="news-img">
-                            <img src="img/photo-restaurant.jpg" data-cms="image" alt="Soirée Dégustation PAUZE">
-                        </div>
-                        <div class="news-content">
-                            <span class="news-date" data-cms="date">Prochainement</span>
-                            <h3 data-cms="title">Menu Dégustation Terroir & Saison</h3>
-                            <p data-cms="body">Le Chef du restaurant PAUZE honore les producteurs flamands à travers une carte éphémère d'exception.</p>
-                            <a href="#contact" class="news-link">Réserver une table &rarr;</a>
-                        </div>
-                    </article>
-
-                    <article class="news-card" data-cms="latest_news">
-                        <div class="news-img">
-                            <img src="img/chambreindex.jpg" data-cms="image" alt="Offre Séjour Flandres">
-                        </div>
-                        <div class="news-content">
-                            <span class="news-date" data-cms="date">Offre Éphémère</span>
-                            <h3 data-cms="title">Week-end Évasion en Flandre</h3>
-                            <p data-cms="body">Bénéficiez d'une nuitée avec petit-déjeuner artisanal buffet et accès illimité à nos espaces détente.</p>
-                            <a href="#contact" class="news-link">Découvrir l'offre &rarr;</a>
-                        </div>
-                    </article>
+                <!-- Conteneur ciblé pour la liste dynamique gérée par PageCMS -->
+                <div class="news-grid" id="news-container">
+                    <!-- Rempli dynamiquement par le script -->
                 </div>
             </div>
         </section>
@@ -324,95 +322,20 @@
             <div class="footer-center">
                 <img src="img/grandlogob.png" alt="Hostellerie Saint-Louis" class="footer-logo-central">
             </div>
-<div class="footer-right">
-    <h3>Newsletter</h3>
-    <p>Recevez nos offres privilèges.</p>
-    <form class="newsletter-form" id="newsletter-form" action="subscribe.php" method="POST">
-        <!-- anti-spam : champ invisible -->
-        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-
-        <input type="email" name="email" placeholder="Votre adresse email" required>
-        <button type="submit" class="btn-gold">S'inscrire</button>
-
-        <label class="newsletter-consent">
-            <input type="checkbox" required>
-            J'accepte de recevoir la newsletter de l'Hostellerie Saint-Louis.
-        </label>
-        <p id="newsletter-msg" class="newsletter-msg"></p>
-    </form>
-</div>
+            <div class="footer-right">
+                <h3>Newsletter</h3>
+                <p>Recevez nos offres privilèges.</p>
+                <form class="newsletter-form" id="newsletter-form" action="subscribe.php" method="POST">
+                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                    <input type="email" name="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn-gold">S'inscrire</button>
+                    <label class="newsletter-consent">
+                        <input type="checkbox" required>
+                        J'accepte de recevoir la newsletter de l'Hostellerie Saint-Louis.
+                    </label>
+                    <p id="newsletter-msg" class="newsletter-msg"></p>
+                </form>
+            </div>
         </div>
         <div class="footer-bottom-legal">
-            <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
-            <p style="margin-top: 5px;">Fait par passion par <a href="https://audaceweb.fr" target="_blank" style="color: var(--color-gold); text-decoration: underline;">Audaceweb</a></p>
-            <p>&copy; 2026 Hostellerie Saint-Louis. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-<script>
-  async function loadCMSContent() {
-    try {
-      // 1. Détection automatique de la page actuelle
-      let pageName = window.location.pathname.split('/').pop().replace('.html', '');
-      if (!pageName || pageName === 'index' || pageName === '') {
-        pageName = 'index';
-      }
-
-      // 2. Chargement du fichier JSON correspondant (avec un slash absolu /)
-      const response = await fetch(`/content/${pageName}.json`);
-      if (!response.ok) {
-        console.warn(`Fichier JSON introuvable pour : ${pageName}`);
-        return; 
-      }
-      
-      const data = await response.json();
-
-      // 3. Injection des données simples (Textes & Images avec data-cms)
-      for (const [key, value] of Object.entries(data)) {
-        if (Array.isArray(value)) continue;
-
-        const elements = document.querySelectorAll(`[data-cms="${key}"]`);
-        elements.forEach(element => {
-          if (element.tagName === 'IMG') {
-            element.src = value;
-          } else if (value !== null && value !== undefined) {
-            element.innerHTML = value; // innerHTML pour garder les balises HTML/strong
-          }
-        });
-      }
-
-      // 4. Gestion spéciale de la LISTE D'ACTUALITÉS (sur la page index)
-      if (data.home_news && Array.isArray(data.home_news)) {
-        const newsContainer = document.querySelector('.news-grid');
-        if (newsContainer) {
-          newsContainer.innerHTML = '';
-
-          data.home_news.forEach(item => {
-            const cardHTML = `
-              <article class="news-card">
-                <div class="news-img"><img src="${item.image || 'img/jazzindex.jfif'}" alt="${item.title || ''}"></div>
-                <div class="news-content">
-                  <span class="news-date">${item.date || ''}</span>
-                  <h3>${item.title || ''}</h3>
-                  <p>${item.desc || ''}</p>
-                  <a href="#reservation" class="news-link">Réserver / En savoir plus &rarr;</a>
-                </div>
-              </article>
-            `;
-            newsContainer.insertAdjacentHTML('beforeend', cardHTML);
-          });
-        }
-      }
-
-    } catch (error) {
-      console.error("Erreur lors de la lecture du contenu CMS :", error);
-    }
-  }
-
-  // Lancement automatique au chargement de la page
-  document.addEventListener('DOMContentLoaded', loadCMSContent);
-</script>
-</body>
-</html>
+            <a
