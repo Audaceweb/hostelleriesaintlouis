@@ -363,23 +363,21 @@
     <!-- Fichier JavaScript -->
     <script src="script.js"></script>
     <script>
+ <script>
   async function loadCMSContent() {
     try {
-      // 1. Détection automatique de la page actuelle (ex: "chambres.html" -> "chambres")
       let pageName = window.location.pathname.split('/').pop().replace('.html', '');
       if (!pageName || pageName === 'index' || pageName === '') {
         pageName = 'index';
       }
 
-      // 2. Chargement du fichier JSON correspondant dans le dossier content/
       const response = await fetch(`content/${pageName}.json`);
-      if (!response.ok) return; // Si le fichier JSON n'existe pas encore, on garde le HTML de base
+      if (!response.ok) return;
       
       const data = await response.json();
 
-      // 3. Injection des données simples (Textes & Images avec data-cms)
+      // Injection des données simples
       for (const [key, value] of Object.entries(data)) {
-        // Si c'est une liste (comme les actualités), on la traite séparément ci-dessous
         if (Array.isArray(value)) continue;
 
         const elements = document.querySelectorAll(`[data-cms="${key}"]`);
@@ -392,40 +390,22 @@
         });
       }
 
-      // 4. Gestion spéciale de la LISTE D'ACTUALITÉS (sur la page index)
-      if (data.home_news && Array.isArray(data.home_news)) {
-        const newsContainer = document.querySelector('.news-grid');
-        if (newsContainer) {
-          // On vide les cartes de démonstration
-          newsContainer.innerHTML = '';
-
-          // On génère dynamiquement chaque carte d'actualité depuis le JSON
-          data.home_news.forEach(item => {
-            const cardHTML = `
-              <article class="news-card">
-                <div class="news-img"><img src="${item.image || 'img/jazzindex.jfif'}" alt="${item.title}"></div>
-                <div class="news-content">
-                  <span class="news-date">${item.date || ''}</span>
-                  <h3>${item.title || ''}</h3>
-                  <p>${item.desc || ''}</p>
-                  <a href="#reservation" class="news-link">Réserver / En savoir plus &rarr;</a>
-                </div>
-              </article>
-            `;
-            newsContainer.insertAdjacentHTML('beforeend', cardHTML);
+      // 1. Injection dynamique du Carrousel Héroïque (Photos illimitées)
+      if (data.hero_carrousel_liste && Array.isArray(data.hero_carrousel_liste)) {
+        const track = document.getElementById('hotel-carousel-track');
+        const dotsContainer = document.getElementById('carousel-dots');
+        if (track && dotsContainer) {
+          track.innerHTML = '';
+          dotsContainer.innerHTML = '';
+          data.hero_carrousel_liste.forEach((item, index) => {
+            const activeClass = index === 0 ? 'active' : '';
+            track.insertAdjacentHTML('beforeend', `<div class="carousel-slide ${activeClass}"><img src="${item.image || ''}" alt="Carrousel"></div>`);
+            dotsContainer.insertAdjacentHTML('beforeend', `<span class="dot ${activeClass}" data-index="${index}"></span>`);
           });
         }
       }
 
-    } catch (error) {
-      console.log("Lecture du contenu CMS...", error);
-    }
-  }
-
-  // Lancement automatique au chargement de la page
-  document.addEventListener('DOMContentLoaded', loadCMSContent);
-
-    // Affichage dynamique des avis avec étoiles
+      // 2. Injection dynamique des Avis avec étoiles
       if (data.reviews_liste && Array.isArray(data.reviews_liste)) {
         const reviewsGrid = document.querySelector('.reviews-grid');
         if (reviewsGrid) {
@@ -443,6 +423,41 @@
           });
         }
       }
+
+      // 3. Gestion spéciale de la LISTE D'ACTUALITÉS
+      if (data.home_news && Array.isArray(data.home_news)) {
+        const newsContainer = document.querySelector('.news-grid');
+        if (newsContainer) {
+          newsContainer.innerHTML = '';
+          data.home_news.forEach(item => {
+            const cardHTML = `
+              <article class="news-card">
+                <div class="news-img"><img src="${item.image || 'img/jazzindex.jfif'}" alt="${item.title}"></div>
+                <div class="news-content">
+                  <span class="news-date">${item.date || ''}</span>
+                  <h3>${item.title || ''}</h3>
+                  <p>${item.desc || ''}</p>
+                  <a href="#reservation" class="news-link">Réserver / En savoir plus &rarr;</a>
+                </div>
+              </article>
+            `;
+            newsContainer.insertAdjacentHTML('beforeend', cardHTML);
+          });
+        }
+      }
+
+      // 4. TRÈS IMPORTANT : On réinitialise le carrousel pour lier les flèches aux nouveaux slides injectés !
+      if (typeof initCarousels === 'function') {
+        initCarousels();
+      }
+
+    } catch (error) {
+      console.log("Lecture du contenu CMS...", error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadCMSContent);
+</script>
     </script>
 </body>
 </html>
