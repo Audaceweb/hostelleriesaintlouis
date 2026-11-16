@@ -144,3 +144,35 @@ if (newsletterForm) {
         }
     });
 }
+// Gestionnaire de liste dynamique pour le Carrousel et les Avis
+      if (data.hero_carrousel_liste && Array.isArray(data.hero_carrousel_liste)) {
+        const track = document.getElementById('hotel-carousel-track');
+        const dotsContainer = document.getElementById('carousel-dots');
+        if (track && dotsContainer) {
+          track.innerHTML = '';
+          dotsContainer.innerHTML = '';
+          data.hero_carrousel_liste.forEach((item, index) => {
+            const activeClass = index === 0 ? 'active' : '';
+            track.insertAdjacentHTML('beforeend', `<div class="carousel-slide ${activeClass}"><img src="${item.image || ''}" alt="Carrousel"></div>`);
+            dotsContainer.insertAdjacentHTML('beforeend', `<span class="dot ${activeClass}" data-index="${index}"></span>`);
+          });
+        }
+      }
+
+      if (data.reviews_liste && Array.isArray(data.reviews_liste)) {
+        const reviewsGrid = document.querySelector('.reviews-grid');
+        if (reviewsGrid) {
+          reviewsGrid.innerHTML = '';
+          data.reviews_liste.forEach(review => {
+            const cardHTML = `
+              <div class="review-card">
+                <div class="review-source" style="font-weight: 600; color: var(--color-gold);">${review.source || ''}</div>
+                <div class="review-stars" style="color: #dcb254; margin: 5px 0;">${review.stars || '★★★★★'}</div>
+                <p class="review-text">${review.text || ''}</p>
+                <div class="review-author" style="font-style: italic; margin-top: 10px;">${review.author || ''}</div>
+              </div>
+            `;
+            reviewsGrid.insertAdjacentHTML('beforeend', cardHTML);
+          });
+        }
+      }
