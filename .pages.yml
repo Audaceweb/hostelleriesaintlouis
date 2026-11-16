@@ -5,7 +5,7 @@ media:
     extensions: [png, jpg, jpeg, webp, svg, jfif]
 
 content:
-  # ==========================================
+# ==========================================
 # 1. PAGE D'ACCUEIL (index.json)
 # ==========================================
 - name: "index"
@@ -21,7 +21,6 @@ content:
       name: "hero_desc"
       type: string
 
-    # Carrousel principal infini (autant de photos que tu veux)
     - label: "Carrousel Accueil (Photos illimitées)"
       name: "hero_carrousel_liste"
       type: object
@@ -165,8 +164,6 @@ content:
     - label: "Infos Description"
       name: "infos_desc"
       type: text
-
-    # --- Section Avis & Témoignages (Liste dynamique complète) ---
     - label: "Avis - Sous-titre"
       name: "reviews_subtitle"
       type: string
@@ -191,9 +188,10 @@ content:
         - label: "Auteur (ex: — Thomas V.)"
           name: "author"
           type: string
-  # ==========================================
-  # 2. PAGE RESTAURANT PAUZE (pauze.json)
-  # ==========================================
+
+# ==========================================
+# 2. PAGE RESTAURANT PAUZE (pauze.json)
+# ==========================================
   - name: "pauze"
     label: "Page Restaurant PAUZE"
     type: file
