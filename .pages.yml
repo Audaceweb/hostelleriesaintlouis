@@ -424,9 +424,9 @@ content:
           - label: "Auteur (ex: — Thomas V.)"
             name: "author"
             type: string
-  # ==========================================
-  # 7. PAGE SPA (spa.json)
-  # ==========================================
+ # ==========================================
+ # 7. PAGE SPA (spa.json)
+ # ==========================================
 - name: "spa"
   label: "Page Spa & Bien-être"
   type: file
@@ -536,7 +536,7 @@ content:
         name: "h3_time"
         type: string
 
-      # --- Carte des Soins (Nohèm & Rituels) ---
+      # --- Carte des Soins (Dynamique via listes CMS) ---
       - label: "Soins - Sous-titre"
         name: "soins_subtitle"
         type: string
@@ -547,134 +547,27 @@ content:
         name: "soins_desc"
         type: text
 
-      # Visage Nohèm
-      - label: "Catégorie 1 - Nom"
-        name: "tcat1"
-        type: string
-      - label: "Soin 1 - Nom"
-        name: "t1_name"
-        type: string
-      - label: "Soin 1 - Détails"
-        name: "t1_sub"
-        type: text
-      - label: "Soin 1 - Prix"
-        name: "t1_price"
-        type: string
-      - label: "Soin 2 - Nom"
-        name: "t2_name"
-        type: string
-      - label: "Soin 2 - Détails"
-        name: "t2_sub"
-        type: text
-      - label: "Soin 2 - Prix"
-        name: "t2_price"
-        type: string
-      - label: "Soin 3 - Nom"
-        name: "t3_name"
-        type: string
-      - label: "Soin 3 - Détails"
-        name: "t3_sub"
-        type: text
-      - label: "Soin 3 - Prix"
-        name: "t3_price"
-        type: string
-
-      # Corps / Massages
-      - label: "Catégorie 2 - Nom"
-        name: "tcat2"
-        type: string
-      - label: "Soin 4 - Nom"
-        name: "t4_name"
-        type: string
-      - label: "Soin 4 - Détails"
-        name: "t4_sub"
-        type: text
-      - label: "Soin 4 - Prix"
-        name: "t4_price"
-        type: string
-      - label: "Soin 5 - Nom"
-        name: "t5_name"
-        type: string
-      - label: "Soin 5 - Détails"
-        name: "t5_sub"
-        type: text
-      - label: "Soin 5 - Prix"
-        name: "t5_price"
-        type: string
-      - label: "Soin 6 - Nom"
-        name: "t6_name"
-        type: string
-      - label: "Soin 6 - Détails"
-        name: "t6_sub"
-        type: text
-      - label: "Soin 6 - Prix"
-        name: "t6_price"
-        type: string
-      - label: "Soin 7 - Nom"
-        name: "t7_name"
-        type: string
-      - label: "Soin 7 - Détails"
-        name: "t7_sub"
-        type: text
-      - label: "Soin 7 - Prix"
-        name: "t7_price"
-        type: string
-
-      # Rituels Signatures
-      - label: "Catégorie 3 - Nom"
-        name: "tcat3"
-        type: string
-      - label: "Soin 8 - Nom"
-        name: "t8_name"
-        type: string
-      - label: "Soin 8 - Détails"
-        name: "t8_sub"
-        type: text
-      - label: "Soin 8 - Prix"
-        name: "t8_price"
-        type: string
-      - label: "Soin 9 - Nom"
-        name: "t9_name"
-        type: string
-      - label: "Soin 9 - Détails"
-        name: "t9_sub"
-        type: text
-      - label: "Soin 9 - Prix"
-        name: "t9_price"
-        type: string
-      - label: "Soin 10 - Nom"
-        name: "t10_name"
-        type: string
-      - label: "Soin 10 - Détails"
-        name: "t10_sub"
-        type: text
-      - label: "Soin 10 - Prix"
-        name: "t10_price"
-        type: string
-
-      # Onglerie & Épilation
-      - label: "Catégorie 4 - Nom"
-        name: "tcat4"
-        type: string
-      - label: "Soin 11 - Nom"
-        name: "t11_name"
-        type: string
-      - label: "Soin 11 - Détails"
-        name: "t11_sub"
-        type: text
-      - label: "Soin 11 - Prix"
-        name: "t11_price"
-        type: string
-      - label: "Soin 12 - Nom"
-        name: "t12_name"
-        type: string
-      - label: "Soin 12 - Détails"
-        name: "t12_sub"
-        type: text
-      - label: "Soin 12 - Prix"
-        name: "t12_price"
-        type: string
-# ==========================================
+      - label: "Catégories de Soins (Illimité)"
+        name: "spa_categories"
+        type: list
+        fields:
+          - label: "Titre de la Catégorie (ex: Soins Visage — Rituels Nohèm)"
+            name: "category_title"
+            type: string
+          - label: "Liste des Soins"
+            name: "items"
+            type: list
+            fields:
+              - label: "Nom du soin"
+                name: "name"
+                type: string
+              - label: "Description / Sous-titre"
+                name: "sub"
+                type: text
+              - label: "Durée & Prix"
+                name: "price"
+                type: string
+  # ==========================================
   # 4. PAGE CHAMBRES (chambres.json)
   # ==========================================
 - name: "chambres"
