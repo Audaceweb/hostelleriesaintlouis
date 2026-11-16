@@ -192,12 +192,12 @@ content:
 # ==========================================
 # 2. PAGE RESTAURANT PAUZE (pauze.json)
 # ==========================================
-  - name: "pauze"
-    label: "Page Restaurant PAUZE"
-    type: file
-    path: "content/pauze.json"
-    format: json
-    fields:
+- name: "pauze"
+  label: "Page Restaurant PAUZE"
+  type: file
+  path: "content/pauze.json"
+  format: json
+  fields:
       - label: "Hero Sous-titre"
         name: "hero_subtitle"
         type: string
@@ -427,12 +427,12 @@ content:
   # ==========================================
   # 7. PAGE SPA (spa.json)
   # ==========================================
-  - name: "spa"
-    label: "Page Spa & Bien-être"
-    type: file
-    path: "content/spa.json"
-    format: json
-    fields:
+- name: "spa"
+  label: "Page Spa & Bien-être"
+  type: file
+  path: "content/spa.json"
+  format: json
+  fields:
       - label: "Hero Sous-titre"
         name: "hero_subtitle"
         type: string
@@ -677,12 +677,12 @@ content:
 # ==========================================
   # 4. PAGE CHAMBRES (chambres.json)
   # ==========================================
-  - name: "chambres"
-    label: "Page Chambres"
-    type: file
-    path: "content/chambres.json"
-    format: json
-    fields:
+- name: "chambres"
+  label: "Page Chambres"
+  type: file
+  path: "content/chambres.json"
+  format: json
+  fields:
       - label: "Hero Sous-titre"
         name: "hero_subtitle"
         type: string
@@ -1111,12 +1111,12 @@ content:
   # ==========================================
   # 5. PAGE MARIAGES & RÉCEPTIONS (mariages.json)
   # ==========================================
-  - name: "mariages"
-    label: "Page Mariages"
-    type: file
-    path: "content/mariages.json"
-    format: json
-    fields:
+- name: "mariages"
+  label: "Page Mariages"
+  type: file
+  path: "content/mariages.json"
+  format: json
+  fields:
       - label: "Hero Sous-titre"
         name: "hero_subtitle"
         type: string
@@ -1319,12 +1319,12 @@ content:
   # ==========================================
   # 6. PAGE SÉMINAIRES (seminaires.json)
   # ==========================================
-  - name: "seminaires"
-    label: "Page Séminaires"
-    type: file
-    path: "content/seminaires.json"
-    format: json
-    fields:
+- name: "seminaires"
+  label: "Page Séminaires"
+  type: file
+  path: "content/seminaires.json"
+  format: json
+  fields:
       - label: "Hero Sous-titre"
         name: "hero_subtitle"
         type: string
@@ -1431,12 +1431,12 @@ content:
   # ==========================================
   # 7. PAGE INFOS PRATIQUES (infos.json)
   # ==========================================
-  - name: "infos"
-    label: "Page Infos Pratiques"
-    type: file
-    path: "content/infos.json"
-    format: json
-    fields:
+- name: "infos"
+  label: "Page Infos Pratiques"
+  type: file
+  path: "content/infos.json"
+  format: json
+  fields:
       - label: "Hero Sous-titre"
         name: "hero_subtitle"
         type: string
