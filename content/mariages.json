@@ -74,6 +74,30 @@
   "quote_subtitle": "Concevons Votre Événement",
   "quote_title": "Demande de Devis",
   "quote_desc": "N’hésitez pas à nous contacter pour toute demande d'informations ou pour élaborer ensemble votre formule sur-mesure. Notre équipe événementielle vous recontactera sous 24h.",
+
+  "capacity_section_subtitle": "Espaces & Configurations",
+  "capacity_section_title": "Nos 4 Salles de Réception",
+  "capacity_section_desc": "Des espaces modulables et élégants pour recevoir vos convives dans les meilleures conditions.",
+
+  "cap1_title": "L'Écrin",
+  "cap1_size": "75 m²",
+  "cap1_seats": "45 personnes assises",
+  "cap1_standing": "60 personnes debout",
+
+  "cap2_title": "Salle des miroirs",
+  "cap2_size": "78 m²",
+  "cap2_seats": "65 personnes assises",
+  "cap2_standing": "80 personnes debout",
+
+  "cap3_title": "Parenthèse",
+  "cap3_size": "78 m²",
+  "cap3_seats": "40 personnes assises",
+  "cap3_standing": "60 personnes debout",
+
+  "cap4_title": "Jardin d'hiver",
+  "cap4_size": "102 m²",
+  "cap4_seats": "70 personnes assises",
+  "cap4_standing": "120 personnes debout",
   "quote_address": "47 Rue de l'Église, 59470 Bollezeele",
   "quote_phone": "+33 (0)3 28 68 00 00"
 }
