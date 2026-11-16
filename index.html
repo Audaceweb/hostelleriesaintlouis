@@ -424,6 +424,25 @@
 
   // Lancement automatique au chargement de la page
   document.addEventListener('DOMContentLoaded', loadCMSContent);
-</script>
+
+    // Affichage dynamique des avis avec étoiles
+      if (data.reviews_liste && Array.isArray(data.reviews_liste)) {
+        const reviewsGrid = document.querySelector('.reviews-grid');
+        if (reviewsGrid) {
+          reviewsGrid.innerHTML = '';
+          data.reviews_liste.forEach(review => {
+            const cardHTML = `
+              <div class="review-card">
+                <div class="review-source" style="font-weight: 600; color: var(--color-gold);">${review.source || ''}</div>
+                <div class="review-stars" style="color: #dcb254; margin: 5px 0; letter-spacing: 2px;">${review.stars || '★★★★★'}</div>
+                <p class="review-text">${review.text || ''}</p>
+                <div class="review-author" style="font-style: italic; margin-top: 10px;">${review.author || ''}</div>
+              </div>
+            `;
+            reviewsGrid.insertAdjacentHTML('beforeend', cardHTML);
+          });
+        }
+      }
+    </script>
 </body>
 </html>
