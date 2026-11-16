@@ -46,7 +46,8 @@
     }
   ]
 }
-"capacities_section_subtitle": "Sur-Mesure & Modularité",
+{
+  "capacities_section_subtitle": "Sur-Mesure & Modularité",
   "capacities_section_title": "Capacités & Configurations de nos Salons",
   "capacities_section_desc": "Offrez à vos collaborateurs et partenaires un cadre d'exception. Nos salons modulables s'adaptent avec élégance à tous vos formats professionnels, de la réunion exécutive au cocktail d'entreprise.",
   
