@@ -13,14 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. GESTION DU MENU HAMBURGER (Animation croix + flou)
+    // 2. GESTION DU MENU HAMBURGER
     if (hamburgerBtn && navBar) {
         hamburgerBtn.addEventListener('click', () => {
             hamburgerBtn.classList.toggle('open');
             navBar.classList.toggle('active');
         });
 
-        // Fermer le menu au clic sur un lien
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburgerBtn.classList.remove('open');
@@ -38,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. ANIMATION AU SCROLL (Intersection Observer)
+    // 4. ANIMATION AU SCROLL
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -52,7 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(element);
     });
 
-    // 5. GESTION MULTI-CARROUSELS 5 ÉTOILES (Fonctionne pour toutes les pages)
+    // Lancement initial des carrousels statiques
+    initCarousels();
+});
+
+// Fonction globale pour initialiser/relancer les carrousels (compatible CMS)
+function initCarousels() {
     const carouselContainers = document.querySelectorAll('.hotel-carousel-container');
 
     carouselContainers.forEach(container => {
@@ -64,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let slideInterval;
 
         function showSlide(index) {
+            if (slides.length === 0) return;
             if (index >= slides.length) currentSlide = 0;
             else if (index < 0) currentSlide = slides.length - 1;
             else currentSlide = index;
@@ -85,25 +90,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (nextBtn && prevBtn) {
-            nextBtn.addEventListener('click', () => {
+            // Utilisation de .onclick pour écraser proprement les anciens écouteurs
+            nextBtn.onclick = () => {
                 nextSlide();
                 resetTimer();
-            });
+            };
 
-            prevBtn.addEventListener('click', () => {
+            prevBtn.onclick = () => {
                 prevSlide();
                 resetTimer();
-            });
+            };
         }
 
         dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
+            dot.onclick = () => {
                 showSlide(index);
                 resetTimer();
-            });
+            };
         });
 
         function startTimer() {
+            clearInterval(slideInterval);
             slideInterval = setInterval(nextSlide, 5000);
         }
 
@@ -112,14 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
             startTimer();
         }
 
-        container.addEventListener('mouseenter', () => clearInterval(slideInterval));
-        container.addEventListener('mouseleave', startTimer);
+        container.onmouseenter = () => clearInterval(slideInterval);
+        container.onmouseleave = startTimer;
 
-        // Lancement initial du carrousel
+        showSlide(0);
         startTimer();
     });
-});
+}
 
+// Gestion de la newsletter
 const newsletterForm = document.getElementById('newsletter-form');
 const newsletterMsg = document.getElementById('newsletter-msg');
 
@@ -144,35 +152,3 @@ if (newsletterForm) {
         }
     });
 }
-// Gestionnaire de liste dynamique pour le Carrousel et les Avis
-      if (data.hero_carrousel_liste && Array.isArray(data.hero_carrousel_liste)) {
-        const track = document.getElementById('hotel-carousel-track');
-        const dotsContainer = document.getElementById('carousel-dots');
-        if (track && dotsContainer) {
-          track.innerHTML = '';
-          dotsContainer.innerHTML = '';
-          data.hero_carrousel_liste.forEach((item, index) => {
-            const activeClass = index === 0 ? 'active' : '';
-            track.insertAdjacentHTML('beforeend', `<div class="carousel-slide ${activeClass}"><img src="${item.image || ''}" alt="Carrousel"></div>`);
-            dotsContainer.insertAdjacentHTML('beforeend', `<span class="dot ${activeClass}" data-index="${index}"></span>`);
-          });
-        }
-      }
-
-      if (data.reviews_liste && Array.isArray(data.reviews_liste)) {
-        const reviewsGrid = document.querySelector('.reviews-grid');
-        if (reviewsGrid) {
-          reviewsGrid.innerHTML = '';
-          data.reviews_liste.forEach(review => {
-            const cardHTML = `
-              <div class="review-card">
-                <div class="review-source" style="font-weight: 600; color: var(--color-gold);">${review.source || ''}</div>
-                <div class="review-stars" style="color: #dcb254; margin: 5px 0;">${review.stars || '★★★★★'}</div>
-                <p class="review-text">${review.text || ''}</p>
-                <div class="review-author" style="font-style: italic; margin-top: 10px;">${review.author || ''}</div>
-              </div>
-            `;
-            reviewsGrid.insertAdjacentHTML('beforeend', cardHTML);
-          });
-        }
-      }
