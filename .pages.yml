@@ -1302,9 +1302,9 @@ content:
           - label: "Description de la configuration"
             name: "room_desc"
             type: text
-  # ==========================================
-  # 7. PAGE INFOS PRATIQUES (infos.json)
-  # ==========================================
+# ==========================================
+# 7. PAGE INFOS PRATIQUES (infos.json)
+# ==========================================
 - name: "infos"
   label: "Page Infos Pratiques"
   type: file
@@ -1359,6 +1359,26 @@ content:
       - label: "Actualités Section - Titre"
         name: "news_title"
         type: string
+
+      # --- LISTE DES ACTUALITÉS (Illimité via PageCMS) ---
+      - label: "Liste des Actualités (Illimité)"
+        name: "news"
+        type: object
+        list: true
+        fields:
+          - label: "Image de l'actualité"
+            name: "image"
+            type: image
+          - label: "Date ou Badge (ex: Prochainement)"
+            name: "date"
+            type: string
+          - label: "Titre de l'actualité"
+            name: "title"
+            type: string
+          - label: "Description"
+            name: "desc"
+            type: text
+
       - label: "Contact Sous-titre"
         name: "contact_subtitle"
         type: string
@@ -1377,7 +1397,6 @@ content:
       - label: "Email"
         name: "contact_email"
         type: string
-
 # ==========================================
 # GALERIE PHOTO (galerie.json)
 # ==========================================
