@@ -6,206 +6,191 @@ media:
 
 content:
   # ==========================================
-  # 1. PAGE D'ACCUEIL (index.json)
-  # ==========================================
-  - name: "index"
-    label: "Page d'Accueil"
-    type: file
-    path: "content/index.json"
-    format: json
-    fields:
-      - label: "Logo Hero"
-        name: "hero_logo"
-        type: image
-      - label: "Description Hero"
-        name: "hero_desc"
-        type: string
-      - label: "Carrousel Accueil - Image 1"
-        name: "carrousel_img1"
-        type: image
-      - label: "Carrousel Accueil - Image 2"
-        name: "carrousel_img2"
-        type: image
-      - label: "Carrousel Accueil - Image 3"
-        name: "carrousel_img3"
-        type: image
-      - label: "Badge Année"
-        name: "badge_year"
-        type: string
-      - label: "Badge Texte"
-        name: "badge_text"
-        type: string
-      - label: "Intro Sous-titre"
-        name: "intro_subtitle"
-        type: string
-      - label: "Intro Titre"
-        name: "intro_title"
-        type: string
-      - label: "Intro Texte 1"
-        name: "intro_text1"
-        type: text
-      - label: "Intro Texte 2"
-        name: "intro_text2"
-        type: text
-      - label: "Chambres Image"
-        name: "rooms_img"
-        type: image
-      - label: "Chambres Sous-titre"
-        name: "rooms_subtitle"
-        type: string
-      - label: "Chambres Titre"
-        name: "rooms_title"
-        type: string
-      - label: "Chambres Description"
-        name: "rooms_desc"
-        type: text
-      - label: "Restaurant Image"
-        name: "resto_img"
-        type: image
-      - label: "Restaurant Sous-titre"
-        name: "resto_subtitle"
-        type: string
-      - label: "Restaurant Titre"
-        name: "resto_title"
-        type: string
-      - label: "Restaurant Description"
-        name: "resto_desc"
-        type: text
-      - label: "Actualités Section - Sous-titre"
-        name: "news_section_subtitle"
-        type: string
-      - label: "Actualités Section - Titre"
-        name: "news_section_title"
-        type: string
-      - label: "Actualités Section - Description"
-        name: "news_section_desc"
-        type: text
-      - label: "Actualités Accueil (Liste)"
-        name: "actualites_liste"
-        type: object
-        list: true
-        fields:
-          - label: "Image de l'actualité"
-            name: "image"
-            type: image
-          - label: "Date / Badge (ex: 15 NOVEMBRE 2026)"
-            name: "date"
-            type: string
-          - label: "Titre"
-            name: "title"
-            type: string
-          - label: "Description"
-            name: "desc"
-            type: text
-          - label: "Texte du Bouton (ex: RÉSERVER SA TABLE)"
-            name: "btn_text"
-            type: string
-          - label: "Lien du Bouton (URL)"
-            name: "btn_link"
-            type: string
-      - label: "Mariages Image"
-        name: "wedding_img"
-        type: image
-      - label: "Mariages Sous-titre"
-        name: "wedding_subtitle"
-        type: string
-      - label: "Mariages Titre"
-        name: "wedding_title"
-        type: string
-      - label: "Mariages Description"
-        name: "wedding_desc"
-        type: text
-      - label: "Séminaires Image"
-        name: "seminar_img"
-        type: image
-      - label: "Séminaires Sous-titre"
-        name: "seminar_subtitle"
-        type: string
-      - label: "Séminaires Titre"
-        name: "seminar_title"
-        type: string
-      - label: "Séminaires Description"
-        name: "seminar_desc"
-        type: text
-      - label: "Spa Image"
-        name: "spa_img"
-        type: image
-      - label: "Spa Sous-titre"
-        name: "spa_subtitle"
-        type: string
-      - label: "Spa Titre"
-        name: "spa_title"
-        type: string
-      - label: "Spa Description"
-        name: "spa_desc"
-        type: text
-      - label: "Coffrets Image"
-        name: "gift_img"
-        type: image
-      - label: "Coffrets Sous-titre"
-        name: "gift_subtitle"
-        type: string
-      - label: "Coffrets Titre"
-        name: "gift_title"
-        type: string
-      - label: "Coffrets Description"
-        name: "gift_desc"
-        type: text
-      - label: "Infos Image"
-        name: "infos_img"
-        type: image
-      - label: "Infos Sous-titre"
-        name: "infos_subtitle"
-        type: string
-      - label: "Infos Titre"
-        name: "infos_title"
-        type: string
-      - label: "Infos Description"
-        name: "infos_desc"
-        type: text
-      - label: "Avis Sous-titre"
-        name: "reviews_subtitle"
-        type: string
-      - label: "Avis Titre"
-        name: "reviews_title"
-        type: string
-# --- Section Avis & Témoignages ---
-      - label: "Avis - Sous-titre"
-        name: "reviews_subtitle"
-        type: string
-      - label: "Avis - Titre"
-        name: "reviews_title"
-        type: string
+# 1. PAGE D'ACCUEIL (index.json)
+# ==========================================
+- name: "index"
+  label: "Page d'Accueil"
+  type: file
+  path: "content/index.json"
+  format: json
+  fields:
+    - label: "Logo Hero"
+      name: "hero_logo"
+      type: image
+    - label: "Description Hero"
+      name: "hero_desc"
+      type: string
 
-      - label: "Avis 1 - Source"
-        name: "review1_source"
-        type: string
-      - label: "Avis 1 - Texte"
-        name: "review1_text"
-        type: text
-      - label: "Avis 1 - Auteur"
-        name: "review1_author"
-        type: string
+    # Carrousel principal infini (autant de photos que tu veux)
+    - label: "Carrousel Accueil (Photos illimitées)"
+      name: "hero_carrousel_liste"
+      type: object
+      list: true
+      fields:
+        - label: "Photo"
+          name: "image"
+          type: image
 
-      - label: "Avis 2 - Source"
-        name: "review2_source"
-        type: string
-      - label: "Avis 2 - Texte"
-        name: "review2_text"
-        type: text
-      - label: "Avis 2 - Auteur"
-        name: "review2_author"
-        type: string
+    - label: "Badge Année"
+      name: "badge_year"
+      type: string
+    - label: "Badge Texte"
+      name: "badge_text"
+      type: string
+    - label: "Intro Sous-titre"
+      name: "intro_subtitle"
+      type: string
+    - label: "Intro Titre"
+      name: "intro_title"
+      type: string
+    - label: "Intro Texte 1"
+      name: "intro_text1"
+      type: text
+    - label: "Intro Texte 2"
+      name: "intro_text2"
+      type: text
+    - label: "Chambres Image"
+      name: "rooms_img"
+      type: image
+    - label: "Chambres Sous-titre"
+      name: "rooms_subtitle"
+      type: string
+    - label: "Chambres Titre"
+      name: "rooms_title"
+      type: string
+    - label: "Chambres Description"
+      name: "rooms_desc"
+      type: text
+    - label: "Restaurant Image"
+      name: "resto_img"
+      type: image
+    - label: "Restaurant Sous-titre"
+      name: "resto_subtitle"
+      type: string
+    - label: "Restaurant Titre"
+      name: "resto_title"
+      type: string
+    - label: "Restaurant Description"
+      name: "resto_desc"
+      type: text
+    - label: "Actualités Section - Sous-titre"
+      name: "news_section_subtitle"
+      type: string
+    - label: "Actualités Section - Titre"
+      name: "news_section_title"
+      type: string
+    - label: "Actualités Section - Description"
+      name: "news_section_desc"
+      type: text
+    - label: "Actualités Accueil (Liste)"
+      name: "actualites_liste"
+      type: object
+      list: true
+      fields:
+        - label: "Image de l'actualité"
+          name: "image"
+          type: image
+        - label: "Date / Badge (ex: 15 NOVEMBRE 2026)"
+          name: "date"
+          type: string
+        - label: "Titre"
+          name: "title"
+          type: string
+        - label: "Description"
+          name: "desc"
+          type: text
+        - label: "Texte du Bouton (ex: RÉSERVER SA TABLE)"
+          name: "btn_text"
+          type: string
+        - label: "Lien du Bouton (URL)"
+          name: "btn_link"
+          type: string
+    - label: "Mariages Image"
+      name: "wedding_img"
+      type: image
+    - label: "Mariages Sous-titre"
+      name: "wedding_subtitle"
+      type: string
+    - label: "Mariages Titre"
+      name: "wedding_title"
+      type: string
+    - label: "Mariages Description"
+      name: "wedding_desc"
+      type: text
+    - label: "Séminaires Image"
+      name: "seminar_img"
+      type: image
+    - label: "Séminaires Sous-titre"
+      name: "seminar_subtitle"
+      type: string
+    - label: "Séminaires Titre"
+      name: "seminar_title"
+      type: string
+    - label: "Séminaires Description"
+      name: "seminar_desc"
+      type: text
+    - label: "Spa Image"
+      name: "spa_img"
+      type: image
+    - label: "Spa Sous-titre"
+      name: "spa_subtitle"
+      type: string
+    - label: "Spa Titre"
+      name: "spa_title"
+      type: string
+    - label: "Spa Description"
+      name: "spa_desc"
+      type: text
+    - label: "Coffrets Image"
+      name: "gift_img"
+      type: image
+    - label: "Coffrets Sous-titre"
+      name: "gift_subtitle"
+      type: string
+    - label: "Coffrets Titre"
+      name: "gift_title"
+      type: string
+    - label: "Coffrets Description"
+      name: "gift_desc"
+      type: text
+    - label: "Infos Image"
+      name: "infos_img"
+      type: image
+    - label: "Infos Sous-titre"
+      name: "infos_subtitle"
+      type: string
+    - label: "Infos Titre"
+      name: "infos_title"
+      type: string
+    - label: "Infos Description"
+      name: "infos_desc"
+      type: text
 
-      - label: "Avis 3 - Source"
-        name: "review3_source"
-        type: string
-      - label: "Avis 3 - Texte"
-        name: "review3_text"
-        type: text
-      - label: "Avis 3 - Auteur"
-        name: "review3_author"
-        type: string
+    # --- Section Avis & Témoignages (Liste dynamique complète) ---
+    - label: "Avis - Sous-titre"
+      name: "reviews_subtitle"
+      type: string
+    - label: "Avis - Titre"
+      name: "reviews_title"
+      type: string
+
+    - label: "Liste des Avis & Témoignages"
+      name: "reviews_liste"
+      type: object
+      list: true
+      fields:
+        - label: "Source (ex: Google, Booking...)"
+          name: "source"
+          type: string
+        - label: "Notes / Étoiles (ex: ★★★★★ ou 9.6/10)"
+          name: "stars"
+          type: string
+        - label: "Commentaire / Texte de l'avis"
+          name: "text"
+          type: text
+        - label: "Auteur (ex: — Thomas V.)"
+          name: "author"
+          type: string
   # ==========================================
   # 2. PAGE RESTAURANT PAUZE (pauze.json)
   # ==========================================
