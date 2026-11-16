@@ -143,37 +143,55 @@
             </div>
         </section>
 
-        <!-- BLOC CAPACITÉS & CONFIGURATIONS DES SALLES (Pilotable CMS) -->
-        <section class="section-block block-creme reveal" id="section-capacites-seminaires">
+       <section class="section-block block-creme reveal" id="section-capacites-seminaires">
             <div class="container" style="max-width: 1100px; margin: 0 auto;">
                 <div style="text-align: center; margin-bottom: 40px;">
                     <span class="subtitle" data-cms="capacities_section_subtitle">Sur-Mesure & Modularité</span>
-                    <h2 class="title" style="color: var(--color-blue); font-size: 2.8rem;" data-cms="capacities_section_title">Capacités & Configurations des Salons</h2>
+                    <h2 class="title" style="color: var(--color-blue); font-size: 2.8rem;" data-cms="capacities_section_title">Capacités & Configurations de nos Salons</h2>
                     <p class="body-text" style="max-width: 750px; margin: 15px auto 0 auto; color: #555;" data-cms="capacities_section_desc">
-                        Découvrez la flexibilité de nos espaces professionnels adaptés à chaque format de réunion ou d'événement d'entreprise.
+                        Offrez à vos collaborateurs et partenaires un cadre d'exception. Nos salons modulables s'adaptent avec élégance à tous vos formats professionnels, de la réunion exécutive au cocktail d'entreprise.
                     </p>
                 </div>
 
-                <!-- Grille dynamique des configurations de salles -->
-                <div class="seminar-features-grid" data-cms-list="seminar_capacities_liste">
+                <!-- Grille dynamique des configurations de salles (Gérée par le CMS) -->
+                <div class="seminar-features-grid" data-cms-list="seminar_capacities_liste" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                    
+                    <!-- Salle 1 : L'Écrin -->
                     <div class="seminar-card">
                         <div class="seminar-card-icon">🏛️</div>
-                        <h3 data-cms="room_name">Salon Principal</h3>
-                        <p style="color: var(--color-gold); font-weight: 600; margin: 5px 0 10px 0;" data-cms="room_capacity">Jusqu'à 60 personnes</p>
-                        <p data-cms="room_desc">Configuration idéale pour les plénières, assemblées générales et séminaires d'entreprise d'envergure.</p>
+                        <h3 data-cms="room_name">L'Écrin</h3>
+                        <p style="color: var(--color-gold); font-weight: 600; margin: 5px 0 2px 0;" data-cms="room_size">75 m²</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;" data-cms="room_capacity">45 pers. assises • 60 pers. debout</p>
+                        <p data-cms="room_desc">Un espace baigné de lumière naturelle, idéal pour vos assemblées plénières, séminaires studieux et présentations de projets.</p>
                     </div>
+
+                    <!-- Salle 2 : Salle des miroirs -->
                     <div class="seminar-card">
-                        <div class="seminar-card-icon">👥</div>
-                        <h3 data-cms="room_name">Salon en U</h3>
-                        <p style="color: var(--color-gold); font-weight: 600; margin: 5px 0 10px 0;" data-cms="room_capacity">Jusqu'à 30 personnes</p>
-                        <p data-cms="room_desc">Parfait pour les réunions de travail interactives, comités de direction et formations participatives.</p>
+                        <div class="seminar-card-icon">✨</div>
+                        <h3 data-cms="room_name">Salle des Miroirs</h3>
+                        <p style="color: var(--color-gold); font-weight: 600; margin: 5px 0 2px 0;" data-cms="room_size">78 m²</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;" data-cms="room_capacity">65 pers. assises • 80 pers. debout</p>
+                        <p data-cms="room_desc">Le choix prestigieux pour vos grands banquets d'entreprise, cocktails dînatoires et conventions professionnelles d'envergure.</p>
                     </div>
+
+                    <!-- Salle 3 : Parenthèse -->
                     <div class="seminar-card">
-                        <div class="seminar-card-icon">📋</div>
-                        <h3 data-cms="room_name">Salon en Classe</h3>
-                        <p style="color: var(--color-gold); font-weight: 600; margin: 5px 0 10px 0;" data-cms="room_capacity">Jusqu'à 25 personnes</p>
-                        <p data-cms="room_desc">Agencement studieux optimisé pour la prise de notes, les présentations et les ateliers techniques.</p>
+                        <div class="seminar-card-icon">🌿</div>
+                        <h3 data-cms="room_name">Parenthèse</h3>
+                        <p style="color: var(--color-gold); font-weight: 600; margin: 5px 0 2px 0;" data-cms="room_size">78 m²</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;" data-cms="room_capacity">40 pers. assises • 60 pers. debout</p>
+                        <p data-cms="room_desc">Un cadre intimiste et chaleureux, parfaitement agencé pour vos comités de direction, ateliers de travail et formations ciblées.</p>
                     </div>
+
+                    <!-- Salle 4 : Jardin d'hiver -->
+                    <div class="seminar-card">
+                        <div class="seminar-card-icon">☀️</div>
+                        <h3 data-cms="room_name">Jardin d'Hiver</h3>
+                        <p style="color: var(--color-gold); font-weight: 600; margin: 5px 0 2px 0;" data-cms="room_size">102 m²</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;" data-cms="room_capacity">70 pers. assises • 120 pers. debout</p>
+                        <p data-cms="room_desc">Notre plus grand volume. Un espace ouvert et lumineux, exceptionnel pour recevoir vos partenaires lors d'événements d'envergure.</p>
+                    </div>
+
                 </div>
             </div>
         </section>
