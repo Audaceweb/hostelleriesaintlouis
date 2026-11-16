@@ -1377,3 +1377,40 @@ content:
       - label: "Email"
         name: "contact_email"
         type: string
+
+# ==========================================
+# GALERIE PHOTO (galerie.json)
+# ==========================================
+- name: "galerie"
+  label: "Galerie Photo"
+  type: file
+  path: "content/galerie.json"
+  format: json
+  fields:
+    - label: "Hero Sous-titre"
+      name: "hero_subtitle"
+      type: string
+    - label: "Hero Titre"
+      name: "hero_title"
+      type: string
+    - label: "Hero Description"
+      name: "hero_desc"
+      type: text
+
+    - label: "Liste des Photos de la Galerie (Illimité)"
+      name: "photos"
+      type: object
+      list: true
+      fields:
+        - label: "Fichier Image"
+          name: "image"
+          type: image
+        - label: "Catégorie (hotel, restaurant, spa, seminaires)"
+          name: "category"
+          type: string
+        - label: "Nom de la catégorie affiché (ex: Restaurant)"
+          name: "category_label"
+          type: string
+        - label: "Titre / Légende de la photo"
+          name: "title"
+          type: string
