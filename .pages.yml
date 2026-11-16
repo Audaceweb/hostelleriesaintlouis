@@ -406,7 +406,41 @@ content:
       - label: "Logo Fait Maison Image"
         name: "homemade_img"
         type: image
+# --- Carrousel Principal (Photos illimitées) ---
+      - label: "Carrousel Principal (Accueil)"
+        name: "hero_carrousel_liste"
+        type: object
+        list: true
+        fields:
+          - label: "Photo du Carrousel"
+            name: "image"
+            type: image
 
+      # --- Section Avis & Témoignages (Modifiable et illimité) ---
+      - label: "Avis - Sous-titre"
+        name: "reviews_subtitle"
+        type: string
+      - label: "Avis - Titre"
+        name: "reviews_title"
+        type: string
+
+      - label: "Liste des Avis / Témoignages"
+        name: "reviews_liste"
+        type: object
+        list: true
+        fields:
+          - label: "Source (ex: Google, Booking...)"
+            name: "source"
+            type: string
+          - label: "Étoiles (ex: ★★★★★)"
+            name: "stars"
+            type: string
+          - label: "Commentaire / Texte de l'avis"
+            name: "text"
+            type: text
+          - label: "Auteur (ex: — Thomas V.)"
+            name: "author"
+            type: string
   # ==========================================
   # 7. PAGE SPA (spa.json)
   # ==========================================
