@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Photo — Hostellerie Saint-Louis</title>
+    <link rel="stylesheet" href="style.css"> <!-- Remplace par le nom de ton fichier CSS global -->
+    <style>
+        /* Styles spécifiques pour la galerie d'excellence */
+        .gallery-filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 40px 0;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--color-gold, #dcb254);
+            color: var(--color-gold, #dcb254);
+            padding: 10px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: var(--font-subtitle, serif);
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--color-gold, #dcb254);
+            color: #fff;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 280px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .gallery-item:hover {
+            transform: translateY(-6px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 25px 20px 15px 20px;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-caption {
+            font-size: 1.1rem;
+            font-family: var(--font-subtitle, serif);
+            margin: 0;
+        }
+        .gallery-category-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-gold, #dcb254);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Lightbox plein écran au clic */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .lightbox-modal.active { display: flex; }
+        .lightbox-modal img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.7);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 30px; right: 40px;
+            color: #fff; font-size: 40px; cursor: pointer;
+            background: none; border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="page-hero-large" style="background-image: url('img/spa1.jpg'); background-size: cover; background-position: center; position: relative; height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="hero-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.4);"></div>
+        <div class="hero-content" style="position: relative; z-index: 2; color: #fff;">
+            <span class="subtitle" data-cms="hero_subtitle">Immersions & Instants Vécus</span>
+            <h1 class="title" style="font-size: 3.5rem;" data-cms="hero_title">La Galerie Photo</h1>
+            <p class="hero-desc" data-cms="hero_desc">Explorez les espaces d'exception de l'Hostellerie Saint-Louis à travers notre regard.</p>
+        </div>
+    </section>
+
+    <!-- SECTION FILTRES ET GRILLE DYNAMIQUE -->
+    <section class="section-block block-creme">
+        <div class="container">
+            <!-- Boutons de tri par catégorie -->
+            <div class="gallery-filter-buttons" id="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="hotel">Chambres & Hôtel</button>
+                <button class="filter-btn" data-filter="restaurant">Restaurant PAUZE</button>
+                <button class="filter-btn" data-filter="spa">Spa & Bien-être</button>
+                <button class="filter-btn" data-filter="seminaires">Séminaires</button>
+            </div>
+
+            <!-- Grille injectée par le CMS -->
+            <div class="gallery-grid" id="gallery-container">
+                <!-- Les photos seront injectées ici par le script -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox pour zoomer sur les photos -->
+    <div class="lightbox-modal" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <img id="lightbox-img" src="" alt="Agrandissement">
+        <p id="lightbox-caption" style="color: #fff; margin-top: 15px; font-size: 1.2rem; font-family: var(--font-subtitle);"></p>
+    </div>
+
+    <!-- SCRIPT DE CHARGEMENT DYNAMIQUE & FILTRAGE -->
+    <script>
+        async function loadGalleryContent() {
+            try {
+                const response = await fetch('content/galerie.json');
+                if (!response.ok) return;
+                const data = await response.json();
+
+                // Injection des textes statiques simples
+                for (const [key, value] of Object.entries(data)) {
+                    if (Array.isArray(value)) continue;
+                    const elements = document.querySelectorAll(`[data-cms="${key}"]`);
+                    elements.forEach(el => {
+                        if (el.tagName === 'IMG') el.src = value;
+                        else if (value !== null) el.innerHTML = value;
+                    });
+                }
+
+                // Génération de la grille photo
+                const gridContainer = document.getElementById('gallery-container');
+                if (gridContainer && Array.isArray(data.photos)) {
+                    gridContainer.innerHTML = '';
+                    data.photos.forEach(photo => {
+                        const itemHTML = `
+                            <div class="gallery-item" data-category="${photo.category || 'all'}">
+                                <img src="${photo.image}" alt="${photo.title || 'Photo Hostellerie Saint-Louis'}" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <span class="gallery-category-tag">${photo.category_label || ''}</span>
+                                    <h3 class="gallery-caption">${photo.title || ''}</h3>
+                                </div>
+                            </div>
+                        `;
+                        gridContainer.insertAdjacentHTML('beforeend', itemHTML);
+                    });
+
+                    // Activer le filtrage par catégorie après injection
+                    initFilters();
+                    // Activer la Lightbox au clic
+                    initLightbox();
+                }
+
+            } catch (error) {
+                console.log("Erreur chargement galerie", error);
+            }
+        }
+
+        function initFilters() {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.gallery-item');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.getAttribute('data-filter');
+
+                    items.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        function initLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeBtn = document.getElementById('lightbox-close');
+
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    const caption = item.querySelector('.gallery-caption').textContent;
+                    lightboxImg.src = img.src;
+                    lightboxCaption.textContent = caption;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) lightbox.classList.remove('active');
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadGalleryContent);
+    </script>
+</body>
+</html>
