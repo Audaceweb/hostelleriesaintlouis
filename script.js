@@ -152,3 +152,34 @@ if (newsletterForm) {
         }
     });
 }
+document.addEventListener('DOMContentLoaded', () => {
+    // S'assure que la page apparaît en fondu à l'arrivée
+    document.body.classList.remove('fade-out');
+
+    // Sélectionne tous les liens du site
+    const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+
+        // Vérifie si c'est un lien interne vers une autre page (on évite les ancres #, les numéros de téléphone, les e-mails et les liens externes)
+        if (
+            href && 
+            !href.startsWith('#') && 
+            !href.startsWith('tel:') && 
+            !href.startsWith('mailto:') && 
+            link.getAttribute('target') !== '_blank' &&
+            (href.endsWith('.html') || href === '/' || !href.includes('http'))
+        ) {
+            link.addEventListener('click', e => {
+                e.preventDefault(); // Empêche le changement de page instantané
+                document.body.classList.add('fade-out'); // Déclenche le fondu sortant
+
+                // Attend la fin de l'animation (350 millisecondes) puis change de page
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        }
+    });
+});
