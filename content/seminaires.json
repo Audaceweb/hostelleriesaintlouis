@@ -26,31 +26,8 @@
   "quote_address": "47 Rue de l'Église, 59470 Bollezeele",
   "quote_phone": "+33 (0)3 28 68 00 00",
   "capacities_section_subtitle": "Sur-Mesure & Modularité",
-  "capacities_section_title": "Capacités & Configurations des Salons",
-  "capacities_section_desc": "Découvrez la flexibilité de nos espaces professionnels adaptés à chaque format de réunion ou d'événement d'entreprise.",
-  "seminar_capacities_liste": [
-    {
-      "room_name": "Salon Principal (Format Théâtre)",
-      "room_capacity": "Jusqu'à 60 personnes",
-      "room_desc": "Configuration idéale pour les plénières, assemblées générales et séminaires d'entreprise d'envergure."
-    },
-    {
-      "room_name": "Salon en U",
-      "room_capacity": "Jusqu'à 30 personnes",
-      "room_desc": "Parfait pour les réunions de travail interactives, comités de direction et formations participatives."
-    },
-    {
-      "room_name": "Salon en Classe",
-      "room_capacity": "Jusqu'à 25 personnes",
-      "room_desc": "Agencement studieux optimisé pour la prise de notes, les présentations et les ateliers techniques."
-    }
-  ]
-}
-{
-  "capacities_section_subtitle": "Sur-Mesure & Modularité",
   "capacities_section_title": "Capacités & Configurations de nos Salons",
   "capacities_section_desc": "Offrez à vos collaborateurs et partenaires un cadre d'exception. Nos salons modulables s'adaptent avec élégance à tous vos formats professionnels, de la réunion exécutive au cocktail d'entreprise.",
-  
   "seminar_capacities_liste": [
     {
       "room_name": "L'Écrin",
@@ -77,3 +54,4 @@
       "room_desc": "Notre plus grand volume. Un espace ouvert et lumineux, exceptionnel pour recevoir vos partenaires lors d'événements d'envergure."
     }
   ]
+}
