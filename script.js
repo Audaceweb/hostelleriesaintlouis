@@ -183,3 +183,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Supposons que ton fichier JSON contienne une liste "spa_categories"
+    // (Ce code est intégré ou appelé après le chargement de ton fetch CMS global)
+});
+
+// Fonction d'injection pour les catégories de soins
+function renderSpaMenu(categories) {
+    const container = document.getElementById('spa-categories-container');
+    if (!container || !Array.isArray(categories)) return;
+
+    container.innerHTML = '';
+
+    categories.forEach((cat, index) => {
+        let itemsHTML = '';
+        if (cat.items && Array.isArray(cat.items)) {
+            cat.items.forEach(item => {
+                itemsHTML += `
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="dish-name" style="color: #fff;">${item.name || ''}</span>
+                            <small style="display:block; color:#aaa;">${item.sub || ''}</small>
+                        </div>
+                        <span class="dish-price" style="color: var(--color-gold);">${item.price || ''}</span>
+                    </div>
+                `;
+            });
+        }
+
+        // Séparateur entre les catégories (sauf pour la première)
+        const dividerHTML = index > 0 ? '<div class="menu-divider"><span>✦ ✦ ✦</span></div>' : '';
+
+        const categoryHTML = `
+            ${dividerHTML}
+            <div class="menu-category">
+                <h3 style="color: var(--color-gold); font-family: var(--font-subtitle); font-style: italic; font-size: 1.8rem; text-align: center; margin-bottom: 25px;">${cat.category_title || ''}</h3>
+                ${itemsHTML}
+            </div>
+        `;
+        container.insertAdjacentHTML('beforeend', categoryHTML);
+    });
+}
