@@ -349,6 +349,20 @@
 <!-- Fichiers JavaScript -->
     <script src="script.js"></script>
     <script>
+$(document).ready(function() {
+    $('.ReservitBookingButton').on('click', function(e) {
+        e.preventDefault();
+        $('#ReservitBookingIframe').css('display', 'block');
+        $('.iframeClose').css('display', 'block');
+        document.body.style.overflow = 'hidden'; // Empêche le scroll en arrière-plan
+    });
+
+    $('.iframeClose').on('click', function() {
+        $('#ReservitBookingIframe').css('display', 'none');
+        $('.iframeClose').css('display', 'none');
+        document.body.style.overflow = ''; // Restaure le scroll normal de la page
+    });
+});
       async function loadCMSContent() {
         try {
           let pageName = window.location.pathname.split('/').pop().replace('.html', '');
