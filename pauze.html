@@ -255,6 +255,7 @@
     </footer>
 
     <!-- SDK ZENCHEF & CONFIGURATION -->
+  <!-- SDK Zenchef -->
     <script>
       ;(function (d, s, id) {
         const el = d.getElementsByTagName(s)[0]
@@ -267,38 +268,101 @@
     </script>
     <div class="zc-widget-config" data-restaurant="375005"></div>
 
-    <!-- JavaScript CMS -->
+    <!-- JavaScript Général / Global -->
     <script src="script.js"></script>
-<script>
-      ;(function (d, s, id) {
-        const el = d.getElementsByTagName(s)[0]
-        if (d.getElementById(id) || el.parentNode == null) return
-        var js = d.createElement(s)
-        js.id = id
-        js.src = 'https://sdk.zenchef.com/v1/sdk.min.js'
-        el.parentNode.insertBefore(js, el)
-      })(document, 'script', 'zenchef-sdk');
-    </script>
-    <div class="zc-widget-config" data-restaurant="375005"></div>
 
     <!-- SCRIPT DE SÉCURITÉ POUR FORCER L'OUVERTURE DES BOUTONS DE RÉSERVATION -->
     <script>
       document.addEventListener('click', function(e) {
-        // Vérifie si l'élément cliqué (ou son parent) est un lien de réservation Zenchef
         const target = e.target.closest('a[href="#zc-action-open"], .floating-reserve-btn, .btn-gold, .btn-restaurant-green');
         
         if (target && target.getAttribute('href') === '#zc-action-open') {
-          e.preventDefault(); // Empêche le saut de page par défaut
+          e.preventDefault();
           
-          // Vérifie si l'API Zenchef est bien chargée et l'ouvre
           if (typeof ZenchefWidget !== 'undefined' && typeof ZenchefWidget.open === 'function') {
             ZenchefWidget.open();
           } else {
-            // Solution de secours : force le hash si le SDK met une seconde à réagir
             window.location.hash = 'zc-action-open';
           }
         }
       });
     </script>
+
+    <!-- FONCTIONS DE RENDU DYNAMIQUE DES MENUS CMS -->
+    <script>
+      function renderRestaurantMenu(categories, containerId) {
+          const container = document.getElementById(containerId);
+          if (!container || !Array.isArray(categories)) return;
+
+          container.innerHTML = '';
+
+          categories.forEach((cat, index) => {
+              let itemsHTML = '';
+              if (cat.items && Array.isArray(cat.items)) {
+                  cat.items.forEach(item => {
+                      const subDescHTML = item.sub ? `<small style="display:block; color:#666;" class="dish-desc">${item.sub}</small>` : '';
+                      
+                      itemsHTML += `
+                          <div class="menu-item">
+                              <div class="menu-item-info">
+                                  <span class="dish-name">${item.name || ''}</span>
+                                  ${subDescHTML}
+                              </div>
+                              <span class="dish-price">${item.price || ''}</span>
+                          </div>
+                      `;
+                  });
+              }
+
+              const dividerHTML = index > 0 ? '<div class="menu-divider"><span>✦ ✦ ✦</span></div>' : '';
+
+              const categoryHTML = `
+                  ${dividerHTML}
+                  <div class="menu-category">
+                      <h3>${cat.category_title || ''}</h3>
+                      ${itemsHTML}
+                  </div>
+              `;
+              container.insertAdjacentHTML('beforeend', categoryHTML);
+          });
+      }
+
+      async function loadCMSContent() {
+        try {
+          let pageName = window.location.pathname.split('/').pop().replace('.html', '');
+          if (!pageName || pageName === 'index' || pageName === '') pageName = 'index';
+          const response = await fetch(`content/${pageName}.json`);
+          if (!response.ok) return;
+          const data = await response.json();
+          
+          // Injection des textes / images simples
+          for (const [key, value] of Object.entries(data)) {
+            if (Array.isArray(value)) continue;
+            const elements = document.querySelectorAll(`[data-cms="${key}"]`);
+            elements.forEach(element => {
+              if (element.tagName === 'IMG') element.src = value;
+              else if (value !== null) element.innerHTML = value;
+            });
+          }
+
+          // Génération dynamique du Menu de la Semaine
+          if (data.weekly_categories && typeof renderRestaurantMenu === 'function') {
+              renderRestaurantMenu(data.weekly_categories, 'weekly-categories-container');
+          }
+
+          // Génération dynamique du Menu d'Automne
+          if (data.autumn_categories && typeof renderRestaurantMenu === 'function') {
+              renderRestaurantMenu(data.autumn_categories, 'autumn-categories-container');
+          }
+
+        } catch (error) { 
+          console.log("CMS Error", error); 
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', loadCMSContent);
+    </script>
+</body>
+</html>
 </body>
 </html>
