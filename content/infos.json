@@ -15,6 +15,20 @@
   "surroundings_desc": "Entre Monts de Flandre, cités fortifiées et côtes sauvages, explorez les richesses culturelles et naturelles entourant Bollezeele.",
   "news_subtitle": "La Vie à l'Hostellerie",
   "news_title": "Actualités & Événements",
+  "news": [
+    {
+      "image": "img/photo-restaurant.jpg",
+      "date": "Prochainement",
+      "title": "Menu Dégustation Terroir & Saison",
+      "desc": "Le Chef du restaurant PAUZE honore les producteurs flamands à travers une carte éphémère d'exception."
+    },
+    {
+      "image": "img/chambreindex.jpg",
+      "date": "Offre Éphémère",
+      "title": "Week-end Évasion en Flandre",
+      "desc": "Bénéficiez d'une nuitée avec petit-déjeuner artisanal buffet et accès illimité à nos espaces détente."
+    }
+  ],
   "contact_subtitle": "À Votre Écoute",
   "contact_title": "Nous Contacter",
   "contact_desc": "Notre équipe se tient à votre entière disposition pour répondre à toutes vos questions et préparer votre venue à Bollezeele.",
