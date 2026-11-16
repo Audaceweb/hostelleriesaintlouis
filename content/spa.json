@@ -33,44 +33,87 @@
   "soins_subtitle": "Voyage des Sens & Rituels du Monde",
   "soins_title": "La Carte des Soins",
   "soins_desc": "Prestations réalisées par une praticienne professionnelle bien-être et esthéticienne. Réservation obligatoire.",
-  "tcat1": "Soins Visage — Rituels Nohèm",
-  "t1_name": "Rituel Découverte (Soin express adapté à votre type de peau)",
-  "t1_sub": "Asie (peaux sensibles & déshydratées) ou Inde (peaux mixtes à grasses). Démaquillage, nettoyage, masque, produits de fin de soin.",
-  "t1_price": "30 min (prévoir 45 min) | 45 €",
-  "t2_name": "Rituel Évasion (Asie ou Inde)",
-  "t2_sub": "Soin visage complet alliant efficacité et relaxation profonde. Gestuelles enveloppantes et massage prolongé.",
-  "t2_price": "1h (prévoir 1h15) | 75 €",
-  "t3_name": "Rituel Grand Nord (Anti-Âge Global)",
-  "t3_sub": "Stimule la régénération cutanée, lisse les traits, techniques de lithothérapie. Idéal peaux matures, fatiguées.",
-  "t3_price": "1h15 (prévoir 1h30) | 90 €",
-  "tcat2": "Soins Corps — Massages du Monde & Sur-Mesure",
-  "t4_name": "Afrique — Deep Tissue",
-  "t4_sub": "Massage profond, pression intense et continue pour décontracter durablement les muscles.",
-  "t4_price": "1h | 80 €",
-  "t5_name": "Polynésie — Lomi-Lomi",
-  "t5_sub": "Massage traditionnel fluide et enveloppant aux avant-bras, rythme berçant pour un lâcher-prise total.",
-  "t5_price": "1h | 80 €",
-  "t6_name": "Massage Future Maman",
-  "t6_sub": "Massage doux associé à des techniques de respiration inspirées de la sophrologie.",
-  "t6_price": "1h | 80 €",
-  "t7_name": "Parenthèse Sur-Mesure (Massage Personnalisé)",
-  "t7_sub": "Zones au choix, pression adaptée, choix de l'huile sensorielle.",
-  "t7_price": "30 min (45€) | 45 min (60€) | 1h (75€) | 1h30 (105€)",
-  "tcat3": "Rituels Spa Signatures (Expériences Complètes)",
-  "t8_name": "Bulle d'Évasion",
-  "t8_sub": "Hammam (20 min) + Gommage + Massage + Enveloppement.",
-  "t8_price": "2h30 | 150 €",
-  "t9_name": "Instant Quiétude",
-  "t9_sub": "Hammam (20 min) + Gommage + Massage.",
-  "t9_price": "2h | 120 €",
-  "t10_name": "Parenthèse Douceur",
-  "t10_sub": "Hammam (20 min) + Gommage + Hydratation.",
-  "t10_price": "1h | 70 €",
-  "tcat4": "Onglerie & Épilation",
-  "t11_name": "Beauté des mains ou des pieds / Vernis semi-permanent",
-  "t11_sub": "Mains ou pieds",
-  "t11_price": "30 min | 25 €",
-  "t12_name": "Épilations Femme & Homme",
-  "t12_sub": "Sourcils, lèvres, aisselles, maillot, jambes, dos, torse.",
-  "t12_price": "Sur demande"
+  
+  "spa_categories": [
+    {
+      "category_title": "Soins Visage — Rituels Nohèm",
+      "items": [
+        {
+          "name": "Rituel Découverte (Soin express adapté à votre type de peau)",
+          "sub": "Asie (peaux sensibles & déshydratées) ou Inde (peaux mixtes à grasses). Démaquillage, nettoyage, masque, produits de fin de soin.",
+          "price": "30 min (prévoir 45 min) | 45 €"
+        },
+        {
+          "name": "Rituel Évasion (Asie ou Inde)",
+          "sub": "Soin visage complet alliant efficacité et relaxation profonde. Gestuelles enveloppantes et massage prolongé.",
+          "price": "1h (prévoir 1h15) | 75 €"
+        },
+        {
+          "name": "Rituel Grand Nord (Anti-Âge Global)",
+          "sub": "Stimule la régénération cutanée, lisse les traits, techniques de lithothérapie. Idéal peaux matures, fatiguées.",
+          "price": "1h15 (prévoir 1h30) | 90 €"
+        }
+      ]
+    },
+    {
+      "category_title": "Soins Corps — Massages du Monde & Sur-Mesure",
+      "items": [
+        {
+          "name": "Afrique — Deep Tissue",
+          "sub": "Massage profond, pression intense et continue pour décontracter durablement les muscles.",
+          "price": "1h | 80 €"
+        },
+        {
+          "name": "Polynésie — Lomi-Lomi",
+          "sub": "Massage traditionnel fluide et enveloppant aux avant-bras, rythme berçant pour un lâcher-prise total.",
+          "price": "1h | 80 €"
+        },
+        {
+          "name": "Massage Future Maman",
+          "sub": "Massage doux associé à des techniques de respiration inspirées de la sophrologie.",
+          "price": "1h | 80 €"
+        },
+        {
+          "name": "Parenthèse Sur-Mesure (Massage Personnalisé)",
+          "sub": "Zones au choix, pression adaptée, choix de l'huile sensorielle.",
+          "price": "30 min (45€) | 45 min (60€) | 1h (75€) | 1h30 (105€)"
+        }
+      ]
+    },
+    {
+      "category_title": "Rituels Spa Signatures (Expériences Complètes)",
+      "items": [
+        {
+          "name": "Bulle d'Évasion",
+          "sub": "Hammam (20 min) + Gommage + Massage + Enveloppement.",
+          "price": "2h30 | 150 €"
+        },
+        {
+          "name": "Instant Quiétude",
+          "sub": "Hammam (20 min) + Gommage + Massage.",
+          "price": "2h | 120 €"
+        },
+        {
+          "name": "Parenthèse Douceur",
+          "sub": "Hammam (20 min) + Gommage + Hydratation.",
+          "price": "1h | 70 €"
+        }
+      ]
+    },
+    {
+      "category_title": "Onglerie & Épilation",
+      "items": [
+        {
+          "name": "Beauté des mains ou des pieds / Vernis semi-permanent",
+          "sub": "Mains ou pieds",
+          "price": "30 min | 25 €"
+        },
+        {
+          "name": "Épilations Femme & Homme",
+          "sub": "Sourcils, lèvres, aisselles, maillot, jambes, dos, torse.",
+          "price": "Sur demande"
+        }
+      ]
+    }
+  ]
 }
