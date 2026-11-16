@@ -165,150 +165,41 @@
             </div>
         </section>
 
-        <!-- BLOC MENU DE LA SEMAINE -->
-        <section class="section-block block-creme reveal" id="menu-semaine">
-            <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <span class="subtitle" data-cms="menu_subtitle">Carte & Suggestions</span>
-                <h2 class="title" style="color: var(--color-restaurant-green); font-size: 3rem; margin-bottom: 10px;" data-cms="menu_title">Le Menu de la Semaine</h2>
-                <p class="menu-dates" data-cms="menu_dates">Du lundi 2 novembre au dimanche 8 novembre 2026</p>
-                
-                <div class="menu-card-luxury">
-                    <!-- Entrées -->
-                    <div class="menu-category">
-                        <h3 data-cms="m_cat1">Entrées</h3>
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="m_item1_name">Oeuf parfait bio, émulsion de cèpes des Flandres et mouillettes croustillantes</span>
-                            </div>
-                            <span class="dish-price" data-cms="m_item1_price">16 €</span>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="m_item2_name">Carpaccio de Saint-Jacques marinées aux agrumes et huile d'aneth</span>
-                            </div>
-                            <span class="dish-price" data-cms="m_item2_price">19 €</span>
-                        </div>
-                    </div>
-
-                    <div class="menu-divider"><span>✦ ✦ ✦</span></div>
-
-                    <!-- Plats -->
-                    <div class="menu-category">
-                        <h3 data-cms="m_cat2">Plats</h3>
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="m_item3_name">Filet de Bar de ligne, mousseline de panais à la vanille et jus de carottes braisées</span>
-                            </div>
-                            <span class="dish-price" data-cms="m_item3_price">34 €</span>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="m_item4_name">Suprême de volaille fermière rôti, poêlée de champignons sauvages et jus corsé</span>
-                            </div>
-                            <span class="dish-price" data-cms="m_item4_price">29 €</span>
-                        </div>
-                    </div>
-
-                    <div class="menu-divider"><span>✦ ✦ ✦</span></div>
-
-                    <!-- Desserts -->
-                    <div class="menu-category">
-                        <h3 data-cms="m_cat3">Desserts</h3>
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="m_item5_name">Tarte tatin revisitée, caramel au beurre salé et glace artisanale à la vanille bourbon</span>
-                            </div>
-                            <span class="dish-price" data-cms="m_item5_price">12 €</span>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="m_item6_name">Chocolat grand cru Guanaja en texture, éclats de noisettes caramélisées</span>
-                            </div>
-                            <span class="dish-price" data-cms="m_item6_price">14 €</span>
-                        </div>
-                    </div>
-
-                    <div class="menu-footer-note">
-                        <p data-cms="m_formula">Formule Entrée + Plat ou Plat + Dessert : <strong>38 €</strong> (Hors boissons)</p>
-                        <a href="#zc-action-open" class="btn-restaurant-green" style="margin-top: 25px; display: inline-block;">Réserver votre table</a>
-                    </div>
-                </div>
+       <!-- BLOC MENU DE LA SEMAINE (Dynamique CMS) -->
+    <section class="section-block block-creme reveal" id="menu-semaine">
+        <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <span class="subtitle" data-cms="menu_subtitle">Carte & Suggestions</span>
+            <h2 class="title" style="color: var(--color-restaurant-green); font-size: 3rem; margin-bottom: 10px;" data-cms="menu_title">Le Menu de la Semaine</h2>
+            <p class="menu-dates" data-cms="menu_dates">Du lundi 2 novembre au dimanche 8 novembre 2026</p>
+            
+            <div class="menu-card-luxury" id="weekly-categories-container">
+                <!-- Généré dynamiquement par le script -->
             </div>
-        </section>
 
-        <!-- MENU DE SAISON AUTOMNAL -->
-        <section class="section-block block-blanc reveal" id="menu-automne">
-            <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <span class="subtitle" data-cms="autumn-subtitle">L'Esprit des Flandres en Automne</span>
-                <h2 class="title" style="color: var(--color-restaurant-green); font-size: 2.8rem; margin-bottom: 10px;" data-cms="autumn-title">Le Menu de Saison Automnal</h2>
-                <p class="menu-dates" data-cms="autumn-dates">De fin septembre à décembre — Au rythme des récoltes du terroir</p>
-
-                <div class="menu-card-luxury autumn-menu-card">
-                    <!-- Entrées -->
-                    <div class="menu-category">
-                        <h3 data-cms="autumn-cat-1">Les Entrées de Saison</h3>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="autumn-item-1-name">Velouté de potimarron rôti aux éclats de châtaignes</span>
-                                <small style="display:block; color:#666;" data-cms="autumn-item-1-desc">Émulsion légère au lard fumé paysan</small>
-                            </div>
-                            <span class="dish-price" data-cms="autumn-item-1-price">22 €</span>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="autumn-item-2-name">Œuf parfait bio, fricassée de cèpes et trompettes</span>
-                                <small style="display:block; color:#666;" data-cms="autumn-item-2-desc">Jus de viande corsé et tuile de pain au sarrasin</small>
-                            </div>
-                            <span class="dish-price" data-cms="autumn-item-2-price">24 €</span>
-                        </div>
-                    </div>
-
-                    <div class="menu-divider"><span>✦ ✦ ✦</span></div>
-
-                    <!-- Plats -->
-                    <div class="menu-category">
-                        <h3 data-cms="autumn-cat-2">Les Plats Signatures</h3>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="autumn-item-3-name">Filet de biche des forêts flamandes poêlé</span>
-                                <small style="display:block; color:#666;" data-cms="autumn-item-3-desc">Purée de panais vanillée, poêlée de coings et sauce grand veneur</small>
-                            </div>
-                            <span class="dish-price" data-cms="autumn-item-3-price">38 €</span>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="autumn-item-4-name">Pavé de cabillaud rôti sur peau, mousseline de céleri-rave</span>
-                                <small style="display:block; color:#666;" data-cms="autumn-item-4-desc">Chicon braisé au jus de bière ambrée artisanale</small>
-                            </div>
-                            <span class="dish-price" data-cms="autumn-item-4-price">34 €</span>
-                        </div>
-                    </div>
-
-                    <div class="menu-divider"><span>✦ ✦ ✦</span></div>
-
-                    <!-- Desserts -->
-                    <div class="menu-category">
-                        <h3 data-cms="autumn-cat-3">Les Douceurs</h3>
-                        
-                        <div class="menu-item">
-                            <div class="menu-item-info">
-                                <span class="dish-name" data-cms="autumn-item-5-name">Tartelette fine aux pommes reinettes et poires locales</span>
-                                <small style="display:block; color:#666;" data-cms="autumn-item-5-desc">Glace vanille bourbon et caramel au beurre salé</small>
-                            </div>
-                            <span class="dish-price" data-cms="autumn-item-5-price">15 €</span>
-                        </div>
-                    </div>
-
-                    <div class="menu-footer-note">
-                        <p data-cms="autumn-footer">Accord Mets & Vins proposé par notre Sommelier avec l'Homme du Vin (3 verres) : <strong>+32 €</strong></p>
-                    </div>
-                </div>
+            <!-- Note et bouton conservés statiques / pilotables en bas -->
+            <div class="menu-footer-note" style="margin-top: 30px;">
+                <p data-cms="m_formula">Formule Entrée + Plat ou Plat + Dessert : <strong>38 €</strong> (Hors boissons)</p>
+                <a href="#zc-action-open" class="btn-restaurant-green" style="margin-top: 25px; display: inline-block;">Réserver votre table</a>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- MENU DE SAISON AUTOMNAL (Dynamique CMS) -->
+    <section class="section-block block-blanc reveal" id="menu-automne">
+        <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <span class="subtitle" data-cms="autumn-subtitle">L'Esprit des Flandres en Automne</span>
+            <h2 class="title" style="color: var(--color-restaurant-green); font-size: 2.8rem; margin-bottom: 10px;" data-cms="autumn-title">Le Menu de Saison Automnal</h2>
+            <p class="menu-dates" data-cms="autumn-dates">De fin septembre à décembre — Au rythme des récoltes du terroir</p>
+
+            <div class="menu-card-luxury autumn-menu-card" id="autumn-categories-container">
+                <!-- Généré dynamiquement par le script -->
+            </div>
+
+            <div class="menu-footer-note" style="margin-top: 30px;">
+                <p data-cms="autumn-footer">Accord Mets & Vins proposé par notre Sommelier avec l'Homme du Vin (3 verres) : <strong>+32 €</strong></p>
+            </div>
+        </div>
+    </section>
 
         <!-- BANDEAU "FAIT MAISON" ET LOGO -->
         <section class="section-block block-creme reveal" style="padding: 50px 20px; text-align: center; border-top: 1px solid rgba(220, 178, 84, 0.25);">
