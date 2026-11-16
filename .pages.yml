@@ -272,14 +272,16 @@ content:
 
       - label: "Catégories du Menu de la Semaine (Illimité)"
         name: "weekly_categories"
-        type: list
+        type: object
+        list: true
         fields:
           - label: "Nom de la Catégorie (ex: Entrées, Plats...)"
             name: "category_title"
             type: string
           - label: "Liste des Plats"
             name: "items"
-            type: list
+            type: object
+            list: true
             fields:
               - label: "Nom du plat"
                 name: "name"
@@ -290,7 +292,6 @@ content:
               - label: "Prix (ex: 16 €)"
                 name: "price"
                 type: string
-
       - label: "Formule Note"
         name: "m_formula"
         type: text
@@ -308,14 +309,16 @@ content:
 
       - label: "Catégories du Menu d'Automne (Illimité)"
         name: "autumn_categories"
-        type: list
+        type: object
+        list: true
         fields:
           - label: "Nom de la Catégorie (ex: Les Entrées de Saison)"
             name: "category_title"
             type: string
           - label: "Liste des Plats"
             name: "items"
-            type: list
+            type: object
+            list: true
             fields:
               - label: "Nom du plat"
                 name: "name"
