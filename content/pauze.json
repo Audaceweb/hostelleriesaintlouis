@@ -1,7 +1,7 @@
 {
   "hero_subtitle": "Table Remarquable Teritoria",
   "hero_title": "Restaurant PAUZE",
-  "hero_desc": "Cuisine authentique & généreuse orchestrée par le Chef Cédric Barquant.",
+  "hero_desc": "Cuisine authentique & généreuse orchestrée par le Chef Cédric Barquant, cuisine de saison, produits soigneusement sélectionnés auprès de partenaires locaux et partenaires de confiance",
   "carrousel_img1": "img/pauze1.jpg",
   "carrousel_img2": "img/pauze6.jpg",
   "carrousel_img3": "img/pauze2.jpg",
@@ -22,20 +22,16 @@
   "menu_subtitle": "Carte & Suggestions",
   "menu_title": "Le Menu de la Semaine",
   "menu_dates": "Du lundi 2 novembre au dimanche 8 novembre 2026",
-  "m_formula": "Formule Entrée + Plat ou Plat + Dessert : <strong>38 €</strong> (Hors boissons)",
-  
   "weekly_categories": [
     {
       "category_title": "Entrées",
       "items": [
         {
           "name": "Oeuf parfait bio, émulsion de cèpes des Flandres et mouillettes croustillantes",
-          "sub": "",
           "price": "16 €"
         },
         {
           "name": "Carpaccio de Saint-Jacques marinées aux agrumes et huile d'aneth",
-          "sub": "",
           "price": "19 €"
         }
       ]
@@ -45,12 +41,10 @@
       "items": [
         {
           "name": "Filet de Bar de ligne, mousseline de panais à la vanille et jus de carottes braisées",
-          "sub": "",
           "price": "34 €"
         },
         {
           "name": "Suprême de volaille fermière rôti, poêlée de champignons sauvages et jus corsé",
-          "sub": "",
           "price": "29 €"
         }
       ]
@@ -60,23 +54,19 @@
       "items": [
         {
           "name": "Tarte tatin revisitée, caramel au beurre salé et glace artisanale à la vanille bourbon",
-          "sub": "",
           "price": "12 €"
         },
         {
           "name": "Chocolat grand cru Guanaja en texture, éclats de noisettes caramélisées",
-          "sub": "",
           "price": "14 €"
         }
       ]
     }
   ],
-
+  "m_formula": "Formule Entrée + Plat ou Plat + Dessert : <strong>38 €</strong> (Hors boissons)",
   "autumn-subtitle": "L'Esprit des Flandres en Automne",
   "autumn-title": "Le Menu de Saison Automnal",
   "autumn-dates": "De fin septembre à décembre — Au rythme des récoltes du terroir",
-  "autumn-footer": "Accord Mets & Vins proposé par notre Sommelier avec l'Homme du Vin (3 verres) : <strong>+32 €</strong>",
-
   "autumn_categories": [
     {
       "category_title": "Les Entrées de Saison",
@@ -119,7 +109,7 @@
       ]
     }
   ],
-
+  "autumn-footer": "Accord Mets & Vins proposé par notre Sommelier avec l'Homme du Vin (3 verres) : <strong>+32 €</strong>",
   "homemade_quote": "« Plats « Fait maison » : tous nos plats sont préparés sur place à partir de produits bruts »",
   "homemade_img": "img/artisanenor.jpeg"
 }
