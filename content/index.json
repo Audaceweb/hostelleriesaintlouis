@@ -1,6 +1,6 @@
 {
   "hero_logo": "img/grandlogob.png",
-  "hero_desc": "Un écrin d'élégance et d'histoire au cœur du Nord de la France.",
+  "hero_desc": "Un écrin d'élégance et d'histoire au cœur des Flandres dans le  Nord de la France.",
   "hero_carrousel_liste": [
     {
       "image": "img/carrousel1.jpg"
@@ -13,10 +13,10 @@
     }
   ],
   "badge_year": "Ancrage & Histoire",
-  "badge_text": "Au cœur du Nord",
+  "badge_text": "Au cœur des Flandres Françaises",
   "intro_subtitle": "Une parenthèse intemporelle au rythme de la Flandre intérieure.",
   "intro_title": "Une Histoire, un Écrin",
-  "intro_text1": "L' Hostellerie Saint-Louis, manoir du XVIII siècle, est situé au calme dans le village de Bollezeele, au milieu d'un joli jardin arboré et fleuri. Il se trouve entre les villes touristiques comme Saint-Omer, Cassel, Bergues et Gravelines. L'Hôtel dispose de 26 chambres, décorées dans des styles différents, classé LOGIS COSY, avec une atmosphère cocooning et chaleureuse.",
+  "intro_text1": "L' Hostellerie Saint-Louis, manoir du XVIII siècle, est situé au calme dans le village de Bollezeele, au milieu d'un joli jardin arboré et fleuri. Il se trouve entre les villes touristiques comme Saint-Omer, Cassel, Bergues et Gravelines. L'Hôtel dispose de 27 chambres, décorées dans des styles différents, membre du réseau Teritoria, avec une atmosphère cocooning et chaleureuse.",
   "intro_text2": "Profitez de votre séjour pour explorer les richesses culturelles et gastronomiques de la région, partez à la découverte des paysages flandriens et laissez-vous bercer par une hospitalité authentique et chaleureuse.",
   "rooms_img": "img/chambreindex.jpg",
   "rooms_subtitle": "Sérénité & Confort",
@@ -25,32 +25,32 @@
   "resto_img": "img/restaurantindex.jpg",
   "resto_subtitle": "Gastronomie & Terroir",
   "resto_title": "Le Restaurant",
-  "resto_desc": "Une cuisine savoureuse et délicate mettant en valeur les trésors de notre région dans une atmosphère chaleureuse.",
+  "resto_desc": "Une cuisine savoureuse et délicate; portée par notre chef, Cédric Barquant, mettant en valeur les trésors de notre région dans une atmosphère chaleureuse.",
   "news_section_subtitle": "La vie de l'Hostellerie",
   "news_section_title": "Actualités & Événements",
   "news_section_desc": "Découvrez nos prochains événements, soirées à thèmes et menus de saison concoctés par notre équipe.",
   "actualites_liste": [
     {
-      "image": "img/chambresimple.jpg",
-      "date": "15 NOVEMBRE 2026",
-      "title": "Soirée Dîner-Concert Jazz",
-      "desc": "Vivez une expérience sensorielle unique alliant haute gastronomie et mélodies envoûtantes.",
+      "image": "img/1.png",
+      "date": "25 décembre 2026",
+      "title": "Repas de Noël",
+      "desc": "Venez passer Noël en famille, entre amis et découvrez notre menu de fête concocté pour l'occasion !",
       "btn_text": "RÉSERVER SA TABLE",
       "btn_link": "#"
     },
     {
       "image": "img/chambreconfort.jpg",
-      "date": "CHAQUE SEMAINE",
-      "title": "Le Menu du Marché",
-      "desc": "Renouvelé chaque semaine par notre chef selon les trésors de notre terroir nordiste.",
-      "btn_text": "DÉCOUVRIR LA CARTE",
+      "date": "Réveillon de la Saint-Sylvestre - COMPLET ! ",
+      "title": "Notre soirée du 31 décembre est complète - inscription sur liste d'attente",
+      "desc": "Une soirée d'exception pour passer la nouvelle année",
+      "btn_text": "Inscrivez-vous sur liste d'attente",
       "btn_link": "#"
     }
   ],
   "wedding_img": "img/mariageindex.jpg",
   "wedding_subtitle": "Moments Inoubliables",
   "wedding_title": "Mariages & Réceptions",
-  "wedding_desc": "Célébrez vos événements précieux dans un cadre prestigieux dédié à la féerie et au partage.",
+  "wedding_desc": "Célébrez votre mariage dans un cadre prestigieux dédié à la féerie et au partage.",
   "seminar_img": "img/seminaireindex.jpg",
   "seminar_subtitle": "Travail & Sérénité",
   "seminar_title": "Séminaires & Pro",
@@ -64,7 +64,7 @@
   "gift_title": "Coffrets Cadeaux",
   "gift_desc": "Faites plaisir à vos proches avec nos chèques et séjours cadeaux faits sur mesure.",
   "infos_img": "img/christelle-ferreira-chalon-sur-saone-bollezele-hostellerie-saint-louis-1140346.jpg",
-  "infos_subtitle": "Votre Séjour dans le Nord",
+  "infos_subtitle": "Votre Séjour dans les Flandres",
   "infos_title": "Infos Pratiques & Région",
   "infos_desc": "Préparez au mieux votre arrivée et explorez les lieux touristiques emblématiques aux alentours de notre hôtel.",
   "reviews_subtitle": "Témoignages",
@@ -83,7 +83,7 @@
       "author": "— Éléonore M."
     },
     {
-      "source": "Label Terratoria",
+      "source": "Label Teritoria",
       "stars": "★★★★★",
       "text": "\"Une authenticité rare et un engagement sincère pour le terroir. L'esprit de l'hostellerie à son paroxysme.\"",
       "author": "— Marc & Sophie L."
