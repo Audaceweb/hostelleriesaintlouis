@@ -394,19 +394,24 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-    <script>
-  async function loadCMSContent() {
+<script>
+  async function loadMariageCMSContent() {
     try {
-      // 1. Détection automatique de la page actuelle (ex: "chambres.html" -> "chambres")
+      const lang = localStorage.getItem('site_lang') || 'fr';
+
+      // 1. Détection automatique de la page actuelle (ex: "mariage.html" -> "mariage")
       let pageName = window.location.pathname.split('/').pop().replace('.html', '');
-      if (!pageName || pageName === 'index' || pageName === '') {
-        pageName = 'index';
+      if (!pageName || pageName === '') {
+        pageName = 'mariage';
       }
 
-      // 2. Chargement du fichier JSON correspondant dans le dossier content/
-      const response = await fetch(`content/${pageName}.json`);
-      if (!response.ok) return; // Si le fichier JSON n'existe pas encore, on garde le HTML de base
-      
+      // 2. Chargement du fichier JSON correspondant selon la langue (avec slash absolu /)
+      const response = await fetch(`/content/${lang}/${pageName}.json`);
+      if (!response.ok) {
+        console.warn(`CMS : /content/${lang}/${pageName}.json introuvable (${response.status})`);
+        return; // Si le fichier JSON n'existe pas encore, on garde le HTML de base
+      }
+
       const data = await response.json();
 
       // 3. Injection des données simples (Textes & Images avec data-cms)
@@ -417,30 +422,29 @@
         const elements = document.querySelectorAll(`[data-cms="${key}"]`);
         elements.forEach(element => {
           if (element.tagName === 'IMG') {
-            element.src = value;
-          } else {
-            element.textContent = value;
+            if (value) element.src = value;
+          } else if (value !== null && value !== undefined) {
+            element.innerHTML = value;
           }
         });
       }
 
-      // 4. Gestion spéciale de la LISTE D'ACTUALITÉS (sur la page index)
+      // 4. Gestion éventuelle d'une LISTE D'ACTUALITÉS dynamique
       if (data.home_news && Array.isArray(data.home_news)) {
         const newsContainer = document.querySelector('.news-grid');
         if (newsContainer) {
-          // On vide les cartes de démonstration
           newsContainer.innerHTML = '';
+          const linkLabel = lang === 'en' ? 'Book / Learn more' : 'Réserver / En savoir plus';
 
-          // On génère dynamiquement chaque carte d'actualité depuis le JSON
           data.home_news.forEach(item => {
             const cardHTML = `
               <article class="news-card">
-                <div class="news-img"><img src="${item.image || 'img/jazzindex.jfif'}" alt="${item.title}"></div>
+                <div class="news-img"><img src="${item.image || 'img/jazzindex.jfif'}" alt="${item.title || ''}"></div>
                 <div class="news-content">
                   <span class="news-date">${item.date || ''}</span>
                   <h3>${item.title || ''}</h3>
                   <p>${item.desc || ''}</p>
-                  <a href="#reservation" class="news-link">Réserver / En savoir plus &rarr;</a>
+                  <a href="#reservation" class="news-link">${linkLabel} &rarr;</a>
                 </div>
               </article>
             `;
@@ -450,18 +454,20 @@
       }
 
     } catch (error) {
-      console.log("Lecture du contenu CMS...", error);
+      console.log("Lecture du contenu CMS (mariage)...", error);
     }
   }
 
   // Lancement automatique au chargement de la page
-  document.addEventListener('DOMContentLoaded', loadCMSContent);
+  document.addEventListener('DOMContentLoaded', loadMariageCMSContent);
 </script>
+
 <div id="gallery-lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:999999; justify-content:center; align-items:center; flex-direction:column; padding:20px; box-sizing:border-box;">
     <span id="lightbox-close" style="position:fixed; top:20px; right:35px; color:#fff; font-size:45px; font-weight:300; cursor:pointer; line-height:1; z-index:1000000;">&times;</span>
     <img id="lightbox-img" src="" alt="" style="max-width:90%; max-height:80vh; border-radius:4px; box-shadow:0 10px 40px rgba(0,0,0,0.6); object-fit:contain;">
     <p id="lightbox-caption" style="color:var(--color-gold, #dcb254); font-family:var(--font-subtitle, serif); font-style:italic; font-size:1.3rem; margin-top:15px; text-align:center;"></p>
 </div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const lightbox = document.getElementById('gallery-lightbox');
