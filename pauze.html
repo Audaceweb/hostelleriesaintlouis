@@ -268,8 +268,8 @@
         </div>
     </footer>
 
-    <!-- SDK ZENCHEF & CONFIGURATION -->
-  <!-- SDK Zenchef -->
+<!-- SDK ZENCHEF & CONFIGURATION -->
+    <!-- SDK Zenchef -->
     <script>
       ;(function (d, s, id) {
         const el = d.getElementsByTagName(s)[0]
@@ -302,7 +302,7 @@
       });
     </script>
 
-    <!-- FONCTIONS DE RENDU DYNAMIQUE DES MENUS CMS -->
+    <!-- FONCTIONS DE RENDU DYNAMIQUE DES MENUS CMS (FR / EN) -->
     <script>
       function renderRestaurantMenu(categories, containerId) {
           const container = document.getElementById(containerId);
@@ -341,12 +341,21 @@
           });
       }
 
-      async function loadCMSContent() {
+      async function loadPauzeCMSContent() {
         try {
+          const lang = localStorage.getItem('site_lang') || 'fr';
+
           let pageName = window.location.pathname.split('/').pop().replace('.html', '');
-          if (!pageName || pageName === 'index' || pageName === '') pageName = 'index';
-          const response = await fetch(`content/${pageName}.json`);
-          if (!response.ok) return;
+          if (!pageName || pageName === '') {
+            pageName = 'pauze';
+          }
+
+          const response = await fetch(`/content/${lang}/${pageName}.json`);
+          if (!response.ok) {
+            console.warn(`CMS : /content/${lang}/${pageName}.json introuvable (${response.status})`);
+            return;
+          }
+
           const data = await response.json();
           
           // Injection des textes / images simples
@@ -354,8 +363,11 @@
             if (Array.isArray(value)) continue;
             const elements = document.querySelectorAll(`[data-cms="${key}"]`);
             elements.forEach(element => {
-              if (element.tagName === 'IMG') element.src = value;
-              else if (value !== null) element.innerHTML = value;
+              if (element.tagName === 'IMG') {
+                if (value) element.src = value;
+              } else if (value !== null && value !== undefined) {
+                element.innerHTML = value;
+              }
             });
           }
 
@@ -370,13 +382,12 @@
           }
 
         } catch (error) { 
-          console.log("CMS Error", error); 
+          console.log("CMS Error (pauze)", error); 
         }
       }
 
-      document.addEventListener('DOMContentLoaded', loadCMSContent);
+      document.addEventListener('DOMContentLoaded', loadPauzeCMSContent);
     </script>
 </body>
 </html>
-</body>
-</html>
+
