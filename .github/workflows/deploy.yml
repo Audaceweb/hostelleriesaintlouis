@@ -17,11 +17,13 @@ jobs:
       - name: Setup SSH for Gandi
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.GANDI_SSH_KEY }}" > ~/.ssh/id_ed25519
+          printf '%s\n' "${{ secrets.GANDI_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -p 22 sftp.sd5.gpaas.net >> ~/.ssh/known_hosts
 
       - name: Push to Gandi Git remote
+        env:
+          GIT_SSH_COMMAND: "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no"
         run: |
           git remote add gandi ssh://14169680@sftp.sd5.gpaas.net/14169680/14169680.git
           git push -f gandi HEAD:refs/heads/main
