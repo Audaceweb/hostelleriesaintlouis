@@ -1,0 +1,73 @@
+{
+  "hero_desc": "An elegant, historic jewel in the heart of Flanders, in the north of France.",
+  "badge_year": "Roots & History",
+  "badge_text": "In the Heart of French Flanders",
+  "intro_subtitle": "A timeless interlude at the rhythm of inland Flanders.",
+  "intro_title": "A Story, a Setting",
+  "intro_text1": "L’Hostellerie Saint-Louis, an 18th-century manor house, is set in a quiet spot in the village of Bollezeele, in the middle of a pretty, tree-lined and flower-filled garden. It lies between tourist towns such as Saint-Omer, Cassel, Bergues and Gravelines. The hotel has 27 rooms, each decorated in a different style, is a member of the Teritoria network, and has a cosy and welcoming atmosphere.",
+  "intro_text2": "Make the most of your stay to explore the region’s cultural and culinary riches, discover the Flemish landscapes and let yourself be soothed by authentic, warm hospitality.",
+  "rooms_subtitle": "Serenity & Comfort",
+  "rooms_title": "Our Rooms",
+  "rooms_desc": "Discover refined spaces where modernity and tradition come together to offer you an exceptional break.",
+  "resto_subtitle": "Gastronomy & Terroir",
+  "resto_title": "The Restaurant",
+  "resto_desc": "Flavourful, delicate cuisine, led by our chef, Cédric Barquant, showcasing the treasures of our region in a warm atmosphere.",
+  "news_section_subtitle": "Life at the Hostellerie",
+  "news_section_title": "News & Events",
+  "news_section_desc": "Discover our upcoming events, themed evenings and seasonal menus created by our team.",
+  "actualites_liste": [
+    {
+      "image": "img/1.png",
+      "date": "25 December 2026",
+      "title": "Christmas Meal",
+      "desc": "Come and spend Christmas with family and friends, and discover the festive menu we have created for the occasion!",
+      "btn_text": "BOOK YOUR TABLE",
+      "btn_link": "#"
+    },
+    {
+      "image": "img/chambreconfort.jpg",
+      "date": "New Year’s Eve – FULLY BOOKED!",
+      "title": "Our 31 December evening is fully booked – join the waiting list",
+      "desc": "An exceptional evening to welcome in the new year",
+      "btn_text": "Join the waiting list",
+      "btn_link": "#"
+    }
+  ],
+  "wedding_subtitle": "Unforgettable Moments",
+  "wedding_title": "Weddings & Receptions",
+  "wedding_desc": "Celebrate your wedding in a prestigious setting dedicated to enchantment and sharing.",
+  "seminar_subtitle": "Work & Serenity",
+  "seminar_title": "Seminars & Business",
+  "seminar_desc": "Fully equipped rooms and bespoke organisation to make your business meetings a success.",
+  "spa_subtitle": "Absolute Relaxation",
+  "spa_title": "Spa & Wellness",
+  "spa_desc": "Let yourself be transported by soothing treatments and enjoy a true haven of peace.",
+  "gift_subtitle": "Give the Exceptional",
+  "gift_title": "Gift Boxes",
+  "gift_desc": "Delight your loved ones with our tailor-made gift vouchers and stays.",
+  "infos_subtitle": "Your Stay in Flanders",
+  "infos_title": "Practical Information & Region",
+  "infos_desc": "Prepare your arrival and explore the emblematic tourist sites around our hotel.",
+  "reviews_subtitle": "Testimonials",
+  "reviews_title": "What Our Guests Say About Us",
+  "reviews_liste": [
+    {
+      "source": "Google Reviews",
+      "stars": "★★★★★",
+      "text": "“A magnificent setting, impeccable service and rooms of absolute cleanliness and refinement. A magical break in the North!”",
+      "author": "— Thomas V."
+    },
+    {
+      "source": "Booking.com (9.6/10)",
+      "stars": "★★★★★",
+      "text": "“The charm of the old combined with modern comfort. The restaurant is a true delight for the taste buds. Attentive staff.”",
+      "author": "— Éléonore M."
+    },
+    {
+      "source": "Teritoria Label",
+      "stars": "★★★★★",
+      "text": "“Rare authenticity and a sincere commitment to the terroir. The spirit of the hostellerie at its height.”",
+      "author": "— Marc & Sophie L."
+    }
+  ]
+}
