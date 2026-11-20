@@ -1,0 +1,27 @@
+name: Deploy to Gandi PaaS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup SSH for Gandi
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GANDI_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p 22 sftp.sd5.gpaas.net >> ~/.ssh/known_hosts
+
+      - name: Push to Gandi Git remote
+        run: |
+          git remote add gandi ssh://14169680@sftp.sd5.gpaas.net/14169680/14169680.git
+          git push -f gandi HEAD:refs/heads/main
