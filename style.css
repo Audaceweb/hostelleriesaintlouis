@@ -31,9 +31,7 @@ body {
     overflow-x: hidden;
 }
 
-    opacity: 1;
-    transition: opacity 0.35s ease-in-out;
-}
+
 
 body.fade-out {
     opacity: 0;
@@ -2683,4 +2681,66 @@ body.spa-theme .main-footer-new {
 
 .gallery-grid .gallery-item {
     cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    /* Transparent en haut, bleu uniquement au scroll (sauf thèmes spéciaux) */
+    #main-header:not(.scrolled) {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        border-bottom: none !important;
+    }
+
+    #main-header.scrolled:not(body.restaurant-theme #main-header):not(body.spa-theme #main-header) {
+        background: rgba(23, 23, 97, 0.95) !important;
+        backdrop-filter: blur(12px) !important;
+        border-bottom: 1px solid rgba(220, 178, 84, 0.2) !important;
+    }
+
+    #main-header .desktop-lang-switcher {
+        display: none !important;
+    }
+
+    /* Cache mobile-lang-switcher quand le menu burger est fermé */
+    #main-header .nav-bar:not(.active) .mobile-lang-switcher {
+        display: none !important;
+    }
+
+    /* Centre et stylise FR / EN proprement dans le menu burger ouvert */
+    #main-header .nav-bar.active {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    #main-header .nav-bar.active .mobile-lang-switcher {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px;
+        width: 100%;
+        margin-top: 24px;
+        padding: 8px 16px;
+        font-family: var(--font-subtitle, serif);
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    #main-header .nav-bar.active .mobile-lang-switcher a {
+        color: var(--color-white) !important;
+        text-decoration: none !important;
+        opacity: 0.7;
+        padding: 2px 6px;
+    }
+
+    #main-header .nav-bar.active .mobile-lang-switcher a.active,
+    #main-header .nav-bar.active .mobile-lang-switcher a:hover {
+        color: var(--color-gold) !important;
+        opacity: 1;
+        font-weight: 600;
+    }
+
+    #main-header .nav-bar.active .mobile-lang-switcher .lang-separator {
+        color: rgba(255, 255, 255, 0.4) !important;
+    }
 }
