@@ -295,33 +295,46 @@
     </footer>
     <script src="script.js"></script>
 <script>
-      async function loadCMSContent() {
-        try {
-          let pageName = window.location.pathname.split('/').pop().replace('.html', '');
-          if (!pageName || pageName === 'index' || pageName === '') pageName = 'index';
-          const response = await fetch(`content/${pageName}.json`);
-          if (!response.ok) return;
-          const data = await response.json();
-          
-          for (const [key, value] of Object.entries(data)) {
-            if (Array.isArray(value)) continue;
-            const elements = document.querySelectorAll(`[data-cms="${key}"]`);
-            elements.forEach(element => {
-              if (element.tagName === 'IMG') element.src = value;
-              else if (value !== null) element.innerHTML = value;
-            });
-          }
+  async function loadSpaCMSContent() {
+    try {
+      const lang = localStorage.getItem('site_lang') || 'fr';
 
-          // Génération dynamique de la carte des soins (Spa)
-          if (data.spa_categories && typeof renderSpaMenu === 'function') {
-              renderSpaMenu(data.spa_categories);
-          }
-
-        } catch (error) { 
-          console.log("CMS Error", error); 
-        }
+      let pageName = window.location.pathname.split('/').pop().replace('.html', '');
+      if (!pageName || pageName === '') {
+        pageName = 'spa';
       }
-      document.addEventListener('DOMContentLoaded', loadCMSContent);
-    </script>
+
+      const response = await fetch(`/content/${lang}/${pageName}.json`);
+      if (!response.ok) {
+        console.warn(`CMS : /content/${lang}/${pageName}.json introuvable (${response.status})`);
+        return;
+      }
+
+      const data = await response.json();
+
+      for (const [key, value] of Object.entries(data)) {
+        if (Array.isArray(value)) continue;
+        const elements = document.querySelectorAll(`[data-cms="${key}"]`);
+        elements.forEach(element => {
+          if (element.tagName === 'IMG') {
+            if (value) element.src = value;
+          } else if (value !== null && value !== undefined) {
+            element.innerHTML = value;
+          }
+        });
+      }
+
+      // Génération dynamique de la carte des soins (Spa)
+      if (data.spa_categories && typeof renderSpaMenu === 'function') {
+        renderSpaMenu(data.spa_categories);
+      }
+
+    } catch (error) {
+      console.log("CMS Error (spa)", error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadSpaCMSContent);
+</script>
 </body>
 </html>
