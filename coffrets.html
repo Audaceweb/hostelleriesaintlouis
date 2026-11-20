@@ -242,18 +242,23 @@
     <!-- JavaScript -->
     <script src="script.js"></script>
 <script>
-  async function loadCMSContent() {
+  async function loadCoffretCMSContent() {
     try {
+      const lang = localStorage.getItem('site_lang') || 'fr';
+
       // 1. Détection automatique de la page actuelle
       let pageName = window.location.pathname.split('/').pop().replace('.html', '');
-      if (!pageName || pageName === 'index' || pageName === '') {
-        pageName = 'index';
+      if (!pageName || pageName === '') {
+        pageName = 'coffret';
       }
 
-      // 2. Chargement du fichier JSON correspondant (avec slash absolu /)
-      const response = await fetch(`/content/${pageName}.json`);
-      if (!response.ok) return; // Si le fichier JSON n'existe pas, on garde le HTML de base
-      
+      // 2. Chargement du fichier JSON correspondant selon la langue (avec slash absolu /)
+      const response = await fetch(`/content/${lang}/${pageName}.json`);
+      if (!response.ok) {
+        console.warn(`CMS : /content/${lang}/${pageName}.json introuvable (${response.status})`);
+        return;
+      }
+
       const data = await response.json();
 
       // 3. Injection des données simples (Textes & Images avec data-cms)
@@ -263,20 +268,21 @@
         const elements = document.querySelectorAll(`[data-cms="${key}"]`);
         elements.forEach(element => {
           if (element.tagName === 'IMG') {
-            element.src = value;
+            if (value) element.src = value;
           } else if (value !== null && value !== undefined) {
             element.innerHTML = value; // innerHTML pour garder les balises HTML/strong
           }
         });
       }
 
-      // 4. Gestion spéciale de la LISTE D'ACTUALITÉS (sur la page index)
-      if (data.home_news && Array.isArray(data.home_news)) {
+      // 4. Gestion éventuelle d'une liste d'actualités / coffrets si présente sur la page
+      const newsList = data.home_news || data.actualites_liste;
+      if (newsList && Array.isArray(newsList)) {
         const newsContainer = document.querySelector('.news-grid');
         if (newsContainer) {
           newsContainer.innerHTML = '';
 
-          data.home_news.forEach(item => {
+          newsList.forEach(item => {
             const cardHTML = `
               <article class="news-card">
                 <div class="news-img"><img src="${item.image || 'img/jazzindex.jfif'}" alt="${item.title || ''}"></div>
@@ -284,7 +290,7 @@
                   <span class="news-date">${item.date || ''}</span>
                   <h3>${item.title || ''}</h3>
                   <p>${item.desc || ''}</p>
-                  <a href="#reservation" class="news-link">Réserver / En savoir plus &rarr;</a>
+                  <a href="#reservation" class="news-link">${lang === 'en' ? 'Book / Learn more' : 'Réserver / En savoir plus'} &rarr;</a>
                 </div>
               </article>
             `;
@@ -294,12 +300,12 @@
       }
 
     } catch (error) {
-      console.log("Lecture du contenu CMS...", error);
+      console.log("Lecture du contenu CMS (coffret)...", error);
     }
   }
 
   // Lancement automatique au chargement de la page
-  document.addEventListener('DOMContentLoaded', loadCMSContent);
+  document.addEventListener('DOMContentLoaded', loadCoffretCMSContent);
 </script>
 </body>
 </html>
