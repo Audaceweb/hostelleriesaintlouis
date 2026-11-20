@@ -1,0 +1,116 @@
+{
+  "hero_subtitle": "Teritoria “Table Remarquable”",
+  "hero_title": "PAUZE Restaurant",
+  "hero_desc": "Authentic, generous cuisine orchestrated by Chef Cédric Barquant.",
+  "intro_subtitle": "Authenticity, Terroir & Passion",
+  "intro_title": "Authentic & Generous Cuisine",
+  "intro_text1": "In our kitchen, every plate tells a story: that of a carefully selected product from committed local producers, grown with respect and transformed with passion. Favouring products rooted in the region guarantees unrivalled freshness while supporting those who keep our Flanders alive.",
+  "badge_title": "<span>⭐</span> Recognised as a “Table Remarquable” by Teritoria",
+  "badge_desc": "A distinction that honours our commitment to sincere, eco-responsible gastronomy.",
+  "chef_subtitle": "Expertise & Rigour",
+  "chef_title": "Chef Cédric Barquant",
+  "chef_desc1": "Our chef, <strong>Cédric Barquant</strong>, joined the establishment in June 2026. Previously sous chef at the <em>Château de Beaulieu (**)</em> and then executive chef at the <em>Auberge du Vertmont</em>, he is devoted to working with seasonal produce with passion, rigour and innovation.",
+  "chef_desc2": "“With a menu that changes with the seasons and varied weekly menus, we offer honest cooking to awaken your taste buds!”",
+  "wine_subtitle": "Harmony of Food & Wine",
+  "wine_title": "The Sommelier’s Selection",
+  "wine_desc1": "To enhance the chef’s creations, we offer our wine list, carefully selected with passion by <strong>L’Homme du Vin</strong>, our main supplier and partner.",
+  "wine_desc2": "🍷 You can also enjoy a fine selection of <strong>wines by the glass</strong>, reinvented with the seasons to perfectly accompany your meal.",
+  "menu_subtitle": "Menu & Suggestions",
+  "menu_title": "The Menu of the Week",
+  "menu_dates": "From Monday 2 November to Sunday 8 November 2026",
+  "m_formula": "Set menu — Starter + Main course or Main course + Dessert: <strong>€38</strong> (drinks not included)",
+  "weekly_categories": [
+    {
+      "category_title": "Starters",
+      "items": [
+        {
+          "name": "Organic perfect egg, Flemish porcini foam and crispy toast soldiers",
+          "sub": "",
+          "price": "€16"
+        },
+        {
+          "name": "Scallop carpaccio marinated in citrus fruits with dill oil",
+          "sub": "",
+          "price": "€19"
+        }
+      ]
+    },
+    {
+      "category_title": "Main Courses",
+      "items": [
+        {
+          "name": "Line-caught sea bass fillet, vanilla parsnip mousseline and braised carrot jus",
+          "sub": "",
+          "price": "€34"
+        },
+        {
+          "name": "Roast free-range chicken supreme, wild mushroom sauté and rich jus",
+          "sub": "",
+          "price": "€29"
+        }
+      ]
+    },
+    {
+      "category_title": "Desserts",
+      "items": [
+        {
+          "name": "Reimagined tarte tatin, salted butter caramel and artisan Bourbon vanilla ice cream",
+          "sub": "",
+          "price": "€12"
+        },
+        {
+          "name": "Guanaja grand cru chocolate in textures, caramelised hazelnut shards",
+          "sub": "",
+          "price": "€14"
+        }
+      ]
+    }
+  ],
+  "autumn-subtitle": "The Spirit of Flanders in Autumn",
+  "autumn-title": "The Autumn Seasonal Menu",
+  "autumn-dates": "From late September to December — In rhythm with the local harvests",
+  "autumn-footer": "Food & wine pairing offered by our Sommelier with L’Homme du Vin (3 glasses): <strong>+€32</strong>",
+  "autumn_categories": [
+    {
+      "category_title": "Seasonal Starters",
+      "items": [
+        {
+          "name": "Roasted pumpkin velouté with chestnut crumbs",
+          "sub": "Light smoked country bacon foam",
+          "price": "€22"
+        },
+        {
+          "name": "Organic perfect egg, fricassée of ceps and trumpet mushrooms",
+          "sub": "Rich meat jus and buckwheat bread crisp",
+          "price": "€24"
+        }
+      ]
+    },
+    {
+      "category_title": "Signature Main Courses",
+      "items": [
+        {
+          "name": "Pan-seared venison fillet from the Flemish forests",
+          "sub": "Vanilla parsnip purée, sautéed quince and grand veneur sauce",
+          "price": "€38"
+        },
+        {
+          "name": "Skin-on roast cod loin, celeriac mousseline",
+          "sub": "Braised chicory in a craft amber-beer jus",
+          "price": "€34"
+        }
+      ]
+    },
+    {
+      "category_title": "Sweet Treats",
+      "items": [
+        {
+          "name": "Thin tartlet of reinette apples and local pears",
+          "sub": "Bourbon vanilla ice cream and salted butter caramel",
+          "price": "€15"
+        }
+      ]
+    }
+  ],
+  "homemade_quote": "“Homemade” dishes: all our dishes are prepared on site from raw ingredients"
+}

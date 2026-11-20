@@ -1,0 +1,35 @@
+{
+  "hero_subtitle": "Your Journey Starts Here",
+  "hero_title": "Practical Information & Access",
+  "hero_desc": "In the heart of the charming village of Bollezeele in inland Flanders.",
+  "access_subtitle": "How to Find Us",
+  "access_title": "Access & Transport",
+  "car_title": "By Car",
+  "car_desc": "Quick access via the A25 (Exit 15 Wormhout / Herzeele or Exit 14). 20 minutes from Dunkirk and 45 minutes from Lille. Private, secure on-site parking.",
+  "shuttle_title": "The Shuttle (Calais / Eurotunnel)",
+  "shuttle_desc": "Just 35 minutes from the Eurotunnel terminal at Calais and the ferries via the A26/A25. An ideal stopover for our visitors from the United Kingdom.",
+  "train_title": "By Train",
+  "train_desc": "Nearest TGV / TER stations: Hazebrouck (20 min) and Dunkirk (25 min).",
+  "surroundings_subtitle": "Getaways & Heritage",
+  "surroundings_title": "Things to Do in the Area",
+  "surroundings_desc": "Between the Monts de Flandre, fortified towns and wild coastline, explore the cultural and natural riches surrounding Bollezeele.",
+  "news_subtitle": "Life at the Hostellerie",
+  "news_title": "News & Events",
+  "news": [
+    {
+      "image": "img/photo-restaurant.jpg",
+      "date": "Coming Soon",
+      "title": "Terroir & Seasonal Tasting Menu",
+      "desc": "The chef of the PAUZE restaurant honours Flemish producers with an exceptional, short-lived menu."
+    },
+    {
+      "image": "img/chambreindex.jpg",
+      "date": "Limited-Time Offer",
+      "title": "Flanders Escape Weekend",
+      "desc": "Enjoy one night with an artisan breakfast buffet and unlimited access to our relaxation areas."
+    }
+  ],
+  "contact_subtitle": "At Your Service",
+  "contact_title": "Contact Us",
+  "contact_desc": "Our team is at your complete disposal to answer all your questions and prepare your visit to Bollezeele."
+}

@@ -1,0 +1,118 @@
+{
+  "hero_subtitle": "Serenity & Sensuality",
+  "hero_title": "The Saint-Louis Spa",
+  "hero_desc": "A 130 m² sanctuary entirely devoted to relaxation and renewal.",
+  "spa_intro_subtitle": "A Journey for the Senses & Nohèm Partnership",
+  "spa_intro_title": "An Exceptional 130 m² Space",
+  "spa_intro_desc": "130 m² dedicated to relaxation, before you move on to the treatment area. Our rituals draw on traditions from around the world, in partnership with the organic cosmetics brand Nohèm (made in France, in Guérande).",
+  "scard1_title": "Swim Spa",
+  "scard1_capacity": "Counter-current swimming",
+  "scard1_desc": "The ideal blend of gentle exercise and soothing hydromassage.",
+  "scard2_title": "Jacuzzi / Whirlpool Bath",
+  "scard2_capacity": "Absolute relaxation",
+  "scard2_desc": "Massaging bubbles to release deep-seated tension.",
+  "scard3_title": "Finnish Sauna",
+  "scard3_capacity": "Dry heat",
+  "scard3_desc": "A soothing heat to purify body and mind.",
+  "scard4_title": "Oriental Hammam",
+  "scard4_capacity": "Humid steam",
+  "scard4_desc": "An enveloping steam to free the senses and purify the skin.",
+  "tarifs_subtitle": "Access Information",
+  "tarifs_title": "Opening Hours & Rates",
+  "t1_title": "External Guests (2-Hour Spa Access)",
+  "t1_price": "€34 / person (Jacuzzi, swimming pool, hammam, sauna)",
+  "t2_title": "Hotel Residents",
+  "t2_price": "Free access with a treatment + 10% off all treatments",
+  "hours_title": "Opening Hours (By Reservation)",
+  "h1_day": "Monday:",
+  "h1_time": "4:00 pm – 8:00 pm",
+  "h2_day": "Tuesday to Saturday:",
+  "h2_time": "10:00 am – 8:00 pm",
+  "h3_day": "Sunday:",
+  "h3_time": "10:00 am – 4:00 pm",
+  "soins_subtitle": "A Journey for the Senses & Rituals from Around the World",
+  "soins_title": "The Treatment Menu",
+  "soins_desc": "Treatments are performed by a professional wellness practitioner and beautician. Reservation required.",
+  "spa_categories": [
+    {
+      "category_title": "Facial Treatments — Nohèm Rituals",
+      "items": [
+        {
+          "name": "Discovery Ritual (express treatment adapted to your skin type)",
+          "sub": "Asia (sensitive & dehydrated skin) or India (combination to oily skin). Make-up removal, cleansing, mask, finishing products.",
+          "price": "30 min (allow 45 min) | €45"
+        },
+        {
+          "name": "Escape Ritual (Asia or India)",
+          "sub": "Complete facial treatment combining effectiveness and deep relaxation. Enveloping movements and extended massage.",
+          "price": "1 h (allow 1 h 15) | €75"
+        },
+        {
+          "name": "Grand Nord Ritual (Global Anti-Ageing)",
+          "sub": "Stimulates skin regeneration and smooths features, using lithotherapy techniques. Ideal for mature or tired skin.",
+          "price": "1 h 15 (allow 1 h 30) | €90"
+        }
+      ]
+    },
+    {
+      "category_title": "Body Treatments — World Massages & Tailor-Made",
+      "items": [
+        {
+          "name": "Africa — Deep Tissue",
+          "sub": "Deep massage with intense, continuous pressure to relax muscles lastingly.",
+          "price": "1 h | €80"
+        },
+        {
+          "name": "Polynesia — Lomi-Lomi",
+          "sub": "Traditional flowing, enveloping massage using the forearms, with a soothing rhythm for total release.",
+          "price": "1 h | €80"
+        },
+        {
+          "name": "Mum-to-Be Massage",
+          "sub": "Gentle massage combined with breathing techniques inspired by sophrology.",
+          "price": "1 h | €80"
+        },
+        {
+          "name": "Tailor-Made Interlude (Personalised Massage)",
+          "sub": "Areas of your choice, adapted pressure, choice of sensory oil.",
+          "price": "30 min (€45) | 45 min (€60) | 1 h (€75) | 1 h 30 (€105)"
+        }
+      ]
+    },
+    {
+      "category_title": "Signature Spa Rituals (Complete Experiences)",
+      "items": [
+        {
+          "name": "Escape Bubble",
+          "sub": "Hammam (20 min) + Scrub + Massage + Body wrap.",
+          "price": "2 h 30 | €150"
+        },
+        {
+          "name": "Moment of Tranquillity",
+          "sub": "Hammam (20 min) + Scrub + Massage.",
+          "price": "2 h | €120"
+        },
+        {
+          "name": "Gentle Interlude",
+          "sub": "Hammam (20 min) + Scrub + Moisturising treatment.",
+          "price": "1 h | €70"
+        }
+      ]
+    },
+    {
+      "category_title": "Nails & Waxing",
+      "items": [
+        {
+          "name": "Hand or foot care / Gel polish",
+          "sub": "Hands or feet",
+          "price": "30 min | €25"
+        },
+        {
+          "name": "Waxing for Women & Men",
+          "sub": "Eyebrows, lip, underarms, bikini line, legs, back, chest.",
+          "price": "On request"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "hero_subtitle": "Business & Resident Spaces",
+  "hero_title": "Seminars & Corporate Events",
+  "hero_desc": "Combine professional efficiency with the art of living in an inspiring historic setting.",
+  "intro_subtitle": "Excellence at Work",
+  "intro_title": "A Setting Conducive to Reflection",
+  "intro_text1": "L’Hostellerie Saint-Louis offers flexible work spaces bathed in natural light. Give your staff, management committees or partners a calm, privileged environment that stimulates creativity and strengthens team cohesion.",
+  "intro_text2": "State-of-the-art technology, a dedicated concierge service and tailor-made catering from our gastronomic restaurant PAUZE.",
+  "atouts_subtitle": "Tailor-Made Services",
+  "atouts_title": "Our Business Solutions",
+  "atouts_desc": "From small committee meetings to full residential seminars, we adapt our spaces and services to your requirements.",
+  "scard1_title": "Fully Equipped Meeting Rooms",
+  "scard1_desc": "Bright rooms with high-definition projection screens, video-conferencing equipment and high-speed fibre Wi-Fi.",
+  "scard2_title": "Residential Seminars",
+  "scard2_desc": "Make the most of our 27 high-end rooms and suites (twin rooms available) to accommodate your teams during multi-day stays.",
+  "scard3_title": "Gourmet Breaks & Dinners",
+  "scard3_desc": "Welcome coffee, artisan pastries, fruit breaks, business lunches and private dinners at the PAUZE restaurant.",
+  "scard4_title": "Team Building & Wellness",
+  "scard4_desc": "Private hire of the Saint-Louis Spa (120 m²) and activities to discover Flanders to strengthen team cohesion.",
+  "quote_subtitle": "Business Enquiries",
+  "quote_title": "Quotes & Bookings",
+  "quote_desc": "Our corporate team is at your disposal to design a bespoke event suited to your budget and objectives.",
+  "capacities_section_subtitle": "Tailor-Made & Modular",
+  "capacities_section_title": "Capacities & Layouts of Our Meeting Rooms",
+  "capacities_section_desc": "Offer your staff and partners an exceptional setting. Our modular rooms adapt elegantly to every professional format, from the executive meeting to the corporate cocktail.",
+  "seminar_capacities_liste": [
+    {
+      "room_name": "L’Écrin",
+      "room_size": "75 m²",
+      "room_capacity": "45 seated • 60 standing",
+      "room_desc": "A room bathed in natural light, ideal for plenary sessions, working seminars and project presentations."
+    },
+    {
+      "room_name": "Salle des Miroirs (Mirror Room)",
+      "room_size": "78 m²",
+      "room_capacity": "65 seated • 80 standing",
+      "room_desc": "The prestigious choice for large corporate banquets, cocktail receptions and major professional conventions."
+    },
+    {
+      "room_name": "Parenthèse",
+      "room_size": "78 m²",
+      "room_capacity": "40 seated • 60 standing",
+      "room_desc": "An intimate and welcoming setting, perfectly laid out for management committees, workshops and targeted training."
+    },
+    {
+      "room_name": "Jardin d’Hiver (Winter Garden)",
+      "room_size": "102 m²",
+      "room_capacity": "70 seated • 120 standing",
+      "room_desc": "Our largest space. An open, bright room, exceptional for hosting partners at large-scale events."
+    }
+  ]
+}
