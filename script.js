@@ -1,15 +1,65 @@
-document.addEventListener('DOMContentLoaded', () => {
+// ==========================================
+// GESTION MULTILINGUE (FR / EN) & CMS
+// ==========================================
+function getCurrentLang() {
+    return localStorage.getItem('site_lang') || 'fr';
+}
+
+function setSiteLang(lang) {
+    localStorage.setItem('site_lang', lang);
+    updateLangButtons(lang);
+    window.location.reload();
+}
+
+function updateLangButtons(lang) {
+    document.querySelectorAll('[data-lang]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+}
+
+async function loadCMSContent(pageName, lang = getCurrentLang()) {
+    const response = await fetch(`content/${lang}/${pageName}.json`);
+    if (!response.ok) {
+        throw new Error(`Impossible de charger content/${lang}/${pageName}.json`);
+    }
+    return await response.json();
+}
+
+function getCurrentPageName() {
+    const fileName = window.location.pathname.split('/').pop();
+    if (!fileName || fileName === '') return 'index';
+    return fileName.replace(/\.html$/i, '');
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
     const header = document.getElementById('main-header');
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const navBar = document.getElementById('nav-bar');
     const navLinks = document.querySelectorAll('.nav-links a');
 
+    // Initialisation du sélecteur FR / EN
+    const currentLang = getCurrentLang();
+    document.documentElement.lang = currentLang;
+    updateLangButtons(currentLang);
+
+    document.querySelectorAll('[data-lang]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetLang = btn.dataset.lang;
+            if (targetLang) {
+                setSiteLang(targetLang);
+            }
+        });
+    });
+
     // 1. GESTION DU SCROLL POUR LE HEADER ET LE LOGO
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 60) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (header) {
+            if (window.scrollY > 60) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
     });
 
@@ -29,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. GESTION DU LIEN ACTIF
-    const currentPath = window.location.pathname.split("/").pop();
+    const currentPath = window.location.pathname.split('/').pop();
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href');
         if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
@@ -50,6 +100,45 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(element => {
         revealObserver.observe(element);
     });
+
+    // S'assure que la page apparaît en fondu à l'arrivée
+    document.body.classList.remove('fade-out');
+
+    // Transitions douces entre pages internes
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+
+        if (
+            href &&
+            !href.startsWith('#') &&
+            !href.startsWith('tel:') &&
+            !href.startsWith('mailto:') &&
+            link.getAttribute('target') !== '_blank' &&
+            (href.endsWith('.html') || href === '/' || !href.includes('http'))
+        ) {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            });
+        }
+    });
+
+    // Chargement du contenu CMS selon la page courante et la langue active
+    const pageName = getCurrentPageName();
+    try {
+        const cmsData = await loadCMSContent(pageName, currentLang);
+
+        if (cmsData.spa_categories && document.getElementById('spa-categories-container')) {
+            renderSpaMenu(cmsData.spa_categories);
+        }
+    } catch (err) {
+        console.warn(err.message);
+    }
 
     // Lancement initial des carrousels statiques
     initCarousels();
@@ -90,7 +179,6 @@ function initCarousels() {
         }
 
         if (nextBtn && prevBtn) {
-            // Utilisation de .onclick pour écraser proprement les anciens écouteurs
             nextBtn.onclick = () => {
                 nextSlide();
                 resetTimer();
@@ -134,7 +222,7 @@ const newsletterMsg = document.getElementById('newsletter-msg');
 if (newsletterForm) {
     newsletterForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        newsletterMsg.textContent = 'Envoi en cours...';
+        if (newsletterMsg) newsletterMsg.textContent = 'Envoi en cours...';
         try {
             const res = await fetch(newsletterForm.action, {
                 method: 'POST',
@@ -142,51 +230,16 @@ if (newsletterForm) {
             });
             const data = await res.json();
             if (data.success) {
-                newsletterMsg.textContent = 'Merci, votre inscription est bien enregistrée !';
+                if (newsletterMsg) newsletterMsg.textContent = 'Merci, votre inscription est bien enregistrée !';
                 newsletterForm.reset();
             } else {
-                newsletterMsg.textContent = data.message || 'Une erreur est survenue, merci de réessayer.';
+                if (newsletterMsg) newsletterMsg.textContent = data.message || 'Une erreur est survenue, merci de réessayer.';
             }
         } catch (err) {
-            newsletterMsg.textContent = 'Une erreur est survenue, merci de réessayer.';
+            if (newsletterMsg) newsletterMsg.textContent = 'Une erreur est survenue, merci de réessayer.';
         }
     });
 }
-document.addEventListener('DOMContentLoaded', () => {
-    // S'assure que la page apparaît en fondu à l'arrivée
-    document.body.classList.remove('fade-out');
-
-    // Sélectionne tous les liens du site
-    const links = document.querySelectorAll('a');
-
-    links.forEach(link => {
-        const href = link.getAttribute('href');
-
-        // Vérifie si c'est un lien interne vers une autre page (on évite les ancres #, les numéros de téléphone, les e-mails et les liens externes)
-        if (
-            href && 
-            !href.startsWith('#') && 
-            !href.startsWith('tel:') && 
-            !href.startsWith('mailto:') && 
-            link.getAttribute('target') !== '_blank' &&
-            (href.endsWith('.html') || href === '/' || !href.includes('http'))
-        ) {
-            link.addEventListener('click', e => {
-                e.preventDefault(); // Empêche le changement de page instantané
-                document.body.classList.add('fade-out'); // Déclenche le fondu sortant
-
-                // Attend la fin de l'animation (350 millisecondes) puis change de page
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 350);
-            });
-        }
-    });
-});
-document.addEventListener('DOMContentLoaded', () => {
-    // Supposons que ton fichier JSON contienne une liste "spa_categories"
-    // (Ce code est intégré ou appelé après le chargement de ton fetch CMS global)
-});
 
 // Fonction d'injection pour les catégories de soins
 function renderSpaMenu(categories) {
@@ -211,7 +264,6 @@ function renderSpaMenu(categories) {
             });
         }
 
-        // Séparateur entre les catégories (sauf pour la première)
         const dividerHTML = index > 0 ? '<div class="menu-divider"><span>✦ ✦ ✦</span></div>' : '';
 
         const categoryHTML = `
