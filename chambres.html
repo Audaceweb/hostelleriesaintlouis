@@ -587,6 +587,7 @@
     }
 
     setInterval(() => { moveBreakfastSlide(1); }, 5000);
+
     function buildBreakfastCarousel(list) {
         const carousel = document.getElementById('breakfastCarousel');
         if (!carousel || !Array.isArray(list)) return;
@@ -624,6 +625,7 @@
             b.style.display = paths.length > 1 ? '' : 'none';
         });
     }
+
     // --- 3. GALERIE LIGHTBOX PLEIN ÉCRAN ---
     let currentGallery = [];
     let currentImgIndex = 0;
@@ -633,12 +635,12 @@
         return typeof p === 'string' ? p.replace(/^\/+/, '') : '';
     }
 
-    // Noms des champs dans content/chambres.json (identiques à ton .pages.yml)
+    // Noms des champs dans content/<lang>/chambres.json (identiques à ton .pages.yml)
     const GALLERY_KEYS = {
-        standard:    { list: 'std_photos_liste',  single: 'std_img'  },
-        superieure:  { list: 'sup_photos_liste',  single: 'sup_img'  },
+        standard:    { list: 'std_photos_liste', single: 'std_img'  },
+        superieure:  { list: 'sup_photos_liste', single: 'sup_img'  },
         confort:     { list: 'conf_photos_liste', single: 'conf_img' },
-        appartement: { list: 'apt_photos_liste',  single: 'apt_img'  }
+        appartement: { list: 'apt_photos_liste', single: 'apt_img'  }
     };
 
     function openGallery(roomType) {
@@ -696,21 +698,23 @@
         if (e.key === 'ArrowLeft') prevGalleryImage();
     });
 
-    // --- 4. CHARGEMENT CMS ---
-    async function loadCMSContent() {
+    // --- 4. CHARGEMENT CMS MULTILINGUE ---
+    async function loadRoomsCMSContent() {
         try {
+            const lang = localStorage.getItem('site_lang') || 'fr';
             let pageName = window.location.pathname.split('/').pop().replace('.html', '');
             if (!pageName || pageName === 'index' || pageName === '') pageName = 'index';
 
-            const response = await fetch(`content/${pageName}.json`);
+            const response = await fetch(`content/${lang}/${pageName}.json`);
             if (!response.ok) {
-                console.warn(`CMS : content/${pageName}.json introuvable (code ${response.status})`);
+                console.warn(`CMS : content/${lang}/${pageName}.json introuvable (code ${response.status})`);
                 return;
             }
 
             const data = await response.json();
             window.cmsData = data;
-             buildBreakfastCarousel(data.breakfast_photos_liste);
+            buildBreakfastCarousel(data.breakfast_photos_liste);
+
             for (const [key, value] of Object.entries(data)) {
                 if (Array.isArray(value)) continue;
 
@@ -728,7 +732,7 @@
         }
     }
 
-    document.addEventListener('DOMContentLoaded', loadCMSContent);
+    document.addEventListener('DOMContentLoaded', loadRoomsCMSContent);
 </script>
 </body>
 </html>
