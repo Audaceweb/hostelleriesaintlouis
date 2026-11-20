@@ -344,62 +344,68 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-    <script>
-      async function loadCMSContent() {
-        try {
-          let pageName = window.location.pathname.split('/').pop().replace('.html', '');
-          if (!pageName || pageName === 'index' || pageName === '') {
-            pageName = 'index';
-          }
+ <script>
+  async function loadInfosCMSContent() {
+    try {
+      const lang = localStorage.getItem('site_lang') || 'fr';
 
-          const response = await fetch(`content/${pageName}.json`);
-          if (!response.ok) return;
-          
-          const data = await response.json();
-
-          // Injection des données simples
-          for (const [key, value] of Object.entries(data)) {
-            if (Array.isArray(value)) continue;
-            const elements = document.querySelectorAll(`[data-cms="${key}"]`);
-            elements.forEach(element => {
-              if (element.tagName === 'IMG') {
-                element.src = value;
-              } else if (value !== null && value !== undefined) {
-                element.innerHTML = value;
-              }
-            });
-          }
-
-          // Gestion de la LISTE D'ACTUALITÉS dynamique
-          if (data.news && Array.isArray(data.news)) {
-            const newsContainer = document.getElementById('news-container');
-            if (newsContainer) {
-              newsContainer.innerHTML = '';
-              data.news.forEach(item => {
-                const cardHTML = `
-                  <article class="news-card">
-                    <div class="news-img">
-                      <img src="${item.image || 'img/photo-restaurant.jpg'}" alt="${item.title || ''}">
-                    </div>
-                    <div class="news-content">
-                      <span class="news-date">${item.date || ''}</span>
-                      <h3>${item.title || ''}</h3>
-                      <p>${item.desc || ''}</p>
-                      <a href="#contact" class="news-link">En savoir plus &rarr;</a>
-                    </div>
-                  </article>
-                `;
-                newsContainer.insertAdjacentHTML('beforeend', cardHTML);
-              });
-            }
-          }
-
-        } catch (error) {
-          console.error("Erreur lors de la lecture du contenu CMS :", error);
-        }
+      let pageName = window.location.pathname.split('/').pop().replace('.html', '');
+      if (!pageName || pageName === '') {
+        pageName = 'infos';
       }
 
-      document.addEventListener('DOMContentLoaded', loadCMSContent);
-    </script>
+      const response = await fetch(`/content/${lang}/${pageName}.json`);
+      if (!response.ok) {
+        console.warn(`CMS : /content/${lang}/${pageName}.json introuvable (${response.status})`);
+        return;
+      }
+
+      const data = await response.json();
+
+      // Injection des données simples
+      for (const [key, value] of Object.entries(data)) {
+        if (Array.isArray(value)) continue;
+        const elements = document.querySelectorAll(`[data-cms="${key}"]`);
+        elements.forEach(element => {
+          if (element.tagName === 'IMG') {
+            if (value) element.src = value;
+          } else if (value !== null && value !== undefined) {
+            element.innerHTML = value;
+          }
+        });
+      }
+
+      // Gestion de la LISTE D'ACTUALITÉS dynamique
+      if (data.news && Array.isArray(data.news)) {
+        const newsContainer = document.getElementById('news-container');
+        if (newsContainer) {
+          newsContainer.innerHTML = '';
+          const linkLabel = lang === 'en' ? 'Learn more' : 'En savoir plus';
+
+          data.news.forEach(item => {
+            const cardHTML = `
+              <article class="news-card">
+                <div class="news-img">
+                  <img src="${item.image || 'img/photo-restaurant.jpg'}" alt="${item.title || ''}">
+                </div>
+                <div class="news-content">
+                  <span class="news-date">${item.date || ''}</span>
+                  <h3>${item.title || ''}</h3>
+                  <p>${item.desc || ''}</p>
+                  <a href="#contact" class="news-link">${linkLabel} &rarr;</a>
+                </div>
+              </article>
+            `;
+            newsContainer.insertAdjacentHTML('beforeend', cardHTML);
+          });
+        }
+      }
+    } catch (error) {
+      console.error("Erreur lors de la lecture du contenu CMS :", error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadInfosCMSContent);
+</script>
 </body>
 </html>
